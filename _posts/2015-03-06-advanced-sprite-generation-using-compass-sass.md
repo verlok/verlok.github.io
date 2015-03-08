@@ -6,12 +6,17 @@ categories:
 - development
 tags: [spriting, sprite generation, compass, mixins]
 ---
-<p>Spriting is a way to improve performance in your website by putting many images (or icons) in a single larger image, in order to make a single HTTP request instead of many.</p>
-<p>You could manually create the sprite map (the single larger image) using your favorite image editor and cutting it in CSS, maybe using a tool like <a href="http://www.spritecow.com/">SpriteCow</a> to make the process simpler.</p>
-<p>Or you can create sprite maps using Compass.</p>
-<h2>Creating sprites with Compass</h2>
-<h3>The simple way</h3>
-<p>The simpler way to create a sprite with Compass requires you to import a folder of images in your project, then generate a class for each sprite. You can do that by using the following code:</p>
+Spriting is a way to improve performance in your website by putting many images (or icons) in a single larger image, in order to make a single HTTP request instead of many.
+
+You could manually create the sprite map (the single larger image) using your favorite image editor and cutting it in CSS, maybe using a tool like [SpriteCow](http://www.spritecow.com/) to make the process simpler.
+
+Or you can create sprite maps using Compass.
+
+## Creating sprites with Compass
+
+### The simple way
+
+The simpler way to create a sprite with Compass requires you to import a folder of images in your project, then generate a class for each sprite. You can do that by using the following code:
 
 {% highlight sass %}
 // Required Compass tool import
@@ -22,7 +27,7 @@ tags: [spriting, sprite generation, compass, mixins]
 @include all-flags-sprites;
 {% endhighlight %}
 
-<p>Example of CSS output:</p>
+Example of CSS output:
 
 {% highlight css %}
 .flags-it,
@@ -35,25 +40,23 @@ tags: [spriting, sprite generation, compass, mixins]
 .flags-fr { background-position: 0 -64px; }
 {% endhighlight %}
 
-<p>This can be enough for your needs... but you want more, don't you?</p>
-<p><!--more--></p>
-<h3>The considering pixel density + spacing between sprites + size generating + offset managing way</h3>
-<p>Skipping all the others way you can do sprites generation with Compass, I found out that if you have to do the following:</p>
-<ul>
-<li>Generate dimensions of the box equals to the sprite ones
-  </li>
-<li>Use an offset inside the box
-  </li>
-<li>Spacing sprites inside the sprite map
-  </li>
-<li>Manage 1x, 2x, 3x density displays
-  </li>
-<li>Optimize sprite generation time
-</li>
-</ul>
-<p>The only way to do spriting with Compass is to create your own mixins which use Compass base mixins under the hood.</p>
-<h3>_mixins.scss</h3>
-<p>I created the following mixins, that I usually put in a separate _mixins.scss partial.</p>
+This can be enough for your needs... but you want more, don't you?
+
+### The considering pixel density + spacing between sprites + size generating + offset managing way
+
+Skipping all the others way you can do sprites generation with Compass, I found out that if you have to do the following:
+
+*   Generate dimensions of the box equals to the sprite ones
+*   Use an offset inside the box
+*   Spacing sprites inside the sprite map
+*   Manage 1x, 2x, 3x density displays
+*   Optimize sprite generation time
+
+The only way to do spriting with Compass is to create your own mixins which use Compass base mixins under the hood.
+
+### _mixins.scss
+
+I created the following mixins, that I usually put in a separate _mixins.scss partial.
 
 {% highlight scss %}
 // N-ple density sprite
@@ -68,7 +71,7 @@ tags: [spriting, sprite generation, compass, mixins]
     width: image-width(sprite-file($spriteMap, $sprite)) / $multiplier;
   }
 }
- 
+
 // Single and double density sprite
 @mixin use1x2xSprite($sprite, $sprite1xMap, $sprite2xMap, $sprite1xUrl, $sprite2xUrl, /* OPTIONAL PARAMETERS -> */ $renderSize: false, $offsetX: 0, $offsetY: 0) {
   @include useNxSprite($sprite, $sprite1xMap, $sprite1xUrl, 1, $renderSize, $offsetX, $offsetY);
@@ -78,18 +81,22 @@ tags: [spriting, sprite generation, compass, mixins]
 }
 {% endhighlight %}
 
-<h3>_variables.scss</h3>
-<p>This is the file where you define all the variables for your site, that you're going to use across all your scss files.</p>
-<p>In your _variables.scss file you should define the spacing between sprites in sprite map images.</p>
+### _variables.scss
+
+This is the file where you define all the variables for your site, that you're going to use across all your scss files.
+
+In your _variables.scss file you should define the spacing between sprites in sprite map images.
 
 {% highlight scss %}
 // Generic spacing (at 1x) for sprites
 $spacing-sprites-generic: 10px;
 {% endhighlight %}
 
-<h3>_flagSprites.scss</h3>
-<p>This is the file where you define the variables and the mixins for your sprites.</p>
-<p>I suggest to use a _sprites.scss partial different from you _variables.scss, and to @import _sprites.scss only in scss files that requires sprites. This speeds up build time a lot, by avoiding frequent images check on the file system.</p>
+### _flagSprites.scss
+
+This is the file where you define the variables and the mixins for your sprites.
+
+I suggest to use a _sprites.scss partial different from you _variables.scss, and to @import _sprites.scss only in scss files that requires sprites. This speeds up build time a lot, by avoiding frequent images check on the file system.
 
 {% highlight scss %}
 // FlagSprites MAPS and URLS
@@ -104,23 +111,27 @@ $flagSprites2xUrl: sprite-url($flagSprites2xMap);
 }
 {% endhighlight %}
 
-<h3>final_file.scss</h3>
-<p>In your final scss file you can use the sprite doing the following:</p>
-<h4>Simple usage</h4>
-<p>If you don't need space around your sprite and you don't want Compass to generate box dimensions for you, you can simply do the following.</p>
+### final_file.scss
+
+In your final scss file you can use the sprite doing the following:
+
+#### Simple usage
+
+If you don't need space around your sprite and you don't want Compass to generate box dimensions for you, you can simply do the following.
 
 {% highlight scss %}
 @import "compass/utilities/sprites";
 @import "_variables";
 @import "_flagSprites";
- 
+
 // Simple usage
 .exampleSimple {
     @include flagSprites(Italy);
 }
 {% endhighlight %}
 
-<p>That will produce the following:</p>
+That will produce the following:
+
 {% highlight css %}
 .exampleSimple {
   background: transparent url('../img/flagSprites1x-s479625030c.png') no-repeat 0 -882px;
@@ -133,8 +144,9 @@ $flagSprites2xUrl: sprite-url($flagSprites2xMap);
 }
 {% endhighlight %}
 
-<h4>With box size generation</h4>
-<p>If you want Compass to generate box dimensions for you, you should do the following.</p>
+#### With box size generation
+
+If you want Compass to generate box dimensions for you, you should do the following.
 
 {% highlight scss %}
 @import "compass/utilities/sprites";
@@ -146,7 +158,8 @@ $flagSprites2xUrl: sprite-url($flagSprites2xMap);
 }
 {% endhighlight %}
 
-<p>That will produce the following:</p>
+That will produce the following:
+
 {% highlight css %}
 .exampleWithDimensions {
   background: transparent url('../img/flagSprites1x-s479625030c.png') no-repeat 0 -882px;
@@ -163,8 +176,9 @@ $flagSprites2xUrl: sprite-url($flagSprites2xMap);
 }
 {% endhighlight %}
 
-<h4>With box size generation</h4>
-<p>If you don't want Compass to generate box dimensions for you, but you want to use an offset inside the box, you should do the following.</p>
+#### With box size generation
+
+If you don't want Compass to generate box dimensions for you, but you want to use an offset inside the box, you should do the following.
 
 {% highlight scss %}
 @import "compass/utilities/sprites";
@@ -177,7 +191,8 @@ $flagSprites2xUrl: sprite-url($flagSprites2xMap);
 }
 {% endhighlight %}
 
-<p>That will produce the following:</p>
+That will produce the following:
+
 {% highlight css %}
 .exampleWithPadding {
   background: transparent url('../img/flagSprites1x-s479625030c.png') no-repeat 10px -872px;
@@ -191,4 +206,3 @@ $flagSprites2xUrl: sprite-url($flagSprites2xMap);
   }
 }
 {% endhighlight %}
-
