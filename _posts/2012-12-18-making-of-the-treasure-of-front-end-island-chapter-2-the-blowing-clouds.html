@@ -1,0 +1,134 @@
+---
+layout: post
+title: Making of The Treasure of Front-end Island – Chapter 2 – The blowing clouds
+date: 2012-12-18 23:56:48.000000000 +01:00
+categories:
+- development
+- Works
+tags:
+- css 3
+- css3 animations
+- from the front
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  _syntaxhighlighter_encoded: '1'
+  _thumbnail_id: '332'
+author:
+  login: admin
+  email: andrea.verlicchi@gmail.com
+  display_name: Andrea Verlicchi
+  first_name: Andrea
+  last_name: Verlicchi
+---
+<p>Ahoy, front-end pirates!</p>
+<p>Welcome to the Chapter 2 of the <a href="http://www.andreaverlicchi.eu/making-of-the-secret-of-front-end-island-chapter-1-splashing-title/">Making of The Secret of Front-end Island</a> saga: <strong>the Blowing Clouds</strong>.</p>
+<p><a href="http://localhost:8888/andreaverlicchi.eu/blog/wp-content/uploads/2012/12/blowing_clouds.jpg"><img class="alignnone size-full wp-image-332" title="blowing_clouds" src="assets/blowing_clouds.jpg" alt="" width="710" height="200" /></a></p>
+<p>As I described <a href="http://localhost:8888/andreaverlicchi.eu/blog/making-of-the-treasure-of-front-end-island-chapter-1-the-splashing-title/" title="Making of The Treasure of Front-end Island – Chapter 1 – The splashing title">before</a>, in the Photoshop layout I got from the designer (<a title="Diego's LinkedIn Profile" href="http://www.linkedin.com/in/diegosessa" target="_blank">Diego Sessa</a>) I had the finished 1280 pixel wide layout, and I had the discretion of choosing animations, responsive behavior, and so on.</p>
+<p>For the blowing clouds I decided to make a “blow left and right” effect using CSS 3 only. I also wanted the clouds to move at different speeds.</p>
+<p>Here are the steps of what I did:</p>
+<h2>The clouds sprite</h2>
+<p>I created a new empty, transparent image and copied the 4 clouds in it. After trimming the empty pixels, I saved it as transparent png (8 bit also in this case, instead of 24 bit, to save lots of kilobytes).</p>
+<h2>Structure of the page</h2>
+<p>As explained in the <a href="http://localhost:8888/andreaverlicchi.eu/blog/making-of-the-treasure-of-front-end-island-chapter-1-the-splashing-title/" title="Making of The Treasure of Front-end Island – Chapter 1 – The splashing title">previous post</a>, I divided the site into many &lt;sections/&gt;:</p>
+<ul>
+<li><strong>event</strong></li>
+<li>speakers</li>
+<li>description</li>
+<li>city</li>
+<li>venue</li>
+<li>cart</li>
+<li>and so on…</li>
+</ul>
+<p>The <strong>event</strong> section contains the <em>From the Front</em> logo, the <em>The Treasure of Frontend Island</em> splash image, the event day, time and location, and the graphic of the island with the trees, the smoke, the sea, etc.</p>
+<p>Then, I divided again the <strong>event</strong> section in 4 &lt;div/&gt;:</p>
+<ul>
+<li>ftfPresents</li>
+<li><strong>treasure</strong></li>
+<li>eventInfo</li>
+<li>horizon</li>
+</ul>
+<div>Inside the <strong>treasure</strong> div I placed:</div>
+<ul>
+<li><strong>the clouds markup</strong></li>
+<li>the splash image</li>
+<li>the event summary</li>
+<li>the event type</li>
+</ul>
+<h2>The clouds markup</h2>
+<p>Here's the markup for the 4 clouds. I like to use semantic IDs and very short class names, when needed, to keep the html light. </p>
+<p>[sourcecode language="html"]<br />
+&lt;div id=&quot;clouds&quot;&gt;<br />
+	&lt;span class=&quot;c1&quot;&gt;&lt;/span&gt;<br />
+	&lt;span class=&quot;c2&quot;&gt;&lt;/span&gt;<br />
+	&lt;span class=&quot;c3&quot;&gt;&lt;/span&gt;<br />
+	&lt;span class=&quot;c4&quot;&gt;&lt;/span&gt;<br />
+&lt;/div&gt;<br />
+[/sourcecode]</p>
+<h2>The clouds stylesheet portion</h2>
+<p>And here's the CSS that makes the sprite to split into pieces. As you see I use the span tag to apply the background image and the absolute position, and the classes c1, c2, c3 and c4 to offset it, size it and give it a z-index value.</p>
+<p>Each cloud has a different z-index because some clouds are behind <a href="http://localhost:8888/andreaverlicchi.eu/blog/making-of-the-treasure-of-front-end-island-chapter-1-the-splashing-title/" title="Making of The Treasure of Front-end Island – Chapter 1 – The splashing title">the splashing title</a>, some others are in front of it.</p>
+<p>[sourcecode language="css"]<br />
+/* Clouds */</p>
+<p>#clouds span {<br />
+	background: url('../img/clouds.png') no-repeat top left;<br />
+	position: absolute;<br />
+}</p>
+<p>#clouds .c1 {<br />
+	width: 206px; height: 89px;<br />
+	left: -75px; top: -38px;<br />
+	z-index: 3;<br />
+}<br />
+#clouds .c2 {<br />
+	background-position: -260px 0px;<br />
+	width: 270px; height: 102px;<br />
+	left: 590px; top: 206px;<br />
+	z-index: 8;<br />
+}<br />
+#clouds .c3 {<br />
+	background-position: 0px -99px;<br />
+	width: 255px; height: 81px;<br />
+	left: -95px; top: 278px;<br />
+	z-index: 3;<br />
+}<br />
+#clouds .c4 {<br />
+	background-position: -272px -114px;<br />
+	width: 129px; height: 56px;<br />
+	left: 504px; top: 463px;<br />
+	z-index: 12;<br />
+}<br />
+[/sourcecode]</p>
+<h2>The swinging animation</h2>
+<p>Let the wind blow! Here's how the animation is done. As you see, it's quite simple.</p>
+<p>There are two types of clouds: A and B. The A type swings of only 50px, the B type swings of 100px. This makes the user to perceive some deepness of the sky. </p>
+<p>So I wrote two keyframes definitions: cloudA and cloudB.</p>
+<p>[sourcecode language="css"]<br />
+/* Clouds animation keyframes */</p>
+<p>@keyframes cloudA {<br />
+	0%   { transform: translate(0px) }<br />
+	100% { transform: translate(50px) }<br />
+}</p>
+<p>@keyframes cloudB {<br />
+	0%   { transform: translate(0px) }<br />
+	100% { transform: translate(100px) }<br />
+}<br />
+[/sourcecode]</p>
+<p>To make the clouds move all together, I applied the keyframes to the elements giving it the same duration: 15 seconds. The animation goes back and forth infinite times using the easing function "ease-in-out", which makes the animation both start slow and end slow.</p>
+<p>[sourcecode language="css"]<br />
+/* Clouds animation appliance */<br />
+#clouds .c1,<br />
+#clouds .c4 {<br />
+	animation: cloudA 15s 0s infinite alternate ease-in-out;<br />
+}</p>
+<p>#clouds .c2,<br />
+#clouds .c3 {<br />
+	animation: cloudB 15s 0s infinite alternate ease-in-out;<br />
+}<br />
+[/sourcecode]</p>
+<h2>Final result</h2>
+<p>See the final result on <a title="From the Front 2012 conference site" href="http://2012.fromthefront.it">2012.fromthefront.it</a></p>
+<p>If you liked this explanation, please share this post!</p>
+<h2>More to come!</h2>
+<p>Come back in the next few days to see the rest of the <a href="http://www.andreaverlicchi.eu/making-of-the-treasure-of-front-end-island/">Making of The Treasure of Front-end Island</a> saga!</p>

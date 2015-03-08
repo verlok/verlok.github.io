@@ -1,0 +1,130 @@
+---
+layout: post
+title: Making of The Treasure of Front-end Island – Chapter 3 – The rising smoke
+date: 2013-01-12 22:43:47.000000000 +01:00
+categories:
+- development
+tags:
+- css only
+- css3
+- css3 animations
+- from the front
+- front-end island
+- making of
+- no-js
+- psd to html
+status: publish
+type: post
+published: true
+meta:
+  _syntaxhighlighter_encoded: '1'
+  _edit_last: '1'
+  _thumbnail_id: '368'
+author:
+  login: admin
+  email: andrea.verlicchi@gmail.com
+  display_name: Andrea Verlicchi
+  first_name: Andrea
+  last_name: Verlicchi
+---
+<p>Ahoy, front-end pirates!</p>
+<p>Welcome to the Chapter 3 of the <a href="http://www.andreaverlicchi.eu/making-of-the-secret-of-front-end-island-chapter-1-splashing-title/">Making of The Secret of Front-end Island</a> saga: <strong>the Rising Smoke</strong>.</p>
+<p><img src="assets/Front-end-Island-Rising-Smoke-709x237.png" alt="Front-end Island Rising Smoke" width="709" height="237" class="alignnone size-medium wp-image-340" /></p>
+<p>In the layout the smoke was composed by 5 gray circles at different opacity. Oh joy! I could avoid using images using markup and border-radius, and animate every smoke ball using CSS 3 only. Challenging, then funny. :)<br />
+<!--more--></p>
+<h2>Structure of the page</h2>
+<p>As explained in the <a title="Making of The Treasure of Front-end Island – Chapter 1 – The splashing title" href="http://www.andreaverlicchi.eu/blog/making-of-the-treasure-of-front-end-island-chapter-1-the-splashing-title/">previous post</a>, I divided the site into many &lt;sections/&gt;:</p>
+<ul>
+<li><strong>event</strong></li>
+<li>speakers</li>
+<li>description</li>
+<li>city</li>
+<li>venue</li>
+<li>cart</li>
+<li>and so on…</li>
+</ul>
+<p>The DOM path of the smoke parent element is the following:<br />
+#event &gt; #horizon &gt; #smoke</p>
+<h2>The smoke markup</h2>
+<p>By the layout, 5 balls of smoke are visible at the same time. To make a beautiful animation, I decided to double them. Here's the markup for the 10 balls of smoke.</p>
+<p>[sourcecode language="html"]<br />
+&lt;div id=&quot;smoke&quot;&gt;<br />
+	&lt;span class=&quot;s0&quot;&gt;&lt;/span&gt;<br />
+	&lt;span class=&quot;s1&quot;&gt;&lt;/span&gt;<br />
+	&lt;span class=&quot;s2&quot;&gt;&lt;/span&gt;<br />
+	&lt;span class=&quot;s3&quot;&gt;&lt;/span&gt;<br />
+	&lt;span class=&quot;s4&quot;&gt;&lt;/span&gt;<br />
+	&lt;span class=&quot;s5&quot;&gt;&lt;/span&gt;<br />
+	&lt;span class=&quot;s6&quot;&gt;&lt;/span&gt;<br />
+	&lt;span class=&quot;s7&quot;&gt;&lt;/span&gt;<br />
+	&lt;span class=&quot;s8&quot;&gt;&lt;/span&gt;<br />
+	&lt;span class=&quot;s9&quot;&gt;&lt;/span&gt;<br />
+&lt;/div&gt;<br />
+[/sourcecode]</p>
+<h2>The CSS 3 only animation</h2>
+<p>The smoke animation can perfectly be developed in CSS 3 only.</p>
+<p>I used Modernizr to test whether the browser supports CSS 3 animations or not. Modernizr adds the <code>cssanimations</code> class if the browser supports animations, or the <code>no-cssanimations</code> if it doesn't.</p>
+<p>The <code>disableAnimations</code> class is toggled when the user presses the "disable animations" button on the page (maybe to save battery life).</p>
+<p>So here's the code:</p>
+<p>[sourcecode language="css"]<br />
+/* Smoke container */</p>
+<p>#smoke {<br />
+	position: absolute;<br />
+	z-index: 3;<br />
+	width: 1px; height: 160px;<br />
+	left: 50%; bottom: 116px;<br />
+}</p>
+<p>/* No animations? Display a static smoke image */</p>
+<p>.disableAnimations #smoke,<br />
+.no-cssanimations #smoke {<br />
+	width: 86px;<br />
+	margin-left: -25px;<br />
+	bottom: 146px;<br />
+	background: url('../img/smokeNoAni.png') no-repeat center bottom;<br />
+}</p>
+<p>/* smoke balls */</p>
+<p>.cssanimations #smoke span {<br />
+	display: block;<br />
+	position: absolute;<br />
+	bottom: -35px; left: 50%; margin-left:-20px;<br />
+	height: 0px; width: 0px;<br />
+	border: 35px solid #4b4b4b;<br />
+	border-radius: 35px;<br />
+	left: -14px; opacity: 0;<br />
+	transform: scale(0.2);<br />
+}<br />
+[/sourcecode]</p>
+<p>Until now, the smoke container is positioned and all the smoke balls are positioned to its bottom and scaled to 20%.</p>
+<p>And here's where the magic happens. I created two different animations, <code>smokeL</code> for the smoke balls which moved up and left, and <code>smokeR</code> for the smoke balls which moved up and right.</p>
+<p>[sourcecode language="css"]<br />
+@keyframes smokeL {<br />
+	0%   { transform:scale(0.2) translate(0, 0) }<br />
+	10%  { opacity: 1; transform: scale(0.2) translate(0, -5px) }<br />
+	100% { opacity: 0; transform: scale(1) translate(-20px, -130px) }<br />
+}</p>
+<p>@keyframes smokeR {<br />
+	0%   { transform:scale(0.2) translate(0, 0) }<br />
+	10%  { opacity: 1; transform: scale(0.2) translate(0, -5px) }<br />
+	100% { opacity: 0; transform: scale(1) translate(20px, -130px) }<br />
+}<br />
+[/sourcecode]</p>
+<p>Then I applied this two animations alternately to each smoke ball, with a total duration of 10 seconds, and a delay of 1 second more each.</p>
+<p>Here's how:</p>
+<p>[sourcecode language="css"]<br />
+#smoke .s0 { animation: smokeL 10s 0s infinite }<br />
+#smoke .s1 { animation: smokeR 10s 1s infinite }<br />
+#smoke .s2 { animation: smokeL 10s 2s infinite }<br />
+#smoke .s3 { animation: smokeR 10s 3s infinite }<br />
+#smoke .s4 { animation: smokeL 10s 4s infinite }<br />
+#smoke .s5 { animation: smokeR 10s 5s infinite }<br />
+#smoke .s6 { animation: smokeL 10s 6s infinite }<br />
+#smoke .s7 { animation: smokeR 10s 7s infinite }<br />
+#smoke .s8 { animation: smokeL 10s 8s infinite }<br />
+#smoke .s9 { animation: smokeR 10s 9s infinite }<br />
+[/sourcecode]</p>
+<p>And that's it! The smoke animation works perfectly on modern browsers!</p>
+<p>Here's the result:</p>
+<div class="post-result"><iframe src="http://www.andreaverlicchi.eu/examples/css3-only-smoke-animation.html" width="100%" height="250"></iframe></div>
+<p>If you liked this explanation, please share this post!</p>
+<h2>More to come!</h2>
+<p>Come back in the next few days to see the rest of the <a href="http://www.andreaverlicchi.eu/making-of-the-treasure-of-front-end-island/">Making of The Treasure of Front-end Island</a> saga!</p>

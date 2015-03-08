@@ -1,0 +1,44 @@
+---
+layout: post
+title: Respond.js vs css3-mediaqueries.js
+date: 2012-12-09 18:55:05.000000000 +01:00
+categories:
+- development
+tags:
+- css3-mediaqueries.js
+- graceful degradation
+- javascript
+- respond.js
+- responsive
+status: publish
+type: post
+published: true
+meta:
+  _thumbnail_id: '283'
+  _edit_last: '1'
+author:
+  login: admin
+  email: andrea.verlicchi@gmail.com
+  display_name: Andrea Verlicchi
+  first_name: Andrea
+  last_name: Verlicchi
+---
+<p>Googling <strong>respond.js vs css3-mediaqueries.js</strong> I've found <a href="http://coding.smashingmagazine.com/2011/08/10/techniques-for-gracefully-degrading-media-queries/">Techniques For Gracefully Degrading Media Queries</a>, a Smashing Magazine post about <a href="http://lewisnyman.co.uk">Lewis Nyman</a> which talks about how to apply the <strong>graceful degradation</strong> of media queries on browsers that don't support them (IE 8, IE 7, IE 6).</p>
+<p><img class="alignnone size-full wp-image-283" title="responsive" src="assets/responsive.jpg" alt="" width="710" height="231" /></p>
+<p>The options are:</p>
+<ul>
+<li>Use a <strong>separate style sheet</strong> to load conditionally on old Internet Explorer versions, or separate style rules to apply based on the body class</li>
+<li>Use a <strong>javascript fallback</strong> (using <strong>respond.js</strong> or <strong>css3-mediaqueries.js</strong>)</li>
+</ul>
+<p>In case of javascript fallback, the best may be <strong>respond.js</strong>, in the following case:</p>
+<p><!--more--></p>
+<ul>
+<li>Desktop support is a primary high concern;</li>
+<li>You are querying only the width and height of the browser;</li>
+<li>You don’t want to query the width by ems;</li>
+<li>You have no problem with non-JavaScript users seeing an unoptimized page</li>
+</ul>
+<p>In my opinion, this is a very frequent case!</p>
+<p>CSS3-mediaqueries.js is indicated only if you have <strong>particular conditions</strong> to query (other than width and height), but it weights 15 freaking kilobytes!</p>
+<p>So you should use respond.js and switch to css3-mediaqueries.js only if the first doesn't fit your needs.</p>
+<p>That's it!</p>

@@ -1,0 +1,68 @@
+---
+layout: post
+title: 'The real picture tag polyfill for responsive images: picturePolyfill'
+date: 2014-03-16 02:30:33.000000000 +01:00
+categories:
+- development
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  _syntaxhighlighter_encoded: '1'
+author:
+  login: admin
+  email: andrea.verlicchi@gmail.com
+  display_name: Andrea Verlicchi
+  first_name: Andrea
+  last_name: Verlicchi
+---
+<p>Today I released version 2 of picturePolyfill, the real &lt;picture&gt; element polyfill.</p>
+<p><img src="assets/responsive_images.jpg" alt="Responsive Images" width="709" height="220" class="alignnone size-full wp-image-378" /></p>
+<p>The great news about version 2 of <a href="https://github.com/verlok/picturePolyfill" title="picturePolyfill repo">PicturePolyfill</a> is that it supports the real &lt;picture&gt; tag, and it gives you the ability to create responsive images TODAY.</p>
+<p><!--more--></p>
+<p>To have responsive images, include the picturePolyfill.min.js script in your page and mark up your images as you see below.</p>
+<h2>The markup</h2>
+<h3>To support HD (Retina) displays</h3>
+<p>[sourcecode language="html"]<br />
+&lt;picture data-alt=&quot;A beautiful responsive image&quot; data-default-src=&quot;img/1440x1440.gif&quot;&gt;<br />
+    &lt;source srcset=&quot;img/480x480.gif,   img/480x480x2.gif 2x&quot;/&gt;<br />
+    &lt;source srcset=&quot;img/768x768.gif,   img/768x768x2.gif 2x&quot;   media=&quot;(min-width: 481px)&quot;/&gt;<br />
+    &lt;source srcset=&quot;img/1440x1440.gif, img/1440x1440x2.gif 2x&quot; media=&quot;(min-width: 1025px)&quot;/&gt;<br />
+    &lt;source srcset=&quot;img/1920x1920.gif, img/1920x1920x2.gif 2x&quot; media=&quot;(min-width: 1441px)&quot;/&gt;<br />
+    &lt;noscript&gt;<br />
+        &lt;img src=&quot;img/768x768.gif&quot; alt=&quot;A beautiful responsive image&quot;/&gt;<br />
+    &lt;/noscript&gt;<br />
+&lt;/picture&gt;<br />
+[/sourcecode]</p>
+<h3>To support only standard resolution displays</h3>
+<p>[sourcecode language="html"]<br />
+&lt;picture data-alt=&quot;A beautiful responsive image&quot; data-default-src=&quot;img/1440x1440.gif&quot;&gt;<br />
+    &lt;source srcset=&quot;img/480x480.gif&quot;/&gt;<br />
+    &lt;source srcset=&quot;img/768x768.gif&quot;   media=&quot;(min-width: 481px)&quot;/&gt;<br />
+    &lt;source srcset=&quot;img/1440x1440.gif&quot; media=&quot;(min-width: 1025px)&quot;/&gt;<br />
+    &lt;source srcset=&quot;img/1920x1920.gif&quot; media=&quot;(min-width: 1441px)&quot;/&gt;<br />
+    &lt;noscript&gt;<br />
+        &lt;img src=&quot;img/768x768.gif&quot; alt=&quot;A beautiful responsive image&quot;/&gt;<br />
+    &lt;/noscript&gt;<br />
+&lt;/picture&gt;<br />
+[/sourcecode]</p>
+<h3>If you have an image server for automated scaling</h3>
+<p>[sourcecode language="html"]<br />
+&lt;picture data-alt=&quot;A beautiful responsive image&quot; data-default-src=&quot;http://demo.api.pixtulate.com/demo/large-2.jpg?w=1440&quot;&gt;<br />
+    &lt;source srcset=&quot;http://demo.api.pixtulate.com/demo/large-2.jpg?w=480&quot;/&gt;<br />
+    &lt;source srcset=&quot;http://demo.api.pixtulate.com/demo/large-2.jpg?w=512&quot; media=&quot;(min-width: 481px)&quot;/&gt;<br />
+    &lt;source srcset=&quot;http://demo.api.pixtulate.com/demo/large-2.jpg?w=720&quot; media=&quot;(min-width: 1025px)&quot;/&gt;<br />
+    &lt;source srcset=&quot;http://demo.api.pixtulate.com/demo/large-2.jpg?w=960&quot; media=&quot;(min-width: 1441px)&quot;/&gt;<br />
+    &lt;noscript&gt;<br />
+        &lt;img src=&quot;http://demo.api.pixtulate.com/demo/large-2.jpg?w=1440&quot; alt=&quot;A beautiful responsive image&quot;/&gt;<br />
+    &lt;/noscript&gt;<br />
+&lt;/picture&gt;<br />
+[/sourcecode]</p>
+<h2>Demo</h2>
+<p>Here's the <a href="http://verlok.github.io/picturePolyfill/" title="picturePolyfill demo - responsive images with support to HD (retina) display">picturePolyfill demo</a> on GitHub.io</p>
+<h2>More info</h2>
+<p>I encourage you to look at the clean, self-explaining <a href="https://github.com/verlok/picturePolyfill/blob/master/picturePolyfill.js">javascript code of picturePolyfill</a>.</p>
+<p>To know more about the script and about the script, read the <a href="https://github.com/verlok/picturePolyfill" title="picturePolyfill">picturePolyfill project page</a> on GitHub.</p>
+<p>Please drop a comment to tell me what you think about the script.</p>
