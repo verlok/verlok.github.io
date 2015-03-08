@@ -4,7 +4,7 @@ title: A new LazyLoad to improve your website performance
 date: 2014-11-20 19:26:58.000000000 +01:00
 categories:
 - libraries
-tags: []
+tags: [lazy load, performance, vanilla javascript]
 status: publish
 type: post
 published: true
