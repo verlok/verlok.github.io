@@ -8,6 +8,11 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://www.andreaverlicchi.eu" # the base hostname & protocol for your site
 twitter_username: verlok
 github_username:  verlok
-
-# Build settings
 markdown: kramdown
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: "posts" # previously `post` in Jekyll 2.2.
+    values:
+      permalink: /:title/
