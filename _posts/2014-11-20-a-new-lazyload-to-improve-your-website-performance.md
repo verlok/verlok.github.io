@@ -9,7 +9,7 @@ status: publish
 type: post
 published: true
 ---
-In the latest days I've been working on **websites performance optimization** and I realized that there is no way to take advantage of the **progressive JPEG** image format on websites if you're using [jQuery_lazyload](https://github.com/tuupola/jquery_lazyload "Mika Tuupola"). So after sending a pull request to its author, I decided to write my own lazy load, which turned out to be **6x faster**.
+In the latest days I've been working on websites performance optimization and I realized that there is no way to take advantage of the **progressive JPEG** image format on websites if you're using [jQuery_lazyload](https://github.com/tuupola/jquery_lazyload "Mika Tuupola"). So after sending a pull request to    its author, I decided to write my own lazy load, which turned out to be 6x faster.
 
 # LazyLoad
 

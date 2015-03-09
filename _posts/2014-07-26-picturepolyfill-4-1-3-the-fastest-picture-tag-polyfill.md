@@ -9,9 +9,7 @@ status: publish
 type: post
 published: true
 ---
-PicturePolyfill 4 is out! 
-
-Implementing responsive images in your site has never been so simple and fast.
+**PicturePolyfill 4** is out! Implementing responsive images in your site has never been so simple and fast.
 
 ![Responsive image](/assets/Copia-di-Schermata-2014-07-26-alle-15.46.48-709x215.jpg)
 

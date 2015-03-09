@@ -6,11 +6,7 @@ categories:
 - development
 tags: [spriting, sprite generation, compass, mixins]
 ---
-Spriting is a way to improve performance in your website by putting many images (or icons) in a single larger image, in order to make a single HTTP request instead of many.
-
-You could manually create the sprite map (the single larger image) using your favorite image editor and cutting it in CSS, maybe using a tool like [SpriteCow](http://www.spritecow.com/) to make the process simpler.
-
-Or you can create sprite maps using Compass.
+Spriting is a way to improve performance in your website by putting many images (or icons) in a single larger image, in order to make a single HTTP request instead of many. You could manually create the sprite map (the single larger image) using your favorite image editor and cutting it in CSS, or you can create sprite maps using Compass.
 
 ## Creating sprites with Compass
 
@@ -24,7 +20,7 @@ The simpler way to create a sprite with Compass requires you to import a folder 
 // Importing all the png images under the flags folder
 @import "flags/*.png";
 // Generate a CSS class for each sprite
-@include all-flags-sprites;
+@include all-flags-sprites
 {% endhighlight %}
 
 Example of CSS output:

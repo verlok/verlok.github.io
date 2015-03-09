@@ -17,9 +17,7 @@ status: publish
 type: post
 published: true
 ---
-Ahoy, front-end pirates!
-
-Welcome to the Chapter 3 of the [Making of The Secret of Front-end Island](http://www.andreaverlicchi.eu/making-of-the-secret-of-front-end-island-chapter-1-splashing-title/) saga: **the Rising Smoke**.
+Ahoy, front-end pirates! Welcome to the Chapter 3 of the [Making of The Secret of Front-end Island](http://www.andreaverlicchi.eu/making-of-the-secret-of-front-end-island-chapter-1-splashing-title/) saga: **the Rising Smoke**.
 
 ![Front-end Island Rising Smoke](/assets/Front-end-Island-Rising-Smoke-709x237.png)
 

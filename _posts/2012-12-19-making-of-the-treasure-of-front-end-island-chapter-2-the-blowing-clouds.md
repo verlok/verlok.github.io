@@ -15,9 +15,7 @@ status: publish
 type: post
 published: true
 ---
-Ahoy, front-end pirates!
-
-Welcome to the Chapter 2 of the [Making of The Secret of Front-end Island](http://www.andreaverlicchi.eu/making-of-the-secret-of-front-end-island-chapter-1-splashing-title/) saga: **the Blowing Clouds**.
+Ahoy, front-end pirates! Welcome to the Chapter 2 of the [Making of The Secret of Front-end Island](http://www.andreaverlicchi.eu/making-of-the-secret-of-front-end-island-chapter-1-splashing-title/) saga: **the Blowing Clouds**.
 
 ![](/assets/blowing_clouds1.jpg "The clouds sprite")
 

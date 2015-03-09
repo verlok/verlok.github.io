@@ -17,9 +17,7 @@ status: publish
 type: post
 published: true
 ---
-Ahoy, front-end pirates!
-
-Today I'm starting a saga about the front-end development of the site of the [2012 edition of the From the Front conference](http://2012.fromthefront.it) which took place in Bologna, Italy on September the 20th.
+Ahoy, front-end pirates! Today I'm starting a saga about the front-end development of the site of the [2012 edition of the From the Front conference](http://2012.fromthefront.it) which took place in Bologna, Italy on September the 20th.
 
 ![](/assets/frontend_island_full.jpg "frontend_island_full")
 

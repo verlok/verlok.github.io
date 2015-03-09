@@ -10,11 +10,11 @@ status: publish
 type: post
 published: true
 ---
-It was recently released the **SVGZR** Grunt Plugin, which is super useful to make SVG with PNG fallback usage super-easy, with Grunt.
+It was recently released the **SVGZR** Grunt Plugin, which makes super-easy to implement SVG icons in your website, with automatic PNG fallback for older <acronym title="Internet Explorer">IE</acronym> versions.
 
-[![10-metro_ui_dock_icon_set___678_svg_icons_by_monkee98-d5deacy](/assets/10-metro_ui_dock_icon_set___678_svg_icons_by_monkee98-d5deacy.jpg)](http://localhost:8888/andreaverlicchi.eu/blog/wp-content/uploads/2014/07/10-metro_ui_dock_icon_set___678_svg_icons_by_monkee98-d5deacy.jpg)
+![10-metro_ui_dock_icon_set___678_svg_icons_by_monkee98-d5deacy](/assets/10-metro_ui_dock_icon_set___678_svg_icons_by_monkee98-d5deacy.jpg)
 
-The plugin will help you to:
+SVGZR will help you to:
 
 *   take all the SVG images from an input folder
 *   compress the SVG removing useless data from the SVG format
