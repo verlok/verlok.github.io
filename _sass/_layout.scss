@@ -176,6 +176,12 @@
     > li {
         margin-bottom: $spacing-unit;
     }
+    
+    .home & {
+        h2 {
+            margin-bottom: 0;
+        }
+    }
 }
 
 .post-meta {
