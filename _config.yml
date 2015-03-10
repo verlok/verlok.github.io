@@ -9,6 +9,7 @@ url: "http://www.andreaverlicchi.eu" # the base hostname & protocol for your sit
 twitter_username: verlok
 github_username:  verlok
 markdown: kramdown
+paginate: 10
 defaults:
   -
     scope:
@@ -16,3 +17,5 @@ defaults:
       type: "posts" # previously `post` in Jekyll 2.2.
     values:
       permalink: /:title/
+gems:
+  - octopress-minify-html
