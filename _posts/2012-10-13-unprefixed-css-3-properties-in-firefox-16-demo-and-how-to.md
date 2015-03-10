@@ -23,7 +23,7 @@ So here's how to create a shaking button that transitions to another color when 
 
 ## Result first:
 
-<iframe style="border: 0; background: black" src="http://www.andreaverlicchi.eu/examples/unprefixing-firefox-16-transitions-animations.html" width="100%" height="55"></iframe>
+<iframe style="border: 0; background: black" src="/examples/unprefixing-firefox-16-transitions-animations.html" width="100%" height="55"></iframe>
 
 ## Create the markup and the basic CSS
 

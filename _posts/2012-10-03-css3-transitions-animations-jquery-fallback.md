@@ -20,5 +20,3 @@ published: true
 ![](/assets/css3-presentation.jpg "css3 presentation")
 
 This speech was given in Italy, Modena, at 2012's [From the Front](http://2012.fromthefront.it) Meetup titled [Alone in the Front](http://blog.intersezione.com/largo-delle-idee/2012/from-the-front-meetup-giovedi-22-marzo-buscape.html).
-
-[Watch the slides](http://www.andreaverlicchi.eu/slides/css3_animations_transitions_jquery_fallback/)

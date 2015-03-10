@@ -26,5 +26,3 @@ Here are the slides shown during the speech:
 <iframe style="border: 1px solid #CCC; border-width: 1px 1px 0; margin-bottom: 5px;" src="http://www.slideshare.net/slideshow/embed_code/15433271" height="572" width="710" allowfullscreen="" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
 
 **[View on SlideShare](http://www.slideshare.net/verlok/agile-css-development-with-compass "Agile css development with Compass/SASS on SlideShare")** from **[Andrea Verlicchi](http://www.slideshare.net/verlok)**
-
-[Download the slides (PDF)](http://www.andreaverlicchi.eu/blog/wp-content/uploads/2012/11/Agile-CSS-Development-with-Compass.pdf)

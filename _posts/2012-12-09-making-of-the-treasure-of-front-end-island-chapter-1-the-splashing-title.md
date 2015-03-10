@@ -14,7 +14,7 @@ status: publish
 type: post
 published: true
 ---
-Ahoy, front-end pirates! Welcome to the Chapter 1 of the [Making of The Secret of Front-end Island](http://www.andreaverlicchi.eu/making-of-the-secret-of-front-end-island-chapter-1-splashing-title/) saga: **the Splashing Title**.
+Ahoy, front-end pirates! Welcome to the Chapter 1 of the [Making of The Secret of Front-end Island]({% post_url 2012-12-09-making-of-the-treasure-of-front-end-island-chapter-1-the-splashing-title %}) saga: **the Splashing Title**.
 
 ![](/assets/logo_tofel.jpg "Splash image: the Treasure of Frontend Island")
 
@@ -74,7 +74,7 @@ This places the image at z-index 5 (in front of some clouds, on the back of some
 
 ## The splash animation
 
-To define a CSS animation, you have to use the @keyframes directive and give the animation a name and some keyframes statuses. For more info about this, see my post [CSS 3 Transitions and Animation](http://www.andreaverlicchi.eu/css-3-transitions-and-animation-graceful-degradation-with-jquery/ "CSS 3 Transitions and Animation + graceful degradation with jQuery").
+To define a CSS animation, you have to use the @keyframes directive and give the animation a name and some keyframes statuses. For more info about this, see my post [CSS 3 Transitions and Animation]({% post_url 2012-10-03-css3-transitions-animations-jquery-fallback %} "CSS 3 Transitions and Animation + graceful degradation with jQuery").
 
 {% highlight css %}
 @keyframes splash {
@@ -130,4 +130,4 @@ If you liked this explanation, please share this post!
 
 ## More to come!
 
-Come back in the next few days to see the rest of the [Making of The Treasure of Front-end Island](http://www.andreaverlicchi.eu/making-of-the-treasure-of-front-end-island/) saga!
+Come back in the next few days to see the rest of the [Making of The Treasure of Front-end Island]({% post_url 2012-12-09-making-of-the-treasure-of-front-end-island %}) saga!

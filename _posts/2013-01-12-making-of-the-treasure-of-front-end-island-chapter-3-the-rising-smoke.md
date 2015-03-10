@@ -17,7 +17,7 @@ status: publish
 type: post
 published: true
 ---
-Ahoy, front-end pirates! Welcome to the Chapter 3 of the [Making of The Secret of Front-end Island](http://www.andreaverlicchi.eu/making-of-the-secret-of-front-end-island-chapter-1-splashing-title/) saga: **the Rising Smoke**.
+Ahoy, front-end pirates! Welcome to the Chapter 3 of the [Making of The Secret of Front-end Island]({% post_url 2012-12-09-making-of-the-treasure-of-front-end-island %}) saga: **the Rising Smoke**.
 
 ![Front-end Island Rising Smoke](/assets/Front-end-Island-Rising-Smoke-709x237.png)
 
@@ -25,7 +25,7 @@ In the layout the smoke was composed by 5 gray circles at different opacity. Oh 
 
 ## Structure of the page
 
-As explained in the [previous post](http://www.andreaverlicchi.eu/blog/making-of-the-treasure-of-front-end-island-chapter-1-the-splashing-title/ "Making of The Treasure of Front-end Island – Chapter 1 – The splashing title"), I divided the site into many `section`s:
+As explained in the [previous post]({% post_url 2012-12-09-making-of-the-treasure-of-front-end-island-chapter-1-the-splashing-title %} "Making of The Treasure of Front-end Island – Chapter 1 – The splashing title"), I divided the site into many `section`s:
 
 *   **event**
 *   speakers
@@ -138,10 +138,10 @@ And that's it! The smoke animation works perfectly on modern browsers!
 
 Here's the result:
 
-<iframe src="http://www.andreaverlicchi.eu/examples/css3-only-smoke-animation.html" width="100%" height="250"></iframe>
+<iframe src="/examples/css3-only-smoke-animation.html" width="100%" height="250"></iframe>
 
 If you liked this explanation, please share this post!
 
 ## More to come!
 
-Come back in the next few days to see the rest of the [Making of The Treasure of Front-end Island](http://www.andreaverlicchi.eu/making-of-the-treasure-of-front-end-island/) saga!
+Come back in the next few days to see the rest of the [Making of The Treasure of Front-end Island]({% post_url 2012-12-09-making-of-the-treasure-of-front-end-island %}) saga!

@@ -15,11 +15,11 @@ status: publish
 type: post
 published: true
 ---
-Ahoy, front-end pirates! Welcome to the Chapter 2 of the [Making of The Secret of Front-end Island](http://www.andreaverlicchi.eu/making-of-the-secret-of-front-end-island-chapter-1-splashing-title/) saga: **the Blowing Clouds**.
+Ahoy, front-end pirates! Welcome to the Chapter 2 of the [Making of The Secret of Front-end Island]({% post_url 2012-12-09-making-of-the-treasure-of-front-end-island %}) saga: **the Blowing Clouds**.
 
 ![](/assets/blowing_clouds1.jpg "The clouds sprite")
 
-As I described [before](http://www.andreaverlicchi.eu/blog/making-of-the-treasure-of-front-end-island-chapter-1-the-splashing-title/ "Making of The Treasure of Front-end Island – Chapter 1 – The splashing title"), in the Photoshop layout I got from the designer ([Diego Sessa](http://www.linkedin.com/in/diegosessa "Diego")) I had the finished 1280 pixel wide layout, and I had the discretion of choosing animations, responsive behavior, and so on.
+As I described [before]({% post_url 2012-12-09-making-of-the-treasure-of-front-end-island-chapter-1-the-splashing-title %} "Making of The Treasure of Front-end Island – Chapter 1 – The splashing title"), in the Photoshop layout I got from the designer ([Diego Sessa](http://www.linkedin.com/in/diegosessa "Diego")) I had the finished 1280 pixel wide layout, and I had the discretion of choosing animations, responsive behavior, and so on.
 
 For the blowing clouds I decided to make a "blow left and right" effect using CSS 3 only. I also wanted the clouds to move at different speeds.
 
@@ -31,7 +31,7 @@ I created a new empty, transparent image and copied the 4 clouds in it. After tr
 
 ## Structure of the page
 
-As explained in the [previous post](http://www.andreaverlicchi.eu/blog/making-of-the-treasure-of-front-end-island-chapter-1-the-splashing-title/ "Making of The Treasure of Front-end Island – Chapter 1 – The splashing title"), I divided the site into many `section`s:
+As explained in the [previous post]({% post_url 2012-12-09-making-of-the-treasure-of-front-end-island-chapter-1-the-splashing-title %} "Making of The Treasure of Front-end Island – Chapter 1 – The splashing title"), I divided the site into many `section`s:
 
 *   **event**
 *   speakers
@@ -74,7 +74,7 @@ Here's the markup for the 4 clouds. I like to use semantic IDs and very short cl
 
 And here's the CSS that makes the sprite to split into pieces. As you see I use the span tag to apply the background image and the absolute position, and the classes c1, c2, c3 and c4 to offset it, size it and give it a z-index value.
 
-Each cloud has a different z-index because some clouds are behind [the splashing title](http://www.andreaverlicchi.eu/blog/making-of-the-treasure-of-front-end-island-chapter-1-the-splashing-title/ "Making of The Treasure of Front-end Island – Chapter 1 – The splashing title"), some others are in front of it.
+Each cloud has a different z-index because some clouds are behind [the splashing title]({% post_url 2012-12-09-making-of-the-treasure-of-front-end-island-chapter-1-the-splashing-title %} "Making of The Treasure of Front-end Island – Chapter 1 – The splashing title"), some others are in front of it.
 
 {% highlight css %}
 /* Clouds */
@@ -155,4 +155,4 @@ If you liked this explanation, please share this post!
 
 ## More to come!
 
-Come back in the next few days to see the rest of the [Making of The Treasure of Front-end Island](http://www.andreaverlicchi.eu/making-of-the-treasure-of-front-end-island/) saga!
+Come back in the next few days to see the rest of the [Making of The Treasure of Front-end Island]({% post_url 2012-12-09-making-of-the-treasure-of-front-end-island %}) saga!

@@ -24,7 +24,7 @@ I want to show you a solution I found to create a "loading" animation from scrat
 
 ## Results first
 
-<iframe style="background:black; border: 0" src="http://www.andreaverlicchi.eu/examples/css3-only-loading-animation.html" width="100%" height="100"></iframe>
+<iframe style="background:black; border: 0" src="/examples/css3-only-loading-animation.html" width="100%" height="100"></iframe>
 
 ## What happens here
 

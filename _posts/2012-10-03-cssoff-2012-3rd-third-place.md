@@ -22,6 +22,6 @@ published: true
 In the early 2012 edition, I landed 3rd out of 400+ world competitors!
 
 *   [See the top 25 winners](http://www.unmatchedstyle.com/news/cssoff-winners-2012.php)
-*   [See my submission](http://www.andreaverlicchi.eu/projects/cssOff)
+*   [See my submission](/projects/cssOff/)
 
 Each entry was marked by 10 industry-renowned judges (including [Chris Coyier](http://chriscoyier.net/) and [Ethan Marcotte](http://ethanmarcotte.com/)). Marking criteria included **code cleanliness**, **validation**, **interactions**, **project size**, **good choice points**, **browser support** &amp; **design**.
