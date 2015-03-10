@@ -38,7 +38,7 @@ Example of CSS output:
 
 This can be enough for your needs... but you want more, don't you?
 
-### The considering pixel density + spacing between sprites + size generating + offset managing way
+### The "considering pixel density + spacing between sprites + size generating + offset managing" way
 
 Skipping all the others way you can do sprites generation with Compass, I found out that if you have to do the following:
 
