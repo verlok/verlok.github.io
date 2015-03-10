@@ -1,0 +1,1031 @@
+/* ------------------------ ANNOTATIONS ---------------------------------------
+
+RESUME OF USED Z-INDEXES:
+
+99: mqDebug overlay
+70: navigation
+65: animations over titles (used in animations.css)
+60: section titles
+55: content over textures, level 2
+50: content over textures, level 1
+40: textures
+30: content under textures
+
+*/
+
+/* ----------------------------------------------------------------------------
+--------------------------- MEYER'S RESET ------------------------------------- */
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figure, figcaption, footer, header, hgroup, menu, nav, output, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; text-decoration: none }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block }
+body { line-height: 1 }
+ol, ul { list-style: none }
+blockquote, q { quotes: none }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none }
+table {	border-collapse: collapse; border-spacing: 0 }
+
+/* ----------------------------------------------------------------------------
+--------------------------- CLEARFIX ------------------------------------------ */
+
+
+.clearfix:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0 }
+.clearfix {	display: inline-block; width: 100% } /* Added width 100% to fill width */
+html[xmlns] .clearfix {	display: block }
+* html .clearfix { height: 1% }
+
+/* ----------------------------------------------------------------------------
+--------------------------- WEB FONTS ----------------------------------------- */
+
+@font-face {
+	font-family: 'KomikaTitle-PaintRegular';
+	src: url('../webfonts/KomikaTitle-Paint-webfont.eot');
+	src: url('../webfonts/KomikaTitle-Paint-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../webfonts/KomikaTitle-Paint-webfont.woff') format('woff'),
+		url('../webfonts/KomikaTitle-Paint-webfont.ttf') format('truetype'),
+		url('../webfonts/KomikaTitle-Paint-webfont.svg#KomikaTitle-PaintRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'OpenSansSemibold';
+	src: url('../webfonts/OpenSans-Semibold-webfont.eot');
+	src: url('../webfonts/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../webfonts/OpenSans-Semibold-webfont.woff') format('woff'),
+		url('../webfonts/OpenSans-Semibold-webfont.ttf') format('truetype'),
+		url('../webfonts/OpenSans-Semibold-webfont.svg#OpenSansSemibold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'DigitaldreamFatRegular';
+	src: url('../webfonts/DIGITALDREAMFAT-webfont.eot');
+	src: url('../webfonts/DIGITALDREAMFAT-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../webfonts/DIGITALDREAMFAT-webfont.woff') format('woff'),
+		url('../webfonts/DIGITALDREAMFAT-webfont.ttf') format('truetype'),
+		url('../webfonts/DIGITALDREAMFAT-webfont.svg#DigitaldreamFatRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* ----------------------------------------------------------------------------
+--------------------------- TRANSITION MARGINS AND COORDS --------------------- */
+
+* {
+	/* May render slow on some browser/hardware, but it's a really great effect on MQ switch */
+	/* Renders bad on Opera 11.52 (current version) */
+	-webkit-transition: margin 1s ease-in-out, padding 1s ease-in-out;
+	-moz-transition: margin 1s ease-in-out, padding 1s ease-in-out;
+	-ms-transition: margin 1s ease-in-out, padding 1s ease-in-out;
+}
+
+
+/* ----------------------------------------------------------------------------
+--------------------------- TYPOGRAPHY ---------------------------------------- */
+
+body {
+	line-height:1.5;
+	color:white;
+}
+
+#siteHeader, 
+.pageSection,
+input,
+button {
+	font-family: 'KomikaTitle-PaintRegular';
+}
+
+nav, 
+#siteHeader .tagLine,
+#siteFooter {
+	font-family: 'OpenSansSemibold';
+}
+
+#clockTicking .value {
+	font-family: 'DigitaldreamFatRegular';
+}
+
+/* Text shadows */
+
+#siteHeader .payoff {
+	text-shadow:2px 3px 0px white;
+}
+
+#obstacles h1,
+#obstacles figcaption,
+#prizes h1,
+#beAContestant h1,
+#beAContestant button,
+#clockTicking figcaption {
+	text-shadow:2px 3px 0px rgba(0,0,0,0.2);
+}
+
+/* 
+Text shadow in css2.1 
+- creates an element before
+- positions it relatelively on top
+- fills it with title attribute
+- uses the element color as shadow, and shadow color as element color (to make it work on ie8)
+(how I miss text shadows on IE!)
+*/
+
+.no-textshadow.iegt7 #siteHeader .payoff,
+.no-textshadow.iegt7 #obstacles h1,
+.no-textshadow.iegt7 #prizes h1,
+.no-textshadow.iegt7 #beAContestant h1 {
+	position: relative;
+	z-index: 50;
+	top:0; left:0;
+	overflow:hidden;
+	margin-right:-5px;
+	padding: 0;
+}
+.no-textshadow.iegt7 #siteHeader .payoff:before,
+.no-textshadow.iegt7 #obstacles h1:before,
+.no-textshadow.iegt7 #prizes h1:before,
+.no-textshadow.iegt7 #beAContestant h1:before {
+	position: absolute;
+	width:100%;
+	z-index: 50;
+	content: attr(title);
+	top: -3px; left: -2px;
+	color:#fe6537;
+}
+
+.no-textshadow.iegt7 #siteHeader .payoff {color: white}
+
+.no-textshadow.iegt7 #obstacles h1 {color:#c94726}
+.no-textshadow.iegt7 #prizes h1 {color:#668e2d}
+.no-textshadow.iegt7 #beAContestant h1 {color:#6299aa}
+
+.no-textshadow.iegt7 #siteHeader .payoff:before {text-align: center}
+
+.no-textshadow.iegt7 #obstacles h1:before,
+.no-textshadow.iegt7 #prizes h1:before,
+.no-textshadow.iegt7 #beAContestant h1:before {
+	color:white;
+	top: -3px; left: 0;
+	padding-left:2px;
+}
+
+.no-textshadow.iegt7 #obstacles h1 span,
+.no-textshadow.iegt7 #prizes h1 span,
+.no-textshadow.iegt7 #beAContestant h1 span {
+	padding-left:4px;
+	overflow:visible;
+}
+
+/* ----------------------------------------------------------------------------
+--------------------------- LAYOUT -------------------------------------------- */
+
+.container {
+	max-width:940px;
+	padding:0 2em;
+	margin:0px auto;
+}
+
+
+/* Section colors */
+
+body,
+#beAContestant h1 span {
+	background-color: #80c1d6;
+}
+
+#obstacles,
+#obstacles h1 span {
+	background-color: #fe6638;
+}
+
+#prizes,
+#prizes h1 span {
+	background-color: #80b238;
+}
+
+
+/* Section borders colors, no-rgba fallback first */
+
+#obstacles { border-color: #ef6035 }
+#prizes { border-color: #78a835 }
+#beAContestant, 
+#siteFooter .content { border-color: #70b0c4 }
+
+#obstacles, #prizes, #beAContestant, #siteFooter .content {
+	border-width: 7px 0;
+	border-style: solid;
+	border-color: rgba(0,0,0,0.06);
+}
+
+#beAContestant { border-bottom: none }
+
+
+/* Text selection */
+
+::selection {background: #5f93a4;}
+::-moz-selection {background: #5f93a4;}
+
+#obstacles ::selection {background: #c34e2b;}
+#obstacles ::-moz-selection {background: #c34e2b;}
+
+#prizes ::selection {background: #61872a;}
+#prizes ::-moz-selection {background: #61872a;}
+
+
+/* Positions and texture */
+
+#siteHeader,
+#siteFooter,
+.pageSection {
+	position:relative;
+}
+
+.texture {
+	background:url(../img/textures/omni.png) repeat center;
+	position:absolute;
+	top:0; left:0;
+	width:100%; height:100%;
+	z-index: 40;
+}
+
+.ielt8 .texture {
+	display: none;
+}
+
+
+/* Elements that should emerge from texture */
+
+#logo,
+#siteHeader .container,
+#obstacles .button,
+#obstacles figure .name,
+#obstacles figure .description,
+#obstacles figure img,
+#prizes .content,
+#beAContestant .content,
+#siteFooter .content {
+	position: relative;
+	z-index: 50;
+}
+
+
+/* Page sections */
+
+.pageSection {
+	padding:3.5em 0 5em 0;
+}
+
+.pageSection h1 {
+	position:relative;
+	font-size:2.5em; /* 40px / 16px */
+	z-index: 60;
+	height:40px; line-height: 40px;
+	background:url(../img/textures/checks.gif) repeat top right;
+	letter-spacing: 0.05em;
+}
+
+.pageSection h1 span {
+	padding-right:0.75em;
+	background:url(../img/textures/omni.png) repeat top left;
+}
+
+.pageSection .content {
+	margin-top:3.625em;
+	position: relative;
+}
+
+
+/* ----------------------------------------------------------------------------
+--------------------------- SITE NAVIGATION ----------------------------------- */
+
+nav {
+	background-color: rgba(0,0,0,0.1);
+	line-height: 2em;
+	text-align: center;
+	position:fixed;
+	top:0; 
+	left:0; right:0;
+	padding-right:3.20em; /* The li left margin */
+	z-index: 70;
+	font-size: 1.125em;
+	text-transform: uppercase;
+	-webkit-transition:all 0.3s;
+	-moz-transition:all 0.3s;
+	-ms-transition:all 0.3s;
+	-o-transition:all 0.3s;
+}
+
+.no-rgba nav { background: url(../img/textures/navBg.png) }
+
+nav:hover { 
+	background-color: rgba(0,0,0,0.7);
+}
+
+.no-rgba nav:hover { background: url(../img/textures/navBgHover.png) }
+
+nav li {
+	display:inline;
+	margin-left:3.20em;
+	white-space: nowrap;
+}
+
+nav a {
+	color: white;
+	padding:0 0.3em;
+	-webkit-transition:all 0.3s;
+	-moz-transition:all 0.3s;
+	-ms-transition:all 0.3s;
+	-o-transition:all 0.3s;
+}
+
+nav .obstacles a:hover {color:#fe6638}
+nav .prizes a:hover {color:#80b238}
+nav .beAContestant a:hover {color:#80c1d6}
+nav .header a:hover {color:#80c1d6}
+
+
+/* ----------------------------------------------------------------------------
+--------------------------- SITE HEADER --------------------------------------- */
+
+#siteHeader {
+	background: url(../img/bgs/slimeCyanBig.png) no-repeat center center;
+	padding: 4.5em 0 4.8em 0;
+}
+
+#slime {
+	background: url(../img/bgs/slimeGreen.png) no-repeat center center;
+	background-size: 0px 0px; /* Must be initialized at 0 to avoid flicker, this is set to the real dimensions in animations.css or no-animations.css */
+	position: relative;
+	height: 436px; width:100%;
+	margin: 0 auto;
+	z-index: 30;
+}
+
+.no-cssanimations #slime {
+	background-size: 576px 445px;
+}
+
+#logo {
+	background: url(../img/logos/tripleDare.png) no-repeat center center;
+	width: 287px; height: 0; padding-top:421px; overflow:hidden;
+	position:relative;
+	margin: 0 auto;
+	left: -20px;
+}
+
+#siteHeader .payoff {
+	font-size:3.2em;
+	text-align: center;
+	color:#fe6537;
+	margin:0.5em 0 0 0;
+}
+
+#siteHeader .tagLine {
+	text-align: center;
+	font-size: 1.37em; /*22px / 16px*/
+}
+
+
+/* ----------------------------------------------------------------------------
+--------------------------- OBSTACLES SECTION --------------------------------- */
+
+/* Contains transitions */
+
+#obstacles {
+	overflow:hidden;
+}
+
+/* Obstacles - buttons */
+
+#obstacles ul {
+	width: 51.06382%; /*480/940*/
+}
+
+#obstacles li {
+	width: 45.83333%; /*220/480*/
+	margin-right: 4.16666%; /*20/480*/
+	float:left;
+}
+
+.ielt8 #obstacles li {
+	width: 45.625%; /*219/480*/
+	margin-right: 3.98333%; /*19/480*/
+}
+
+#obstacles .button {
+	overflow: hidden;
+	text-align: center;
+	padding-top:.7em;
+	cursor:pointer;
+	font-size: 0.875em;
+	background: #80b238 url(../img/textures/omni.png) repeat left top;
+	border-radius: 8px;
+	margin-bottom: 20px; 
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+}
+
+#obstacles .button:hover {
+	background-color:#b3cd35;
+}
+#obstacles .selected .button {
+	background-color: #eef13f;
+	color:#f46034;
+}
+#obstacles .icon {
+	display:block;
+	width:75%;
+	margin:0 auto;
+}
+#obstacles h2 {
+	height:2.5em;
+	line-height:2.5em;
+}
+
+/* Button rounded corners for old IE 8 and 7 */
+
+#obstacles .button .rc {
+	background:url(../img/bgs/obstacleButtonRoundedCorners.png) no-repeat 0px 0px;
+	position:absolute;
+	width: 8px; height:8px;
+}
+#obstacles .button .tl {background-position: 0px 0px; top:0; left:0}
+#obstacles .button .tr {background-position: -8px 0px; top:0; right:0}
+#obstacles .button .br {background-position: -8px -8px; bottom:0; right:0}
+#obstacles .button .bl {background-position: 0px -8px; bottom:0; left:0}
+
+
+/* Obstacles - figures */
+
+#obstacles figure {
+	width: 48.93617%; /*460/940*/
+	position:absolute;
+	right:0; top:0;
+	height: 50.1em;
+}
+
+#obstacles figure img {
+	width: 100%;
+	padding: 0;
+	margin:2.7em 0 0 0;
+	left: 300%;
+	position: relative;
+	-webkit-transition: left 1s ease-in-out;
+	-moz-transition: left 1s ease-in-out;
+	-ms-transition: left 1s ease-in-out;
+	-o-transition: left 1s ease-in-out;
+}
+
+#obstacles .wheel figure img,
+#obstacles .wringer figure img {
+	margin-left:2em;
+}
+
+#obstacles figcaption {
+	z-index:55;
+	color: white;
+	height: 13em;
+	background:url(../img/bgs/slimeGreenSmall.png) no-repeat center center;
+	background-size:auto 100%;
+	text-align: center;
+	opacity: 0;
+	-webkit-transition: opacity 1s 0.5s ease-in-out;
+	-moz-transition: opacity 1s 0.5s ease-in-out;
+	-ms-transition: opacity 1s 0.5s ease-in-out;
+	-o-transition: opacity 1s 0.5s ease-in-out;
+	-webkit-transform: skew(0,-7deg);
+	-moz-transform: skew(0,-7deg);
+	-ms-transform: skew(0,-7deg);
+	-o-transform: skew(0,-7deg);
+}
+
+.no-opacity #obstacles figcaption {
+	display:none;
+}
+
+
+/* Selected states */
+
+#obstacles .selected figure img {
+	left: 0;
+}
+
+#obstacles .selected figcaption {
+	opacity: 1;
+}
+
+.no-opacity #obstacles .selected figcaption {
+	display: block;
+}
+
+/* Typo */
+
+#obstacles .name {
+	line-height:1.1;
+	padding-top:1.25em;
+	font-size:2.62em;
+	margin-bottom:0.2em;
+}
+#obstacles .description {
+	font-size:1.31em; /*21/16*/
+}
+
+
+/* ----------------------------------------------------------------------------
+--------------------------- PRIZES SECTION ------------------------------------ */
+
+#prizes {
+	padding-bottom: 3em;
+}
+
+#prizes .content {
+	margin:5.3em 0 0 0;
+}
+
+#prizes ol {
+	width: 48.93617%; /*460/940*/
+	float:left;
+	text-align: center;
+}
+
+.ielt8 #prizes ol {
+	width: 48.82978%; /*459/940*/
+}
+
+#prizes ol.first {
+	margin-right:2.12766%; /*20/940*/
+}
+
+#prizes ol li {
+	padding: 0 4.34783%; /*20/460*/
+	margin-bottom: 4em;
+}
+
+#prizes ol.first li.first {
+	margin-bottom: 7em;
+}
+
+#prizes img {
+	display:block;
+	max-width:100%;
+	margin:0 auto;
+	margin-bottom: 1em;
+}
+
+/* ----------------------------------------------------------------------------
+--------------------------- BE A CONSTANT SECTION ----------------------------- */
+
+/* Columns */
+
+#clockTicking {
+	float:right;
+	width: 50%;
+	margin-left: 9.57446%; /*90/940*/
+}
+
+#contestant {
+	float:right;
+	width: 40.42553%; /*380/940*/
+}
+
+.ielt8 #contestant {
+	width: 40.31914%; /*379/940*/
+}
+
+/* Be a contestant form */
+
+#beAContestant .row {
+	display:block;
+	margin-bottom:0.9em;
+}
+
+#beAContestant legend,
+#beAContestant .row label,
+#beAContestant label span {
+	display:none;
+}
+
+#beAContestant .row label.error {
+	display:inline;
+	font-size:0.8em;
+}
+
+#beAContestant input.error {
+	background-color:#f00;
+}
+
+
+/* Be a contestant form - input and button */
+
+#beAContestant input {
+	width: 94.73684%; /* 360/380 */
+	background:#fe6336 url(../img/textures/omni.png) repeat top left;
+	border-radius:0.3em;
+	border:none;
+	color:white;
+	font-size:1em;
+	padding-top: 0.7em;
+	padding-right: 2.63157%; /*10/380*/
+	padding-bottom: 0.7em;
+	padding-left: 2.63157%; /*10/380*/
+	-webkit-transition: background 2s ease;
+	-moz-transition: background 2s ease;
+	-ms-transition: background 2s ease;
+	-o-transition: background 2s ease;
+}
+
+#beAContestant button {
+	width: 100%;
+	margin-top:1em;
+	background: url(../img/bgs/slimeGreenTiny.png) no-repeat center center;
+	background-size: auto 100%;
+	height: 4em;
+	border: none;
+	-webkit-transform: skew(0,-7deg);
+	-moz-transform: skew(0,-7deg);
+	-ms-transform: skew(0,-7deg);
+	-o-transform: skew(0,-7deg);
+	font-size: 1.5em;
+	color:white;
+	letter-spacing: 0.05em;
+}
+
+/* Be a contestant form - selects */
+
+/* NOTE: use only class names instead of the "select" selector to make the style declaration be valid for the html select field (visible only in iOS) AND for the one generated by the selectBox plugin (visible only in desktop browsers) which copies the class names */
+
+#beAContestant .teamColor,
+#beAContestant .gender {
+	padding-top: 0.7em;
+	padding-right: 15.78947%; /*60/380*/
+	padding-bottom: 0.7em;
+	padding-left: 2.63157%; /*10/380*/
+}
+
+#beAContestant .teamColor {
+	width: 39.47368%; /*150/380*/
+	margin-right: 5.26316%; /*20/380*/
+}
+
+.ielt8 #beAContestant .teamColor {
+	width: 39.21052%; /*149/380*/
+	margin-right: 5%; /*19/380*/
+}
+
+#beAContestant .gender {
+	width: 18.42105%; /*70/380*/
+}
+
+
+/* Be a contestant clock side */
+
+/*#beAContestant*/ #alarmClock {
+	position:relative;
+}
+
+#beAContestant img {
+	display: block;
+	max-width: 100%;
+	margin:0 auto;
+}
+
+#beAContestant .value {
+	position: absolute;
+	top:0; left:0;
+	padding-top:13%;
+	text-align: center;
+	color:#f5eb00;
+	text-shadow:0.04em 0.08em 0px black;
+	width: 100%;
+}
+
+#beAContestant figcaption {
+	padding:3.125em 18.2%;
+	text-align: center;
+}
+
+#beAContestant .spacing {
+	font-size:2.5em;
+	line-height:1em;
+	letter-spacing: 0.05em;
+}
+
+
+/* Fields with placeholder */
+
+[placeholder]{
+	cursor:pointer;
+	color:white;
+}
+[placeholder]:active,
+[placeholder]:focus{
+	cursor:text;
+}
+
+
+/* Placeholders on Webkit and Gecko - can't style 'em in Opera :( */
+
+::-webkit-input-placeholder  { color:#fff; }
+input:-moz-placeholder { color:#fff; }
+
+
+/* ----------------------------------------------------------------------------
+--------------------------- SITE FOOTER --------------------------------------- */
+
+#siteFooter .logo {
+	display:block;
+	margin:0 auto;
+	position:relative;
+	top:-3em;
+}
+
+#siteFooter .content {
+	padding-bottom:2em;
+	margin-bottom:2em;
+}
+
+#siteFooter .col1,
+#siteFooter .col2 {
+	float: left;
+	width: 31.91489%; /*300/940*/
+}
+
+#siteFooter .col1 {
+	text-align: right;
+	margin-right:2.12766%; /*20/940*/
+	padding-left: 17.02128%; /*160/940*/
+}
+
+#siteFooter p {
+	font-size: 0.87em;
+}
+
+#siteFooter h1, 
+#siteFooter h2 {
+	text-align: center;
+	font-size: 1.25em;
+	margin: 0.5em 0;
+}
+
+#siteFooter h2 {
+	margin-top: 1em;
+}
+
+#licence {
+	text-align: center;
+	padding-bottom: 6em;
+}
+
+#licence img {
+	display: block; 
+	margin: 1em auto;
+}
+
+/* ----------------------------------------------------------------------------
+--------------------------- MEDIA QUERIES ------------------------------------- */
+
+/* MQ Debug - UTILITY TO KNOW WHICH MQ IS USED */
+
+.mqDebug #siteFooter:after {
+	position: fixed;
+	bottom: 0; right: 0;
+	background: #000;
+	width: 200px;
+	content: 'Standard';
+	font-family: 'OpenSansSemibold', sans-serif;
+	font-size: 1em;
+	line-height: 1.5em;
+	text-align: center;
+	z-index: 99;
+}
+
+
+/* --------------- Window under 1024 --------------- */
+
+@media screen and (max-width: 1024px) {
+	
+	body {
+		font-size:0.95em;
+	}
+
+	#obstacles figure img {
+		margin: 0 !important;
+	}
+
+	.pageSection {
+		padding: 2em 0;
+	}
+
+	.pageSection .content {
+		margin-top: 2.5em;
+	}
+
+	/* MQ Debug */
+
+	.mqDebug #siteFooter:after {
+		content: '<= 1024px';
+	}
+
+}
+
+/* --------------- Window under 768 --------------- */
+
+@media screen and (max-width: 768px) {
+	
+	body {
+		font-size:0.90em;
+	}
+
+	nav {
+		padding-right: 1.5em; /* The li left margin */
+	}
+	nav li {
+		margin-left: 1.5em;
+	}
+
+	/* MQ Debug */
+
+	.mqDebug #siteFooter:after {
+		content: '<= 768px';
+	}
+}
+
+/* --------------- Window under 480 --------------- */
+
+@media screen and (max-width: 480px) {
+	
+	body {
+		font-size:0.80em;
+	}
+
+	/* ------- Nav ------- */
+
+	nav {
+		position:static;
+		background:#000;
+		padding-right: 0.5em; /* The li left margin */
+	}
+
+	nav li {
+		margin-left:0.5em;
+		/*display:block;*/
+	}
+
+	nav li.header {
+		display:none;
+	}
+
+	/* ------- Site header ------- */
+
+	#siteHeader {
+		padding: 1em 0;
+	}
+
+	#slime {
+		height: 267px;
+	}
+
+	#logo {
+		width: 287px;
+		padding-top: 267px;
+		left: 0;
+		background-size: 90%;
+	}
+
+	#siteHeader .payoff {	
+		margin-bottom: 0.5em;
+	}
+
+	/* ------- All sections adaptation ------- */
+
+	.container {
+		padding: 0 1em;
+	}
+
+	.pageSection {
+		padding: 1em 0;
+	}
+
+	.pageSection h1 {
+		line-height: 1.4em;
+		height: auto;
+		text-align: center;
+	}
+
+	.pageSection h1,
+	#obstacles h1 span,
+	#prizes h1 span,
+	#beAContestant h1 span {
+		background:none;
+		padding:0;
+	}
+
+	/* Reset letter-spacing */
+
+	.pageSection h1,
+	.pageSection h1 span,
+	#beAContestant button,
+	#clockTicking .spacing {
+		letter-spacing: normal;
+	}
+
+	/* ------- Obstacles ------- */
+
+	#obstacles ul,
+	#obstacles li {
+		width:100%;
+		float:none;;
+	}
+
+	#obstacles li {
+		margin: 0;
+	}
+
+	#obstacles figcaption {
+		position:absolute;
+		font-size:0.8em;
+		width: 60%;
+		opacity:1;
+	}
+
+	#obstacles .tank	figcaption { right:0;	bottom:10em; }
+	#obstacles .sundae	figcaption { left:0;	top:10em; }
+	#obstacles .wheel	figcaption { right:0;	bottom:4em; }
+	#obstacles .hatch	figcaption { right:0;	top:0em; }
+	#obstacles .pick	figcaption { left:4em;	top:0; }
+	#obstacles .wringer	figcaption { right:0;	top:0; }
+
+	#obstacles .button {
+		display:none;
+	}
+
+	#obstacles figure {
+		display:block;
+		position:relative;
+		width:100%;
+		height: auto;
+	}
+
+	#obstacles figure img {
+		top:0; left:0;
+	}
+	
+
+	/* ------- Prizes ------- */
+
+	#prizes ol {
+		float: none;
+		width: 100%;
+	}
+
+	#prizes img {
+		width: 80%;
+	}
+
+	/* ------- Be a contestant ------- */
+
+	#clockTicking {
+		margin:0; 
+	}
+
+	#clockTicking figcaption {
+		padding:3.125em 0;
+	}
+
+	#clockTicking figure .spacing {
+		line-height:1em;
+	}
+
+	#beAContestant {
+		margin-bottom:4em;
+	}
+
+	#beAContestant section {
+		float: none;
+		width: 100%;
+	}
+
+	#beAContestant button {
+		font-size: 2em;
+	}
+	
+	/* ------- Footer ------- */
+
+	#siteFooter .col1,
+	#siteFooter .col2 {
+		width: 100%;
+		text-align: center;
+		padding: 0;
+		margin: 0 0 0.5em 0;
+	}
+
+
+	/* MQ Debug */
+
+	.mqDebug #siteFooter:after {
+		content: '<= 480px';
+	}
+
+}

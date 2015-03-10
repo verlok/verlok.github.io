@@ -1,0 +1,113 @@
+.selextBox-dropdown,
+.selectBox-options {
+	font-family: 'KomikaTitle-PaintRegular';
+}
+
+/* Dropdown control */
+.selectBox-dropdown {
+	position: relative;
+	border: none;
+	line-height: 1.5;
+	text-decoration: none;
+	color: #FFF;
+	outline: none;
+	vertical-align: middle;
+	background: #FE6336 url(../img/textures/omni.png) repeat top left;
+	border-radius:0.4em;
+	display: inline-block;
+	cursor: default;
+	font-size:1em;
+	padding-top:0.85em;
+	padding-bottom:0.85em;
+}
+
+.selectBox-dropdown.selectBox-menuShowing {
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.selectBox-dropdown .selectBox-label {
+	width: 100%;
+	display: inline-block;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.selectBox-dropdown .selectBox-arrow {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 50px;
+	height: 100%;
+	background: url(../img/forms/dropdownButton.png) 50% center no-repeat;
+}
+
+/* Dropdown menu */
+.selectBox-dropdown-menu {
+	position: absolute;
+	z-index: 99999;
+	border: none; /* should be the same border width as .selectBox-dropdown */
+	background: #FE6336 url(../img/textures/omni.png) repeat top left;
+	box-shadow: 2px 3px 0px rgba(0, 0, 0, 0.2);
+	overflow: auto;
+	border-bottom-left-radius: 0.4em;
+	border-bottom-right-radius: 0.4em;
+}
+
+/* Options */
+.selectBox-options,
+.selectBox-options LI,
+.selectBox-options LI A {
+	list-style: none;
+	display: block;
+	cursor: default;
+	margin: 0;
+}
+
+.selectBox-options LI A {
+	line-height: 1.5;
+	padding: 0.7em 0.5em;
+	white-space: nowrap;
+	overflow: hidden;
+	background: 6px center no-repeat;
+}
+
+.selectBox-options LI.selectBox-hover A {
+	background-color: #c55028;
+}
+
+.selectBox-options LI.selectBox-disabled A {
+	color: #888;
+	background-color: transparent;
+}
+
+.selectBox-options LI.selectBox-selected A {
+	background-color: #c55028;
+}
+
+/* Disabled state */
+.selectBox.selectBox-disabled {
+	color: #888 !important;
+}
+
+.selectBox-dropdown.selectBox-disabled .selectBox-arrow {
+	opacity: .5;
+	filter: alpha(opacity=50);
+	border-color: #666;
+}
+
+.selectBox-inline.selectBox-disabled {
+	color: #888 !important;
+}
+
+.selectBox-inline.selectBox-disabled .selectBox-options A {
+	background-color: transparent !important;
+}
+
+/* IE6 FIX */
+
+.ie6 .selectBox-dropdown,
+.ie6 .selectBox-dropdown-menu,
+.ie6 .selectBox-dropdown .selectBox-arrow {
+	background-image: none;
+}

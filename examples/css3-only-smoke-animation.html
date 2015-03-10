@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>CSS 3 only Smoke animation</title>
+  <!-- http://codepen.io/verlok/pen/nLsdB -->
+  <style>
+
+body {
+  background: #18d0f0;
+}
+
+/* Smoke container */
+#smoke {
+  position: absolute;
+  z-index: 3;
+  width: 1px;
+  height: 160px;
+  left: 50%;
+  bottom: 30px;
+}
+
+/* smoke balls */
+#smoke span {
+  display: block;
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  margin-left: -20px;
+  height: 0px;
+  width: 0px;
+  border: 35px solid #4b4b4b;
+  border-radius: 35px;
+  left: -14px;
+  opacity: 0;
+  -webkit-transform: scale(0.2);
+  -moz-transform: scale(0.2);
+  -ms-transform: scale(0.2);
+  -o-transform: scale(0.2);
+  transform: scale(0.2);
+}
+
+/* Smoke animation */
+@-webkit-keyframes smokeL {
+  0% {
+    -webkit-transform: scale(0.2) translate(0, 0);
+    -moz-transform: scale(0.2) translate(0, 0);
+    -ms-transform: scale(0.2) translate(0, 0);
+    -o-transform: scale(0.2) translate(0, 0);
+    transform: scale(0.2) translate(0, 0);
+  }
+
+  10% {
+    opacity: 1;
+    -webkit-transform: scale(0.2) translate(0, -5px);
+    -moz-transform: scale(0.2) translate(0, -5px);
+    -ms-transform: scale(0.2) translate(0, -5px);
+    -o-transform: scale(0.2) translate(0, -5px);
+    transform: scale(0.2) translate(0, -5px);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1) translate(-20px, -130px);
+    -moz-transform: scale(1) translate(-20px, -130px);
+    -ms-transform: scale(1) translate(-20px, -130px);
+    -o-transform: scale(1) translate(-20px, -130px);
+    transform: scale(1) translate(-20px, -130px);
+  }
+}
+
+@-moz-keyframes smokeL {
+  0% {
+    -webkit-transform: scale(0.2) translate(0, 0);
+    -moz-transform: scale(0.2) translate(0, 0);
+    -ms-transform: scale(0.2) translate(0, 0);
+    -o-transform: scale(0.2) translate(0, 0);
+    transform: scale(0.2) translate(0, 0);
+  }
+
+  10% {
+    opacity: 1;
+    -webkit-transform: scale(0.2) translate(0, -5px);
+    -moz-transform: scale(0.2) translate(0, -5px);
+    -ms-transform: scale(0.2) translate(0, -5px);
+    -o-transform: scale(0.2) translate(0, -5px);
+    transform: scale(0.2) translate(0, -5px);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1) translate(-20px, -130px);
+    -moz-transform: scale(1) translate(-20px, -130px);
+    -ms-transform: scale(1) translate(-20px, -130px);
+    -o-transform: scale(1) translate(-20px, -130px);
+    transform: scale(1) translate(-20px, -130px);
+  }
+}
+
+@-o-keyframes smokeL {
+  0% {
+    -webkit-transform: scale(0.2) translate(0, 0);
+    -moz-transform: scale(0.2) translate(0, 0);
+    -ms-transform: scale(0.2) translate(0, 0);
+    -o-transform: scale(0.2) translate(0, 0);
+    transform: scale(0.2) translate(0, 0);
+  }
+
+  10% {
+    opacity: 1;
+    -webkit-transform: scale(0.2) translate(0, -5px);
+    -moz-transform: scale(0.2) translate(0, -5px);
+    -ms-transform: scale(0.2) translate(0, -5px);
+    -o-transform: scale(0.2) translate(0, -5px);
+    transform: scale(0.2) translate(0, -5px);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1) translate(-20px, -130px);
+    -moz-transform: scale(1) translate(-20px, -130px);
+    -ms-transform: scale(1) translate(-20px, -130px);
+    -o-transform: scale(1) translate(-20px, -130px);
+    transform: scale(1) translate(-20px, -130px);
+  }
+}
+
+@keyframes smokeL {
+  0% {
+    -webkit-transform: scale(0.2) translate(0, 0);
+    -moz-transform: scale(0.2) translate(0, 0);
+    -ms-transform: scale(0.2) translate(0, 0);
+    -o-transform: scale(0.2) translate(0, 0);
+    transform: scale(0.2) translate(0, 0);
+  }
+
+  10% {
+    opacity: 1;
+    -webkit-transform: scale(0.2) translate(0, -5px);
+    -moz-transform: scale(0.2) translate(0, -5px);
+    -ms-transform: scale(0.2) translate(0, -5px);
+    -o-transform: scale(0.2) translate(0, -5px);
+    transform: scale(0.2) translate(0, -5px);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1) translate(-20px, -130px);
+    -moz-transform: scale(1) translate(-20px, -130px);
+    -ms-transform: scale(1) translate(-20px, -130px);
+    -o-transform: scale(1) translate(-20px, -130px);
+    transform: scale(1) translate(-20px, -130px);
+  }
+}
+
+@-webkit-keyframes smokeR {
+  0% {
+    -webkit-transform: scale(0.2) translate(0, 0);
+    -moz-transform: scale(0.2) translate(0, 0);
+    -ms-transform: scale(0.2) translate(0, 0);
+    -o-transform: scale(0.2) translate(0, 0);
+    transform: scale(0.2) translate(0, 0);
+  }
+
+  10% {
+    opacity: 1;
+    -webkit-transform: scale(0.2) translate(0, -5px);
+    -moz-transform: scale(0.2) translate(0, -5px);
+    -ms-transform: scale(0.2) translate(0, -5px);
+    -o-transform: scale(0.2) translate(0, -5px);
+    transform: scale(0.2) translate(0, -5px);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1) translate(20px, -130px);
+    -moz-transform: scale(1) translate(20px, -130px);
+    -ms-transform: scale(1) translate(20px, -130px);
+    -o-transform: scale(1) translate(20px, -130px);
+    transform: scale(1) translate(20px, -130px);
+  }
+}
+
+@-moz-keyframes smokeR {
+  0% {
+    -webkit-transform: scale(0.2) translate(0, 0);
+    -moz-transform: scale(0.2) translate(0, 0);
+    -ms-transform: scale(0.2) translate(0, 0);
+    -o-transform: scale(0.2) translate(0, 0);
+    transform: scale(0.2) translate(0, 0);
+  }
+
+  10% {
+    opacity: 1;
+    -webkit-transform: scale(0.2) translate(0, -5px);
+    -moz-transform: scale(0.2) translate(0, -5px);
+    -ms-transform: scale(0.2) translate(0, -5px);
+    -o-transform: scale(0.2) translate(0, -5px);
+    transform: scale(0.2) translate(0, -5px);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1) translate(20px, -130px);
+    -moz-transform: scale(1) translate(20px, -130px);
+    -ms-transform: scale(1) translate(20px, -130px);
+    -o-transform: scale(1) translate(20px, -130px);
+    transform: scale(1) translate(20px, -130px);
+  }
+}
+
+@-o-keyframes smokeR {
+  0% {
+    -webkit-transform: scale(0.2) translate(0, 0);
+    -moz-transform: scale(0.2) translate(0, 0);
+    -ms-transform: scale(0.2) translate(0, 0);
+    -o-transform: scale(0.2) translate(0, 0);
+    transform: scale(0.2) translate(0, 0);
+  }
+
+  10% {
+    opacity: 1;
+    -webkit-transform: scale(0.2) translate(0, -5px);
+    -moz-transform: scale(0.2) translate(0, -5px);
+    -ms-transform: scale(0.2) translate(0, -5px);
+    -o-transform: scale(0.2) translate(0, -5px);
+    transform: scale(0.2) translate(0, -5px);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1) translate(20px, -130px);
+    -moz-transform: scale(1) translate(20px, -130px);
+    -ms-transform: scale(1) translate(20px, -130px);
+    -o-transform: scale(1) translate(20px, -130px);
+    transform: scale(1) translate(20px, -130px);
+  }
+}
+
+@keyframes smokeR {
+  0% {
+    -webkit-transform: scale(0.2) translate(0, 0);
+    -moz-transform: scale(0.2) translate(0, 0);
+    -ms-transform: scale(0.2) translate(0, 0);
+    -o-transform: scale(0.2) translate(0, 0);
+    transform: scale(0.2) translate(0, 0);
+  }
+
+  10% {
+    opacity: 1;
+    -webkit-transform: scale(0.2) translate(0, -5px);
+    -moz-transform: scale(0.2) translate(0, -5px);
+    -ms-transform: scale(0.2) translate(0, -5px);
+    -o-transform: scale(0.2) translate(0, -5px);
+    transform: scale(0.2) translate(0, -5px);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1) translate(20px, -130px);
+    -moz-transform: scale(1) translate(20px, -130px);
+    -ms-transform: scale(1) translate(20px, -130px);
+    -o-transform: scale(1) translate(20px, -130px);
+    transform: scale(1) translate(20px, -130px);
+  }
+}
+
+#smoke .s0 {
+  -webkit-animation: smokeL 10s 0s infinite;
+  -moz-animation: smokeL 10s 0s infinite;
+  -o-animation: smokeL 10s 0s infinite;
+  animation: smokeL 10s 0s infinite;
+}
+
+#smoke .s1 {
+  -webkit-animation: smokeR 10s 1s infinite;
+  -moz-animation: smokeR 10s 1s infinite;
+  -o-animation: smokeR 10s 1s infinite;
+  animation: smokeR 10s 1s infinite;
+}
+
+#smoke .s2 {
+  -webkit-animation: smokeL 10s 2s infinite;
+  -moz-animation: smokeL 10s 2s infinite;
+  -o-animation: smokeL 10s 2s infinite;
+  animation: smokeL 10s 2s infinite;
+}
+
+#smoke .s3 {
+  -webkit-animation: smokeR 10s 3s infinite;
+  -moz-animation: smokeR 10s 3s infinite;
+  -o-animation: smokeR 10s 3s infinite;
+  animation: smokeR 10s 3s infinite;
+}
+
+#smoke .s4 {
+  -webkit-animation: smokeL 10s 4s infinite;
+  -moz-animation: smokeL 10s 4s infinite;
+  -o-animation: smokeL 10s 4s infinite;
+  animation: smokeL 10s 4s infinite;
+}
+
+#smoke .s5 {
+  -webkit-animation: smokeR 10s 5s infinite;
+  -moz-animation: smokeR 10s 5s infinite;
+  -o-animation: smokeR 10s 5s infinite;
+  animation: smokeR 10s 5s infinite;
+}
+
+#smoke .s6 {
+  -webkit-animation: smokeL 10s 6s infinite;
+  -moz-animation: smokeL 10s 6s infinite;
+  -o-animation: smokeL 10s 6s infinite;
+  animation: smokeL 10s 6s infinite;
+}
+
+#smoke .s7 {
+  -webkit-animation: smokeR 10s 7s infinite;
+  -moz-animation: smokeR 10s 7s infinite;
+  -o-animation: smokeR 10s 7s infinite;
+  animation: smokeR 10s 7s infinite;
+}
+
+#smoke .s8 {
+  -webkit-animation: smokeL 10s 8s infinite;
+  -moz-animation: smokeL 10s 8s infinite;
+  -o-animation: smokeL 10s 8s infinite;
+  animation: smokeL 10s 8s infinite;
+}
+
+#smoke .s9 {
+  -webkit-animation: smokeR 10s 9s infinite;
+  -moz-animation: smokeR 10s 9s infinite;
+  -o-animation: smokeR 10s 9s infinite;
+  animation: smokeR 10s 9s infinite;
+}
+  </style>
+</head>
+
+<body>
+  <div id="smoke">
+    <span class="s0"></span>
+    <span class="s1"></span>
+    <span class="s2"></span>
+    <span class="s3"></span>
+    <span class="s4"></span>
+    <span class="s5"></span>
+    <span class="s6"></span>
+    <span class="s7"></span>
+    <span class="s8"></span>
+    <span class="s9"></span>
+</div>
+
+</body>
+</html>

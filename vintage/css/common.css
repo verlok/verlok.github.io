@@ -1,0 +1,264 @@
+/* -----------------
+DEFINIZIONI GENERALI
+----------------- */
+
+html {
+	padding:0;
+	margin:0}
+h1,h2,h3,h4 {
+	padding:0;
+	font-family:"Trebuchet MS", Tahoma, sans-serif}
+h1 {
+	margin:0 0 0.5em 0;
+	font-size:150%;
+	clear:both}
+h2 {
+	margin:1em 0 0.5em 0;
+	font-size:130%}
+h3 {
+	margin:0.75em 0 0.5em 0;
+	font-size:120%}
+h4 {
+	margin:0.75em 0 0.5em 0;
+	font-size:115%}
+a:link {
+	color:#0066CC}
+a:visited {
+	color:#99BBEE}
+img {
+	border:0}
+body {
+	font-size:76%;
+	text-align:center; /*centra in ie 5.x*/
+	font-family:Tahoma, sans-serif;
+	margin:10px 0 20px 0 ;
+	padding:0;
+	background-color:#88979E;
+	line-height:1.5em}
+p {
+	margin:0;
+	margin-bottom:0.5em}
+
+/* --------------
+AREE DELLA PAGINA
+-------------- */
+
+/* contenitore */
+div#container {
+	background-image:url(../images/sfondo_0_colonne_bordato.gif);
+	background-color:#E7E7E7;
+	width:760px;
+	margin:0 auto; /*centra negli altri browsers*/
+	text-align:left; /*ripristina l'allineamento*/
+	position:relative}
+
+/* intestazione */
+div#author {
+	font-family:"Trebuchet MS", Tahoma, sans-serif;
+	font-size:250%;
+	font-weight:bold;
+	line-height:normal;
+	margin-bottom:0.1em;
+	color:#0066CC;
+	text-decoration:underline;
+	}
+div#author a:visited {
+	color:#0066CC}
+
+div#header {
+	padding:0.5em 0.5em 0 0.5em;
+	border-top:1px solid #7F7F7F;
+	border-left:1px solid #7F7F7F;
+	border-right:1px solid #000000;
+	height:6em;
+	background-color:#FFFFFF}
+div#header .jobTitle {}
+div#header img#stampante {
+	margin-right:6px;
+	vertical-align:text-bottom}
+div#header p#engNoMore {
+	color:#666666;
+	text-decoration:line-through}
+
+/* menu superiore */
+div#menuTop {
+	background-color:#D9ECFF;
+	border-top:1px solid #000000;
+	border-right:1px solid #000000;
+	border-bottom:1px solid #000000;
+	border-left:1px solid #7F7F7F;
+	font-size:118%;
+	height:1.5em;
+	vertical-align:middle;
+	clear:both;
+	font-family:"Trebuchet MS", Tahoma, sans-serif}
+div#menuTop a:link {
+	text-decoration:none;
+	color:#000000}
+div#menuTop a:visited {
+	text-decoration:none;
+	color:#333333}
+div#menuTop a:hover {
+	text-decoration:underline;
+	color:#0055AA}
+div#menuTop a:visited:hover {
+	text-decoration:underline;
+	color:#0055AA}
+div#menuTop ul {
+	margin:0;
+	padding:0}
+div#menuTop li {
+	display:inline;
+	padding:0 8px;
+	margin:0;
+	border-right: 1px solid #666}
+div#menuTop li.last {
+	border-right: none}
+
+/* contenuti */
+div#contents {
+	clear:both;
+	margin:0;
+	padding:1em;
+	border-left:1px solid #7F7F7F;
+	border-right:1px solid #000000;
+	background-color:#FFFFFF}
+div#contents ul {
+	margin:0 0 1em 0;
+	padding:0}
+div#contents li {
+	margin:0;
+	padding:0 0 0 10px;
+	background-image:url("../images/quadrato4x4giallosc.gif");
+	background-position:top left;
+	background-repeat:no-repeat;
+	list-style-type:none;
+	}
+div#contents li.moreInfo {
+	margin:0.75em 0 0.2em 0}
+div#contents li .etichetta {font-weight:bold}
+div#contents li .valore {font-weight:bold}
+div#contents li .descrizione {}
+div#contents li p {
+	margin-bottom:0.5em}
+div#contents li img {
+	vertical-align:middle}
+div#flashjob {
+	position:relative;
+	background-color: #FFFFFF;
+	border-top: 1px solid #CCC;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+	border-left: 1px solid #CCC;
+	margin-bottom: 0.5em;
+	}
+
+/* link di ritorno */
+span.ritorno {
+	width:160px;
+	padding:5px 5px 5px 10px;
+	border-top:1px solid #CCCCCC;
+	border-right:1px solid #CCCCCC;
+	border-bottom:1px solid #CCCCCC;
+	margin-left:-1em;
+	margin-top:1.5em}
+span.ritorno a {
+	font-weight:bold}
+
+/* piede */
+div#footer {
+	color:#FFFFFF;
+	border-top:1px solid #000000;
+	background-color:#88979E;
+	font-size:92%;
+	text-align:right;
+	padding:5px;
+	clear:both}
+div#footer a {
+	color:#FFFFFF}
+
+/* Site Thumb */
+
+div.siteThumb {
+	float:left;
+	margin-right:7px}
+div.siteThumb img {
+	border:1px solid #666666}
+div.siteThumb object#flashmovie {
+	border:1px solid #666666}
+div.siteThumb p {
+	font-size:75%;
+	color:#666666;
+	text-align:center}
+
+/* Classi Generali */
+.shownSkills {
+	font-size:94%;
+	color:#666666;
+	margin-top:0.2em;
+	line-height:100%}
+.detailsLinks {
+	margin:0;
+	font-weight:bold}
+.fotografia {
+	float:right;
+	margin-left:7px}
+.fotografia img {
+	border:1px solid #CCCCCC}
+.fotografia p {
+	font-size:75%;
+	color:#666666;
+	text-align:center}
+.highlightedText {
+	font-weight:bold;
+	color:#CC0000}
+a.linkEsterno:link {
+	color:#420093;
+	text-decoration: underline;
+	}
+a.linkEsterno:visited {
+	color:#C6AEC5;
+	text-decoration: underline;
+	}
+a.linkEsterno:hover {
+	color:#FFF;
+	background-color:#420093;
+	text-decoration: none;
+	}
+a.linkEsterno:visited:hover {
+	background-color:#C6AEC5;
+	color:#FFF;
+	text-decoration:none;
+	}
+
+div.clearer{clear:both}
+div.pagePath {margin-bottom:0.8em;font-size:92%}
+div.pagePath img {margin-right:0.5em;vertical-align:baseline}
+
+/* others / utils */
+.leftLeft {
+	float:left;
+	text-align:left}
+.rightRight {
+	float:right;
+	text-align:right}
+
+/* tabelle (competenze) */
+
+table {
+	margin-bottom:0.5em;
+	border-top:1px solid #CCC;
+	border-left:1px solid #CCC;
+	}
+td,
+th {
+	vertical-align:top;
+	padding:1px 5px;
+	border-right:1px solid #CCC;
+	border-bottom:1px solid #CCC;
+	}
+
+th {
+	text-align:left;
+	background-color:#EEE;
+	}

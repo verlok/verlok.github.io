@@ -1,0 +1,16 @@
+body {
+	font-family:"Trebuchet MS", Tahoma, sans-serif;
+	font-size:76%}
+table, tr, td {padding:0;margin:0;border:0}
+td, th {padding:4px;border-right:1px solid #CCC;border-bottom:1px solid #CCC;vertical-align:top}
+th {text-align:left;color:#FFFFFF;background-color:#333}
+table {margin-bottom:0.5em;background-color:#FFFFFF;border-top:1px solid #CCC;border-left:1px solid #CCC;}
+td.corpo {width:50%}
+tr.pari {background-color:#F0F5F7};
+tr.dispari {background-color:#FFF};
+input.textbox {width:500px}
+textarea {width:500px;height:300px}
+select {width:500px}
+p {margin:0 0 0.25em 0}
+p.errormsg {color:#FF0000;margin:1em 0;padding:0.5em;background-color:#FFFFEA;border:1px solid #FF0000}
+p.confirmmsg {color:#009900;margin:1em 0;padding:0.5em;background-color:#F0FFEC;border:1px solid #009900}
