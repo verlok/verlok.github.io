@@ -1,5 +1,6 @@
 # Site settings
 title: Andrea Verlicchi
+subtitle: Web front-end development addicted
 email: andrea.verlicchi@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Web front-end development addicted, Andrea currently works as front-end architect
@@ -9,7 +10,7 @@ url: "http://www.andreaverlicchi.eu" # the base hostname & protocol for your sit
 twitter_username: verlok
 github_username:  verlok
 markdown: kramdown
-paginate: 10
+exclude: [downloads, examples, projects, vintage]
 defaults:
   -
     scope:
@@ -17,5 +18,3 @@ defaults:
       type: "posts" # previously `post` in Jekyll 2.2.
     values:
       permalink: /:title/
-gems:
-  - octopress-minify-html
