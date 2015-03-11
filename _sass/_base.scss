@@ -97,8 +97,10 @@ a {
     }
 
     &:hover {
-        color: $text-color;
-        text-decoration: underline;
+        $hoverColor: saturate($brand-color, 15%);
+        color: $hoverColor;
+        //text-decoration: none;
+        //border-bottom: 1px dotted darken($brand-color, 30%);
     }
 }
 
