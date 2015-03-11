@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About me
+title: About
 date: '2012-09-23 22:52:10 +0200'
 date_gmt: '2012-09-23 21:52:10 +0200'
 ---
