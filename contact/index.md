@@ -2,7 +2,7 @@
 layout: page
 status: publish
 published: true
-title: Contacts
+title: Contact
 author:
   display_name: Andrea Verlicchi
   login: admin
@@ -21,9 +21,10 @@ comments: []
 ---
 Here's how you can contact me.
 
-* Twitter: [@verlok](https://twitter.com/verlok)
-* LinkedIn: [Andrea Verlicchi](http://www.linkedin.com/in/andreaverlicchi)
-* Facebook: [andrea.verlicchi](http://www.facebook.com/andrea.verlicchi)
-* Phone: +39.329.0644530
+* [Twitter](https://twitter.com/verlok)
+* [LinkedIn](http://www.linkedin.com/in/andreaverlicchi)
+* [GitHub](http://www.github.com/verlok)
+* [FaceBook](http://www.facebook.com/andrea.verlicchi)
+* [Phone](tel://+39.329.0644530)
 
-You may want to <a href="http://dl.dropbox.com/u/31950802/andrea_verlicchi_cv.pdf">download my CV</a>.
+You may also want to <a href="http://dl.dropbox.com/u/31950802/andrea_verlicchi_cv.pdf">download my CV</a>.
