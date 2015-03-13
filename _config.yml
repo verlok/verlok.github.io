@@ -11,6 +11,7 @@ twitter_username: verlok
 github_username:  verlok
 markdown: kramdown
 exclude: [downloads, examples, projects, vintage]
+include: [.htaccess]
 defaults:
   -
     scope:
