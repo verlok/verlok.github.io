@@ -27,4 +27,4 @@ Here's how you can contact me.
 * [FaceBook](http://www.facebook.com/andrea.verlicchi)
 * [Phone](tel://+39.329.0644530)
 
-You may also want to <a href="http://dl.dropbox.com/u/31950802/andrea_verlicchi_cv.pdf">download my CV</a>.
+You may also want to <a href="http://dl.dropbox.com/u/31950802/andrea_verlicchi_cv.pdf">download my resume</a>.
