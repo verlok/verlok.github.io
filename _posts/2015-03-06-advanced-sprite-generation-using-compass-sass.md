@@ -38,7 +38,7 @@ Example of CSS output:
 
 This can be enough for your needs... but you want more, don't you?
 
-### The "considering pixel density + spacing between sprites + size generating + offset managing" way
+### The advanced way
 
 Skipping all the others way you can do sprites generation with Compass, I found out that if you have to do the following:
 
@@ -50,13 +50,71 @@ Skipping all the others way you can do sprites generation with Compass, I found 
 
 The only way to do spriting with Compass is to create your own mixins which use Compass base mixins under the hood.
 
-### _mixins.scss
+####Images and folders structure
 
-I created the following mixins, that I usually put in a separate _mixins.scss partial.
+To have the images in single density, double density and maybe triple density, we need to provide the images in 1x, 2x and maybe 3x size.
+
+So, supposing you will create a sprite map containing **flags**, you can have the following folders under our images folder:
+
+* flagsSprite1x - _flags images @ single density_
+    * france.png
+    * germany.png
+    * italy.png
+    * ...
+* flagsSprite2x - _flags images @ double density_
+    * france.png
+    * germany.png
+    * italy.png
+    * ...
+* flagsSprite3x - _...triple density_
+    * ...
+
+And if we're were going to create also an **icons** sprite map, we'd have to create the folders:
+
+* iconsSprite1x 
+    * ...
+* iconsSprite2x
+    * ...
+* iconsSprite3x
+    * ...
+
+Now let's take a look at the SASS partials you should create.
+
+####SASS partials
+
+To guarantee the maximum flexibility and the smallest build time, I suggest you to use the following:
+
+* _variables.scss - all your variables
+* _mixins.scss - all your mixins
+* one partial file for set of images
+    * _flagsSprite.scss - flags
+    * _iconsSprite.scss - icons
+    * ...
+
+Let's see what to put in our partials, one by one.
+
+####_mixins.scss
+
+Here's some mixins you might want to include in your mixins file. You can find the explanation of what they do right in the code comments.
 
 {% highlight scss %}
-// N-ple density sprite
-@mixin useNxSprite($sprite, $spriteMap, $spriteUrl, /* OPTIONAL PARAMETERS -> */ $multiplier: 1, $renderSize: false, $offsetX: 0, $offsetY: 0) {
+/* 
+Makes possible to use a n-ple density sprite
+Automatically adapts background-size and offset when $multiplier is greater than 1
+Allows you to use automatic size generation, which is automatically adapted when $multiplier is greater than 1
+
+Required parameters:
+- $sprite - the sprite name
+- $spriteMap - the spriteMap variable
+- $spriteUrl - the sprite map url of the sprite
+
+Optional parameters:
+- $multiplier (1) - the sprite density (1 for single density, 2 for retina, 3, etc.)
+- $renderSize (false) - tells the mixin to render width and height of the box containing the sprite
+- $offsetX (0) - the horizontal offset (px) for the image in the box
+- $offsetY (0) - the vertical offset (px) for the image in the box
+*/
+@mixin useNxSprite($sprite, $spriteMap, $spriteUrl, $multiplier: 1, $renderSize: false, $offsetX: 0, $offsetY: 0) {
   $spritePosition: sprite-position($spriteMap, $sprite, $offsetX * $multiplier, $offsetY * $multiplier);
   background: transparent $spriteUrl no-repeat nth($spritePosition, 1) / $multiplier nth($spritePosition, 2) / $multiplier;
   @if ($multiplier > 1) {
@@ -68,8 +126,22 @@ I created the following mixins, that I usually put in a separate _mixins.scss pa
   }
 }
 
-// Single and double density sprite
-@mixin use1x2xSprite($sprite, $sprite1xMap, $sprite2xMap, $sprite1xUrl, $sprite2xUrl, /* OPTIONAL PARAMETERS -> */ $renderSize: false, $offsetX: 0, $offsetY: 0) {
+/*
+Utility mixin to use single and double density sprite, with double density media query included
+
+Required parameters:
+- $sprite - the sprite name
+- $sprite1xMap - the spriteMap variable for the 1x sprites
+- $sprite2xMap - the spriteMap variable for the 2x sprites
+- $sprite1xUrl - the sprite map url of the 1x sprites
+- $sprite2xUrl - the sprite map url of the 2x sprites
+
+Optional parameters:
+- $renderSize (false) - tells the mixin to render width and height of the box containing the sprite
+- $offsetX (0) - the horizontal offset (px) for the image in the box
+- $offsetY (0) - the vertical offset (px) for the image in the box
+*/
+@mixin use1x2xSprite($sprite, $sprite1xMap, $sprite2xMap, $sprite1xUrl, $sprite2xUrl, $renderSize: false, $offsetX: 0, $offsetY: 0) {
   @include useNxSprite($sprite, $sprite1xMap, $sprite1xUrl, 1, $renderSize, $offsetX, $offsetY);
   @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
     @include useNxSprite($sprite, $sprite2xMap, $sprite2xUrl, 2, $renderSize, $offsetX, $offsetY);
@@ -77,52 +149,48 @@ I created the following mixins, that I usually put in a separate _mixins.scss pa
 }
 {% endhighlight %}
 
-### _variables.scss
+####_variables.scss
 
 This is the file where you define all the variables for your site, that you're going to use across all your scss files.
 
-In your _variables.scss file you should define the spacing between sprites in sprite map images.
+Here you should define the spacing between sprites in sprite map images.
 
 {% highlight scss %}
 // Generic spacing (at 1x) for sprites
 $spacing-sprites-generic: 10px;
 {% endhighlight %}
 
-### _flagSprites.scss
+####_flagsSprite.scss
 
-This is the file where you define the variables and the mixins for your sprites.
+This is the file where you define the variables and the mixins for your flag sprites.
 
-I suggest to use a _sprites.scss partial different from you _variables.scss, and to @import _sprites.scss only in scss files that requires sprites. This speeds up build time a lot, by avoiding frequent images check on the file system.
+I suggest to `@import` your `_flagsSprite.scss` only in files that requires flag sprites. This **speeds up build time** a lot, by avoiding frequent images check on the file system.
 
 {% highlight scss %}
-// FlagSprites MAPS and URLS
-$flagSprites1xMap: sprite-map("flagSprites1x/*.png", $spacing: $spacing-sprites-generic);
-$flagSprites2xMap: sprite-map("flagSprites2x/*.png", $spacing: $spacing-sprites-generic * 2);
-$flagSprites1xUrl: sprite-url($flagSprites1xMap);
-$flagSprites2xUrl: sprite-url($flagSprites2xMap);
+// flagsSprite MAPS and URLS
+$flagsSprite1xMap: sprite-map("flagsSprite1x/*.png", $spacing: $spacing-sprites-generic);
+$flagsSprite2xMap: sprite-map("flagsSprite2x/*.png", $spacing: $spacing-sprites-generic * 2);
+$flagsSprite1xUrl: sprite-url($flagsSprite1xMap);
+$flagsSprite2xUrl: sprite-url($flagsSprite2xMap);
 
-// FlagSprites mixin
-@mixin flagSprites($spriteName, $renderSize: false, $offsetX: 0, $offsetY: 0) {
-    @include use1x2xSprite($spriteName, $flagSprites1xMap, $flagSprites2xMap, $flagSprites1xUrl, $flagSprites2xUrl, $renderSize, $offsetX, $offsetY);
+// flagsSprite mixin
+@mixin flagsSprite($spriteName, $renderSize: false, $offsetX: 0, $offsetY: 0) {
+    @include use1x2xSprite($spriteName, $flagsSprite1xMap, $flagsSprite2xMap, $flagsSprite1xUrl, $flagsSprite2xUrl, $renderSize, $offsetX, $offsetY);
 }
 {% endhighlight %}
 
-### final_file.scss
-
-In your final scss file you can use the sprite doing the following:
-
-#### Simple usage
+####style.scss - standard usage
 
 If you don't need space around your sprite and you don't want Compass to generate box dimensions for you, you can simply do the following.
 
 {% highlight scss %}
 @import "compass/utilities/sprites";
 @import "_variables";
-@import "_flagSprites";
+@import "_flagsSprite";
 
 // Simple usage
 .exampleSimple {
-    @include flagSprites(Italy);
+    @include flagsSprite(italy);
 }
 {% endhighlight %}
 
@@ -130,27 +198,27 @@ That will produce the following:
 
 {% highlight css %}
 .exampleSimple {
-  background: transparent url('../img/flagSprites1x-s479625030c.png') no-repeat 0 -882px;
+  background: transparent url('../img/flagsSprite1x-s479625030c.png') no-repeat 0 -882px;
 }
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
   .exampleSimple {
-    background: transparent url('../img/flagSprites2x-s9a855cf705.png') no-repeat 0 -882px;
+    background: transparent url('../img/flagsSprite2x-s9a855cf705.png') no-repeat 0 -882px;
     background-size: 32px 2048px;
   }
 }
 {% endhighlight %}
 
-#### With box size generation
+####style.scss - with box size generation
 
 If you want Compass to generate box dimensions for you, you should do the following.
 
 {% highlight scss %}
 @import "compass/utilities/sprites";
 @import "_variables";
-@import "_flagSprites";
+@import "_flagsSprite";
 
 .exampleWithDimensions {
-    @include flagSprites(Italy, true);
+    @include flagsSprite(italy, true);
 }
 {% endhighlight %}
 
@@ -158,13 +226,13 @@ That will produce the following:
 
 {% highlight css %}
 .exampleWithDimensions {
-  background: transparent url('../img/flagSprites1x-s479625030c.png') no-repeat 0 -882px;
+  background: transparent url('../img/flagsSprite1x-s479625030c.png') no-repeat 0 -882px;
   height: 32px;
   width: 32px;
 }
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
   .exampleWithDimensions {
-    background: transparent url('../img/flagSprites2x-s9a855cf705.png') no-repeat 0 -882px;
+    background: transparent url('../img/flagsSprite2x-s9a855cf705.png') no-repeat 0 -882px;
     background-size: 32px 2048px;
     height: 32px;
     width: 32px;
@@ -172,17 +240,17 @@ That will produce the following:
 }
 {% endhighlight %}
 
-#### With box size generation
+####style.scss - with offset management
 
 If you don't want Compass to generate box dimensions for you, but you want to use an offset inside the box, you should do the following.
 
 {% highlight scss %}
 @import "compass/utilities/sprites";
 @import "_variables";
-@import "_flagSprites";
+@import "_flagsSprite";
 
 .exampleWithPadding {
-    @include flagSprites(Italy, false, 10, 10);
+    @include flagsSprite(italy, false, 10, 10);
     width: 52px; height: 52px;
 }
 {% endhighlight %}
@@ -191,14 +259,20 @@ That will produce the following:
 
 {% highlight css %}
 .exampleWithPadding {
-  background: transparent url('../img/flagSprites1x-s479625030c.png') no-repeat 10px -872px;
+  background: transparent url('../img/flagsSprite1x-s479625030c.png') no-repeat 10px -872px;
   width: 52px;
   height: 52px;
 }
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
   .exampleWithPadding {
-    background: transparent url('../img/flagSprites2x-s9a855cf705.png') no-repeat 10px -872px;
+    background: transparent url('../img/flagsSprite2x-s9a855cf705.png') no-repeat 10px -872px;
     background-size: 32px 2048px;
   }
 }
 {% endhighlight %}
+
+###That's it
+
+Automatic sprite generation using Compass considering all the factors can be quite complex, but if you follow this guide it will be easy and also easier to maintain.
+
+You you found any issues with this post, please [tweet me](https://twitter.com/verlok) and I'll fix it.
