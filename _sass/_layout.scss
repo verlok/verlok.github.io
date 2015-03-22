@@ -2,23 +2,21 @@
  * Site header
  */
 .site-header {
-    border-top: 5px solid $grey-color-dark;
-    border-bottom: 1px solid $grey-color-light;
+    font-family: $gotham-font-family;
+    background: $toolbar-background-color;
+    border-bottom: 5px solid $grey-color-dark;
     min-height: 56px;
+    color: $text-color-on-dark;
 
-    // Positioning context for the mobile navigation icon
-    position: relative;
-    
-    a:hover {
-        color: $brand-color;
+    .wrapper {
+        padding: $spacing-unit/2;
     }
-    
 }
 
 .site-title {
     
     float: left;
-    
+
     h1 {
         margin: 0;
     }
@@ -33,28 +31,51 @@
     font-size: 26px;
     line-height: 36px;
     display: inline-block;
+
+    .name {
+        color: white;
+    }
     &,
     &:visited {
-        color: $grey-color-dark;
+        color: $link-color;
     }
+
+    span {
+        position: relative;
+    }
+    span:after {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        z-index: 1;
+        background-image: linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0) 50%);
+    }
+
 }
 
 .site-nav {
     float: right;
     line-height: 56px;
+    font-size: 12px;
+    text-transform: uppercase;
     
     .menu-icon {
         display: none; 
     }
 
     .page-link {
-        color: $text-color;
+        padding: 10px;
+        background-color: $brand-color;
+        color: $text-color-on-dark;
         line-height: $base-line-height;
+        margin-left: $spacing-unit / 6;
+
 
         // Gaps between nav items, but not on the first one
         &:not(:first-child) {
             margin-left: 20px;
         }
+        
     }
     
     ul {
@@ -63,10 +84,6 @@
     }
     li {
         display: inline;
-        margin-left: $spacing-unit / 2;
-        &:first-child {
-            margin-left: 0;
-        }
     }
 }
 
@@ -76,14 +93,32 @@
  * Site footer
  */
 .site-footer {
-    border-top: 1px solid $grey-color-light;
+    font-family: $gotham-font-family;
+    background-color: $toolbar-background-color;
+    border-top: 5px solid $grey-color-dark;
     padding: $spacing-unit 0;
-}
+    color: $text-color-on-dark;
+    a {
+        color: $brand-color-on-dark;
+        .icon > svg path {
+            fill: $text-color-on-dark;
+        }
+        &:hover {
+            color: saturate($brand-color-on-dark, 25%);
+            .icon > svg path {
+                fill: saturate($brand-color-on-dark, 25%);
+            }
+        }
+    }
 
-.footer-heading {
-    display: none;
-    /*font-size: 18px;
-    margin-bottom: $spacing-unit / 2;*/
+    .text {
+        padding-left: $spacing-unit/2;
+        border-left: 2px solid #BBBDC0;
+        float:right;
+        width: -webkit-calc(45% - (#{$spacing-unit} / 2));
+        width:         calc(45% - (#{$spacing-unit} / 2));
+
+    }
 }
 
 .contact-list,
@@ -92,46 +127,22 @@
     margin-left: 0;
 }
 
-.footer-col-wrapper {
-    font-size: 15px;
-    color: $grey-color;
-    margin-left: -$spacing-unit / 2;
-    @extend %clearfix;
-}
-
-.footer-col {
-    float: left;
-    margin-bottom: $spacing-unit / 2;
-    padding-left: $spacing-unit / 2;
-}
-
-.footer-col-1 {
-    width: -webkit-calc(35% - (#{$spacing-unit} / 2));
-    width:         calc(35% - (#{$spacing-unit} / 2));
-}
-
-.footer-col-2 {
-    width: -webkit-calc(20% - (#{$spacing-unit} / 2));
-    width:         calc(20% - (#{$spacing-unit} / 2));
-}
-
-.footer-col-3 {
-    width: -webkit-calc(45% - (#{$spacing-unit} / 2));
-    width:         calc(45% - (#{$spacing-unit} / 2));
-}
-
-@include media-query($on-laptop) {
-    .footer-col-1,
-    .footer-col-2 {
-        width: -webkit-calc(50% - (#{$spacing-unit} / 2));
-        width:         calc(50% - (#{$spacing-unit} / 2));
+.contact-list {
+    .icon {
+        margin-right: .33em;
+        > svg path {
+            fill: $text-color;
+        }
     }
-
-    .footer-col-3 {
-        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-        width:         calc(100% - (#{$spacing-unit} / 2));
+    a:hover {
+        .icon {
+            > svg path {
+                fill: $link-color-hover;
+            }
+        }
     }
 }
+
 
 @include media-query($on-palm) {
     .footer-col {
@@ -148,6 +159,10 @@
  */
 .page-content {
     padding: $spacing-unit 0;
+
+    .intro {
+        margin-bottom: $spacing-unit;
+    }
 }
 
 .page-heading {
@@ -161,12 +176,7 @@
     > li {
         margin-bottom: $spacing-unit * 1.5;
     }
-    
-    .home & {
-        h2 {
-            line-height: 1;
-        }
-    }
+
 }
 
 .post-meta {

@@ -3,23 +3,31 @@
 ---
 @charset "utf-8";
 
+// Fonts
+$gotham-font-family: "Gotham", Helvetica, Arial, sans-serif;
+$base-font-family:   "Open Sans", Helvetica, Arial, sans-serif;
+$base-font-size:     16px;
+$small-font-size:    $base-font-size * 0.875;
+$base-line-height:   1.5;
 
-
-// Our variables
-$base-font-family: Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
-$small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
-
+// Space
 $spacing-unit:     30px;
 
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
+// Colors
+$toolbar-background-color: black;
+$text-color-on-dark:       #FFF;
+$text-color:               #111;
+$background-color:         #fdfdfd;
+$brand-color:              #8FC747;
+$brand-color-on-dark:      #91CD95;
+
+$link-color:               $brand-color;
+$link-color-hover:         saturate($brand-color, 15%);
+
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
+$grey-color-dark:  darken($grey-color, 15%);
 
 // Width of the content area
 $content-width:    800px;
