@@ -10,7 +10,7 @@ status: publish
 type: post
 published: true
 ---
-It was recently released the **SVGZR** Grunt Plugin, which makes super-easy to implement SVG icons in your website, with automatic PNG fallback for older <acronym title="Internet Explorer">IE</acronym> versions.
+It was recently released the **SVGZR** Grunt Plugin, which makes super-easy to implement SVG icons in your website, with automatic PNG fallback for older <abbr title="Internet Explorer">IE</abbr> versions.
 
 ![10-metro_ui_dock_icon_set___678_svg_icons_by_monkee98-d5deacy](/assets/10-metro_ui_dock_icon_set___678_svg_icons_by_monkee98-d5deacy.jpg)
 
