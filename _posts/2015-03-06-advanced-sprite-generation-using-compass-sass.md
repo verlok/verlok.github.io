@@ -8,9 +8,7 @@ tags: [spriting, sprite generation, compass, mixins]
 ---
 Spriting is a way to improve performance in your website by putting many images (or icons) in a single larger image, in order to make a single HTTP request instead of many. Here's how you can do sprites using Compass.
 
-## Creating sprites with Compass
-
-### The simple way
+## The simple way
 
 The simpler way to create a sprite with Compass requires you to import a folder of images in your project, then generate a class for each sprite. You can do that by using the following code:
 
@@ -38,7 +36,7 @@ Example of CSS output:
 
 This can be enough for your needs... but you want more, don't you?
 
-### The advanced way
+## The advanced way
 
 Skipping all the others way you can do sprites generation with Compass, I found out that if you have to do the following:
 
@@ -50,7 +48,7 @@ Skipping all the others way you can do sprites generation with Compass, I found 
 
 The only way to do spriting with Compass is to create your own mixins which use Compass base mixins under the hood.
 
-####Images and folders structure
+### Images and folders structure
 
 To have the images in single density, double density and maybe triple density, we need to provide the images in 1x, 2x and maybe 3x size.
 
@@ -80,7 +78,7 @@ And if we're were going to create also an **icons** sprite map, we'd have to cre
 
 Now let's take a look at the SASS partials you should create.
 
-####SASS partials
+### SASS partials
 
 To guarantee the maximum flexibility and the smallest build time, I suggest you to use the following:
 
@@ -93,7 +91,7 @@ To guarantee the maximum flexibility and the smallest build time, I suggest you 
 
 Let's see what to put in our partials, one by one.
 
-####_mixins.scss
+### _mixins.scss
 
 Here's some mixins you might want to include in your mixins file. You can find the explanation of what they do right in the code comments.
 
@@ -149,7 +147,7 @@ Optional parameters:
 }
 {% endhighlight %}
 
-####_variables.scss
+### _variables.scss
 
 This is the file where you define all the variables for your site, that you're going to use across all your scss files.
 
@@ -160,7 +158,7 @@ Here you should define the spacing between sprites in sprite map images.
 $spacing-sprites-generic: 10px;
 {% endhighlight %}
 
-####_flagsSprite.scss
+### _flagsSprite.scss
 
 This is the file where you define the variables and the mixins for your flag sprites.
 
@@ -179,7 +177,7 @@ $flagsSprite2xUrl: sprite-url($flagsSprite2xMap);
 }
 {% endhighlight %}
 
-####style.scss - standard usage
+### style.scss - standard usage
 
 If you don't need space around your sprite and you don't want Compass to generate box dimensions for you, you can simply do the following.
 
@@ -208,7 +206,7 @@ That will produce the following:
 }
 {% endhighlight %}
 
-####style.scss - with box size generation
+### style.scss - with box size generation
 
 If you want Compass to generate box dimensions for you, you should do the following.
 
@@ -240,7 +238,7 @@ That will produce the following:
 }
 {% endhighlight %}
 
-####style.scss - with offset management
+### style.scss - with offset management
 
 If you don't want Compass to generate box dimensions for you, but you want to use an offset inside the box, you should do the following.
 
@@ -271,7 +269,7 @@ That will produce the following:
 }
 {% endhighlight %}
 
-###That's it
+## That's it
 
 Automatic sprite generation using Compass considering all the factors can be quite complex, but if you follow this guide it will be easy and also easier to maintain.
 
