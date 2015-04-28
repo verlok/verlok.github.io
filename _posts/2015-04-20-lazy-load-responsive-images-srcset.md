@@ -6,7 +6,7 @@ categories:
 - development, libraries
 tags: [srcset, responsive images, lazy load]
 ---
-Is it possible to have **lazy loading** on **responsive images** today to have our images adapt to users screens and keep our website fast? YES. In this article, we'll see what markup we need to write and which Javascript libraries we're gonna need to do that.
+It's now possible (yes, today!) to have **lazy loading** on **responsive images** to make our images to adapt to users screens _and_ keep our website fast. YAY! \o/ In this article, we'll see what markup we need to write and which Javascript libraries we're gonna need to do that.
 
 ## Responsive lazy what?
 
@@ -49,10 +49,10 @@ Here's the markup you're gonna need to lazy load a responsive image.
         100vw">
 {% endhighlight %}
 
-Note that we're using the `img` HTML tag and not the `picture` tag for 2 reasons:
+Note that we're using the `img` HTML tag and **not** the `picture` tag for 2 reasons:
 
 1. `picture` is not necessary because we're not changing the image ratio
-2. Lazy Load only works on `img` tags (now, April 2015)
+2. Lazy Load only works on `img` tags
 
 
 ### Script inclusion
@@ -125,6 +125,6 @@ Fixes Firefox anomaly during images load time
 }
 {% endhighlight %}
 
-## That's pretty much it
+## That's it!
 
-[Take a look at the demo](http://verlok.github.io/img_srcset_lazyload) of what we achieved here. Responsive images and lazy loading all in one. Isn't it cool?
+It was very easy, wasn't it? If you didn't yet, [take a look at the demo](http://verlok.github.io/img_srcset_lazyload) of what we achieved here.
