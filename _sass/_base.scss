@@ -5,7 +5,7 @@
     font-family: "Gotham";
     src: url('../fonts/gotham-book.woff2') format('woff2'), /* Super Modern Browsers */
          url('../fonts/gotham-book.woff') format('woff'), /* Pretty Modern Browsers */
-         url('../fonts/gotham-book.ttf')  format('truetype'); /* Safari, Android, iOS */
+         url('../fonts/gotham-book.ttf') format('truetype'); /* Safari, Android, iOS */
 }
 
 
@@ -156,6 +156,21 @@ pre {
     }
 }
 
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+td, th {
+    border: 1px solid $tables-border-color;
+    padding: .3em;
+    vertical-align: top;
+    font-size: 90%;
+}
+th {
+    text-align: left;
+    background-color: $grey-color-light;
+    //color: white;
+}
 
 
 /**
