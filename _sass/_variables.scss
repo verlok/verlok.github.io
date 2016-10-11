@@ -1,0 +1,44 @@
+
+/*
+075C8C
+1170A6
+D90009
+EBE500
+8C0E13
+*/
+
+
+// Fonts
+$brandon-font-family: Brandon, Helvetica, Arial, sans-serif;
+$base-font-family:   Brandon, Helvetica, Arial, sans-serif;
+$base-font-size:     16px;
+$small-font-size:    $base-font-size * 0.875;
+$base-line-height:   1.5;
+
+// Space
+$spacing-unit:     30px;
+
+// Colors
+$toolbar-background-color: black;
+$text-color-on-dark:       #FFF;
+$text-color:               #111;
+$background-color:         #fdfdfd;
+$brand-color:              #D90009;
+$brand-color-on-dark:      lighten($brand-color, 15%);
+
+$link-color:               #1170A6;
+$link-color-on-dark:       lighten($link-color, 15%);
+$link-color-hover:         saturate($link-color, 15%);
+
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 15%);
+
+// Width of the content area
+$content-width:    800px;
+
+$on-palm:          600px;
+$on-laptop:        800px;
+
+$tables-border-color:    $grey-color;

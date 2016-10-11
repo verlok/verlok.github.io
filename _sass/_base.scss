@@ -1,15 +1,4 @@
 /**
- * Defining Gotham font
- */
-@font-face {
-    font-family: "Gotham";
-    src: url('../fonts/gotham-book.woff2') format('woff2'), /* Super Modern Browsers */
-         url('../fonts/gotham-book.woff') format('woff'), /* Pretty Modern Browsers */
-         url('../fonts/gotham-book.ttf') format('truetype'); /* Safari, Android, iOS */
-}
-
-
-/**
  * Reset some basic elements
  */
 body, h1, h2, h3, h4, h5, h6,
@@ -28,7 +17,7 @@ body {
     font-family: $base-font-family;
     font-size: $base-font-size;
     line-height: $base-line-height;
-    font-weight: 300;
+    font-weight: 400;
     color: $text-color;
     background-color: $background-color;
     -webkit-text-size-adjust: 100%;
@@ -91,19 +80,18 @@ li {
  * Headings
  */
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 300;
+    font-weight: 500;
     //line-height: 1;
-    font-family: $gotham-font-family;
+    font-family: $brandon-font-family;
 }
-
-
 
 /**
  * Links
  */
 a {
     color: $link-color;
-    text-decoration: none;
+    text-decoration: underline;
+    //background-image: url('data:image/svg+xml;utf8,<svg><line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_1" y2="16" x2="20" y1="16" x1="0" stroke="#000" fill="none"/></svg>');
 
     &:hover {
         color: $link-color-hover;
@@ -121,7 +109,7 @@ blockquote {
     padding-left: $spacing-unit / 2;
     font-size: 18px;
     letter-spacing: -1px;
-    font-style: italic;
+    //font-style: regular;
 
     > :last-child {
         margin-bottom: 0;

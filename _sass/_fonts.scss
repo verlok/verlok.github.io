@@ -1,0 +1,52 @@
+/**
+ * Defining Gotham font
+ */
+@font-face {
+    font-family: "Gotham";
+    src: url('../fonts/gotham-book.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/gotham-book.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/gotham-book.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+
+/**
+ * Defining Brandon font
+ */
+/*@font-face{
+	font-family:'Brandon';
+	src:url(../fonts/Brandon_txt_light-webfont-bd513b4aa806e63e38db401d86e498ee74c91b072af38ec2430b841eceea4fc2.woff2) format("woff2"),
+		url(../fonts/Brandon_txt_light-webfont-3aaacaa106aa17b85f62db7e537ad8690ee1b7e80310309ec4551f5b5486fdec.woff) format("woff");
+		font-weight:300;
+		font-style:normal
+	}*/
+@font-face{
+	font-family:'Brandon';
+	src:url(../fonts/Brandon_txt_reg-webfont-9dda42bc452d60e586ece0fb57ad1c0f02417cb1dab483290aab760fa04ca84b.woff2) format("woff2"),
+		url(../fonts/Brandon_txt_reg-webfont-4a6ef3c8cbf0f9c07e56b9c736cb16743f52371ec25286cbcecf8552a7951d42.woff) format("woff");
+		font-weight:400;
+		font-style:normal
+	}
+    /*
+@font-face{
+	font-family:'Brandon';
+	src:url(../fonts/Brandon_txt_med-webfont-9370fe3938793e33471207eb9c41dadcd97cffac905848708a004d9a316d1948.woff2) format("woff2"),
+		url(../fonts/Brandon_txt_med-webfont-040bb0ae25ad794ffa8078f9da28dc96d6386ae95b34fd1e26b91574555133da.woff) format("woff");
+		font-weight:500;
+		font-style:normal
+	}
+    */
+@font-face{
+	font-family:'Brandon';
+	src:url(../fonts/Brandon_txt_bld-webfont-a323a45dedd9f441a496b3d6e40624e49537d3edbed5bec33b6963cc173cf1c1.woff2) format("woff2"),
+		url(../fonts/Brandon_txt_bld-webfont-51cbc2efe11a6bfcb16ffe667930c3d245f6c94722047581367596f0aa85c1e4.woff) format("woff");
+		font-weight:700;
+		font-style:normal
+	}
+/*
+@font-face{
+	font-family:'Brandon';
+	src:url(../fonts/Brandon_txt_blk-webfont-724a8da66e7333dc9a912c02ec10bd00f49f95850e60903c8f5faa0ec3d86867.woff2) format("woff2"),
+		url(../fonts/Brandon_txt_blk-webfont-ccd6e3ef342bf7c93bcbffc95ac1b693bda0db3c2c151d56070428954d95a6db.woff) format("woff");
+		font-weight:900;
+		font-style:normal
+	}
+*/
