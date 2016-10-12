@@ -198,12 +198,8 @@
 
 .post-title {
     color: $brand-color;
-    font-size: 42px;
-    letter-spacing: -1px;
-
-    @include media-query($on-laptop) {
-        font-size: 36px;
-    }
+    font-size: $font-size-h1*2;
+    margin-top: 0;
 }
 
 .post-content {
