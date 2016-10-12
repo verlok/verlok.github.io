@@ -81,7 +81,7 @@ li {
  */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 500;
-    //line-height: 1;
+    line-height: $base-line-height;
     font-family: $brandon-font-family;
 }
 
@@ -123,14 +123,12 @@ blockquote {
  */
 pre,
 code {
-    font-size: 15px;
     border: 1px solid $grey-color-light;
-    border-radius: 3px;
-    background-color: #eef;
+    border-radius: .2em;
 }
 
 code {
-    padding: 1px 5px;
+    padding: 0 .2em;
 }
 
 pre {
@@ -147,6 +145,7 @@ pre {
 table {
     border-collapse: collapse;
     width: 100%;
+    margin-bottom: $spacing-unit/2;
 }
 td, th {
     border: 1px solid $tables-border-color;

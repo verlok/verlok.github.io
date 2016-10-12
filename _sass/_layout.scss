@@ -29,7 +29,7 @@
 .site-home-link {
     letter-spacing: -1px;
     font-size: 26px;
-    line-height: 36px;
+    //line-height: 36px;
     display: inline-block;
     color: $brand-color;
     text-decoration: none;
@@ -57,7 +57,7 @@
 
 .site-nav {
     float: right;
-    line-height: 56px;
+    line-height: $base-line-height*3.5;
     font-size: 12px;
     text-transform: uppercase;
 
@@ -208,7 +208,7 @@
     color: $brand-color;
     font-size: 42px;
     letter-spacing: -1px;
-    line-height: 1;
+    line-height: 1em;
 
     @include media-query($on-laptop) {
         font-size: 36px;
@@ -220,7 +220,7 @@
 
     h2 {
         margin-top: 1.5em;
-        font-size: 32px;
+        font-size: $base-font-size * 1.5;
 
         @include media-query($on-laptop) {
             font-size: 28px;
@@ -229,7 +229,7 @@
 
     h3 {
         margin-top: 1.5em;
-        font-size: 22px;
+        font-size: $base-font-size * 1.3;
         text-transform: uppercase;
 
         @include media-query($on-laptop) {
@@ -238,7 +238,7 @@
     }
 
     h4 {
-        font-size: 20px;
+        font-size: $base-font-size * 1.1;
 
         @include media-query($on-laptop) {
             font-size: 18px;
