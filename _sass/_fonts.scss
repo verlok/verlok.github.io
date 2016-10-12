@@ -1,14 +1,4 @@
 /**
- * Defining Gotham font
- */
-@font-face {
-    font-family: "Gotham";
-    src: url('../fonts/gotham-book.woff2') format('woff2'), /* Super Modern Browsers */
-         url('../fonts/gotham-book.woff') format('woff'), /* Pretty Modern Browsers */
-         url('../fonts/gotham-book.ttf') format('truetype'); /* Safari, Android, iOS */
-}
-
-/**
  * Defining Brandon font
  */
 /*@font-face{
@@ -25,15 +15,15 @@
 		font-weight:400;
 		font-style:normal
 	}
-    /*
+
 @font-face{
 	font-family:'Brandon';
 	src:url(../fonts/Brandon_txt_med-webfont-9370fe3938793e33471207eb9c41dadcd97cffac905848708a004d9a316d1948.woff2) format("woff2"),
 		url(../fonts/Brandon_txt_med-webfont-040bb0ae25ad794ffa8078f9da28dc96d6386ae95b34fd1e26b91574555133da.woff) format("woff");
-		font-weight:500;
+		font-weight:700;
 		font-style:normal
 	}
-    */
+    /*
 @font-face{
 	font-family:'Brandon';
 	src:url(../fonts/Brandon_txt_bld-webfont-a323a45dedd9f441a496b3d6e40624e49537d3edbed5bec33b6963cc173cf1c1.woff2) format("woff2"),
@@ -41,7 +31,7 @@
 		font-weight:700;
 		font-style:normal
 	}
-/*
+
 @font-face{
 	font-family:'Brandon';
 	src:url(../fonts/Brandon_txt_blk-webfont-724a8da66e7333dc9a912c02ec10bd00f49f95850e60903c8f5faa0ec3d86867.woff2) format("woff2"),

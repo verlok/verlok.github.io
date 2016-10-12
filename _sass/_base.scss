@@ -82,7 +82,6 @@ li {
 h1, h2, h3, h4, h5, h6 {
     font-weight: 500;
     line-height: $base-line-height;
-    font-family: $brandon-font-family;
 }
 
 /**
@@ -90,11 +89,24 @@ h1, h2, h3, h4, h5, h6 {
  */
 a {
     color: $link-color;
-    text-decoration: underline;
-    //background-image: url('data:image/svg+xml;utf8,<svg><line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_1" y2="16" x2="20" y1="16" x1="0" stroke="#000" fill="none"/></svg>');
+    text-decoration: none;
+    //background-image: -webkit-linear-gradient(top, currentColor 75%, currentColor 75%);
+    background-image: linear-gradient(to bottom, currentColor 75%, currentColor 75%);
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+    background-repeat: repeat-x;
+    background-size: 1px 1px;
+    background-position: 0 90%;
 
     &:hover {
         color: $link-color-hover;
+        //background-image: -webkit-linear-gradient(top, currentColor 75%, currentColor 75%);
+        background-image: linear-gradient(to bottom, currentColor 75%, currentColor 75%);
+    }
+
+    .site-header &,
+    .site-footer & {
+        text-shadow: none;
+        background-image: none;
     }
 }
 

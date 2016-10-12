@@ -2,7 +2,6 @@
  * Site header
  */
 .site-header {
-    font-family: $brandon-font-family;
     background: $toolbar-background-color;
     border-bottom: 5px solid $brand-color;
     min-height: 56px;
@@ -96,7 +95,6 @@
  * Site footer
  */
 .site-footer {
-    font-family: $brandon-font-family;
     background-color: $toolbar-background-color;
     border-top: 5px solid $brand-color;
     padding: $spacing-unit 0;
@@ -191,7 +189,7 @@
 
 .post-link {
     color: $brand-color;
-    display: block;
+    //display: block;
     font-size: 24px;
 }
 
