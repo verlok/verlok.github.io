@@ -1,17 +1,17 @@
 ---
 layout: post
-title: Responsive images, `img` with `srcset` and `sizes` in a responsive layout
+title: Responsive images? You don't need the picture tag
 date: 2015-12-21 07:54:00 +01:00
 categories:
 - techniques
 - experiments
 tags: [responsive images, picture, tag, responsive design]
 ---
-We have a responsive website layout and we want to have responsive images sized at 100% width at every viewport width, and we want them optimized for the most common resolutions, but **the images are inside a container which is not always as wide as the viewport**. Therefore, **images cannot be sized relatively to a percentage of the viewport as we do with `vw` unit**. Do we need to use the `picture` tag, or the `img` tag with its `srcset` and `sizes` attributes can do the job alone? I did some researches and POCs and I found out that **`img` can do it**, and I'm going to explain how in this post.
+We have a responsive website layout, images are sized at 100% of the container, but **the container is not always as wide as the viewport**. Therefore, **we can't size the images using `vw`**. Do we need to use the `picture` tag, or the `img` tag is enough? The result is that **`img` can do it**, using the `sizes` and `srcset` attributes.
 
 ## The images layout
 
-Images in this layout are as follows:
+The images in the layout are wide as follows:
 
 | Viewport Width        | Images width     | Container width          |
 |-----------------------|------------------|--------------------------|
@@ -20,13 +20,11 @@ Images in this layout are as follows:
 | From 1024px to 1279px | 1/4 of container | 100% with 30px padding   |
 | From 1280px up        | 1/4 of container | 1280px with 30px padding |
 
-## The problem I thought existed
+## Units we can use in the `sizes` attribute
 
 When using the `img` tag with `srcset` and `sizes`, we can specify how wide your images will look at different media queries, but as I could found so few articles that explains it, I thought we could only specify the widths using the viewport width (`vw`) unit. But I was wrong...
 
-## The solution I found
-
-Contrarily of what I thought, we can specify the `img` `sizes` attribute using **any length**, so we can use the `vw` unit when the image is an exact percentage of the viewport wide, and **using the CSS `calc()` function** when we have to deal with pixel `padding`s or container `max-width`s.
+Contrarily of what I thought, we can specify the `img`'s `sizes` attribute using **any length**, so we can use the `vw` unit when the image is an exact percentage of the viewport wide, and **using the CSS `calc()` function** when we have to deal with pixel `padding`s or container `max-width`s.
 
 > If you need a more extensive explication, please read [srcset and sizes](https://ericportis.com/posts/2014/srcset-sizes/) by Eric Portis, in my opinion the best article about using `img` with `srcset` and `sizes`.
 
