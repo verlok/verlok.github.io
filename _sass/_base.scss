@@ -2,7 +2,7 @@
  * Reset some basic elements
  */
 body, h1, h2, h3, h4, h5, h6,
-p, blockquote, pre, hr,
+p, blockquote, pre, hr, table,
 dl, dd, ol, ul, figure {
     margin: 0;
     padding: 0;
@@ -27,10 +27,14 @@ body {
  * Set `margin-bottom` to maintain vertical rhythm
  */
 h1, h2, h3, h4, h5, h6,
-p, blockquote, pre,
+p, blockquote, pre, table,
 ul, ol, dl, figure,
 %vertical-rhythm {
     margin-bottom: $spacing-unit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: $spacing-unit*2;
 }
 
 
@@ -170,7 +174,6 @@ pre {
 table {
     border-collapse: collapse;
     width: 100%;
-    margin-bottom: $spacing-unit/2;
 }
 td, th {
     border: 1px solid $tables-border-color;
