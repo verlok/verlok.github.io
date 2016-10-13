@@ -8,4 +8,4 @@ categories:
 tags: [accessibility, techniques, ecommerce, speech]
 ---
 
-On October 6th 2016 I spoke about **5 tips to code accessible e-commerce websites** at the [Fronteers Conference 2016 Jam Session](https://fronteers.nl/congres/2016/jam-session) in Amsterdam. [Here are my slides](goo.gl/FLi6Wm). Video coming soon. Maybe also a blog post :)
+On October 6th 2016 I spoke about **5 tips to code accessible e-commerce websites** at the [Fronteers Conference 2016 Jam Session](https://fronteers.nl/congres/2016/jam-session) in Amsterdam. [Here are my slides](https://goo.gl/FLi6Wm). Video coming soon. Maybe also a blog post :)
