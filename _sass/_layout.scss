@@ -178,6 +178,10 @@
     list-style: none;
 }
 
+.post-list-title {
+    margin-bottom: $spacing-unit / 2;
+}
+
 .post-meta {
     color: $grey-color;
 }
@@ -185,6 +189,7 @@
 .post-link {
     color: $brand-color;
     font-size: 24px;
+    background: none;
 }
 
 /**
