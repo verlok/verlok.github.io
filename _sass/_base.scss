@@ -110,18 +110,20 @@ h1 {
 /**
  * Links
  */
-a {
-    color: $link-color;
-    text-decoration: none;
-    background-image: linear-gradient(to bottom, currentColor, currentColor);
-    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
-    background-repeat: repeat-x;
-    background-size: 1px 1px;
-    background-position: 0 90%;
+ a {
+     color: $link-color;
+     text-decoration: none;
+     background-image: linear-gradient(to bottom, currentColor, currentColor);
+     text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+     background-repeat: no-repeat;
+     background-size: 100% 1px;
+     background-position: right 90%;
+     transition: background-size .3s;
 
-    &:hover {
-        color: $link-color-hover;
-    }
+     &:hover {
+         background-size: 80% 1px;
+         background-position: right 90%;
+     }
 
     .site-header &,
     .site-footer & {
