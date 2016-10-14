@@ -121,8 +121,6 @@ a {
 
     &:hover {
         color: $link-color-hover;
-        //background-image: -webkit-linear-gradient(top, currentColor 75%, currentColor 75%);
-        background-image: linear-gradient(to bottom, currentColor, currentColor);
     }
 
     .site-header &,

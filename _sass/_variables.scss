@@ -25,7 +25,7 @@ $brand-color-on-dark:      lighten($brand-color, 15%);
 
 $link-color:               #1170A6;
 $link-color-on-dark:       lighten($link-color, 15%);
-$link-color-hover:         saturate($link-color, 15%);
+$link-color-hover:         $link-color;
 
 
 $grey-color:       #828282;
