@@ -35,8 +35,6 @@
 
 .site-home-link {
     letter-spacing: -1px;
-    font-size: 26px;
-    //line-height: 36px;
     display: inline-block;
     color: $brand-color;
     text-decoration: none;
@@ -100,15 +98,6 @@
     color: $text-color-on-dark;
     a {
         color: $brand-color-on-dark;
-        .icon > svg path {
-            fill: $text-color-on-dark;
-        }
-        &:hover {
-            color: saturate($brand-color-on-dark, 25%);
-            .icon > svg path {
-                fill: saturate($brand-color-on-dark, 25%);
-            }
-        }
     }
 
     .text {
@@ -139,11 +128,16 @@
     }
 }
 
-.contact-page {
-    .icon {
-        margin-right: .2em;
+.contact-list {
+    a {
         position: relative;
+        margin-left: 25px;
+    }
+    .icon {
+        position: absolute;
+        margin-right: .2em;
         top: -2px;
+        left: -25px;
         > svg path {
             fill: $text-color;
         }
@@ -152,7 +146,7 @@
     a:hover {
         .icon {
             > svg path {
-                fill: $link-color-hover;
+                fill: currentColor;
             }
         }
     }
