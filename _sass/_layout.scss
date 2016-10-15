@@ -207,3 +207,16 @@
 .post-content {
     margin-bottom: $spacing-unit;
 }
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pagination-pageNumber {
+    flex-grow: 1;
+}
+
+.pagination-previous {
+    margin-right: $spacing-unit;
+}

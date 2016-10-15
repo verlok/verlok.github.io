@@ -12,6 +12,7 @@ github_username:  verlok
 markdown: kramdown
 exclude: [downloads, examples, projects, vintage]
 include: [.htaccess]
+paginate: 5
 defaults:
   -
     scope:
@@ -19,3 +20,4 @@ defaults:
       type: "posts" # previously `post` in Jekyll 2.2.
     values:
       permalink: /:title/
+gems: [jekyll-paginate]
