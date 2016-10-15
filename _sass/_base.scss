@@ -1,13 +1,26 @@
 /**
  * Reset some basic elements
  */
-body, h1, h2, h3, h4, h5, h6,
-p, blockquote, pre, hr, table,
-dl, dd, ol, ul, figure {
+blockquote,
+body,
+dd,
+dl,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+ol,
+p,
+pre,
+table,
+ul {
     margin: 0;
     padding: 0;
 }
-
 /**
  * Basic styling
  */
@@ -20,29 +33,39 @@ body {
     background-color: $background-color;
     -webkit-text-size-adjust: 100%;
 }
-
-
-
 /**
  * Set `margin-bottom` to maintain vertical rhythm
  */
-h1, h2, h3, h4, h5, h6,
-p, blockquote, pre, table,
-ul, ol, dl, figure,
-%vertical-rhythm {
+%vertical-rhythm,
+blockquote,
+dl,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ol,
+p,
+pre,
+table,
+ul {
     margin-bottom: $spacing-unit;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin-top: $spacing-unit * 2;
 }
 
 h2:first-of-type {
     margin-top: 0;
 }
-
-
-
 /**
  * Images
  */
@@ -50,9 +73,6 @@ img {
     max-width: 100%;
     vertical-align: middle;
 }
-
-
-
 /**
  * Figures
  */
@@ -63,13 +83,11 @@ figure > img {
 figcaption {
     ///
 }
-
-
-
 /**
  * Lists
  */
-ul, ol {
+ol,
+ul {
     margin-left: $spacing-unit;
     margin-top: $spacing-unit;
     margin-bottom: $spacing-unit;
@@ -79,12 +97,15 @@ ul, ol {
         margin-bottom: 0;
     }
 }
-
 /**
  * Headings
  */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     font-weight: 700;
+
     .site-header & {
         font-weight: 400;
     }
@@ -94,46 +115,46 @@ h4 {
     font-size: $base-font-size * 1.0;
     line-height: $base-line-height * 1.0;
 }
+
 h3 {
     font-size: $base-font-size * 1.25;
     line-height: $base-line-height * 1.1;
 }
+
 h2 {
     font-size: $base-font-size * 1.5;
     line-height: $base-line-height * 1.2;
 }
+
 h1 {
     font-size: $base-font-size * 1.9;
     line-height: $base-line-height * 1.4;
 }
-
 /**
  * Links
  */
- a {
-     color: $link-color;
-     text-decoration: none;
-     background-image: linear-gradient(to bottom, currentColor, currentColor);
-     text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
-     background-repeat: no-repeat;
-     background-size: 100% 1px;
-     background-position: right 90%;
-     transition: background-size .3s;
+a {
+    color: $link-color;
+    text-decoration: none;
+    background-image: linear-gradient(to bottom, currentColor, currentColor);
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+    background-repeat: no-repeat;
+    background-size: 100% 1px;
+    background-position: center 90%;
+    transition: all 0.1s;
 
-     &:hover {
-         background-size: 80% 1px;
-         background-position: right 90%;
-     }
+    &:focus,
+    &:hover {
+        background-size: 90% 1px;
+        //background-position: center calc(90% + 1px);
+    }
 
-    .site-header &,
-    .site-footer & {
+    .site-footer &,
+    .site-header & {
         text-shadow: none;
         background-image: none;
     }
 }
-
-
-
 /**
  * Blockquotes
  */
@@ -144,25 +165,21 @@ blockquote {
     font-size: 18px;
     letter-spacing: -1px;
     //font-style: regular;
-
     > :last-child {
         margin-bottom: 0;
     }
 }
-
-
-
 /**
  * Code formatting
  */
-pre,
-code {
+code,
+pre {
     border: 1px solid $grey-color-light;
-    border-radius: .2em;
+    border-radius: 0.2em;
 }
 
 code {
-    padding: 0 .2em;
+    padding: 0 0.2em;
 }
 
 pre {
@@ -180,44 +197,38 @@ table {
     border-collapse: collapse;
     width: 100%;
 }
-td, th {
+
+td,
+th {
     border: 1px solid $tables-border-color;
-    padding: .3em;
+    padding: 0.3em;
     vertical-align: top;
     font-size: 90%;
 }
+
 th {
     text-align: left;
     background-color: $grey-color-light;
     //color: white;
 }
-
-
-
 /**
  * Clearfix
  */
 %clearfix {
-
     &:after {
         content: "";
         display: table;
         clear: both;
     }
 }
-
-
-
 /**
  * Icons
  */
 .icon {
-
     > svg {
         display: inline-block;
         width: 16px;
         height: 16px;
         vertical-align: middle;
     }
-
 }
