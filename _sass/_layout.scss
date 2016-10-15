@@ -59,6 +59,7 @@
         transition: opacity 0.3s;
     }
 
+    &:focus,
     &:hover {
         span:after {
             opacity: 0;
@@ -167,6 +168,22 @@
 .page-content {
     .intro {
         margin-bottom: $spacing-unit;
+    }
+    a {
+        background-image: linear-gradient(to bottom, currentColor, currentColor);
+        text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+        background-repeat: no-repeat;
+        background-size: calc(100% - .5em) 1px;
+        background-position: center 90%;
+        transition: all 0.1s;
+
+        &:focus,
+        &:hover {
+            background-color: $link-background-on-hover;
+            animation: linkHover .5s ease-out alternate infinite;
+            //background-size: 100% 1px;
+            //background-position: center calc(90% + 1px);
+        }
     }
 }
 
