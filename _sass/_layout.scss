@@ -30,7 +30,9 @@
 }
 
 .site-title {
-
+    h1 {
+        margin-bottom: $spacing-unit/2;
+    }
 }
 
 .site-home-link {
@@ -102,7 +104,7 @@
 .site-footer {
     background-color: $toolbar-background-color;
     border-top: 5px solid $brand-color;
-    padding: $spacing-unit 0;
+    padding: $spacing-unit/2 0;
     color: $text-color-on-dark;
     a {
         color: $brand-color-on-dark;
