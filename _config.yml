@@ -12,7 +12,7 @@ github_username:  verlok
 markdown: kramdown
 exclude: [downloads, examples, projects, vintage]
 include: [.htaccess]
-paginate: 5
+paginate: 10
 defaults:
   -
     scope:
