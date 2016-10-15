@@ -127,16 +127,21 @@
     }
 }
 
-.contact-list,
-.social-media-list {
-    list-style: none;
-    margin-left: 0;
-    li {
-        margin-bottom: .33em;
-    }
+.contact-lists {
+    display: flex;
+}
+
+.contact-list--social {
+    margin-right: $spacing-unit;
 }
 
 .contact-list {
+    list-style: none;
+    margin-left: 0;
+    margin-top: 0;
+    li {
+        margin-bottom: .33em;
+    }
     a {
         position: relative;
         margin-left: 25px;
@@ -159,8 +164,6 @@
         }
     }
 }
-
-
 
 /**
  * Page content
@@ -185,10 +188,6 @@
             //background-position: center calc(90% + 1px);
         }
     }
-}
-
-.page-heading {
-    display: none;
 }
 
 .post-list {

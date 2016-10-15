@@ -2,9 +2,11 @@
 layout: default
 ---
 <div class="home">
-    <h1 class="page-heading">Blog</h1>
-    <p class="intro">Hello, <a href="/about" title="About Andrea Verlicchi">this is me</a> and I wrote...</p>
+    <h1 class="visuallyHidden">Andrea Verlicchi's Blog</h1>
+
+    <!-- Posts list -->
     <section class="post-list">
+        <h2 class="visuallyHidden">Latest posts</h2>
         {% for post in paginator.posts %}
         <article>
             <h2 class="post-list-title">
@@ -18,15 +20,12 @@ layout: default
     <!-- Pagination links -->
     <section class="pagination">
         <h2 class="visuallyHidden">Pagination</h2>
-
         <span class="pagination-pageNumber">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
-
         {% if paginator.previous_page %}
             <a href="{{ paginator.previous_page_path }}" class="pagination-previous">&larr; Newer posts</a>
         {% else %}
             <span class="pagination-previous"><span class="visuallyHidden">No newer posts</span></span>
         {% endif %}
-
         {% if paginator.next_page %}
             <a href="{{ paginator.next_page_path }}" class="pagination-next">Older posts &rarr;</a>
         {% else %}
