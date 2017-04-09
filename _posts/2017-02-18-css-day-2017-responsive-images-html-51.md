@@ -16,4 +16,14 @@ I will also take a sneak peek on how to generate the right size for your images 
 
 Sounds interesting? See you [there](http://2017.cssday.it)! (and be sure to stay in Romagna for the week-end, the seaside is not so far, and I'm sure the weather will be just right)
 
-Slides will be posted here after the speech.
+Here are the slides of my talk, from my <a href="//www.slideshare.net/verlok">SlideShare</a>:
+
+<div class="slideshareWrapper">
+    <iframe id="ssFrame" width="100%" src="//www.slideshare.net/slideshow/embed_code/key/cxLve2h1ruQvPK"  frameborder="0" allowfullscreen></iframe>
+</div>
+
+They are also available as video, where you can **watch the videos embedded in the presentation** and appreciate the animations.
+
+<div class="videoWrapper">
+    <iframe id="ytFrame" width="100%" height="auto" src="https://www.youtube.com/embed/3CZjm4dqh1Y" frameborder="0" allowfullscreen></iframe>
+</div>
