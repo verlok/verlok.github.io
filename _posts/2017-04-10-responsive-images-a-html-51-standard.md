@@ -71,7 +71,7 @@ We can define images of these sizes:
 | 1x                       | 300 x 380 | 600 x 760   | 1200 x 1520 |
 | 2x                       | 600 x 760 | 1200 x 1520 | 2400 x 3040 |
 
-As you can see, we're using 4 different image sizes. I advice to name the images with their width on the name, since it's much clearer to understand.
+As you can see, we're using 4 different image sizes. I would advice to name the images with their width on the name, since it's much clearer to understand.
 
 - 300 x 380 - shirt_300w.jpg
 - 600 x 760 - shirt_600w.jpg
@@ -88,17 +88,15 @@ To markup this in our HTML, we must do:
           shirt_2400w.jpg 2400w"
   alt="A beautiful shirt"
   sizes="(min-width: 1200px) 1200px,
-    (min-width: 600px) 600px,
-    300px">
+         (min-width: 600px) 600px,
+         300px">
 ```
 
-TODO: CHECK THE ORDER IN `SIZES`
+With this markup, the browser knows the size that the image will take on the screen (throuh `sizes`) and all the available image sources that we prepared for our users (through `sizes`). 
 
-
+At this point, the browser will choose what image source to use based on this information and the information it knows about our user, such as screen density, cached files, connection speed, etc.
 
 
 ## Browser support
 
-The `srcset` attribute was known to be supported across all browsers except IE 11, but a [bug](https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/7778808/) in MS Edge 14 was recently discovered.
-
-Fortunately, there's an official [polyfill](https://github.com/scottjehl/picturefill/) which makes everything work properly on every browser.
+The `srcset` attribute is supported across all browsers except Internet Explorer. Fortunately, there's an official [polyfill](https://github.com/scottjehl/picturefill/) that we can use to emulate native browser behaviour on legacy browsers.
