@@ -1,3 +1,5 @@
+# Responsive images - an HTML 5.1 standard
+
 It's official. Responsive images are a [W3C recommendation](https://www.w3.org/TR/html51/) since November 2016, featuring the brand new `picture` tag and new attributes for the `img` tag: `srcset` and `sizes`.
 
 ## Why responsive images?
