@@ -10,7 +10,7 @@ url: "http://www.andreaverlicchi.eu" # the base hostname & protocol for your sit
 twitter_username: verlok
 github_username:  verlok
 markdown: kramdown
-exclude: [downloads, examples, projects, vintage]
+exclude: [examples, vintage]
 include: [.htaccess]
 paginate: 10
 defaults:
