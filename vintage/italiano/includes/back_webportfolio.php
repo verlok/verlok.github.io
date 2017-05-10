@@ -1,1 +1,0 @@
-<span class="ritorno">&lt; torna a <a href="/italiano/home.php" class="cellaRitornoLink">web portfolio</a></span>
