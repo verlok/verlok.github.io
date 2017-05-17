@@ -14,6 +14,7 @@ markdown: kramdown
 exclude: [examples]
 include: [.htaccess]
 paginate: 10
+google_analytics: UA-26756203-1
 defaults:
   -
     scope:
