@@ -4,7 +4,7 @@ title: About
 date: '2012-09-23 22:52:10 +0200'
 date_gmt: '2012-09-23 21:52:10 +0200'
 ---
-Hello, I'm Andrea and this is my face.
+Hello, I'm Andrea, nice to meet you.
 
 I started coding on an [MSX Computer](http://en.wikipedia.org/wiki/MSX) when I was 9, then studied informatics, started working as a programmer at 19, realized that I loved the web and started working as a web developer at 21, specialized on the front-end at 29. Now I'm 36 and I work as **front-end architect** (or guide) at [Yoox Net-a-Porter Group](http://www.ynap.com).
 
