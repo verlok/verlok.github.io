@@ -11,8 +11,11 @@ EBE500
 $spacing-unit:       26px;
 
 // Fonts
-$base-font-family:   Brandon, sans-serif;
+$base-font-family:   Brandon, "Helvetica Neue", Helvetica, Arial, sans-serif;
 $base-font-size:     18px;
+$base-font-weight: 400 !default;
+$base-line-height: 1.5 !default;
+$small-font-size:  $base-font-size * 0.875 !default;
 
 // Colors
 $toolbar-background-color: black;
