@@ -138,7 +138,8 @@ And that's it! The smoke animation works perfectly on modern browsers!
 
 Here's the result:
 
-<iframe src="/examples/css3-only-smoke-animation.html" width="100%" height="250"></iframe>
+<iframe class="lazy" height='265' scrolling='no' title='CSS 3 only Smoke animation' data-src='//codepen.io/verlok/embed/nLsdB/?height=265&amp;theme-id=0&amp;default-tab=css,result&amp;embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/verlok/pen/nLsdB/'>CSS 3 only Smoke animation</a> by Andrea Verlicchi (<a href='http://codepen.io/verlok'>@verlok</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
 
 If you liked this explanation, please share this post!
 
