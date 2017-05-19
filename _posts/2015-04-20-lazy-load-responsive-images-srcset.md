@@ -49,10 +49,7 @@ Here's the markup you're gonna need to lazy load a responsive image.
         100vw">
 {% endhighlight %}
 
-Note that we're using the `img` HTML tag and **not** the `picture` tag for 2 reasons:
-
-1. `picture` is not necessary because we're not changing the image ratio
-2. Lazy Load only works on `img` tags
+Note that we're using the `img` HTML tag and **not** the `picture`. The latter is not necessary because we're not changing the image ratio in this case.
 
 
 ### Script inclusion
