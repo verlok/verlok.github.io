@@ -10,3 +10,7 @@
         color: darken($brand-color, 10%);
     }
 }
+
+.post-list > article {
+    margin-bottom: $spacing-unit;
+}
