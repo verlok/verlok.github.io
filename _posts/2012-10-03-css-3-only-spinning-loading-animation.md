@@ -24,7 +24,8 @@ I want to show you a solution I found to create a "loading" animation from scrat
 
 ## Results first
 
-<iframe style="background:black; border: 0" src="/examples/css3-only-loading-animation.html" width="100%" height="100"></iframe>
+<iframe class="lazy" height='265' scrolling='no' title='CSS 3 only spinning circle quarter - loading animation' data-src='//codepen.io/verlok/embed/bWmvON/?height=265&amp;theme-id=0&amp;default-tab=css,result&amp;embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/verlok/pen/bWmvON/'>CSS 3 only spinning circle quarter - loading animation</a> by Andrea Verlicchi (<a href='http://codepen.io/verlok'>@verlok</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
 
 ## What happens here
 
