@@ -17,6 +17,6 @@ published: true
 ---
 20 minutes speech about why and how to use CSS 3 transitions and animations, which work in all modern browsers (Internet Explorer 10, Chrome, Firefox, Safari, Opera), and when and how implement a fallback animation or transition with jQuery.
 
-![](/assets/css3-presentation.jpg "css3 presentation")
+![](/assets/post-images/css3-presentation.jpg "css3 presentation")
 
 This speech was given in Italy, Modena, at 2012's [From the Front](http://2012.fromthefront.it) Meetup titled [Alone in the Front](http://blog.intersezione.com/largo-delle-idee/2012/from-the-front-meetup-giovedi-22-marzo-buscape.html).

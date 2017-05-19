@@ -16,7 +16,7 @@ published: true
 ---
 Ahoy, front-end pirates! Welcome to the Chapter 1 of the [Making of The Secret of Front-end Island]({% post_url 2012-12-09-making-of-the-treasure-of-front-end-island-chapter-1-the-splashing-title %}) saga: **the Splashing Title**.
 
-![](/assets/logo_tofel.jpg "Splash image: the Treasure of Frontend Island")
+![](/assets/post-images/logo_tofel.jpg "Splash image: the Treasure of Frontend Island")
 
 Let's start saying that in the Photoshop layout I got from the designer ([Diego Sessa](http://www.linkedin.com/in/diegosessa "Diego")) I had the finished 1280 pixel wide layout, and I had the discretion of choosing animations, responsive behavior, and so on.
 

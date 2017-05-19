@@ -17,7 +17,7 @@ published: true
 ---
 I developed the piratesque website for the 2012 edition of the conference [From the Front](http://2012.fromthefront.it/), titled **The Treasure of Frontend Island**.
 
-![](/assets/From-the-Front-2012-Front-end-Island.jpg "From the Front 2012 - Front-end Island")
+![](/assets/post-images/From-the-Front-2012-Front-end-Island.jpg "From the Front 2012 - Front-end Island")
 
 <!--more-->
 

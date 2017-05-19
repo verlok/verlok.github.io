@@ -16,7 +16,7 @@ published: true
 ---
 Googling **respond.js vs css3-mediaqueries.js** I've found [Techniques For Gracefully Degrading Media Queries](http://coding.smashingmagazine.com/2011/08/10/techniques-for-gracefully-degrading-media-queries/), a Smashing Magazine post about [Lewis Nyman](http://lewisnyman.co.uk) which talks about how to apply the **graceful degradation** of media queries on browsers that don't support them (IE 8, IE 7, IE 6).
 
-![](/assets/responsive.jpg "responsive")
+![](/assets/post-images/responsive.jpg "responsive")
 
 The options are:
 

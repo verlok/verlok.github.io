@@ -17,7 +17,7 @@ published: true
 ---
 If you are a front-end developer and make mobile websites / mobile web apps, you know that debugging on mobile devices is a pain.
 
-![](/assets/weinre_ready.png "Weinre Ready to Debug")
+![](/assets/post-images/weinre_ready.png "Weinre Ready to Debug")
 
 Although you might not know that you can remotely inspect your mobile web app or website using [Weinre](http://people.apache.org/~pmuellr/weinre/docs/1.x/1.5.0/ "Weinre website"). Here's how:
 

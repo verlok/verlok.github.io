@@ -17,7 +17,7 @@ published: true
 ---
 On Friday, September 13th 2013, I spoke again about web design at the event [WPDAY Bologna](http://www.wpday.it "WPDAY Bologna").
 
-![](/assets/Agile-CSS-Development-with-Compass-Sass-preview.jpeg "Agile CSS Development with Compass Sass - preview")
+![](/assets/post-images/Agile-CSS-Development-with-Compass-Sass-preview.jpeg "Agile CSS Development with Compass Sass - preview")
 
 I repeated (and integrated) the speech about agile web page styling (CSS) with Compass/SASS.
 

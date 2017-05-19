@@ -17,7 +17,7 @@ published: true
 ---
 [CSSOff](http://www.unmatchedstyle.com/cssoff/) is a competition for front-end developers to show off their skills in a no holds barred display of CSS and markup skills.
 
-![](/assets/cssoff-winner-3rd.jpg "cssoff-winner-3rd")
+![](/assets/post-images/cssoff-winner-3rd.jpg "cssoff-winner-3rd")
 
 In the early 2012 edition, I landed 3rd out of 400+ world competitors!
 

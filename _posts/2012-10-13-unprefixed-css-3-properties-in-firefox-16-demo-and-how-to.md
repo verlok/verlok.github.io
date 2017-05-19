@@ -17,7 +17,7 @@ published: true
 ---
 I heard that Firefox 16 unprefixed CSS 3 transitions, animations and gradients, so I wanted to give it a try. In short, it's true: starting from October 9th, no more -webkit- prefix in transition, animation, @keyframes and linear-gradient.
 
-![](/assets/unprefixed-ff-button1.jpg "unprefixed-ff-button")
+![](/assets/post-images/unprefixed-ff-button1.jpg "unprefixed-ff-button")
 
 So here's how to create a shaking button that transitions to another color when rolled over.
 

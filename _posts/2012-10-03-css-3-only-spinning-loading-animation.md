@@ -18,7 +18,7 @@ published: true
 ---
 We used GIF images to create animations for years, but they aren't pretty to be used over gradients or pictures (no alpha channel, no anti-aliasing) of which modern web sites are full. There are many workarounds to animate PNG images instead, but...
 
-![](/assets/preloader_preview1.png "preloader_preview")
+![](/assets/post-images/preloader_preview1.png "preloader_preview")
 
 I want to show you a solution I found to create a "loading" animation from scratch, using only CSS 3, without images.
 

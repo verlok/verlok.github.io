@@ -17,7 +17,7 @@ published: true
 ---
 Ahoy, front-end pirates! Welcome to the Chapter 2 of the [Making of The Secret of Front-end Island]({% post_url 2012-12-09-making-of-the-treasure-of-front-end-island %}) saga: **the Blowing Clouds**.
 
-![](/assets/blowing_clouds1.jpg "The clouds sprite")
+![](/assets/post-images/blowing_clouds1.jpg "The clouds sprite")
 
 As I described [before]({% post_url 2012-12-09-making-of-the-treasure-of-front-end-island-chapter-1-the-splashing-title %} "Making of The Treasure of Front-end Island – Chapter 1 – The splashing title"), in the Photoshop layout I got from the designer ([Diego Sessa](http://www.linkedin.com/in/diegosessa "Diego")) I had the finished 1280 pixel wide layout, and I had the discretion of choosing animations, responsive behavior, and so on.
 

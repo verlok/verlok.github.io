@@ -17,7 +17,7 @@ published: true
 ---
 On Tuesday, October the 30st, 2012, at 18:30, I'm speaking again about when, why and how to use CSS 3 transitions and animations, and when and how to apply the fallback animation with jQuery.
 
-![](/assets/PRESENTAZIONE-CSS3-+-jquery-fallback-header.jpg "PRESENTAZIONE-CSS3-+-jquery-fallback-header")
+![](/assets/post-images/PRESENTAZIONE-CSS3-+-jquery-fallback-header.jpg "PRESENTAZIONE-CSS3-+-jquery-fallback-header")
 
 This event will be hosted by the company I currently work for, Gruppo Euris, in its office at Bologna, Via del Rondone 1 ([see the map](https://maps.google.it/maps?q=Via+del+Rondone,+1,+Bologna&hl=it&ll=44.499168,11.341023&spn=0.018427,0.038581&sll=44.504341,11.337032&sspn=0.036851,0.077162&hnear=Via+del+Rondone,+Bologna&t=m&z=15)).
 

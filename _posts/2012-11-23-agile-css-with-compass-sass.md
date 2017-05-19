@@ -16,7 +16,7 @@ published: true
 ---
 On Saturday, November 24th 2012, I spoke again about web design at the event [Wordcamp Bologna](http://2012.bologna.wordcamp.org).
 
-![](/assets/Agile-CSS-Development-with-Compass-Sass-preview.jpeg "Agile CSS Development with Compass Sass - preview")
+![](/assets/post-images/Agile-CSS-Development-with-Compass-Sass-preview.jpeg "Agile CSS Development with Compass Sass - preview")
 
 This time my speech was about agile web page styling (CSS) with Compass/SASS.
 
