@@ -11,7 +11,6 @@ url: "http://www.andreaverlicchi.eu" # the base hostname & protocol for your sit
 twitter_username: verlok
 github_username:  verlok
 markdown: kramdown
-exclude: [examples]
 include: [.htaccess]
 paginate: 10
 google_analytics: UA-26756203-1
