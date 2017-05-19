@@ -1,0 +1,12 @@
+/**
+ * Posts
+ */
+.post-title,
+.post-link {
+    color: $brand-color;
+}
+.post-link {
+    &:visited {
+        color: darken($brand-color, 10%);
+    }
+}
