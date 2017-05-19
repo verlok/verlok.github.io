@@ -11,7 +11,7 @@ published: true
 ---
 Today I released version 2 of picturePolyfill, the real `picture` element polyfill.
 
-![Responsive Images](/assets/responsive_images.jpg)
+![Responsive Images](/assets/post-images/responsive_images.jpg)
 
 The great news about version 2 of [PicturePolyfill](https://github.com/verlok/picturePolyfill "picturePolyfill repo") is that it supports the real `picture` tag, and it gives you the ability to create responsive images TODAY.
 

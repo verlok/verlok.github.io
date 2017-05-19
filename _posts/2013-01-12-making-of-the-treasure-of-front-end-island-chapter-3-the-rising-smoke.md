@@ -19,7 +19,7 @@ published: true
 ---
 Ahoy, front-end pirates! Welcome to the Chapter 3 of the [Making of The Secret of Front-end Island]({% post_url 2012-12-09-making-of-the-treasure-of-front-end-island %}) saga: **the Rising Smoke**.
 
-![Front-end Island Rising Smoke](/assets/Front-end-Island-Rising-Smoke-709x237.png)
+![Front-end Island Rising Smoke](/assets/post-images/Front-end-Island-Rising-Smoke-709x237.png)
 
 In the layout the smoke was composed by 5 gray circles at different opacity. Oh joy! I could avoid using images using markup and border-radius, and animate every smoke ball using CSS 3 only. Challenging, then funny. :)
 
