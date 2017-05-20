@@ -92,9 +92,9 @@ To markup this in our HTML, we must do:
          300px">
 ```
 
-With this markup, the browser knows the size that the image will take on the screen (throuh `sizes`) and all the available image sources that we prepared for our users (through `sizes`). 
+With this markup, the browser knows the space that the image will occupy on the screen (throuh `sizes`) and all the available image sources that we prepared for our users (through `srcset`). 
 
-At this point, the browser will choose what image source to use based on this information and the information it knows about our user, such as screen density, cached files, connection speed, etc.
+At this point, the browser will choose what image source to download based on the information we provided and the information it knows about our user, such as screen density, cached files, connection speed, etc.
 
 
 ## Browser support
