@@ -87,7 +87,7 @@ The `entries` argument is passed **all the elements being observed** by the obse
 
 ## Observing an element
 
-Isn't it something missing? Yes it is! The code explained until now accomplishes nothing, if we don't **tell our observer to observe an element**, or more than one in our case. What we need to do is:
+Isn't something missing? Yes it is! The code explained until now accomplishes nothing, if we don't **tell our observer to observe an element**, or more than one in our case. What we need to do is:
 
 ```js
 this._elements.forEach(element => {
