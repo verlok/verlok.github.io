@@ -9,7 +9,7 @@ tags: [intersection observer API, lazy load]
 
 In August 2017 a new exciting browser API finally [landed on Firefox](https://hacks.mozilla.org/2017/08/intersection-observer-comes-to-firefox/) too: the [Intersection Observer](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API), making it now [widely supported](https://caniuse.com/#search=IntersectionObserver) (it's missing only in Internet Explorer 11 and Safari, where it's currently [in development](https://webkit.org/status/#specification-intersection-observer)).
 
-This new API is useful to know when 2 DOM elements intersect, and especially to **know when a given DOM element entered the browser viewport**.
+This new API is useful to know when two DOM elements intersect, and especially to **know when a given DOM element entered the browser viewport**.
 
 **Lazy loading of images** / elements as a page is scrolled is just the case, and guess what? 3 years / 498 commits ago I gave birth to a new **[vanilla javascript lazy load](https://github.com/verlok/lazyload)**, nowadays known as `vanilla-lazyload` on [npm](https://www.npmjs.com/package/vanilla-lazyload) and [cdnjs](https://cdnjs.com/libraries/vanilla-lazyload), and starred by **1,135 people on GitHub**.
 
@@ -20,7 +20,7 @@ As the **community** around my script started to grow, [some](https://github.com
 
 So I decided to make my script's fans happy, and I did it. The resulting source code is **40% smaller**, and vanilla-lazyload is now **2 times faster** than its previous version!
 
-_(ok, I'm still figuring out how to measure it precisely, if you know how please comment at the end of this post)_
+_(to be honest: I'm still figuring out how to measure it precisely, if you know how please comment at the end of this post)_
 
 
 ## How to create an Intersection Observer
@@ -30,6 +30,19 @@ The implementation is quite simple: you create a new Intersection Observer insta
 * `root`: the element you want to **test the intersection against**, `null` meaning the browser viewport
 * `rootMargin`: in case you want to **expand or shrink** the effective size of the `root` element
 
+```js
+var myObserver = new IntersectionObserver(function(entries) { /* do something */ }, {
+    root: null,
+    rootMargin: "300px 0"
+});
+```
+
+Once the intersection observer is created an assigned to a variable, you can start observing on a target element with:
+
+```js
+var elementToObserve = document.getElementById('observeMe');
+myObserver.observe(elementToObserve);
+```
 
 ## Creating the observer
 
@@ -74,7 +87,7 @@ The `entries` argument is passed **all the elements being observed** by the obse
 
 ## Observing an element
 
-Something is missing? Yes! The code explained until now accomplishes nothing, if we don't **tell our observer to observe an element**, or more than one in our case. What we need to do is:
+Isn't it something missing? Yes it is! The code explained until now accomplishes nothing, if we don't **tell our observer to observe an element**, or more than one in our case. What we need to do is:
 
 ```js
 this._elements.forEach(element => {
