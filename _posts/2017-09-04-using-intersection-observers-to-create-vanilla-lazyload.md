@@ -54,14 +54,14 @@ this._observer = new IntersectionObserver(onIntersection, {
 
 Notes: 
 
-* `onIntersection` is a function, which I explain below (keep reading)
+* `onIntersection` is a function, which I explain below
 * `settings.container` is the scrolling container, defaulting to `document`, passed by LazyLoad user in the options object
 * `settings.threshold` is the amount of pixels beyond the scrolling container where to start loading the images / elements, defaulting to `300`.
 
 
 ## The onIntersection function
 
-The aim is that whenever a DOM element intersects with the scrolling container, the `onIntersection` function is called. Here goes the function definition:
+The point is that whenever a DOM element intersects with the scrolling container, the `onIntersection` function is called. Here goes the function definition:
 
 ```js
 const onIntersection = (entries) => {
@@ -92,9 +92,7 @@ this._elements.forEach(element => {
 });
 ```
 
-Notes:
-
-* `this._elements` is the set of elements that LazyLoad has found inside `this._container` by a specific selector, purged by the ones that are already being processed (in case of _infinite scroll_ or other DOM changing cases).
+Being `this._elements` the set of elements that LazyLoad has found inside `this._container` by a specific selector, purged by the ones that are already being processed (to deal with cases of _infinite scroll_, or other DOM updating cases).
 
 
 ## Fallback
@@ -107,11 +105,11 @@ if (!("IntersectionObserver" in window)) {
 }
 ```
 
-In my case, on browsers where `IntersectionObserver` is not supported, LazyLoad will load **all the images at once**. That's why if you need to load lots of images and your users base is composed by people with unsupported browsers, you should use LazyLoad a version less than 9. See [changelog](https://github.com/verlok/lazyload/blob/master/CHANGELOG.md) for more details.
+In my case, on browsers where `IntersectionObserver` is not supported, LazyLoad will load **all the images at once**. Therefore, if you need to load lots of images and your user base is browsing with a consistent share of older browsers, you should use LazyLoad a version less than 9. See [changelog](https://github.com/verlok/lazyload/blob/master/CHANGELOG.md) for more details.
 
 
 ## Conclusion
 
-That's it! Intersection Observer makes your code smaller, faster and more legible. If you're not using it already, you should definetly start playing around with it.
+That's it! Intersection Observer makes your code much smaller, faster and more legible. If you're not using it already, you should definetly start playing around with it.
 
 And don't forget, if you have a very long page stuffed with images and other content, you should load them lazily using a lazy load script, and your best choice is [vanilla-lazyload](https://github.com/verlok/lazyload)! :)
