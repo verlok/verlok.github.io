@@ -1,26 +1,22 @@
 ---
 layout: post
-title: Using Intersection Observers to create a lazy loader for images
-date: 2017-09-04 08:30:00:00 +01:00
+title: Intersection Observer and Lazy Load of elements
+date: 2017-09-04 08:00:00:00 +01:00
 categories:
 - techniques
 tags: [intersection observer API, lazy load]
 ---
 
-In August 2017 a new exciting browser API finally [landed on Firefox](https://hacks.mozilla.org/2017/08/intersection-observer-comes-to-firefox/) too: the [Intersection Observer](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API), making it now [widely supported](https://caniuse.com/#search=IntersectionObserver) (it's missing only in Internet Explorer 11 and Safari, where it's currently [in development](https://webkit.org/status/#specification-intersection-observer)).
+In August 2017 a new exciting browser API finally [gained](https://hacks.mozilla.org/2017/08/intersection-observer-comes-to-firefox/) quite a [wide support](https://caniuse.com/#search=IntersectionObserver): the [Intersection Observer](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API), which we can use to know when two DOM elements intersect, or when a given DOM element **entered the browser viewport**. Lazy loading of images is just the case.
 
-This new API is useful to know when two DOM elements intersect, and especially to **know when a given DOM element entered the browser viewport**.
-
-**Lazy loading of images** / elements as a page is scrolled is just the case, and guess what? 3 years / 498 commits ago I gave birth to a new **[vanilla javascript lazy load](https://github.com/verlok/lazyload)**, nowadays known as `vanilla-lazyload` on [npm](https://www.npmjs.com/package/vanilla-lazyload) and [cdnjs](https://cdnjs.com/libraries/vanilla-lazyload), and starred by **1,135 people on GitHub**.
+About [3 years]({{ site.baseurl }}{% post_url 2014-11-20-a-new-lazyload-to-improve-your-website-performance %}) and 500 commits ago, I gave birth to a new vanilla javascript **[lazy load script](https://github.com/verlok/lazyload)**, currently known as `vanilla-lazyload` on [npm](https://www.npmjs.com/package/vanilla-lazyload) and [cdnjs](https://cdnjs.com/libraries/vanilla-lazyload), and starred by **1,135 people on GitHub**.
 
 
 ## The switch to Intersection Observer
 
-As the **community** around my script started to grow, [some](https://github.com/si14) [members](https://github.com/ricardobrandao) requested it to support the Intersection Observer API, amongst [other enhancements](https://github.com/verlok/lazyload/issues?q=label%3Aenhancement+is%3Aclosed).
+As the community around my script started to grow, [some](https://github.com/si14) [members](https://github.com/ricardobrandao) requested it to support the Intersection Observer API, amongst [other enhancements](https://github.com/verlok/lazyload/issues?q=label%3Aenhancement+is%3Aclosed).
 
-So I decided to make my script's fans happy, and I did it. The resulting source code is **40% smaller**, and vanilla-lazyload is now **2 times faster** than its previous version!
-
-_(to be honest: I'm still figuring out how to measure it precisely, if you know how please comment at the end of this post)_
+So I decided to make my script's fans happy, and I did it. The resulting source code is **40% smaller**, and vanilla-lazyload is now **much faster** than its previous version. (by the way, if you know how to measure a script performance precisely, please comment)
 
 
 ## How to create an Intersection Observer
@@ -43,6 +39,7 @@ Once the intersection observer is created an assigned to a variable, you can sta
 var elementToObserve = document.getElementById('observeMe');
 myObserver.observe(elementToObserve);
 ```
+
 
 ## Creating the observer
 
@@ -112,8 +109,9 @@ if (!("IntersectionObserver" in window)) {
 
 In my case, on browsers where `IntersectionObserver` is not supported, LazyLoad will load **all the images at once**. That's why if you need to load lots of images and your users base is composed by people with unsupported browsers, you should use LazyLoad a version less than 9. See [changelog](https://github.com/verlok/lazyload/blob/master/CHANGELOG.md) for more details.
 
+
 ## Conclusion
 
 That's it! Intersection Observer makes your code smaller, faster and more legible. If you're not using it already, you should definetly start playing around with it.
 
-And don't forget, if you have a very long page stuffed with images and other content, you should load it lazily using a/my [LazyLoad](https://github.com/verlok/lazyload).
+And don't forget, if you have a very long page stuffed with images and other content, you should load them lazily using a lazy load script, and your best choice is [vanilla-lazyload](https://github.com/verlok/lazyload)! :)
