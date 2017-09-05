@@ -27,7 +27,9 @@ The implementation is quite simple: you create a new Intersection Observer insta
 * `rootMargin`: in case you want to **expand or shrink** the effective size of the `root` element
 
 ```js
-var myObserver = new IntersectionObserver(function(entries) { /* do something */ }, {
+var myObserver = new IntersectionObserver((entries) => { 
+    /* do something */ 
+}, {
     root: null,
     rootMargin: "300px 0"
 });
@@ -112,4 +114,4 @@ In my case, on browsers where `IntersectionObserver` is not supported, LazyLoad 
 
 That's it! Intersection Observer makes your code much smaller, faster and more legible. If you're not using it already, you should definetly start playing around with it.
 
-And don't forget, if you have a very long page stuffed with images and other content, you should load them lazily using a lazy load script, and your best choice is [vanilla-lazyload](https://github.com/verlok/lazyload)! :)
+And don't forget, if you have a very long page stuffed with images and other content, you should load them lazily using a lazy load script, and your best choice is [vanilla-lazyload](https://github.com/verlok/lazyload)!
