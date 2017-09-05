@@ -11,8 +11,9 @@ EBE500
 $spacing-unit:       26px;
 
 // Fonts
-$base-font-family:   Brandon, "Helvetica Neue", Helvetica, Arial, sans-serif;
-$base-font-size:     18px;
+$base-font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$title-font-family: "Brandon", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-size:   18px;
 $base-font-weight: 400 !default;
 $base-line-height: 1.5 !default;
 $small-font-size:  $base-font-size * 0.875 !default;
@@ -24,10 +25,9 @@ $text-color:               #111;
 $background-color:         #fdfdfd;
 $brand-color:              #D90009;
 $brand-color-on-dark:      lighten($brand-color, 15%);
-
-$link-color:                   #1170A6;
-$link-color-on-dark:           lighten($link-color, 15%);
-$link-background-on-hover:     #fffd9f;
+$alternative-color:        #1170A6;
+$link-color:               $alternative-color;
+$link-color-on-dark:       lighten($link-color, 15%);
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);

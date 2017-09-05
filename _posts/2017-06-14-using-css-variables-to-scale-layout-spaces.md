@@ -41,7 +41,7 @@ In case you're thinking: "So what? I'm already using SASS and my `_variables.scs
 
 SASS variables are pre-processed so they are transformed to a fixed, static CSS value. When the CSS is loaded, **the variable is lost** and only its value remains, spread out in all of its usages.
 
-> A SASS variable cannot be changed after the CSS is loaded. CSS variables, **can be changed using media queries, javascript, or the developer tools** of your favourite browser.
+> A SASS variable cannot be changed after the CSS is loaded. CSS variables can be changed using media queries, javascript, or the developer tools of your favourite browser.
 
 
 ## How to use a CSS variable
