@@ -7,7 +7,7 @@ categories:
 tags: [intersection observer API, lazy load]
 ---
 
-In August 2017 a new exciting browser API finally [gained](https://hacks.mozilla.org/2017/08/intersection-observer-comes-to-firefox/) quite a [wide support](https://caniuse.com/#search=IntersectionObserver): the [Intersection Observer](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API), which we can use to know when two DOM elements intersect, or when a given DOM element **entered the browser viewport**. Lazy loading of images is just the case.
+In August 2017 a new exciting browser API finally [gained](https://hacks.mozilla.org/2017/08/intersection-observer-comes-to-firefox/) quite a [wide support](https://caniuse.com/#search=IntersectionObserver): the [Intersection Observer](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API), which we can use to know when two DOM elements intersect, or when a given DOM element **enters the browser viewport**. Lazy loading of images is just the case.
 
 About [3 years]({{ site.baseurl }}{% post_url 2014-11-20-a-new-lazyload-to-improve-your-website-performance %}) and 500 commits ago, I gave birth to a new vanilla javascript **[lazy load script](https://github.com/verlok/lazyload)**, currently known as `vanilla-lazyload` on [npm](https://www.npmjs.com/package/vanilla-lazyload) and [cdnjs](https://cdnjs.com/libraries/vanilla-lazyload), and starred by **1,135 people on GitHub**.
 
