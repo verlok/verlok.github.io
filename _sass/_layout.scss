@@ -2,7 +2,19 @@
  * Site header
  */
 
+html {
+	height: 100%;
+}
+
+body {
+	min-width: 320px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
 .site-header {
+	flex-shrink: 0;
 	background: $toolbar-background-color;
 	border-bottom: 5px solid $brand-color;
 	min-height: $spacing-unit * 1.865;
@@ -120,10 +132,25 @@
 
 
 /**
+ * Page content
+ */
+
+.page-content {
+	flex-grow: 1;
+	padding: $spacing-unit 0;
+}
+
+.page-heading {
+	@include relative-font-size(1.25);
+}
+
+
+/**
  * Site footer
  */
 
 .site-footer {
+	flex-shrink: 0;
 	background-color: $toolbar-background-color;
 	border-top: 5px solid $brand-color;
 	padding: $spacing-unit/2 0;
@@ -197,15 +224,3 @@
 	}
 }
 
-
-/**
- * Page content
- */
-
-.page-content {
-	padding: $spacing-unit 0;
-}
-
-.page-heading {
-	@include relative-font-size(1.25);
-}
