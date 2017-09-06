@@ -24,8 +24,8 @@ I want to show you a solution I found to create a "loading" animation from scrat
 
 ## Results first
 
-<iframe class="lazy" height='265' scrolling='no' title='CSS 3 only spinning circle quarter - loading animation' data-src='//codepen.io/verlok/embed/bWmvON/?height=265&amp;theme-id=0&amp;default-tab=css,result&amp;embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/verlok/pen/bWmvON/'>CSS 3 only spinning circle quarter - loading animation</a> by Andrea Verlicchi (<a href='http://codepen.io/verlok'>@verlok</a>) on <a href='http://codepen.io'>CodePen</a>.
-</iframe>
+<p data-height="265" data-theme-id="0" data-slug-hash="bWmvON" data-default-tab="css,result" data-user="verlok" data-embed-version="2" data-pen-title="CSS 3 only spinning circle quarter - loading animation" class="codepen">See the Pen <a href="https://codepen.io/verlok/pen/bWmvON/">CSS 3 only spinning circle quarter - loading animation</a> by Andrea Verlicchi (<a href="https://codepen.io/verlok">@verlok</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
 ## What happens here
 
@@ -34,12 +34,12 @@ Read on to know the bottom-up steps to do it.
 
 ## 1. Create a circle
 
-{% highlight html %}
+```html
 <!-- Inner masked circle -->
 <div class="maskedCircle"></div>
-{% endhighlight %}
+```
 
-{% highlight css %}
+```css
 /* Spinning circle (inner circle) */
 .loading .maskedCircle {
 	width: 20px;
@@ -47,30 +47,30 @@ Read on to know the bottom-up steps to do it.
 	border-radius: 12px;
 	border: 3px solid white;
 }
-{% endhighlight %}
+```
 
 ## 2. Mask one quarter of the circle
 
-{% highlight html %}
+```html
 <!-- Mask of the quarter of circle -->
 <div class="mask">
     <!-- Inner masked circle -->
     <div class="maskedCircle"></div>
 </div>
-{% endhighlight %}
+```
 
-{% highlight css %}
+```css
 /* Spinning circle mask */
 .loading .mask {
 	width: 12px;
 	height: 12px;
 	overflow: hidden;
 }
-
-{% endhighlight %}
+```
 
 ## 3. Make both spin around
-{% highlight html %}
+
+```html
 <!-- We make this div spin -->
 <div class="spinner">
 	<!-- Mask of the quarter of circle -->
@@ -79,15 +79,10 @@ Read on to know the bottom-up steps to do it.
 		<div class="maskedCircle"></div>
 	</div>
 </div>
-{% endhighlight %}
+```
 
-{% highlight css %}
-/* 
-Animation keyframes
-Note that you'll need to add -vendor-prefixes
-to make it work on all browsers 
-*/
-
+```css
+/* Animation keyframes */
 @keyframes spin {
 	from { transform: rotate(0deg); }
 	to { transform: rotate(360deg); }
@@ -102,11 +97,11 @@ to make it work on all browsers
 	height: 26px;
 	animation: spin 1s infinite linear;
 }
-{% endhighlight %}
+```
 
 ## 4. Wrap everything in a "loading" container, that will be centered inside its parent
 
-{% highlight html %}
+```html
 <!-- Loading animation container -->
 <div class="loading">
 	<!-- We make this div spin -->
@@ -118,9 +113,9 @@ to make it work on all browsers
 		</div>
 	</div>
 </div>
-{% endhighlight %}
+```
 
-{% highlight css %}
+```css
 /* Loading animation container */
 .loading {
 	position: absolute;
@@ -130,11 +125,11 @@ to make it work on all browsers
 	height: 28px;
 	margin: -14px 0 0 -14px;
 }
-{% endhighlight %}
+```
 
 ## Resulting HTML and CSS code:
 
-{% highlight html %}
+```html
 <!-- Loading animation container -->
 <div class="loading">
 	<!-- We make this div spin -->
@@ -146,9 +141,9 @@ to make it work on all browsers
 		</div>
 	</div>
 </div>
-{% endhighlight %}
+```
 
-{% highlight css %}
+```css
 /* Animation keyframes - you need to add prefixes */
 @keyframes spin {
 	from { transform: rotate(0deg); }
@@ -189,25 +184,26 @@ to make it work on all browsers
 	height: 26px;
 	animation: spin 1s infinite linear;
 }
-{% endhighlight %}
+```
 
 Isn't that cool? 
 
-It works perfectly on all modern desktop browsers like:
+It works perfectly on all desktop browsers like:
 
-*   Internet Explorer 10
-*   Chrome
-*   Firefox
-*   Safari
-*   Opera
+* Internet Explorer 10+
+* Edge
+* Chrome
+* Firefox
+* Safari
+* Opera
 
 and also for all major mobile browsers:
 
-*   Safari Mobile
-*   Chrome Mobile
-*   Firefox Mobile
-*   Opera Mobile
-*   Internet Explorer Mobile (Windows Phone 8 only)
+* Safari Mobile
+* Chrome Mobile
+* Firefox Mobile
+* Opera Mobile
+* Internet Explorer Mobile (Windows Phone 8 only)
 
 At the moment, Windows Phone 7's Internet Explorer won't animate the figure.
 
@@ -215,4 +211,4 @@ At the moment, Windows Phone 7's Internet Explorer won't animate the figure.
 
 Need a fallback to see the animation in older browsers? If you read so far, you probably do.
 
-Although the fallback is not the purpose of this article, let's say that the best solution would be preparing a sprite with all the frames of the animation at a constant distance one from each other, use the sprite as background of a DOM element, and animate the background with javascript.
+Although the fallback is not the purpose of this article, let's say that the best solution would be preparing **a sprite with all the frames** of the animation at a constant distance one from each other, use the sprite as background of a DOM element, and **animate the background with Javascript**.
