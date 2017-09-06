@@ -70,7 +70,7 @@ The code of the POC that I created is on GitHub in [this repo](https://www.githu
 
 ### picture markup
 
-{% highlight html %}
+```html
 <picture>
     <source media="(max-width: 320px)"
             srcset="http://placehold.it/320x372 2x">
@@ -88,11 +88,11 @@ The code of the POC that I created is on GitHub in [this repo](https://www.githu
             srcset="http://placehold.it/305x355 1x, http://placehold.it/610x709 2x">
     <img src="http://placehold.it/305x355" alt="A product image">
 </picture>
-{% endhighlight %}
+```
 
 ### img markup
 
-{% highlight html %}
+```html
 <img src="http://placehold.it/305x355"
          srcset="http://placehold.it/241x280 241w,
              http://placehold.it/305x355 305w,
@@ -108,7 +108,7 @@ The code of the POC that I created is on GitHub in [this repo](https://www.githu
             (min-width: 768px) calc((100vw - 60px) / 3),
             50vw"
          alt="A product image">
-{% endhighlight %}
+```
 
 ## Conclusion
 

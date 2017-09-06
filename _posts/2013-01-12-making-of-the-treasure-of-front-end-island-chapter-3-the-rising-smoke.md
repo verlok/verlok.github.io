@@ -43,7 +43,7 @@ The DOM path of the smoke parent element is the following:
 
 By the layout, 5 balls of smoke are visible at the same time. To make a beautiful animation, I decided to double them. Here's the markup for the 10 balls of smoke.
 
-{% highlight html %}
+```html
 <div id="smoke">
 	<span class="s0"></span>
 	<span class="s1"></span>
@@ -56,7 +56,7 @@ By the layout, 5 balls of smoke are visible at the same time. To make a beautifu
 	<span class="s8"></span>
 	<span class="s9"></span>
 </div>
-{% endhighlight %}
+```
 
 ## The CSS 3 only animation
 
@@ -68,7 +68,7 @@ The `disableAnimations` class is toggled when the user presses the "disable anim
 
 So here's the code:
 
-{% highlight css %}
+```css
 /* Smoke container */
 #smoke {
 	position: absolute;
@@ -97,13 +97,13 @@ So here's the code:
 	left: -14px; opacity: 0;
 	transform: scale(0.2);
 }
-{% endhighlight %}
+```
 
 Until now, the smoke container is positioned and all the smoke balls are positioned to its bottom and scaled to 20%.
 
 And here's where the magic happens. I created two different animations, `smokeL` for the smoke balls which moved up and left, and `smokeR` for the smoke balls which moved up and right.
 
-{% highlight css %}
+```css
 @keyframes smokeL {
 	0%   { transform:scale(0.2) translate(0, 0) }
 	10%  { opacity: 1; transform: scale(0.2) translate(0, -5px) }
@@ -115,13 +115,13 @@ And here's where the magic happens. I created two different animations, `smokeL`
 	10%  { opacity: 1; transform: scale(0.2) translate(0, -5px) }
 	100% { opacity: 0; transform: scale(1) translate(20px, -130px) }
 }
-{% endhighlight %}
+```
 
 Then I applied this two animations alternately to each smoke ball, with a total duration of 10 seconds, and a delay of 1 second more each.
 
 Here's how:
 
-{% highlight css %}
+```css
 #smoke .s0 { animation: smokeL 10s 0s infinite }
 #smoke .s1 { animation: smokeR 10s 1s infinite }
 #smoke .s2 { animation: smokeL 10s 2s infinite }
@@ -132,7 +132,7 @@ Here's how:
 #smoke .s7 { animation: smokeR 10s 7s infinite }
 #smoke .s8 { animation: smokeL 10s 8s infinite }
 #smoke .s9 { animation: smokeR 10s 9s infinite }
-{% endhighlight %}
+```
 
 And that's it! The smoke animation works perfectly on modern browsers!
 

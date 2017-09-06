@@ -21,7 +21,7 @@ To have responsive images, include the picturePolyfill.min.js script in your pag
 
 ### To support HD (Retina) displays
 
-{% highlight html %}
+```html
 <picture data-alt="A beautiful responsive image" data-default-src="img/1440x1440.gif">
     <source srcset="img/480x480.gif,   img/480x480x2.gif 2x"/>
     <source srcset="img/768x768.gif,   img/768x768x2.gif 2x"   media="(min-width: 481px)"/>
@@ -31,11 +31,11 @@ To have responsive images, include the picturePolyfill.min.js script in your pag
         <img src="img/768x768.gif" alt="A beautiful responsive image"/>
     </noscript>
 </picture>
-{% endhighlight %}
+```
 
 ### To support only standard resolution displays
 
-{% highlight html %}
+```html
 <picture data-alt="A beautiful responsive image" data-default-src="img/1440x1440.gif">
     <source srcset="img/480x480.gif"/>
     <source srcset="img/768x768.gif"   media="(min-width: 481px)"/>
@@ -45,11 +45,11 @@ To have responsive images, include the picturePolyfill.min.js script in your pag
         <img src="img/768x768.gif" alt="A beautiful responsive image"/>
     </noscript>
 </picture>
-{% endhighlight %}
+```
 
 ### If you have an image server for automated scaling
 
-{% highlight html %}
+```html
 <picture data-alt="A beautiful responsive image" data-default-src="http://demo.api.pixtulate.com/demo/large-2.jpg?w=1440">
     <source srcset="http://demo.api.pixtulate.com/demo/large-2.jpg?w=480"/>
     <source srcset="http://demo.api.pixtulate.com/demo/large-2.jpg?w=512" media="(min-width: 481px)"/>
@@ -59,7 +59,7 @@ To have responsive images, include the picturePolyfill.min.js script in your pag
         <img src="http://demo.api.pixtulate.com/demo/large-2.jpg?w=1440" alt="A beautiful responsive image"/>
     </noscript>
 </picture>
-{% endhighlight %}
+```
 
 ## Demo
 

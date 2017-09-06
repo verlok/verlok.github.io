@@ -60,7 +60,7 @@ Inside the **treasure** `div` I placed:
 
 The splash image is now inside #event > #treasure > img.
 
-{% highlight css %}
+```css
 #treasure img {
 	z-index: 5;
 	position: relative;
@@ -68,7 +68,7 @@ The splash image is now inside #event > #treasure > img.
 	max-width: 668px;
 	height: auto;
 }
-{% endhighlight %}
+```
 
 This places the image at z-index 5 (in front of some clouds, on the back of some others), makes it wide the full page up to 668px (the image original width), and makes the height automatically scale based on the image original ratio.
 
@@ -76,14 +76,14 @@ This places the image at z-index 5 (in front of some clouds, on the back of some
 
 To define a CSS animation, you have to use the @keyframes directive and give the animation a name and some keyframes statuses. For more info about this, see my post [CSS 3 Transitions and Animation]({% post_url 2012-10-03-css3-transitions-animations-jquery-fallback %} "CSS 3 Transitions and Animation + graceful degradation with jQuery").
 
-{% highlight css %}
+```css
 @keyframes splash {
 	0%   { transform : scale(0.1)}
 	50%  { transform : scale(1.1); animation-timing-function: ease-in }
 	75%  { transform : scale(0.9); animation-timing-function: ease-in-out }
 	100% { transform : scale(  1); animation-timing-function: ease-in-out }
 }
-{% endhighlight %}
+```
 
 ## Image starting size + animation application
 
@@ -98,7 +98,7 @@ As a result, the html element can have `.cssanimations` or `.no-cssanimations` d
 
 So I used the following piece of CSS to apply the animation.
 
-{% highlight css %}
+```css
 #treasure img {
 	/* Initial frame status */
 	transform: scale(0.1);
@@ -113,7 +113,7 @@ So I used the following piece of CSS to apply the animation.
 	/* Final frame status */
 	transform: scale(1);
 }
-{% endhighlight %}
+```
 
 Like that:
 

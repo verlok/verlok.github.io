@@ -30,13 +30,13 @@ So here's how to create a shaking button that transitions to another color when 
 
 This is a regular rounded corners button that changes color to red when mouse-overed.
 
-{% highlight html %}
+```html
 <div class="clearfix">
     <a id="me" href="http://www.andreaverlicchi.eu">Visit andreaverlicchi.eu</a>
 </div>
-{% endhighlight %}
+```
 
-{% highlight css %}
+```css
 body {
     font-family: Helvetica, Arial, sans-serif;
 }
@@ -62,11 +62,11 @@ body {
     border-radius: 20px;
     text-shadow: 0 1px 1px black;
 }
-{% endhighlight %}
+```
 
 ## The simplest thing: add the transition
 
-{% highlight css %}
+```css
 #me {
     /* For Firefox 16 and Internet Explorer 10 */
     transition: background-color 1s ease-in-out;
@@ -75,11 +75,11 @@ body {
     /* For Opera 12 */
     -o-transition: background-color 1s ease-in-out;
 }
-{% endhighlight %}
+```
 
 ## Now the animation keyframes
 
-{% highlight css %}
+```css
 /* Fore Firefox 16 and Internet Explorer 10 */
 @keyframes shake {
     100% {transform: translate(20px, 0px); }
@@ -92,35 +92,35 @@ body {
 @-o-keyframes shake {
     100% {-o-transform: translate(20px, 0px); }
 }
-{% endhighlight %}
+```
 
 ## ...and the animation appliance
 
-{% highlight css %}
+```css
 /* For Firefox 16 and Internet Explorer 10 */
 animation: shake 1s infinite alternate ease-in-out;
 /* For Chrome 22 and Safari 6 */
 -webkit-animation: shake 1s infinite alternate ease-in-out;
 /* For Opera 12 */
 -o-animation: shake 1s infinite alternate ease-in-out;
-{% endhighlight %}
+```
 
 ## Finally, the linear gradient
 
 Note that the syntax of linear gradient has been changed according to standards
 
-{% highlight css %}
+```css
 /* For Firefox 16 and Internet Explorer 10 */
 background-image: linear-gradient(to bottom, rgba(255,255,255,.5), rgba(127,127,127,0.1), rgba(0,0,0,0.5));
 /* For Chrome 22 and Safari 6 */
 background-image: -webkit-linear-gradient(top, rgba(255,255,255,.5), rgba(127,127,127,0.1), rgba(0,0,0,0.5));
 /* For Opera 12 */
 background-image: -o-linear-gradient(top, rgba(255,255,255,.5), rgba(127,127,127,0.1), rgba(0,0,0,0.5));
-{% endhighlight %}
+```
 
 ## The final, without comment, compact and readable version:
 
-{% highlight css %}
+```css
 @-webkit-keyframes shake {
     100% {-webkit-transform: translate(20px, 0px); }
 }
@@ -150,7 +150,7 @@ background-image: -o-linear-gradient(top, rgba(255,255,255,.5), rgba(127,127,127
     background-image:      -o-linear-gradient(top,       rgba(255,255,255,.5), rgba(127,127,127,0.1), rgba(0,0,0,0.5));
     background-image:         linear-gradient(to bottom, rgba(255,255,255,.5), rgba(127,127,127,0.1), rgba(0,0,0,0.5));
     }
-{% endhighlight %}
+```
 
 That's it!
 

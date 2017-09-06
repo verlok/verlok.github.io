@@ -12,18 +12,18 @@ Spriting is a way to improve performance in your website by putting many images 
 
 The simpler way to create a sprite with Compass requires you to import a folder of images in your project, then generate a class for each sprite. You can do that by using the following code:
 
-{% highlight sass %}
+```scss
 // Required Compass tool import
 @import "compass/utilities/sprites";
 // Importing all the png images under the flags folder
 @import "flags/*.png";
 // Generate a CSS class for each sprite
 @include all-flags-sprites
-{% endhighlight %}
+```
 
 Example of CSS output:
 
-{% highlight css %}
+```css
 .flags-it,
 .flags-de,
 .flags-fr { 
@@ -32,7 +32,7 @@ Example of CSS output:
 .flags-it { background-position: 0 0; }
 .flags-de { background-position: 0 -32px; }
 .flags-fr { background-position: 0 -64px; }
-{% endhighlight %}
+```
 
 This can be enough for your needs... but you want more, don't you?
 
@@ -95,7 +95,7 @@ Let's see what to put in our partials, one by one.
 
 Here's some mixins you might want to include in your mixins file. You can find the explanation of what they do right in the code comments.
 
-{% highlight scss %}
+```scss
 /* 
 Makes possible to use a n-ple density sprite
 Automatically adapts background-size and offset when $multiplier is greater than 1
@@ -145,7 +145,7 @@ Optional parameters:
     @include useNxSprite($sprite, $sprite2xMap, $sprite2xUrl, 2, $renderSize, $offsetX, $offsetY);
   }
 }
-{% endhighlight %}
+```
 
 ### _variables.scss
 
@@ -153,10 +153,10 @@ This is the file where you define all the variables for your site, that you're g
 
 Here you should define the spacing between sprites in sprite map images.
 
-{% highlight scss %}
+```scss
 // Generic spacing (at 1x) for sprites
 $spacing-sprites-generic: 10px;
-{% endhighlight %}
+```
 
 ### _flagsSprite.scss
 
@@ -164,7 +164,7 @@ This is the file where you define the variables and the mixins for your flag spr
 
 I suggest to `@import` your `_flagsSprite.scss` only in files that requires flag sprites. This **speeds up build time** a lot, by avoiding frequent images check on the file system.
 
-{% highlight scss %}
+```scss
 // flagsSprite MAPS and URLS
 $flagsSprite1xMap: sprite-map("flagsSprite1x/*.png", $spacing: $spacing-sprites-generic);
 $flagsSprite2xMap: sprite-map("flagsSprite2x/*.png", $spacing: $spacing-sprites-generic * 2);
@@ -175,13 +175,13 @@ $flagsSprite2xUrl: sprite-url($flagsSprite2xMap);
 @mixin flagsSprite($spriteName, $renderSize: false, $offsetX: 0, $offsetY: 0) {
     @include use1x2xSprite($spriteName, $flagsSprite1xMap, $flagsSprite2xMap, $flagsSprite1xUrl, $flagsSprite2xUrl, $renderSize, $offsetX, $offsetY);
 }
-{% endhighlight %}
+```
 
 ### style.scss - standard usage
 
 If you don't need space around your sprite and you don't want Compass to generate box dimensions for you, you can simply do the following.
 
-{% highlight scss %}
+```scss
 @import "compass/utilities/sprites";
 @import "_variables";
 @import "_flagsSprite";
@@ -190,11 +190,11 @@ If you don't need space around your sprite and you don't want Compass to generat
 .exampleSimple {
     @include flagsSprite(italy);
 }
-{% endhighlight %}
+```
 
 That will produce the following:
 
-{% highlight css %}
+```css
 .exampleSimple {
   background: transparent url('../img/flagsSprite1x-s479625030c.png') no-repeat 0 -882px;
 }
@@ -204,13 +204,13 @@ That will produce the following:
     background-size: 32px 2048px;
   }
 }
-{% endhighlight %}
+```
 
 ### style.scss - with box size generation
 
 If you want Compass to generate box dimensions for you, you should do the following.
 
-{% highlight scss %}
+```scss
 @import "compass/utilities/sprites";
 @import "_variables";
 @import "_flagsSprite";
@@ -218,11 +218,11 @@ If you want Compass to generate box dimensions for you, you should do the follow
 .exampleWithDimensions {
     @include flagsSprite(italy, true);
 }
-{% endhighlight %}
+```
 
 That will produce the following:
 
-{% highlight css %}
+```css
 .exampleWithDimensions {
   background: transparent url('../img/flagsSprite1x-s479625030c.png') no-repeat 0 -882px;
   height: 32px;
@@ -236,13 +236,13 @@ That will produce the following:
     width: 32px;
   }
 }
-{% endhighlight %}
+```
 
 ### style.scss - with offset management
 
 If you don't want Compass to generate box dimensions for you, but you want to use an offset inside the box, you should do the following.
 
-{% highlight scss %}
+```scss
 @import "compass/utilities/sprites";
 @import "_variables";
 @import "_flagsSprite";
@@ -251,11 +251,11 @@ If you don't want Compass to generate box dimensions for you, but you want to us
     @include flagsSprite(italy, false, 10, 10);
     width: 52px; height: 52px;
 }
-{% endhighlight %}
+```
 
 That will produce the following:
 
-{% highlight css %}
+```css
 .exampleWithPadding {
   background: transparent url('../img/flagsSprite1x-s479625030c.png') no-repeat 10px -872px;
   width: 52px;
@@ -267,7 +267,7 @@ That will produce the following:
     background-size: 32px 2048px;
   }
 }
-{% endhighlight %}
+```
 
 ## That's it
 

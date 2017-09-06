@@ -25,7 +25,7 @@ If you open your browser inspector in the network panel, you would see that the 
 
 Here's the markup you're gonna need to lazy load a responsive image.
 
-{% highlight html %}
+```html
 <!-- Image loaded normally by the browser -->
 <img srcset="img/41494516WM_10r_n_f.jpg 668w,
         img/41494516WM_10_n_f.jpg 334w,
@@ -47,7 +47,7 @@ Here's the markup you're gonna need to lazy load a responsive image.
         (min-width: 769px) 25vw, 
         (min-width: 1025px) 20vw, 
         100vw">
-{% endhighlight %}
+```
 
 Note that we're using the `img` HTML tag and **not** the `picture`. The latter is not necessary because we're not changing the image ratio in this case.
 
@@ -60,10 +60,10 @@ Furthermore, as not all browser are supporting responsive images, we need to inc
 
 So we're going to include those 2 scripts:
 
-{% highlight html %}
+```html
 <script src="js/vendor/lazyload.min.js"></script>
 <script src="js/vendor/picturefill.min.js"></script>
-{% endhighlight %}
+```
 
 
 ### Script initialization
@@ -72,7 +72,7 @@ What we need to do is create a new instance of `LazyLoad` to transform that `dat
 
 We can do all of that using this command:
 
-{% highlight javascript %}
+```js
 /*var myLazyLoad = */ new LazyLoad({
     data_src: "src",
     data_srcset: "srcset",
@@ -83,7 +83,7 @@ We can do all of that using this command:
         });
     }
 });
-{% endhighlight %}
+```
 
 For further reference about what we did here, see [LazyLoad documentation](http://verlok.github.io/lazyload/).
 
@@ -97,7 +97,7 @@ There are also some features that can be achieved only using our CSS. We need to
 
 We can do all that using this CSS rules:
 
-{% highlight css %}
+```css
 /*
 Makes images container to occupy some space 
 when the images aren't loaded yet.
@@ -120,7 +120,7 @@ Fixes Firefox anomaly during images load time
         visibility: hidden;
     }
 }
-{% endhighlight %}
+```
 
 ## That's it!
 

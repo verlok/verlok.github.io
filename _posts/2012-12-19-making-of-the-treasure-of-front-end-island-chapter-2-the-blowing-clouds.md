@@ -61,14 +61,14 @@ Inside the **treasure** `div` I placed:
 
 Here's the markup for the 4 clouds. I like to use semantic IDs and very short class names, when needed, to keep the html light.
 
-{% highlight html %}
+```html
 <div id="clouds">
     <span class="c1"></span>
     <span class="c2"></span>
     <span class="c3"></span>
     <span class="c4"></span>
 </div>
-{% endhighlight %}
+```
 
 ## The clouds stylesheet portion
 
@@ -76,7 +76,7 @@ And here's the CSS that makes the sprite to split into pieces. As you see I use 
 
 Each cloud has a different z-index because some clouds are behind [the splashing title]({% post_url 2012-12-09-making-of-the-treasure-of-front-end-island-chapter-1-the-splashing-title %} "Making of The Treasure of Front-end Island – Chapter 1 – The splashing title"), some others are in front of it.
 
-{% highlight css %}
+```css
 /* Clouds */
 #clouds span {
 	background: url('../img/clouds.png') no-repeat top left;
@@ -109,7 +109,7 @@ Each cloud has a different z-index because some clouds are behind [the splashing
 	left: 504px; top: 463px;
 	z-index: 12;
 }
-{% endhighlight %}
+```
 
 ## The blowing animation
 
@@ -119,7 +119,7 @@ There are two types of clouds: A and B. The A type translates horizontally by on
 
 So I wrote two keyframes definitions: cloudA and cloudB.
 
-{% highlight css %}
+```css
 /* Clouds animation keyframes */
 @keyframes cloudA {
 	0%   { transform: translate(0px) }
@@ -130,11 +130,11 @@ So I wrote two keyframes definitions: cloudA and cloudB.
 	0%   { transform: translate(0px) }
 	100% { transform: translate(100px) }
 }
-{% endhighlight %}
+```
 
 To make the clouds move all together, I applied the keyframes to the elements giving it the same duration: 15 seconds. The animation goes back and forth infinite times using the easing function "ease-in-out", which makes the animation both start slow and end slow.
 
-{% highlight css %}
+```css
 /* Clouds animation appliance */
 #clouds .c1,
 #clouds .c4 {
@@ -145,7 +145,7 @@ To make the clouds move all together, I applied the keyframes to the elements gi
 #clouds .c3 {
 	animation: cloudB 15s 0s infinite alternate ease-in-out;
 }
-{% endhighlight %}
+```
 
 ## Final result
 
