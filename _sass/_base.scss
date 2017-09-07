@@ -93,8 +93,7 @@ h1, h2, h3, h4, h5, h6 {
 a {
 	color: $link-color;
 	text-decoration: none;
-	text-decoration: underline;
-
+	
 	.social-media-list &:hover {
 		text-decoration: none;
 
@@ -149,7 +148,14 @@ pre {
 	}*/
 }
 
+/**
+ * Strong
+ */
 
+strong {
+	font-weight: normal;
+	//background-color: lighten($alternative-color, 60);
+}
 
 /**
  * Wrapper

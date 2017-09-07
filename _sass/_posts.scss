@@ -4,6 +4,14 @@
 
 .post {
 
+    /* LINKS INSIDE PARAGRAPHS, BOTH POST AND POST LIST */
+
+    &-list p a,
+    p > a {
+        text-shadow: 0 0 1px white, 0 0 2px white;
+        background-image: linear-gradient(to top, transparent 10%, $alternative-color 11%, $alternative-color 12%, transparent 13%);
+    }
+
     /* POST LIST - HOME */
     &-list {
         margin-left: 0;
@@ -12,10 +20,10 @@
             margin-bottom: $spacing-unit;
         }
         &-intro {
-            margin-bottom: $spacing-unit;
+            margin-bottom: $spacing-unit/1.5;
         }
         &-title {
-            text-transform: uppercase;
+            //text-transform: uppercase;
             line-height: 1.3;
             margin-bottom: $spacing-unit/8;
         }
@@ -24,16 +32,21 @@
         }
     }
 
-    /* SINGLE POST - DETAIL */
+    /* LINK TO DETAIL PAGE */
 
     &-link {
+        line-height: 1.2;
         color: $brand-color;
-        text-decoration: none;
+        margin-bottom: $spacing-unit/2;
+        //text-decoration: none;
     }
+
+    /* SINGLE POST - DETAIL */
+
     &-title {
         @include relative-font-size(2.625);
         color: $brand-color;
-        text-transform: uppercase;
+        font-weight: bold;
         letter-spacing: -1px;
         line-height: 1.1;
         @include media-query($on-laptop) {
@@ -46,12 +59,9 @@
     &-link {
         display: block;
         @include relative-font-size(1.5);
-        &:visited {
-            color: darken($brand-color, 10%);
-        }
     }
     &-meta {
-        font-size: $small-font-size;
+        @include relative-font-size(0.9);
         color: $grey-color;
     } 
     
@@ -62,7 +72,7 @@
         h2 {
             //text-transform: uppercase;
             @include relative-font-size(2);
-            line-height: 1.2;
+            line-height: 1.1;
             margin-top: $spacing-unit;
             @include media-query($on-laptop) {
                 @include relative-font-size(1.75);
