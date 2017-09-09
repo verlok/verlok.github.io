@@ -76,12 +76,14 @@
             }
         }
         h3 {
+            margin-top: $spacing-unit;
             @include relative-font-size(1.625);
             @include media-query($on-laptop) {
                 @include relative-font-size(1.375);
             }
         }
         h4 {
+            margin-top: $spacing-unit;
             @include relative-font-size(1.25);
             @include media-query($on-laptop) {
                 @include relative-font-size(1.125);
