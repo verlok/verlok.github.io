@@ -247,14 +247,26 @@ gulp watch
 ```
 
 
-## Testing with Jest
+## Making Jest work along with Rollup 
 
-.
-.
-.
+I'll write another in-depth post about how I used Jest to test modules which would become private uglified variables and functions, but the point here is how to make Jest work together with Rollup, since the two require different Babel configuration.
+
+As we saw, the Babel configuration is split in two `env`s and the one set and used by Jest is `test`. This is because Jest just needs the `presets` object to contain `["es2015"]`, whereas rollup requires `["es2015", {"modules": false}]`.
+
+If you did what I explained correctly, Jest should work out of the box.
+
+```sh
+npm install --save-dev jest
+npm install -g jest-cli
+```
+
+Then just launch jest like that:
+
+```
+jest
+```
 
 
----
+## Further steps
 
-** TODO: Create a separate post about testing private functions from modules using Jest and ES2015 modules **
-
+A more advanced configuration would be to configure `npm` to be the command line interface for the build and the tests, so that we could run `npm run build` and `npm run test` to launch either the build or the tests, or better include the testing process in the build so whenever our tests fail, the build fails too. I will do that as next steps.
