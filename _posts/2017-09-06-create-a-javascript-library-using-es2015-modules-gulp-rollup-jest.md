@@ -1,22 +1,20 @@
 ---
 layout: post
-title: Create a JavaScript library using ES2015, modules, Gulp, Rollup and Jest
+title: Create a JavaScript library using ES2015 modules, Gulp, Rollup and Jest
 date: 2017-09-09 08:00:00:00 +01:00
 categories:
 - best practices
-tags: [es2015, modules, javaScript, gulp, rollup]
+tags: [es2015, modules, javascript, gulp, rollup]
 ---
 
-Let's discover how and why to write a JavaScript library using [ES2015](https://babeljs.io/learn-es2015/) transpiled with [Babel](https://babeljs.io/), featuring [ES modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) packed up using [Rollup](https://rollupjs.org/), running everything with [Gulp](gulp.js) and using [Jest](https://facebook.github.io/jest/) to test your code.
+Let's see how to write a JavaScript library using [ES2015](https://babeljs.io/learn-es2015/) transpiled with [Babel](https://babeljs.io/), featuring [ES modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) packed up using [Rollup](https://rollupjs.org/) via [Gulp](gulp.js), and [Jest](https://facebook.github.io/jest/) to test your code.
 
-The experience I'm showing in this post is the one I had while developing my [vanilla-lazyload](https://github.com/verlok/lazyload).
+Here I'm sharing the experience I had while developing my [vanilla-lazyload](https://github.com/verlok/lazyload) script, since at the time I didn't find anything that explained how to use those libraries together, especially **Rollup and Jest**.
 
 
 ## Installing Gulp
 
-Gulp is a task runner similar to Grunt for automating painful or time-consuming tasks in your development workflow, so you can stop messing around and build something.
-
-I chose to migrate from Grunt (another task runner) to Gulp because the latter is blazing fast, being it based on Node [streams](https://medium.freecodecamp.org/node-js-streams-everything-you-need-to-know-c9141306be93) instead of the file system.
+Gulp is a **task runner** similar to [Grunt](https://gruntjs.com/) for automating painful or time-consuming tasks in your development workflow. I chose to migrate **from Grunt to Gulp** because the latter is blazing fast, being it based on Node's [streams](https://medium.freecodecamp.org/node-js-streams-everything-you-need-to-know-c9141306be93) instead of the file system.
 
 In order to use Gulp, you need to install Gulp locally to your project, to do so:
 
@@ -35,14 +33,12 @@ For more information, I would suggest to read [Gulp for beginners](https://css-t
 
 ## Configuring gulp
 
-Gulp execution requires a configuration file named `gulpfile.js`. Create an empty one for now, I'm going to show you what to put in it step by step.
+Gulp execution requires a configuration file named `gulpfile.js`. Create an empty one for now, I'm going to show you what to put in it, step by step.
 
 
 ### 1. Linting source files
 
 Being JavaScript a dynamic and loosely-typed language, is especially prone to developer errors. Linting tools like [ESLint](https://eslint.org/) allow developers to discover problems with their JavaScript code without executing it.
-
-So the first thing I want my `gulp` command to do is check the code using ESLint.
 
 To install ESLint for Gulp, just run:
 
@@ -50,7 +46,7 @@ To install ESLint for Gulp, just run:
 npm install --save-dev gulp-eslint 
 ```
 
-Then in your `gulpfile.js` add:
+Then in your empty `gulpfile.js` add:
 
 ```js
 var gulp = require("gulp");
@@ -67,14 +63,14 @@ gulp.task("default", function () {
 });
 ```
 
-NOTE: Setting the `process.env.NODE_ENV` variable is necessary to match the task we're running in the Babel configuration. I'll explain this later.
+NOTE: Setting the `process.env.NODE_ENV` variable is necessary to match the task we're running in the Babel configuration. I'll explain this [in a while](#3-transpiling-to-es5-with-babel).
 
 
 ### 2. Bundling modules with Rollup
 
-Rollup is a module bundler for JavaScript which compiles small pieces of code into something larger, such as a library. It uses the new standardized format for code modules included in the ES2015 revision of JavaScript, instead of older CommonJS and AMD. ES6 modules let you freely and seamlessly combine the most useful individual functions from your favorite libraries.
+Rollup is a module bundler for JavaScript which compiles small pieces of code into something larger, such as a library. It uses the new standardized format for code modules included in the ES2015 revision of JavaScript, today.
 
-To simplify, Rollup reads your main JavaScript file and generates a bigger file with all the modules included, automatically. And it even removes what you don't use, feature also known as _tree shaking_.
+Long story short, Rollup reads your main JavaScript file and generates a bigger file with all the modules included, automatically. 
 
 Install rollup with:
 
@@ -102,9 +98,9 @@ Since I want to distribute a version of the script which is not transpiled in ES
         .pipe(gulp.dest(destFolder)) // --> writing rolledup
 ```
 
-`destFolder` is a JavaScript variable and it's just set to  `./dist` inside your `gulpfile.js`.
+`destFolder` is a JavaScript variable and it's just set to  `./dist` inside our `gulpfile.js`.
 
-NOTE: [Webpack](https://webpack.github.io/) is a similar bundling script which might be preferrable to bundle complex applications, but I noticed that the final code generated by Webpack would be much heavier, so I prefer Rollup to do this kind of job.
+NOTE: [Webpack](https://webpack.github.io/) is a similar bundling script which might be preferrable to bundle complex applications, but I noticed that the final code generated by Webpack would be much heavier, so Rollup worked better for me.
 
 
 ### 3. Transpiling to ES5 with Babel
@@ -265,6 +261,8 @@ Then just launch jest like that:
 ```
 jest
 ```
+
+More information on Jest on the [Get Started](https://facebook.github.io/jest/docs/en/getting-started.html) page.
 
 
 ## Further steps
