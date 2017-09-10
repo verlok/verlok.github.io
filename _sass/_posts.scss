@@ -68,18 +68,13 @@
             //text-transform: uppercase;
             @include relative-font-size(2);
             line-height: 1.1;
-            margin-top: $spacing-unit;
-            @include media-query($on-laptop) {
-                @include relative-font-size(1.75);
-            }
+            margin-top: $spacing-unit*1.2;
+            @include relative-font-size(1.75);
         }
         h3 {
-            margin-top: $spacing-unit;
+            margin-top: $spacing-unit*1.1;
             line-height: 1.2;
-            @include relative-font-size(1.625);
-            @include media-query($on-laptop) {
-                @include relative-font-size(1.375);
-            }
+            @include relative-font-size(1.375);
         }
     } 
 }
