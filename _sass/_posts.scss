@@ -76,5 +76,16 @@
             line-height: 1.2;
             @include relative-font-size(1.375);
         }
-    } 
+    }
+
+    &-footer {
+        @extend %clearfix;
+        margin-bottom: $spacing-unit;
+    }
+
+    &-back {
+        a {
+            color: $brand-color;
+        }
+    }
 }

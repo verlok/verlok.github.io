@@ -19,10 +19,9 @@ layout: default
     {{ content }}
   </div>
 
-  <p>If you liked this post, please share it :)</p>
-  {% include addThisShareButtons.html %}
+  {% include post_footer.html %}
 
-  {% if site.disqus.shortname %}
-    {% include disqus_comments.html %}
-  {% endif %}
+  <nav class="post-back">
+    <a href="/">&larr; Back to the posts list</a>
+  </nav>
 </article>
