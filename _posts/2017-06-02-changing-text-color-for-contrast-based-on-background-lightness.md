@@ -11,12 +11,12 @@ If you had to change the color of some fixed-positioned text based on the lightn
 
 Here's the result using `clip` - wide browser support
 
-<iframe class="lazy" height='200' scrolling='no' title='Text color change at background using clip' data-src='//codepen.io/verlok/embed/VWZeBL/?height=194&amp;theme-id=light&amp;default-tab=result&amp;embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/verlok/pen/VWZeBL/'>Text color change at background using clip</a> by Andrea Verlicchi (<a href='https://codepen.io/verlok'>@verlok</a>) on <a href='https://codepen.io'>CodePen</a>.
+<iframe class="lazy" height='200' scrolling='no' title='Text color change at background using clip' data-src='https://codepen.io/verlok/embed/VWZeBL/?height=194&amp;theme-id=light&amp;default-tab=result&amp;embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/verlok/pen/VWZeBL/'>Text color change at background using clip</a> by Andrea Verlicchi (<a href='https://codepen.io/verlok'>@verlok</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 And here's the result using `clip-path` - modern browsers only
 
-<iframe class="lazy" height='200' scrolling='no' title='Text color change at background using clip-path' data-src='//codepen.io/verlok/embed/owvYjx/?height=265&amp;theme-id=light&amp;default-tab=result&amp;embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/verlok/pen/owvYjx/'>Text color change at background using clip-path</a> by Andrea Verlicchi (<a href='https://codepen.io/verlok'>@verlok</a>) on <a href='https://codepen.io'>CodePen</a>.
+<iframe class="lazy" height='200' scrolling='no' title='Text color change at background using clip-path' data-src='https://codepen.io/verlok/embed/owvYjx/?height=265&amp;theme-id=light&amp;default-tab=result&amp;embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/verlok/pen/owvYjx/'>Text color change at background using clip-path</a> by Andrea Verlicchi (<a href='https://codepen.io/verlok'>@verlok</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 What happens here that the content is:

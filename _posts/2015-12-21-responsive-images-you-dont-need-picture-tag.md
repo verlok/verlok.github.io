@@ -32,7 +32,7 @@ When using the `img` tag, in the `sizes` attribute, you can specify how wide you
 | From 1024 px to 1279 px | 1/4 of container | 100% with 30 px padding    | `calc(( 100vw - 60 px ) / 4)`|
 | From 1280 px up         | 1/4 of container | 1280 px with 30 px padding | `305 px`                     |
 
-See [this pen](http://codepen.io/verlok/pen/JGXeyz?editors=110) which uses media queries and CSS to specify `img` widths, and [this pen](http://codepen.io/verlok/pen/adNQqX?editors=110) which specifies the `sizes` inside the `img` tag.
+See [this pen](https://codepen.io/verlok/pen/JGXeyz?editors=110) which uses media queries and CSS to specify `img` widths, and [this pen](https://codepen.io/verlok/pen/adNQqX?editors=110) which specifies the `sizes` inside the `img` tag.
 
 > Confused? If you need a more extensive explication, please read [srcset and sizes](https://ericportis.com/posts/2014/srcset-sizes/) by Eric Portis, in my opinion the best article about using `img` with `srcset` and `sizes`
 

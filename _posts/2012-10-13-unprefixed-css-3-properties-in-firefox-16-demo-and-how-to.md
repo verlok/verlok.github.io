@@ -23,7 +23,7 @@ So here's how to create a shaking button that transitions to another color when 
 
 ## Result first:
 
-<iframe class="lazy" height='265' scrolling='no' title='Animated and transitioned gradient rounded button' data-src='//codepen.io/verlok/embed/dWgePa/?height=265&amp;theme-id=0&amp;default-tab=css,result&amp;embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/verlok/pen/dWgePa/'>Animated and transitioned gradient rounded button</a> by Andrea Verlicchi (<a href='http://codepen.io/verlok'>@verlok</a>) on <a href='http://codepen.io'>CodePen</a>.
+<iframe class="lazy" height='265' scrolling='no' title='Animated and transitioned gradient rounded button' data-src='https://codepen.io/verlok/embed/dWgePa/?height=265&amp;theme-id=0&amp;default-tab=css,result&amp;embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/verlok/pen/dWgePa/'>Animated and transitioned gradient rounded button</a> by Andrea Verlicchi (<a href='https://codepen.io/verlok'>@verlok</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 ## Create the markup and the basic CSS
