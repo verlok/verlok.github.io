@@ -19,6 +19,11 @@
     {% include lazyload.html %}
     {% include slideShareResize.html %}
     {% include addThis.html %}
+    
+    <!-- Analytics -->
+    {% if jekyll.environment == 'production' and site.google_analytics %}
+    {% include google-analytics.html %}
+    {% endif %}
 
   </body>
 
