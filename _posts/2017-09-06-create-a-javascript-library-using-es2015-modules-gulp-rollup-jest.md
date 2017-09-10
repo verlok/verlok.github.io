@@ -81,12 +81,12 @@ npm install --save-dev gulp-rollup gulp-rename
 Then in your gulpfile, just add a pipe command:
 
 ```js
-        // ----------- rolling up --------------
-        .pipe(rollup({
-            format: "umd",
-            moduleName: "LazyLoad",
-            entry: "./src/lazyload.js"
-        }))
+// ----------- rolling up --------------
+.pipe(rollup({
+    format: "umd",
+    moduleName: "LazyLoad",
+    entry: "./src/lazyload.js"
+}))
 ```
 
 This means that Rollup has to produce a `umd` type of module, the produced module name will be `LazyLoad`, and the entry point to start looking for dependencies is `./src/lazyload.js`.
@@ -94,8 +94,8 @@ This means that Rollup has to produce a `umd` type of module, the produced modul
 Since I want to distribute a version of the script which is not transpiled in ES5, I save it to `lazyload.es2015.js` piping the `rename` command and the `dest` one.
 
 ```js
-        .pipe(rename("lazyload.es2015.js"))
-        .pipe(gulp.dest(destFolder)) // --> writing rolledup
+.pipe(rename("lazyload.es2015.js"))
+.pipe(gulp.dest(destFolder)) // --> writing rolledup
 ```
 
 `destFolder` is a JavaScript variable and it's just set to  `./dist` inside our `gulpfile.js`.
@@ -120,10 +120,10 @@ var babel = require("gulp-babel");
 ```
 
 ```js
-        // ----------- babelizing --------------
-        .pipe(babel())
-        .pipe(rename("lazyload.js"))
-        .pipe(gulp.dest(destFolder)) // --> writing babelized es5 js
+// ----------- babelizing --------------
+.pipe(babel())
+.pipe(rename("lazyload.js"))
+.pipe(gulp.dest(destFolder)) // --> writing babelized es5 js
 ```
 
 The babel configuration has to be stored in an external `.babelrc` file, that in my case looks like that:
@@ -174,10 +174,10 @@ var uglify = require("gulp-uglify");
 ```
 
 ```js
-        // ----------- minifying --------------
-        .pipe(uglify())
-        .pipe(rename("lazyload.min.js"))
-        .pipe(gulp.dest(destFolder)); // --> writing uglified
+// ----------- minifying --------------
+.pipe(uglify())
+.pipe(rename("lazyload.min.js"))
+.pipe(gulp.dest(destFolder)); // --> writing uglified
 ```
 
 ### All together now
