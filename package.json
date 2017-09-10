@@ -1,0 +1,27 @@
+{
+  "name": "andreaverlicchi",
+  "version": "1.0.0",
+  "description": "The new version of my blog, based on Jekyll.",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "uncss": "^0.15.0"
+  },
+  "devDependencies": {
+    "gulp-postcss": "^7.0.0",
+    "postcss-uncss": "^0.15.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/verlok/andreaverlicchi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/verlok/andreaverlicchi/issues"
+  },
+  "homepage": "https://github.com/verlok/andreaverlicchi#readme"
+}

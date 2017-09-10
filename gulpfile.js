@@ -1,8 +1,14 @@
 var gulp = require('gulp');
-var purify = require('gulp-purifycss');
+var postcss = require('gulp-postcss');
+var uncss = require('postcss-uncss');
 
-gulp.task('css', function() {
-  return gulp.src('./_site/main.css')
-    .pipe(purify(['./_site/**/*.js', './_site/**/*.html']))
-    .pipe(gulp.dest('./dist/'));
+gulp.task('css', function () {
+    var plugins = [
+        uncss({
+            html: ['_site/**/index.html']
+        }),
+    ];
+    return gulp.src('./_site/assets/main.css')
+        .pipe(postcss(plugins))
+        .pipe(gulp.dest('./dest'));
 });
