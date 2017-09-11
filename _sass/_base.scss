@@ -103,6 +103,15 @@ a {
 	}
 }
 
+/**
+ * Abbreviations
+ */
+
+abbr[title] {
+	text-decoration: none;
+	cursor: help;
+}
+
 
 /**
  * Blockquotes
