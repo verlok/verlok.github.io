@@ -5,16 +5,14 @@ date: '2012-09-23 22:52:10 +0200'
 date_gmt: '2012-09-23 21:52:10 +0200'
 ---
 
-<img alt="Andrea's face" width="295" src="http://www.gravatar.com/avatar/a175bc6ffa39da4513620869709c0fcb?s=295" srcset="http://www.gravatar.com/avatar/a175bc6ffa39da4513620869709c0fcb?s=295 295w, http://www.gravatar.com/avatar/a175bc6ffa39da4513620869709c0fcb?s=590 590w" sizes="295px" style="float: left; margin-right: 20px"> 
+<img alt="Andrea Verlicchi's face" width="295" src="http://www.gravatar.com/avatar/a175bc6ffa39da4513620869709c0fcb?s=295" srcset="http://www.gravatar.com/avatar/a175bc6ffa39da4513620869709c0fcb?s=295 295w, http://www.gravatar.com/avatar/a175bc6ffa39da4513620869709c0fcb?s=590 590w" sizes="295px" style="float: left; margin: 0 26px 26px 0"> 
 
-Hello, I'm Andrea, and this is my face.
+Hello, I'm Andrea, and I love to craft websites with the user experience at the center, which I care about in every detail.
 
-I've been working as a **front-end architect** at [YOOX NET-A-PORTER GROUP](http://www.ynap.com) since 2013. My job is really focused on **performance optimization**, research and development, accessibility, internal training and tech assessment for  recruiting.
+Recently I've been counting and I realized I'm a programmer for 30 years*. My current job at [YNAP](https://www.ynap.com) is mainly focused on front-end research and development, working together with tech leaders, training on new technologies / best practices, and technically assess candidates. [More on LinkedIn &rarr;](https://linkedin.com/andreaverlicchi)
 
-Less recently I worked also as back-end developer using PHP (which I still use for my pet projects) and other object-oriented languages. 
+I'm a father, a fan of GitHub, the creator of [vanilla-lazyload](https://github.com/verlok/lazyload) and [colonnineelettriche.it](http://www.colonnineelettriche.it) and a proud writer of this tech blog. I also occasionally speak at front-end conferences.
 
-Besides work I love nature in all of its forms, cycling, hiking, healthy local food (wherever I go), and all kinds of regional and foreign languages and cultures, and above all my family and my kid Lorenzo.
+I love nature in all of its forms and - when I'm not geeking around - I love cycling, hiking, eat healthy local food, and all kinds of foreign and regional languages and cultures.
 
---
-
-PS: recently I've been counting and I realized I'm a programmer for 30 years. To be honest, when at 9 I started coding on my [MSX](http://en.wikipedia.org/wiki/MSX), I just copied lines of code from a magazine, but I was loving it. Anyway I have to say thanks to my father for his patience, and the company that included a programming manual for kids (featuring a robot-dog!) in their computers box, because that's how I started to code.
+\* to be honest, when at 9 I started coding on my [MSX](http://en.wikipedia.org/wiki/MSX), I just copied lines of code from a magazine, but I was loving it. Anyway I have to say thanks to my father for his patience and to the company that included a programming manual for kids (featuring a robot-dog!) in their computers box.
