@@ -2,7 +2,7 @@
 layout: default
 ---
 <div class="home">
-    <h1 class="visuallyHidden">Andrea Verlicchi's Blog</h1>
+    <h1 class="visuallyHidden">{{ site.title | escape }}</h1>
 
     <!-- Posts list -->
     <section class="post-list">
@@ -10,9 +10,10 @@ layout: default
         {% for post in paginator.posts %}
         <article>
             <h2 class="post-list-title">
-                <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                <a class="post-list-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
             </h2>
             {{ post.excerpt }}
+            <a href="{{ post.url | prepend: site.baseurl }}" class="post-list-cta">Read more &rarr;</a>
         </article>
         {% endfor %}
     </section>

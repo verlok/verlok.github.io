@@ -9,7 +9,7 @@
     &-list p a,
     p > a {
         text-shadow: 0 0 1px white, 0 0 2px white;
-        background-image: linear-gradient(to top, transparent 10%, $alternative-color 11%, $alternative-color 12%, transparent 13%);
+        background-image: linear-gradient(to top, transparent 10%, currentColor 11%, currentColor 12%, transparent 13%);
     }
 
     /* POST LIST - HOME */
@@ -17,6 +17,12 @@
         margin-left: 0;
         list-style: none;
 
+        /* LINK TO DETAIL PAGE */
+        &-link {
+            line-height: 1.2;
+            color: $brand-color;
+            margin-bottom: $spacing-unit/2;
+        }
         &-intro {
             margin-bottom: $spacing-unit/1.5;
         }
@@ -25,19 +31,25 @@
             line-height: 1.3;
             margin-bottom: $spacing-unit/8;
         }
-        >article {
+        > article {
             margin-bottom: 32px;
+        }
+        &-cta {
+            display: inline-block;
+            max-width: 200px;
+            border: 1px solid $alternative-color;
+            //color: white;
+            padding: 0 $spacing-unit/4;
+            border-radius: 5px;
+            @include relative-font-size(0.9);
+            &:hover {
+                color: white;
+                background: $alternative-color;
+            }
         }
     }
 
-    /* LINK TO DETAIL PAGE */
-
-    &-link {
-        line-height: 1.2;
-        color: $brand-color;
-        margin-bottom: $spacing-unit/2;
-        //text-decoration: none;
-    }
+    
 
     /* SINGLE POST - DETAIL */
 
