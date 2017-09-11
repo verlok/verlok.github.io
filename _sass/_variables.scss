@@ -25,9 +25,9 @@ $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 15%);
 
 // Width of the content area
-$content-width:    700px;
+$content-width:    600px;
 
 // MQ Breakpoints
-$on-palm:          600px;
+$on-palm:          420px;
 
 $tables-border-color:    $grey-color;

@@ -170,8 +170,7 @@ strong {
  * Wrapper
  */
 .wrapper {
-	max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-	max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+	max-width: $content-width;
 	margin-right: auto;
 	margin-left: auto;
 	padding-right: $spacing-unit / 2;
