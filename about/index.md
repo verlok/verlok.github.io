@@ -11,7 +11,7 @@ Hello, I'm Andrea, and I love to craft websites with the user experience at the 
 
 Recently I've been counting and I realized I'm a programmer for 30 years*. My current job at [YNAP](https://www.ynap.com) is mainly focused on front-end research and development, working together with tech leaders, training on new technologies / best practices, and technically assess candidates. [More on LinkedIn &rarr;](https://linkedin.com/andreaverlicchi)
 
-I'm a father, a fan of GitHub, the creator of [vanilla-lazyload](https://github.com/verlok/lazyload) and [colonnineelettriche.it](http://www.colonnineelettriche.it) and a proud writer of this tech blog. I also occasionally speak at front-end conferences.
+I'm a father, a fan of GitHub, the proud creator of [vanilla-lazyload](https://github.com/verlok/lazyload) and [colonnineelettriche.it](http://www.colonnineelettriche.it) and the writer of this tech blog. I also occasionally speak at front-end conferences.
 
 I love nature in all of its forms and - when I'm not geeking around - I love cycling, hiking, eat healthy local food, and all kinds of foreign and regional languages and cultures.
 
