@@ -36,10 +36,9 @@
         }
         &-cta {
             display: inline-block;
-            max-width: 200px;
             border: 1px solid $alternative-color;
             //color: white;
-            padding: 0 $spacing-unit/4;
+            padding: $spacing-unit/4 $spacing-unit/2;
             border-radius: 5px;
             @include relative-font-size(0.9);
             &:hover {
