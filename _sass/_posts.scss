@@ -84,8 +84,15 @@
     }
 
     &-back {
+        margin-bottom: $spacing-unit;
         a {
             color: $brand-color;
+        }
+    }
+
+    &-share {
+        &-title {
+            @extend .visuallyHidden;
         }
     }
 }
