@@ -84,10 +84,13 @@
     }
 
     &-back {
-        margin-bottom: $spacing-unit;
-        a {
-            color: $brand-color;
+        margin-bottom: $spacing-unit/1.5;
+        &--bottom {
+            a {
+                color: $brand-color;
+            }
         }
+        
     }
 
     &-share {
