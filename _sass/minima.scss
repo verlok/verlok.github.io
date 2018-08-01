@@ -1,17 +1,5 @@
 @charset "utf-8";
 
 // Import partials.
-@import
-  "mixins",
-  "base",
-  "layout",
-  "syntax-highlighting",
-  // Customization ahead!
-  "posts",
-  "pagination",
-  "icons",
-  "fonts",
-  "iframes", 
-  "tables", 
-  "utils";
-;
+@import "mixins", "base", "layout", "syntax-highlighting", "posts", "code",
+	"pagination", "icons", "fonts", "iframes", "tables", "utils";
