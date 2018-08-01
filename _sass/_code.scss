@@ -1,0 +1,76 @@
+/**
+ * Basic code formatting
+ */
+
+pre,
+code {
+	@include relative-font-size(0.9);
+}
+
+/**
+ * Inline code elements
+ */
+
+code.highlighter-rouge {
+	padding: 1px 4px;
+	background: $grey-color-light;
+	border-radius: 3px;
+}
+
+pre {
+	padding: 8px 12px;
+	overflow-x: auto;
+}
+
+/**
+ * Blocks of code
+ */
+
+$extra-code-margin: 100px;
+
+div.highlighter-rouge {
+	margin-top: $spacing-unit;
+	margin-bottom: $spacing-unit;
+	position: relative;
+	@media (min-width: 900px) {
+		width: $content-width + $extra-code-margin * 2;
+		margin-left: -$extra-code-margin;
+	}
+}
+
+// Language-specific implementations
+
+%language {
+	border-radius: 5px 5px 0 0;
+	display: block;
+	@include relative-font-size(0.8);
+	padding: 2px $spacing-unit/2;
+}
+
+.language-js::before {
+	@extend %language;
+	content: "Javascript";
+	background: #2e9fff;
+	color: white;
+}
+
+.language-json::before {
+	@extend %language;
+	content: "JSON";
+	background: #1b72be;
+	color: white;
+}
+
+.language-css::before {
+	@extend %language;
+	content: "CSS";
+	background: #ff2e9f;
+	color: white;
+}
+
+.language-html::before {
+	@extend %language;
+	content: "HTML";
+	background: #e4d617;
+	color: black;
+}
