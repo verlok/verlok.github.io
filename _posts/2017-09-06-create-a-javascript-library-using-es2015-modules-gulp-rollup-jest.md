@@ -113,7 +113,7 @@ To install babel and its ES2015 preset, plus a plugin to transform `Object.assig
 npm install --save-dev babel-core gulp-babel babel-preset-es2015 babel-plugin-transform-object-assign
 ```
 
-Then, to babelize our previously rolled-up JavaScript and save it to `lazyload.js`, let's require `gulp-babel` and add the following pipe to our `gruntfile.js`:
+Then, to babelize our previously rolled-up JavaScript and save it to `lazyload.js`, let's require `gulp-babel` and add the following pipe to our `gulpfile.js`:
 
 ```js
 var babel = require("gulp-babel");
@@ -167,7 +167,7 @@ You may have noticed that I configured two `env`s differently:
 npm install --save-dev gulp-uglify
 ```
 
-Then, add the following require and pipe to our `gruntfile.js`:
+Then, add the following require and pipe to our `gulpfile.js`:
 
 ```js
 var uglify = require("gulp-uglify");
