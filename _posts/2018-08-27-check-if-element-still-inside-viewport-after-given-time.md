@@ -54,11 +54,11 @@ Says MDN:
 
 > Either a single number or an array of numbers which indicate at what percentage of the target's visibility the observer's callback should be executed. If you only want to detect when visibility passes the 50% mark, you can use a value of 0.5. If you want the callback run every time visibility passes another 25%, you would specify the array [0, 0.25, 0.5, 0.75, 1]. The default is 0 (meaning as soon as even one pixel is visible, the callback will be run). A value of 1.0 means that the threshold isn't considered passed until every pixel is visible.
 
-After I fiddled around with the option and tried the result in a specific [delay load demo](https://github.com/verlok/lazyload/blob/master/demos/delay_test.html), I found out that explicitly passing `0` to the `thresholds` option (which should be the default value according to MDN, but apparently it is not), the `onIntersection` function is called also when the element _exits_ the viewport.
+After I fiddled around with the option and tried the result in a specific [delay load demo](https://github.com/verlok/lazyload/blob/master/demos/delay_test.html), I found out that passing `0` to the `thresholds` option (which is the default value), the `onIntersection` function is called also when the element _exits_ the viewport.
 
 ### Ultimate solution
 
-Now that I could know when an element **exits the viewport**, it's **much easier to solve the main problem**.
+Now that I knew when an element **exits the viewport**, it's **much easier to solve the main problem**.
 
 The solution, ultimately, is to:
 
@@ -187,6 +187,14 @@ We did everything good until now, but we didn't start anything yet! We need a se
 var watchedElements = document.querySelectorAll("img");
 watchedElements.forEach(element => gObserver.observe(element));
 ```
+
+### All together now
+
+If you want to see a working version of the previous code or play around with it without copy-paste, find it on CodeSandbox.
+
+[![Check if an element is still inside viewport after a given time](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/mzokk46vlx)
+
+<iframe src="https://codesandbox.io/embed/mzokk46vlx" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
 ## Final words
 
