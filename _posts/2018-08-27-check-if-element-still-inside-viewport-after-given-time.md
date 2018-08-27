@@ -190,7 +190,7 @@ watchedElements.forEach(element => gObserver.observe(element));
 
 ### All together now
 
-If you want to see a working version of the previous code, or play around with it, find it on CodeSandbox.
+Find on CodeSandbox a working version of the previous code, or play around with it!
 
 [![Check if an element is still inside viewport after a given time](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/mzokk46vlx)
 
