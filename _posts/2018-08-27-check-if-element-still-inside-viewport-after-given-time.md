@@ -198,7 +198,7 @@ Find on CodeSandbox a working version of the previous code, or play around with 
 
 See how easy is to do check if an element is still inside the viewport after some time using `IntersectionObserver`?
 
-For more information about how to create a LazyLoad using `IntersectionObserver`, see [Intersection Observer and Lazy Load of elements]({{ site.baseurl }}{% post_url 2017-09-04-using-intersection-observers-to-create-vanilla-lazyload.md %}).
+For more information about how to create a LazyLoad using `IntersectionObserver`, see [Intersection Observer and Lazy Load of elements]({{ site.baseurl }}{% post_url 2017-09-04-using-intersection-observers-to-create-vanilla-lazyload %}).
 
 Is there something you would have done differently, or do you agree with what I did here? Please let me know in the comments!
 
