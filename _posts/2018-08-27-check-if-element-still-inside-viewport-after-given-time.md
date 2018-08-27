@@ -79,7 +79,6 @@ A **simplified version** of the code is provided below for your convenience.
 
 ```js
 const gObserver = new IntersectionObserver(onIntersection, {
-  root: document.documentElement,
   rootMargin: "300px",
   threshold: 0
 });
