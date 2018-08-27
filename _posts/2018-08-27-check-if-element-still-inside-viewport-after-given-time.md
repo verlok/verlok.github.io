@@ -78,29 +78,26 @@ A **simplified version** of the code is provided below for your convenience.
 ### Setting IntersectionObserver
 
 ```js
-const myObserver = new IntersectionObserver(
-    onIntersection,
-    getObserverSettings({
-        root: document,
-        rootMargin: "300px",
-        threshold: 0
-    })
-);
+const gObserver = new IntersectionObserver(onIntersection, {
+  root: document.documentElement,
+  rootMargin: "300px",
+  threshold: 0
+});
 ```
 
 ### onIntersection function
 
 This function is called each time an intersection occurs, and the parameter is the set of entries that intersected with the viewport.
 
-Say `watchedElements` are the elements being watched by the script. After each intersection they should be purged from the elements we already dealt with (loaded). 
+Say `watchedElements` are the elements being watched by the script (see below). After each intersection they should be purged from the elements we already dealt with (loaded).
 
 The `purgeElements` function is out of the scope of this post, but it just returns a subset of the watchedElements.
 
 ```js
-const onIntersection = function(entries) {
-    entries.forEach(manageIntersection);
-    // watchedElements = purgeElements(watchedElements);
-},
+const onIntersection = (entries) => {
+  entries.forEach(manageIntersection);
+  watchedElements = purgeElements(watchedElements);
+};
 ```
 
 ### manageIntersection function
@@ -110,15 +107,15 @@ This function is called on each entry that intersected with the viewport. Both o
 On enter, it starts the delayed loading of the element. On exit, it cancels it.
 
 ```js
-const manageIntersection = function(entry) {
-    var element = entry.target;
-    if (isIntersecting(entry)) {
-        delayLoad(element, delayTime);
-    }
+const manageIntersection = (entry) => {
+  var element = entry.target;
+  if (isIntersecting(entry)) {
+    delayLoad(element, delayTime);
+  }
 
-    if (!isIntersecting(entry)) {
-        cancelDelayLoad(element);
-    }
+  if (!isIntersecting(entry)) {
+    cancelDelayLoad(element);
+  }
 };
 ```
 
@@ -133,8 +130,8 @@ Note that:
 - `entry.intersectionRatio` is not enough alone because it could be `0` on some intersecting elements 
 
 ```js
-const isIntersecting = entry =>
-    entry.isIntersecting || entry.intersectionRatio > 0;
+const isIntersecting = (entry) =>
+  entry.isIntersecting || entry.intersectionRatio > 0;
 ```
 
 ### delayLoad function
@@ -145,15 +142,15 @@ This is the function that delays the load of the element by `delayTime`.
 
 ```js
 const delayLoad = (element, delayTime) => {
-    var timeoutId = getTimeoutData(element);
-    if (timeoutId) {
-        return; // timeout was already set, do nothing
-    }
-    timeoutId = setTimeout(function() {
-        loadAndUnobserve(element);
-        cancelDelayLoad(element);
-    }, delayTime);
-    setTimeoutData(element, timeoutId); 
+  var timeoutId = getTimeoutData(element);
+  if (timeoutId) {
+    return; // timeout was already set, do nothing
+  }
+  timeoutId = setTimeout(function() {
+    loadAndUnobserve(element);
+    cancelDelayLoad(element);
+  }, delayTime);
+  setTimeoutData(element, timeoutId);
 };
 ```
 
@@ -162,13 +159,13 @@ const delayLoad = (element, delayTime) => {
 This function's duty is to cancel the element timeout, if it's set.
 
 ```js
-const cancelDelayLoad = element => {
-    var timeoutId = getTimeoutData(element);
-    if (!timeoutId) {
-        return; // do nothing if timeout doesn't exist
-    }
-    clearTimeout(timeoutId);
-    setTimeoutData(element, null);
+const cancelDelayLoad = (element) => {
+  var timeoutId = getTimeoutData(element);
+  if (!timeoutId) {
+    return; // do nothing if timeout doesn't exist
+  }
+  clearTimeout(timeoutId);
+  setTimeoutData(element, null);
 };
 ```
 
@@ -178,17 +175,26 @@ This immediately loads the element, and takes it away from the `IntersectionObse
 
 ```js
 const loadAndUnobserve = (element) => {
-    revealElement(element);
-    myObserver.unobserve(element);
+  revealElement(element); // Immediately load the element
+  gObserver.unobserve(element);
 };
+```
+
+### At my signal, unleash hell!
+
+We did everything good until now, but we didn't start anything yet! We need a set of `watchedElements` to observe with our `IntersectionObserver`, or nothing will happen.
+
+```js
+var watchedElements = document.querySelectorAll("img");
+watchedElements.forEach(element => gObserver.observe(element));
 ```
 
 ## Final words
 
-I hope you enjoyed this article!
-
 See how easy is to do check if an element is still inside the viewport after some time using `IntersectionObserver`?
+
+For more information about how to create a LazyLoad using `IntersectionObserver`, see [Intersection Observer and Lazy Load of elements]({{ site.baseurl }}{% post_url 2017-09-04-using-intersection-observers-to-create-vanilla-lazyload.md %}).
 
 Is there something you would have done differently, or do you agree with what I did here? Please let me know in the comments!
 
-If you want to show some to LazyLoad,  [star it on GitHub](https://github.com/verlok/lazyload)! ⭐
+If you want to show some love to LazyLoad, [star it on GitHub](https://github.com/verlok/lazyload)! ⭐
