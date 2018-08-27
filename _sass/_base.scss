@@ -1,20 +1,32 @@
 /**
  * Reset some basic elements
  */
-body, h1, h2, h3, h4, h5, h6,
-p, blockquote, pre, hr,
-dl, dd, ol, ul, figure {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+hr,
+dl,
+dd,
+ol,
+ul,
+figure {
 	margin: 0;
 	padding: 0;
 }
-
-
 
 /**
  * Basic styling
  */
 body {
-	font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+	font: $base-font-weight #{$base-font-size}/#{$base-line-height}
+		$base-font-family;
 	color: $text-color;
 	background-color: $background-color;
 	-webkit-text-size-adjust: 100%;
@@ -22,19 +34,25 @@ body {
 	font-kerning: normal;
 }
 
-
-
 /**
  * Set `margin-bottom` to maintain vertical rhythm
  */
-h1, h2, h3, h4, h5, h6,
-p, blockquote, pre,
-ul, ol, dl, figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+ul,
+ol,
+dl,
+figure,
 %vertical-rhythm {
 	margin-bottom: $spacing-unit / 2;
 }
-
-
 
 /**
  * Images
@@ -43,8 +61,6 @@ img {
 	max-width: 100%;
 	vertical-align: middle;
 }
-
-
 
 /**
  * Figures
@@ -57,12 +73,11 @@ figcaption {
 	font-size: $small-font-size;
 }
 
-
-
 /**
  * Lists
  */
-ul, ol {
+ul,
+ol {
 	margin-left: $spacing-unit;
 }
 
@@ -73,17 +88,18 @@ li {
 	}
 }
 
-
-
 /**
  * Headings
  */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	font-family: $title-font-family;
 	font-weight: $base-font-weight;
 }
-
-
 
 /**
  * Links
@@ -91,7 +107,7 @@ h1, h2, h3, h4, h5, h6 {
 a {
 	color: $link-color;
 	text-decoration: none;
-	
+
 	.social-media-list &:hover {
 		text-decoration: none;
 
@@ -110,7 +126,6 @@ abbr[title] {
 	cursor: help;
 }
 
-
 /**
  * Blockquotes
  */
@@ -125,34 +140,6 @@ blockquote {
 	> :last-child {
 		margin-bottom: 0;
 	}
-}
-
-
-
-/**
- * Code formatting
- */
-pre,
-code {
-	@include relative-font-size(0.9);
-	//border: 1px solid $grey-color-light;
-	border-radius: 3px;
-}
-
-code {
-	padding: 1px 4px;
-	background: $grey-color-light;
-}
-
-pre {
-	padding: 8px 12px;
-	overflow-x: auto;
-
-	/*> code {
-		border: 0;
-		padding-right: 0;
-		padding-left: 0;
-	}*/
 }
 
 /**
@@ -176,7 +163,6 @@ strong {
 	@extend %clearfix;
 }
 
-
 /**
  * Clearfix
  */
@@ -185,8 +171,6 @@ strong {
 	display: table;
 	clear: both;
 }
-
-
 
 /**
  * Icons
