@@ -9,23 +9,25 @@ tags: [javascript, IntersectionObserver, timeout, lazy loading]
 
 What would you do if they asked you to load a DOM element only if it **stays inside the viewport for a given time**? You would use [vanilla-lazyload](https://github.com/verlok/lazyload), wouldn't you? 😉
 
-This is exactly what a couple of GitHub users asked me to develop as new feature of LazyLoad, to avoid loading elements which users skipped **scrolling fast over them**. 
+This is exactly what a couple of GitHub users asked me to develop as new feature of LazyLoad, to **avoid loading elements which users skipped** by **scrolling fast beyond them**.
 
-I want to share how I did it with you, because there are a couple of ways of doing this. The first one is checking the element's posistion over time, the second one is with IntersectionObserver.
+In this post, I'd like to share the solution with you.
 
-## Without IntersectionObserver
+There are a couple of ways of doing this. The first one is checking the element's posistion over time, the second one leverages `IntersectionObserver`.
+
+## The (slow) way without IntersectionObserver
 
 This way is much slower that using `IntersectionObserver` because it implies:
 
-- watching browser’s scroll and resize events to call a callback (ok, throttled, but still&hellip;)
-- in the callback, loop though every watched element and call a `isInsideViewport` function to check if they are inside viewport 
-- the `isInsideViewport` function checks a [bunch of things](https://github.com/verlok/lazyload/blob/support/8.x/src/lazyload.viewport.js) like the element's `getBoundingClientRect`, the window's `innerHeight`, `pageYOffset`, etc. and returns a boolean
+- watching browser’s `scroll` and `resize` events to call a (throttled) callback
+- in the callback, loop through every watched element and call a `isInsideViewport` function to check if they are inside viewport 
+- the `isInsideViewport` function then checks a [bunch of things](https://github.com/verlok/lazyload/blob/support/8.x/src/lazyload.viewport.js) like the element's `getBoundingClientRect`, the window's `innerHeight`, `pageYOffset`, etc. and returns a boolean
 
 All these checks only to know when elements enter the viewport.
 
-To know if the elements stay inside the viewport for a given time, you should do something like:
+To know whether or not a given element stayed inside the viewport for a given time, you should do something like:
 
-- `setTimeout` a `isStillInsideViewport` function when the element enters the viewport
+- when the element enters the viewport, `setTimeout` a function. Let's call it `isStillInsideViewport`.
 - in the `isStillInsideViewport` function, check if the element is still inside the viewport calling `isInsideViewport` on that element, then:
   - if it is, load it and remove it from the watched elements
   - if it's NOT, don't load it and keep watching it
@@ -37,16 +39,16 @@ Quite straightforward as a thought, but not that fast executing.
 This way is much faster because it only implies the following.
 
 - you set an `IntersectionObserver` and use it to observe all your watched elements
-- it calls a `onIntersection` function each time "an intersection" occurs
+- it calls a `onIntersection` function each time an element intersects with the viewport
 - you can do the loading logic inside the `onIntersection` function
 
-No need to watch browser’s scroll and resize events.
+No need to watch browser’s `scroll` nor `resize` events.
 
 ### First idea
 
 My first thought was to do like without `IntersectionObserver`, meaning to check the "is inside viewport" state after a timeout.
 
-Turns out there is not an elegant way to check if an element is inside the viewport with intersection observer. You just get callbacks when an element intersects with the viewport.
+Turns out there is not an elegant way to check if an element is inside the viewport with `IntersectionObserver`. All you get are callbacks calls when an element intersects with the viewport.
 
 ### Discovering thresholds
 
@@ -56,17 +58,17 @@ Says MDN:
 
 > Either a single number or an array of numbers which indicate at what percentage of the target's visibility the observer's callback should be executed. If you only want to detect when visibility passes the 50% mark, you can use a value of 0.5. If you want the callback run every time visibility passes another 25%, you would specify the array [0, 0.25, 0.5, 0.75, 1]. The default is 0 (meaning as soon as even one pixel is visible, the callback will be run). A value of 1.0 means that the threshold isn't considered passed until every pixel is visible.
 
-After I fiddled around with the option and tried the result in a specific [delay load demo](https://github.com/verlok/lazyload/blob/master/demos/delay_test.html), I found out that explicitly passing `0` to the `thresholds` option (don't ask me why, it should be the default value), the `onIntersection` function is called also when the element _exits_ the viewport.
+After I fiddled around with the option and tried the result in a specific [delay load demo](https://github.com/verlok/lazyload/blob/master/demos/delay_test.html), I found out that explicitly passing `0` to the `thresholds` option (which should be the default value according to MDN, but apparently it is not), the `onIntersection` function is called also when the element _exits_ the viewport.
 
 ### Ultimate solution
 
-Now that I can know when an element **exits the viewport**, it's **much easier to solve the main problem**.
+Now that I could know when an element **exits the viewport**, it's **much easier to solve the main problem**.
 
 The solution, ultimately, is to:
 
-- `setTimeout` a function when an element enters the viewport
+- when an element enters the viewport, `setTimeout` a function to load the element
 - store each timeout ID in a `data-` attribute of the related element
-- make the element load when the timeout occurs
+- let the element load when the timeout occurs
 - if the element exits the viewport before the timeout is executed, cancel the timeout with `clearTimeout`
 
 That linear and easy! 😊
@@ -127,9 +129,11 @@ const manageIntersection = function(entry) {
 
 ### isIntersecting utility function
 
-This is a utility function to understand whether or not an entry is intersecting
+This is a utility function to understand whether or not an entry is intersecting with the viewport.
 
-- `entry.isIntersecting` needs fallback because it is `null` on some versions of MS Edge
+Note that:
+
+- `entry.isIntersecting` needs fallback because it is `null` on some versions of Microsoft Edge
 - `entry.intersectionRatio` is not enough alone because it could be `0` on some intersecting elements 
 
 ```js
@@ -141,17 +145,19 @@ const isIntersecting = entry =>
 
 This is the function that delays the load of the element by `delayTime`.
 
+`getTimeoutData` and `setTimeoutData` are utility functions to get and set the timeout ID from a data-attribute on the element.
+
 ```js
 const delayLoad = (element, delayTime) => {
-	var timeoutId = getTimeoutData(element); // gets the timeout ID from a data-attribute
-	if (timeoutId) {
-		return; // do nothing if the timeout was already set
-	}
-	timeoutId = setTimeout(function() {
-		loadAndUnobserve(element);
-		cancelDelayLoad(element);
-	}, delayTime);
-	setTimeoutData(element, timeoutId); // sets the timeout ID in a data-attribute
+    var timeoutId = getTimeoutData(element);
+    if (timeoutId) {
+        return; // timeout was already set, do nothing
+    }
+    timeoutId = setTimeout(function() {
+        loadAndUnobserve(element);
+        cancelDelayLoad(element);
+    }, delayTime);
+    setTimeoutData(element, timeoutId); 
 };
 ```
 
@@ -161,12 +167,12 @@ This function's duty is to cancel the element timeout, if it's set.
 
 ```js
 const cancelDelayLoad = element => {
-	var timeoutId = getTimeoutData(element);
-	if (!timeoutId) {
-		return; // do nothing if timeout doesn't exist
-	}
-	clearTimeout(timeoutId);
-	setTimeoutData(element, null);
+    var timeoutId = getTimeoutData(element);
+    if (!timeoutId) {
+        return; // do nothing if timeout doesn't exist
+    }
+    clearTimeout(timeoutId);
+    setTimeoutData(element, null);
 };
 ```
 
@@ -176,8 +182,8 @@ This immediately loads the element, and takes it away from the `IntersectionObse
 
 ```js
 const loadAndUnobserve = (element) => {
-	revealElement(element);
-	myObserver.unobserve(element);
+    revealElement(element);
+    myObserver.unobserve(element);
 };
 ```
 
