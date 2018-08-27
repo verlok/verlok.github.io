@@ -5,11 +5,11 @@
   "main": "gulpfile.js",
   "dependencies": {
     "gulp": "^3.9.1",
-    "uncss": "^0.15.0"
+    "uncss": "^0.16.1"
   },
   "devDependencies": {
-    "gulp-postcss": "^7.0.0",
-    "postcss-uncss": "^0.15.0"
+    "gulp-postcss": "^7.0.1",
+    "postcss-uncss": "^0.16.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
