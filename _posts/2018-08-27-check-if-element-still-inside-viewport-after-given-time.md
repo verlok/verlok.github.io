@@ -7,11 +7,7 @@ categories:
 tags: [javascript, IntersectionObserver, timeout, lazy loading]
 ---
 
-What would you do if they asked you to load a DOM element only if it **stays inside the viewport for a given time**? You would use [vanilla-lazyload](https://github.com/verlok/lazyload), wouldn't you? 😉
-
-This is exactly what a couple of GitHub users asked me to develop as new feature of LazyLoad, to **avoid loading elements which users skipped** by **scrolling fast beyond them**.
-
-In this post, I'd like to share the solution with you.
+What would you do if they asked you to load a DOM element only if it **stays inside the viewport for a given time**? You would use [vanilla-lazyload](https://github.com/verlok/lazyload), wouldn't you? 😉 This is exactly the GitHub community asked as new feature of LazyLoad, to **avoid loading elements which users skipped** by **scrolling fast beyond them**. In this post, I'd like to share the solution with you.
 
 There are a couple of ways of doing this. The first one is checking the element's posistion over time, the second one leverages `IntersectionObserver`.
 
