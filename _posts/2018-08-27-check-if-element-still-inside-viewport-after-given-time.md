@@ -42,7 +42,7 @@ No need to watch browser’s `scroll` nor `resize` events.
 
 ### First idea
 
-My first thought was to do it without `IntersectionObserver`, meaning i'd have to check the "is inside viewport" state after a timeout.
+My first thought was to do it without `IntersectionObserver`, meaning I'd have to check the "is inside viewport" state after a timeout.
 
 Turns out there is not an elegant way to check if an element is inside the viewport with `IntersectionObserver`. All you get are callbacks when an element intersects with the viewport.
 
@@ -198,7 +198,7 @@ You can find a working version of the code above on CodeSandbox for you to play 
 
 See how easy is it to check if an element is still inside the viewport after some time using `IntersectionObserver`?
 
-For more information about how to create LazyLoad using `IntersectionObserver`, see [Intersection Observer and Lazy Load of elements]({{ site.baseurl }}{% post_url 2017-09-04-using-intersection-observers-to-create-vanilla-lazyload.md %}).
+For more information about how to create LazyLoad using `IntersectionObserver`, see [Intersection Observer and Lazy Load of elements]({{ site.baseurl }}{% post_url 2017-09-04-using-intersection-observers-to-create-vanilla-lazyload %}).
 
 Is there something you would have done differently, or do you agree with what I did here? Please let me know in the comments!
 
