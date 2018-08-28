@@ -7,19 +7,19 @@ categories:
 tags: [javascript, IntersectionObserver, timeout, lazy loading]
 ---
 
-What would you do if they asked you to load a DOM element only if it **stays inside the viewport for a given time**? You would use [vanilla-lazyload](https://github.com/verlok/lazyload), wouldn't you? 😉 This is exactly the GitHub community asked as new feature of LazyLoad, to **avoid loading elements which users skipped** by **scrolling fast beyond them**. In this post, I'd like to share the solution with you.
+What would you do if somebody asked you to load a DOM element only if it **stays inside the viewport for a given time**? You would use [vanilla-lazyload](https://github.com/verlok/lazyload), wouldn't you? 😉 This is exactly what the GitHub community asked for as new feature in LazyLoad, to **avoid loading elements which users skipped** by **scrolling fast beyond them**. In this post, I'd like to share the solution with you.
 
-There are a couple of ways of doing this. The first one is checking the element's posistion over time, the second one leverages `IntersectionObserver`.
+There are a couple of ways of doing this. The first one is check the element's posistion over time, the second one leverages `IntersectionObserver`.
 
 ## The (slow) way without IntersectionObserver
 
 This way is much slower that using `IntersectionObserver` because it implies:
 
 - watching browser’s `scroll` and `resize` events to call a (throttled) callback
-- in the callback, loop through every watched element and call a `isInsideViewport` function to check if they are inside viewport 
+- in the callback, loop through every watched element and call a `isInsideViewport` function to check if they are inside the viewport 
 - the `isInsideViewport` function then checks a [bunch of things](https://github.com/verlok/lazyload/blob/support/8.x/src/lazyload.viewport.js) like the element's `getBoundingClientRect`, the window's `innerHeight`, `pageYOffset`, etc. and returns a boolean
 
-All these checks only to know when elements enter the viewport.
+All of these only to know when elements enter the viewport.
 
 To know whether or not a given element stayed inside the viewport for a given time, you should do something like:
 
@@ -42,9 +42,9 @@ No need to watch browser’s `scroll` nor `resize` events.
 
 ### First idea
 
-My first thought was to do like without `IntersectionObserver`, meaning to check the "is inside viewport" state after a timeout.
+My first thought was to do it without `IntersectionObserver`, meaning i'd have to check the "is inside viewport" state after a timeout.
 
-Turns out there is not an elegant way to check if an element is inside the viewport with `IntersectionObserver`. All you get are callbacks calls when an element intersects with the viewport.
+Turns out there is not an elegant way to check if an element is inside the viewport with `IntersectionObserver`. All you get are callbacks when an element intersects with the viewport.
 
 ### Discovering thresholds
 
@@ -54,20 +54,20 @@ Says MDN:
 
 > Either a single number or an array of numbers which indicate at what percentage of the target's visibility the observer's callback should be executed. If you only want to detect when visibility passes the 50% mark, you can use a value of 0.5. If you want the callback run every time visibility passes another 25%, you would specify the array [0, 0.25, 0.5, 0.75, 1]. The default is 0 (meaning as soon as even one pixel is visible, the callback will be run). A value of 1.0 means that the threshold isn't considered passed until every pixel is visible.
 
-After I fiddled around with the option and tried the result in a specific [delay load demo](https://github.com/verlok/lazyload/blob/master/demos/delay_test.html), I found out that passing `0` to the `thresholds` option (which is the default value), the `onIntersection` function is called also when the element _exits_ the viewport.
+After I fiddled around with the option and tried the result in a specific [delay load demo](https://github.com/verlok/lazyload/blob/master/demos/delay_test.html), I found out that passing `0` to the `thresholds` option (which is the default value), the `onIntersection` function is called also when the element _leaves_ the viewport.
 
 ### Ultimate solution
 
-Now that I knew when an element **exits the viewport**, it's **much easier to solve the main problem**.
+Now that I knew when an element **leaves the viewport**, it's **much easier to solve the main problem**.
 
 The solution, ultimately, is to:
 
 - when an element enters the viewport, `setTimeout` a function to load the element
 - store each timeout ID in a `data-` attribute of the related element
 - let the element load when the timeout occurs
-- if the element exits the viewport before the timeout is executed, cancel the timeout with `clearTimeout`
+- if the element leaves the viewport before the timeout is executed, cancel the timeout with `clearTimeout`
 
-That linear and easy! 😊
+That's linear and easy! 😊
 
 ## Show me the code!
 
@@ -86,11 +86,11 @@ const gObserver = new IntersectionObserver(onIntersection, {
 
 ### onIntersection function
 
-This function is called each time an intersection occurs, and the parameter is the set of entries that intersected with the viewport.
+This function is called each time an intersection occurs and the parameter is the set of entries that intersected with the viewport.
 
-Say `watchedElements` are the elements being watched by the script (see below). After each intersection they should be purged from the elements we already dealt with (loaded).
+Assuming `watchedElements` are the elements being watched by the script (see below), after each intersection they should be purged from the elements we already dealt with (loaded).
 
-The `purgeElements` function is out of the scope of this post, but it just returns a subset of the watchedElements.
+The `purgeElements` function is out of the scope of this post, but it returns a subset of the watchedElements.
 
 ```js
 const onIntersection = (entries) => {
@@ -190,15 +190,15 @@ watchedElements.forEach(element => gObserver.observe(element));
 
 ### All together now
 
-Find on CodeSandbox a working version of the previous code, or play around with it!
+You can find a working version of the code above on CodeSandbox for you to play around with it!
 
 [![Check if an element is still inside viewport after a given time](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/mzokk46vlx)
 
 ## Final words
 
-See how easy is to do check if an element is still inside the viewport after some time using `IntersectionObserver`?
+See how easy is it to check if an element is still inside the viewport after some time using `IntersectionObserver`?
 
-For more information about how to create a LazyLoad using `IntersectionObserver`, see [Intersection Observer and Lazy Load of elements]({{ site.baseurl }}{% post_url 2017-09-04-using-intersection-observers-to-create-vanilla-lazyload %}).
+For more information about how to create LazyLoad using `IntersectionObserver`, see [Intersection Observer and Lazy Load of elements]({{ site.baseurl }}{% post_url 2017-09-04-using-intersection-observers-to-create-vanilla-lazyload.md %}).
 
 Is there something you would have done differently, or do you agree with what I did here? Please let me know in the comments!
 
