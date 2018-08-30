@@ -69,6 +69,8 @@ The solution, ultimately, is to:
 
 That's linear and easy! 😊
 
+---
+
 ## Show me the code!
 
 You can find the full code in vanilla-lazyload's [`lazyload.js`](https://github.com/verlok/lazyload/blob/master/src/lazyload.js) file + related imports. If you don't feel like jumping from one file to another, you could also open the bundled file [`lazyload.es2015.js`](https://github.com/verlok/lazyload/blob/master/dist/lazyload.es2015.js) from the `dist` folder. 
@@ -79,10 +81,12 @@ A **simplified version** of the code is provided below for your convenience.
 
 ```js
 const gObserver = new IntersectionObserver(onIntersection, {
-  rootMargin: "300px",
+  rootMargin: "0px",
   threshold: 0
 });
 ```
+
+The `rootMargin` option set to `0px` here means: "observe the actual viewport size". You could pass any CSS length in order to expand the observed area. E.g. passing `300px` would expand it by that length on top, right, bottom, and left.
 
 ### onIntersection function
 
@@ -93,7 +97,7 @@ Assuming `watchedElements` are the elements being watched by the script (see bel
 The `purgeElements` function is out of the scope of this post, but it returns a subset of the watchedElements.
 
 ```js
-const onIntersection = (entries) => {
+const onIntersection = entries => {
   entries.forEach(manageIntersection);
   watchedElements = purgeElements(watchedElements);
 };
@@ -106,18 +110,15 @@ This function is called on each entry that intersected with the viewport. Both o
 On enter, it starts the delayed loading of the element. On exit, it cancels it.
 
 ```js
-const manageIntersection = (entry) => {
+const manageIntersection = entry => {
   var element = entry.target;
   if (isIntersecting(entry)) {
     delayLoad(element, delayTime);
-  }
-
-  if (!isIntersecting(entry)) {
+  } else {
     cancelDelayLoad(element);
   }
 };
 ```
-
 
 ### isIntersecting utility function
 
@@ -158,13 +159,13 @@ const delayLoad = (element, delayTime) => {
 This function's duty is to cancel the element timeout, if it's set.
 
 ```js
-const cancelDelayLoad = (element) => {
+const cancelDelayLoad = element => {
   var timeoutId = getTimeoutData(element);
   if (!timeoutId) {
     return; // do nothing if timeout doesn't exist
   }
   clearTimeout(timeoutId);
-  setTimeoutData(element, null);
+  deleteTimeoutData(element);
 };
 ```
 
@@ -174,7 +175,8 @@ This immediately loads the element, and takes it away from the `IntersectionObse
 
 ```js
 const loadAndUnobserve = (element) => {
-  revealElement(element); // Immediately load the element
+  // Here's what you actually do something with the element
+  revealElement(element); 
   gObserver.unobserve(element);
 };
 ```
