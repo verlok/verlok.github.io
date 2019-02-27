@@ -1,47 +1,32 @@
 ---
 layout: post
-title: Lazy load of responsive images with srcset and LazyLoad
-date: 2015-04-20 08:14:00 +01:00
+title: Lazy load responsive images in 2019. Srcset, sizes and more!
+date: 2019-03-01 08:15:00 +01:00
 categories:
 - development, libraries
 tags: [srcset, responsive images, lazy load]
 ---
 
-**2019 UPDATE!** Read the [updated version]({% post_url 2019-03-01-lazy-load-responsive-images-in-2019-srcset-sizes-more %}) of this post.
-
-It's now possible (yes, today!) to have **lazy loading** on **responsive images** to make our images to adapt to users screens _and_ keep our website fast. YAY! \o/ In this article, we'll see what markup we need to write and which Javascript libraries we're gonna need to do that.
+In the latest years, both at my job and as maintainer of a [LazyLoad library](https://github.com/verlok/lazyload), I've specialized in **lazy loading** of **responsive images**, meaning the images that adapt to users screens _and_ keep our websites fast. Exciting stuff! In this article, I'm going to show what HTML markup you need to write and which Javascript libraries you need to do that.
 
 ## Responsive lazy what?
 
-**Responsive images** is a technique to make the images in your website to adapt to the **viewport witdh** and **screen density** (1x, 2x - retina display, etc.). To understand how to do this, you can read [Responsive images in practise](http://alistapart.com/article/responsive-images-in-practice) and you can find more info at the [responsive images community group website](http://responsiveimages.org/).
+**Responsive images** is a technique to make websites images to adapt to the **viewport witdh** and **screen density** (1x, 2x - retina display, etc.). To understand how to do this, you can read [Responsive images in practise](http://alistapart.com/article/responsive-images-in-practice) and you can find more info at the [responsive images community group website](http://responsiveimages.org/).
 
-**Lazy loading images** is a technique to make your website faster by **avoiding to load images** that the user might never see on his viewport, then **loading them as they enter the viewport**. Beyond performance, this also allows you to save bandwith (and money, if you're paying a CDN service for your images). 
-
+**Lazy loading images** is a technique to make your website faster by **avoiding to load images** that your users might never see on their viewport, then **loading them as they enter the viewport**. Beyond performance, this also allows you to save bandwith (and money, if you're paying a CDN service for your images).
 
 ## Implementation
 
-[Take a look at the results](http://verlok.github.io/img_srcset_lazyload) we're going to achieve using this techniques together.
-
-If you open your browser inspector in the network panel, you would see that the first images are loaded "normally" by the browser at page landing, but the rest of the images are loaded as you scroll down the document.
+[Take a look at the results](http://verlok.github.io/lazyload/demos/image_srcset_lazy_sizes.html) you can achieve using this technique. If you open your developer tools in the network panel, you can see that the first images are loaded "eagerly" by the browser at page landing, and the rest of the images are loaded as you scroll down the document.
 
 ### The markup
 
-Here's the markup you're gonna need to lazy load a responsive image.
+Here's the markup of a responsive image.
 
 ```html
 <!-- Image loaded normally by the browser -->
-<img srcset="img/41494516WM_10r_n_f.jpg 668w,
-        img/41494516WM_10_n_f.jpg 334w,
-        img/41494516WM_9r_n_f.jpg 446w, 
-        img/41494516WM_9_n_f.jpg 223w"
-    sizes="(min-width: 361px) 50vw,
-        (min-width: 481px) 33.333vw, 
-        (min-width: 769px) 25vw, 
-        (min-width: 1025px) 20vw, 
-        100vw">
-        
-<!-- Image loaded lazily by javascript -->
-<img data-srcset="img/41494516WM_10r_n_f.jpg 668w,
+<img src="img/41494516WM_10_n_f.jpg" 
+    srcset="img/41494516WM_10r_n_f.jpg 668w,
         img/41494516WM_10_n_f.jpg 334w,
         img/41494516WM_9r_n_f.jpg 446w, 
         img/41494516WM_9_n_f.jpg 223w"
@@ -52,7 +37,26 @@ Here's the markup you're gonna need to lazy load a responsive image.
         100vw">
 ```
 
-Note that we're using the `img` HTML tag and **not** the `picture`. The latter is not necessary because we're not changing the image ratio in this case.
+And here's the markup you're gonna need to _lazy load_ a responsive image.
+
+```html
+<!-- Image loaded lazily by javascript -->
+<img data-src="img/41494516WM_10_n_f.jpg" 
+    data-srcset="img/41494516WM_10r_n_f.jpg 668w,
+        img/41494516WM_10_n_f.jpg 334w,
+        img/41494516WM_9r_n_f.jpg 446w, 
+        img/41494516WM_9_n_f.jpg 223w"
+    data-sizes="(min-width: 361px) 50vw,
+        (min-width: 481px) 33.333vw, 
+        (min-width: 769px) 25vw, 
+        (min-width: 1025px) 20vw, 
+        100vw">
+```
+
+Note that we're using the `img` HTML tag and not the `picture` tag. The latter is not necessary in this case.
+
+----- ORIGINAL POST ------
+
 
 
 ### Script inclusion
