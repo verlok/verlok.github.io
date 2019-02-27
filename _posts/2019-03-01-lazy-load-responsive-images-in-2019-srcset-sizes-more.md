@@ -21,78 +21,61 @@ In the latest years, both at my job and as maintainer of a [LazyLoad library](ht
 
 ### The markup
 
-Here's the markup of a responsive image.
+Here's the markup of an immediately loaded responsive image.
 
 ```html
 <!-- Image loaded normally by the browser -->
-<img src="img/41494516WM_10_n_f.jpg" 
-    srcset="img/41494516WM_10r_n_f.jpg 668w,
-        img/41494516WM_10_n_f.jpg 334w,
-        img/41494516WM_9r_n_f.jpg 446w, 
-        img/41494516WM_9_n_f.jpg 223w"
-    sizes="(min-width: 361px) 50vw,
-        (min-width: 481px) 33.333vw, 
-        (min-width: 769px) 25vw, 
-        (min-width: 1025px) 20vw, 
-        100vw">
+<img
+    alt="Image 01"
+    src="https://via.placeholder.com/220x280?text=Img+01"
+    srcset="https://via.placeholder.com/220x280?text=Img+01 220w,
+        https://via.placeholder.com/440x560?text=Img+01 440w"
+    sizes="220px"
+/>
 ```
 
-And here's the markup you're gonna need to _lazy load_ a responsive image.
+And here's the markup you're gonna need in order to _lazy load_ a responsive image.
 
 ```html
 <!-- Image loaded lazily by javascript -->
-<img data-src="img/41494516WM_10_n_f.jpg" 
-    data-srcset="img/41494516WM_10r_n_f.jpg 668w,
-        img/41494516WM_10_n_f.jpg 334w,
-        img/41494516WM_9r_n_f.jpg 446w, 
-        img/41494516WM_9_n_f.jpg 223w"
-    data-sizes="(min-width: 361px) 50vw,
-        (min-width: 481px) 33.333vw, 
-        (min-width: 769px) 25vw, 
-        (min-width: 1025px) 20vw, 
-        100vw">
+<img
+    alt="Image 03"
+    class="lazy"
+    data-src="https://via.placeholder.com/220x280?text=Img+03"
+    data-srcset="https://via.placeholder.com/220x280?text=Img+03 220w, 
+        https://via.placeholder.com/440x560?text=Img+03 440w"
+    data-sizes="220px"
+/>
 ```
 
-Note that we're using the `img` HTML tag and not the `picture` tag. The latter is not necessary in this case.
-
------ ORIGINAL POST ------
-
-
+Note that we're using the `img` HTML tag and not the `picture` tag, since the latter is not necessary in this case.
 
 ### Script inclusion
 
-First of all, we need a library to load the lazy images as they enter the viewport. There are a couple of libraries to have your images loaded lazily, but to have lazy loading of _responsive_ images you're gonna need the one that I wrote: [LazyLoad](http://verlok.github.io/lazyload/) (read about all its advantages [here]({% post_url 2014-11-20-a-new-lazyload-to-improve-your-website-performance %})).
+We need a library to load the `.lazy` images as they enter the viewport. There are more than one libraries to have your images loaded lazily, but I've been writing [vanilla-lazyload](http://verlok.github.io/lazyload/) since November 2014 and I advice to use it because it's blazing fast, versatile, and lightweight as hell (4 kb minified, less than 2 kb gzipped).
 
-Furthermore, as not all browser are supporting responsive images, we need to include Filament Group's [picturefill](https://github.com/scottjehl/picturefill) library, a polyfill which allows us fill the gap and make responsive images work in all browsers. Note that this library won't be necessary when all browsers you need to support will support responsive images.
+Internet Explorer doesn't support responsive images, but given that only the last version of Internet Explorer (11) stuck around and it has almost disappeared from our radars, I'd suggest NOT to use a responsive images polyfill for it, and just rely on the image specified in the `src` attribute instead.
 
-So we're going to include those 2 scripts:
+So you just need to include the vanilla-lazyload script.
 
 ```html
-<script src="js/vendor/lazyload.min.js"></script>
-<script src="js/vendor/picturefill.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@11.0.2/dist/lazyload.min.js"></script>
 ```
-
 
 ### Script initialization
 
-What we need to do is create a new instance of `LazyLoad` to transform that `data-srcset` attribute into a proper `srcset` attribute. This would be enough for browsers that natively support _responsive images_ but, for the rest of them, we need to call `picturefill` soon after `LazyLoad` has modified the DOM. 
-
 We can do all of that using this command:
 
+
 ```js
-/*var myLazyLoad = */ new LazyLoad({
-    data_src: "src",
-    data_srcset: "srcset",
-    show_while_loading: true, //best for progressive JPEG
-    callback_set: function (img) {
-        picturefill({
-            elements: [img]
-        });
-    }
-});
+var lazyLoad = new LazyLoad();
 ```
 
-For further reference about what we did here, see [LazyLoad documentation](http://verlok.github.io/lazyload/).
+**NOTE:** You have other choices for script inclusion in your web pages, like using an `async` script, using RequireJS, or again with WebPack or Rollup.js -> [read more](https://github.com/verlok/lazyload/). It's your choice.
+
+
+----- ORIGINAL POST - RESUME FROM HERE ------
+
 
 ### The stylesheet
 
