@@ -24,7 +24,7 @@ In the latest years, both at my job and as maintainer of a [LazyLoad library](ht
 Here's the markup of an immediately loaded responsive image.
 
 ```html
-<!-- Image loaded normally by the browser -->
+<!-- Immediately loaded responsive image -->
 <img
     alt="Image 01"
     src="https://via.placeholder.com/220x280?text=Img+01"
@@ -34,10 +34,14 @@ Here's the markup of an immediately loaded responsive image.
 />
 ```
 
+To make sure your users see your precious images **as soon as possible**, I recommend to **load immediately the topmost images** of your webpage, meaning the ones that will be placed _above the fold_ in most common viewports, considering smartphones, tablets and computers. 
+
+Yes, because since lazy loading is a Javascript-based task, before any lazy loaded image **can start downloading**, your Javascript code needs to be **downloaded, parsed and executed**, and your lazy images must be **found in the DOM**, and **their position evaluated** by the browser's `IntersetctionObserver`.
+
 And here's the markup you're gonna need in order to _lazy load_ a responsive image.
 
 ```html
-<!-- Image loaded lazily by javascript -->
+<!-- Lazy loaded responsive image -->
 <img
     alt="Image 03"
     class="lazy"
@@ -48,11 +52,11 @@ And here's the markup you're gonna need in order to _lazy load_ a responsive ima
 />
 ```
 
-Note that we're using the `img` HTML tag and not the `picture` tag, since the latter is not necessary in this case.
+Note that we're using the `img` HTML tag and not the `picture` tag, since the latter is not necessary in this case. I'll dig into the `picture` tag use cases later.
 
 ### Script inclusion
 
-We need a library to load the `.lazy` images as they enter the viewport. There are more than one libraries to have your images loaded lazily, but I've been writing [vanilla-lazyload](http://verlok.github.io/lazyload/) since November 2014 and I advice to use it because it's blazing fast, versatile, and lightweight as hell (4 kb minified, less than 2 kb gzipped).
+We need a library to load the `.lazy` images as they enter the viewport. There are more than one libraries to have your images loaded lazily. Since November 2014 I've been writing [vanilla-lazyload](http://verlok.github.io/lazyload/)  and I advice to use it because it's blazing fast, versatile, and lightweight as hell (4 kb minified, less than 2 kb gzipped).
 
 Internet Explorer doesn't support responsive images, but given that only the last version of Internet Explorer (11) stuck around and it has almost disappeared from our radars, I'd suggest NOT to use a responsive images polyfill for it, and just rely on the image specified in the `src` attribute instead.
 
@@ -64,14 +68,17 @@ So you just need to include the vanilla-lazyload script.
 
 ### Script initialization
 
-We can do all of that using this command:
+Once the script is initialized and executed, you can initialize `LazyLoad` by doing this:
 
 
 ```js
-var lazyLoad = new LazyLoad();
+var lazyLoad = new LazyLoad({
+    elements_selector: ".lazy",
+    // More options here?
+});
 ```
 
-**NOTE:** You have other choices for script inclusion in your web pages, like using an `async` script, using RequireJS, or again with WebPack or Rollup.js -> [read more](https://github.com/verlok/lazyload/). It's your choice.
+**NOTE:** You have other choices for script inclusion in your web pages, like using an `async` script, using RequireJS, or again with WebPack or Rollup.js -> [read more](https://github.com/verlok/lazyload/#include-lazyload-in-your-project). It's your choice.
 
 
 ----- ORIGINAL POST - RESUME FROM HERE ------
