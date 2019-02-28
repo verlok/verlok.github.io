@@ -7,17 +7,17 @@ categories:
 tags: [srcset, responsive images, lazy load]
 ---
 
-In the latest years, both at my job and as maintainer of a [LazyLoad library](https://github.com/verlok/lazyload), I've specialized in **lazy loading** of **responsive images**, meaning the images that adapt to users screens _and_ keep our websites fast. Exciting stuff! In this article, I'm going to show what HTML markup you need to write and which Javascript libraries you need to do that.
+In the latest years, both at my job and as maintainer of a [LazyLoad script](https://github.com/verlok/lazyload), I've specialized in **lazy loading** of **responsive images**. In this article, I'm going to show you what HTML, CSS and Javascript code you need to write in 2019 in order to lazy load responsive images.
 
 ## Responsive lazy what?
 
-**Responsive images** is a technique to make websites images to adapt to the **viewport witdh** and **screen density** (1x, 2x - retina display, etc.). To understand how to do this, you can read [Responsive images in practise](http://alistapart.com/article/responsive-images-in-practice) and you can find more info at the [responsive images community group website](http://responsiveimages.org/).
+**Responsive images** are the images that adapt to the user's screen _while_ keeping our websites fast by downloading just the right image source for the right **viewport witdh** (from small devices to large desktop computers), also considering the user's **screen density** (retina display, hiDpi, etc.). 
 
 **Lazy loading images** is a technique to make your website faster by **avoiding to load images** that your users might never see on their viewport, then **loading them as they enter the viewport**. Beyond performance, this also allows you to save bandwith (and money, if you're paying a CDN service for your images).
 
-## Implementation
+## Just show me the code!
 
-[Take a look at the results](http://verlok.github.io/lazyload/demos/image_srcset_lazy_sizes.html) you can achieve using this technique. If you open your developer tools in the network panel, you can see that the first images are loaded "eagerly" by the browser at page landing, and the rest of the images are loaded as you scroll down the document.
+&rarr; [Take a look at the results](http://verlok.github.io/lazyload/demos/image_srcset_lazy_sizes.html) &larr; you will achieve. Open your browser's **developer tools** and switch to the **network panel**. You will see that the first images are loaded immediately (or _eagerly_) by the browser at page landing, while the rest of the images are loaded as you **scroll down** the document.
 
 ### The markup
 
@@ -34,11 +34,13 @@ Here's the markup of an immediately loaded responsive image.
 />
 ```
 
-To make sure your users see your precious images **as soon as possible**, I recommend to **load immediately the topmost images** of your webpage, meaning the ones that will be placed _above the fold_ in most common viewports, considering smartphones, tablets and computers. 
+([Learn more about `srcset` and `sizes`](http://alistapart.com/article/responsive-images-in-practice))
 
-Yes, because since lazy loading is a Javascript-based task, before any lazy loaded image **can start downloading**, your Javascript code needs to be **downloaded, parsed and executed**, and your lazy images must be **found in the DOM**, and **their position evaluated** by the browser's `IntersetctionObserver`.
+To make sure that your users will see your images **as soon as possible**, I recommend to **load immediately the topmost images** of your webpage, only the ones that will be placed _above the fold_ in most common viewports, considering smartphones, tablets and computers. 
 
-And here's the markup you're gonna need in order to _lazy load_ a responsive image.
+Always remember that lazy loading is a Javascript-based task, so before any lazy image **can start downloading**, your Javascript code needs to be **downloaded, parsed and executed**, your lazy images must be **found in the DOM**, and **their position evaluated**, and this operations will take a while.
+
+And here's the markup you're going to need in order to _lazy load_ a responsive image.
 
 ```html
 <!-- Lazy loaded responsive image -->
@@ -46,8 +48,7 @@ And here's the markup you're gonna need in order to _lazy load_ a responsive ima
     alt="Image 03"
     class="lazy"
     data-src="https://via.placeholder.com/220x280?text=Img+03"
-    data-srcset="https://via.placeholder.com/220x280?text=Img+03 220w, 
-        https://via.placeholder.com/440x560?text=Img+03 440w"
+    data-srcset="https://via.placeholder.com/220x280?text=Img+03 220w, https://via.placeholder.com/440x560?text=Img+03 440w"
     data-sizes="220px"
 />
 ```
@@ -56,7 +57,7 @@ Note that we're using the `img` HTML tag and not the `picture` tag, since the la
 
 ### Script inclusion
 
-We need a library to load the `.lazy` images as they enter the viewport. There are more than one libraries to have your images loaded lazily. Since November 2014 I've been writing [vanilla-lazyload](http://verlok.github.io/lazyload/)  and I advice to use it because it's blazing fast, versatile, and lightweight as hell (4 kb minified, less than 2 kb gzipped).
+We need a library to load the `.lazy` images as they enter the viewport, and there are a quite a few around. Since November 2014 I've been writing [vanilla-lazyload](http://verlok.github.io/lazyload/) which is lightweight as air (4 kb minified, less than 2 kb gzipped), configurable , SEO-friendly, and it also leverages the `IntersectionObserver` browser API so it's blazing fast and jank-free. 
 
 Internet Explorer doesn't support responsive images, but given that only the last version of Internet Explorer (11) stuck around and it has almost disappeared from our radars, I'd suggest NOT to use a responsive images polyfill for it, and just rely on the image specified in the `src` attribute instead.
 
@@ -82,6 +83,11 @@ var lazyLoad = new LazyLoad({
 
 
 ----- ORIGINAL POST - RESUME FROM HERE ------
+
+TODO:
+
+- [ ] Dig into `picture` use cases
+- [ ] Explain how to load `IO` polyfill as a dependency
 
 
 ### The stylesheet
