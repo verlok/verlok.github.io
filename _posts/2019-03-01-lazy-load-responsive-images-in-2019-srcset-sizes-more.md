@@ -165,7 +165,6 @@ Case two: you want the browser to **pick a specific image format** (e.g. WebP) d
 
 TODO:
 
-- [ ] Dig into `picture` use cases
 - [ ] Explain how to load `IO` polyfill as a dependency
 - [ ] Responsive with low-quality preview
 - [ ] More resources | Learn more about `srcset` and `sizes` in [responsive images in practice](http://alistapart.com/article/responsive-images-in-practice).
