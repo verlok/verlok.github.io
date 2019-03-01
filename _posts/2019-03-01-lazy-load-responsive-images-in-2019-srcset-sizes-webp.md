@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Lazy load responsive images in 2019. Srcset, sizes and more!
+title: Lazy load responsive images in 2019
 date: 2019-03-01 08:15:00 +01:00
 categories:
 - development, libraries
