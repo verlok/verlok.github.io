@@ -7,7 +7,7 @@ categories:
 tags: [srcset, responsive images, lazy load]
 ---
 
-In the latest years, both at my job and as maintainer of a [LazyLoad script](https://github.com/verlok/lazyload), I've specialized in **lazy loading** of **responsive images**. In this article, I'm going to show you what HTML, CSS and Javascript code you need to write in 2019 in order to lazy load responsive images.
+In the latest years, both at my job and as maintainer of a [LazyLoad script](https://github.com/verlok/lazyload), I've specialized in **lazy loading** of **responsive images**. Today I'm going to show you what HTML, CSS and JavaScript code you need to write _in 2019_ in order to serve responsive images _and_ load them lazily. In the second part of the post, I'm also showing how to make the browser **natively pick the WebP image** when it supports it.
 
 ## Responsive lazy what?
 
@@ -51,11 +51,26 @@ And here's the markup you're going to need in order to _lazy load_ a responsive 
 />
 ```
 
+If you want your lazy images to have a low-quality preview image while they load, you can put a small, low-quality image in the `src` tag like the following.
+
+```html
+<!-- Lazy loaded responsive image
+     with low-quality preview -->
+<img
+    alt="Image 03"
+    class="lazy"
+    src="https://via.placeholder.com/11x14?text=Img+03"
+    data-src="https://via.placeholder.com/220x280?text=Img+03"
+    data-srcset="https://via.placeholder.com/220x280?text=Img+03 220w, https://via.placeholder.com/440x560?text=Img+03 440w"
+    data-sizes="220px"
+/>
+```
+
 Note that we're using the `img` HTML tag and not the `picture` tag, since the latter is not necessary in this case. I'll dig into the `picture` tag use cases [down belos](#picture-tag-use-cases).
 
 #### But hey, what about Internet Explorer?
 
-It's true, Internet Explorer doesn't support responsive images, but given that only its latest version stuck around and it's slowly disappearing from our radars (in the websites we manage, its share is around 4%), I'd suggest NOT to use a responsive images polyfill for it, and just rely on the image specified in the `src` attribute instead.
+It's true, Internet Explorer doesn't support responsive images, but given that only its latest version stuck around and it's slowly disappearing from our radars (in the websites we manage, its share is around 4%), I'd suggest NOT to use a responsive images polyfill for it, and just rely on the image specified in the `src` (or `data-src`) attribute instead.
 
 ### Script inclusion
 
@@ -173,21 +188,38 @@ Here's the code! Again, in order to obtain immediately loaded images, just use t
     </picture>
 ```
 
-## One more thing
+## _One more thing_
 
----- CONTINUE FROM HERE ----
+The vanilla [LazyLoad script](https://github.com/verlok/lazyload) leverages the `IntersectionObserver` API so, in browser not supporting it like Internet Explorer and older versions of Safari, it will load all images as soon as it executes, which leads more or less to the same result as if no LazyLoad was ever used on the page.
 
-- [ ] Responsive with low-quality preview
+If you want to load your content lazily in the 100% of the browsers out there (I wouldn't, but it's up to you), you need to include the [IntersectionObserver Polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill) script before LazyLoad. 
 
-## More resources
+You can either you put the script in the page just before the LazyLoad one, as it follows...
 
-- [Responsive images in practice](http://alistapart.com/article/responsive-images-in-practice), A List Apart
-- [Responsive images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images), Mozilla Developer Network
-- [Responsive images in CSS](https://css-tricks.com/responsive-images-css/), CSS Tricks
-- [Respinsive images community group](https://responsiveimages.org), the origins
+```html
+<script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.5.1/intersection-observer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@11.0.2/dist/lazyload.min.js"></script>
+```
 
-<!--
-TODO:
+...or you can load it the polyfill as a dependency of LazyLoad using _RequireJS_ or another AMD module loader. [More info here](https://github.com/verlok/lazyload/blob/master/README.md#include-via-requirejs-without-intersectionobserver-polyfill).
 
-- [ ] Explain how to load `IO` polyfill as a dependency
--->
+## Conclusions
+
+Here is a summary of what I wrote here
+
+1. Don't load all the images lazily, just the ones _below the fold_
+2. Use the `img` tag to do simple responsive images
+3. Use the `picture` tag to conditinally serve the WebP version of your images, or to change your images ratio
+4. Use [vanilla-lazyload](https://github.com/verlok/lazyload/) to load your lazy images.
+5. Optionally use the IntersectionObserver polyfill if you want to load lazily on 100% of the browsers.
+
+If something is unclear or could be improved, let me know in the comments. Or [tweet me](https://twitter.com/verlok/).
+
+Otherwise if you did find this useful, feel free to share it! 
+
+### Useful resources
+
+- [Responsive images in practice](http://alistapart.com/article/responsive-images-in-practice) @ A List Apart
+- [Responsive images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images) @ Mozilla Developer Network
+- [Responsive images in CSS](https://css-tricks.com/responsive-images-css/) @ CSS Tricks
+- [Respinsive images community group](https://responsiveimages.org) website
