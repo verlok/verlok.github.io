@@ -126,6 +126,8 @@ Until now, I talked about the `img` tag with the `srcset` and `sizes` attributes
 
 Use case: you need to show images with different **width/height ratio** depending on a media query. e.g. you want to show _portrait_ images on mobile, vertical devices, _landscape_ on wider viewports, like tablets and computers.
 
+&rarr; [Take a look at the results](http://verlok.github.io/lazyload/demos/picture_media.html) &larr; 
+
 Here's the code you're gonna need in this case. In order to have immediately loaded images, just use the plain `src` and `srcset` attributes, with no `data-` prefix.
 
 ```html
@@ -150,6 +152,8 @@ Here's the code you're gonna need in this case. In order to have immediately loa
 
 Use case: you want the browser to **automatically pick the WebP format** depending on its support for that format.
 
+&rarr; [Take a look at the results](http://verlok.github.io/lazyload/demos/picture_type_webp.html) &larr; 
+
 Here's the code! Again, in order to obtain immediately loaded images, just use the plain `src`, `srcset` and `sizes` attributes, with no `data-` prefix.
 
 ```html
@@ -169,17 +173,21 @@ Here's the code! Again, in order to obtain immediately loaded images, just use t
     </picture>
 ```
 
------ ORIGINAL POST - RESUME FROM HERE ------
+## One more thing
 
+---- CONTINUE FROM HERE ----
+
+- [ ] Responsive with low-quality preview
+
+## More resources
+
+- [Responsive images in practice](http://alistapart.com/article/responsive-images-in-practice), A List Apart
+- [Responsive images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images), Mozilla Developer Network
+- [Responsive images in CSS](https://css-tricks.com/responsive-images-css/), CSS Tricks
+- [Respinsive images community group](https://responsiveimages.org), the origins
+
+<!--
 TODO:
 
 - [ ] Explain how to load `IO` polyfill as a dependency
-- [ ] Responsive with low-quality preview
-- [ ] More resources | Learn more about `srcset` and `sizes` in [responsive images in practice](http://alistapart.com/article/responsive-images-in-practice).
-
-
-
-
-## That's it!
-
-It was very easy, wasn't it? If you didn't yet, [take a look at the demo](http://verlok.github.io/img_srcset_lazyload) of what we achieved here.
+-->
