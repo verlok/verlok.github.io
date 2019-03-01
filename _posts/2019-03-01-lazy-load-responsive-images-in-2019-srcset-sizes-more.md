@@ -120,9 +120,13 @@ Fixes the Firefox anomaly while images are loading
 
 ### Picture tag use cases
 
-In which cases should you use the picture tag?
+Until now, I talked about the `img` tag with the `srcset` and `sizes` attributes, which is common for the majority of the responsive images you might need and use on a website or web application. Now, in which cases should you use the `picture` tag?
 
-Case one: you need to **change the width/height ratio** of your image depending on a media query. E.g. vertical images on mobile, horizontal on wider viewports.
+#### Different width/height ratio
+
+Use case: you need to show images with different **width/height ratio** depending on a media query. e.g. you want to show _portrait_ images on mobile, vertical devices, _landscape_ on wider viewports, like tablets and computers.
+
+Here's the code you're gonna need in this case. In order to have immediately loaded images, just use the plain `src` and `srcset` attributes, with no `data-` prefix.
 
 ```html
 <picture>
@@ -142,7 +146,11 @@ Case one: you need to **change the width/height ratio** of your image depending 
 </picture>
 ```
 
-Case two: you want the browser to **pick a specific image format** (e.g. WebP) depending on its support for that format.
+#### Automatically switch to WebP
+
+Use case: you want the browser to **automatically pick the WebP format** depending on its support for that format.
+
+Here's the code! Again, in order to obtain immediately loaded images, just use the plain `src`, `srcset` and `sizes` attributes, with no `data-` prefix.
 
 ```html
 <picture>
