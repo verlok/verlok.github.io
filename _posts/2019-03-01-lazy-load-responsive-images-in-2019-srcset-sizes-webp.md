@@ -13,11 +13,11 @@ In the latest years, both at my job and as maintainer of a [LazyLoad script](htt
 
 **Responsive images** are the images that adapt to the user's screen _while_ keeping our websites fast by downloading just the right image source for the right **viewport witdh** (from small devices to large desktop computers), also considering the user's **screen density** (retina display, hiDpi, etc.). 
 
-**Lazy loading images** is a technique to make your website faster by **avoiding to load images** that your users might never see on their viewport, then **loading them as they enter the viewport**. Beyond performance, this also allows you to save bandwith (and money, if you're paying a CDN service for your images).
+**Lazy loading images** is a technique to make your website faster by **avoiding to load below the fold images**, then loading them **as they enter the viewport**. Beyond performance, this also allows you to save bandwith and money, e.g. if you're paying a CDN service for your images.
 
 ## Got it! Now show me some code!
 
-&rarr; [Take a look at the results](http://verlok.github.io/lazyload/demos/image_srcset_lazy_sizes.html) &larr; that you will achieve. Open your browser's **developer tools** and switch to the **network panel**. You will see that the first images are loaded immediately (or _eagerly_) by the browser at page landing, while the rest of the images are loaded as you **scroll down** the document.
+&rarr; [Take a look at the results](http://verlok.github.io/lazyload/demos/image_srcset_lazy_sizes.html) &larr; that you will achieve. Open your browser's **developer tools** and switch to the **network panel**. You will see that the first images are loaded immediately (or _eagerly_) at page landing, while the rest of the images are loaded as you **scroll down** the document.
 
 ### The HTML markup
 
@@ -34,9 +34,9 @@ Here's the markup of an immediately loaded responsive image.
 />
 ```
 
-To make sure that your users will see your images **as soon as possible**, I recommend to **load immediately the topmost images** of your webpage, only the ones that will be placed _above the fold_ in most common viewports, considering smartphones, tablets and computers. 
+To make sure that your users will see your images **as soon as possible**, I recommend to **immediately load the topmost images** of your webpage, only the ones that will be placed _above the fold_ in most common viewports, considering smartphones, tablets and computers. 
 
-Always remember that lazy loading is a Javascript-based task, so before any lazy image **can start downloading**, your Javascript code needs to be **downloaded, parsed and executed**, your lazy images must be **found in the DOM**, and **their position evaluated**, and this operations will take a while.
+Always remember that lazy loading is a Javascript-based task, so before any lazy image **can start downloading**, your Javascript code needs to be **downloaded, parsed and executed**, your lazy images must be **found in the DOM**, **their position evaluated**, and this operations will take a while.
 
 And here's the markup you're going to need in order to _lazy load_ a responsive image.
 
@@ -66,11 +66,11 @@ If you want your lazy images to have a low-quality preview image while they load
 />
 ```
 
-Note that we're using the `img` HTML tag and not the `picture` tag, since the latter is not necessary in this case. I'll dig into the `picture` tag use cases [down belos](#picture-tag-use-cases).
+We're using the `img` HTML tag and not the `picture` tag, since the latter is not necessary in this case. I'll dig into the `picture` tag use cases [down below](#picture-tag-use-cases).
 
 #### But hey, what about Internet Explorer?
 
-It's true, Internet Explorer doesn't support responsive images, but given that only its latest version stuck around and it's slowly disappearing from our radars (in the websites we manage, its share is around 4%), I'd suggest NOT to use a responsive images polyfill for it, and just rely on the image specified in the `src` (or `data-src`) attribute instead.
+It's true, Internet Explorer does not support responsive images, but given that only its latest version stuck around and it's slowly disappearing from our radars (in the websites we manage, its share is around 4%), I'd suggest NOT to use a responsive images polyfill for it, and just rely on the image specified in the `src` (or `data-src`) attribute instead.
 
 ### Script inclusion
 
@@ -135,7 +135,7 @@ Fixes the Firefox anomaly while images are loading
 
 ### Picture tag use cases
 
-Until now, I talked about the `img` tag with the `srcset` and `sizes` attributes, which is common for the majority of the responsive images you might need and use on a website or web application. Now, in which cases should you use the `picture` tag?
+Until now, I wrote about the `img` tag with the `srcset` and `sizes` attributes, which is the solution to the vast majority of the responsive images you might need and use on a website or web application. Now, in which cases should you use the `picture` tag?
 
 #### Different width/height ratio
 
@@ -149,11 +149,13 @@ Here's the code you're gonna need in this case. In order to have immediately loa
 <picture>
     <source 
         media="(min-width: 1024px)"
-        data-srcset="https://via.placeholder.com/1024x576?text=Horizontal+Image 1x, https://via.placeholder.com/2048x1152?text=Horizontal+Image 2x"
+        data-srcset="https://via.placeholder.com/1024x576?text=Horizontal+Image 1x,
+        https://via.placeholder.com/2048x1152?text=Horizontal+Image 2x"
     />
     <source 
         media="(max-width: 1023px)"
-        data-srcset="https://via.placeholder.com/640x960?text=Vertical+Image 1x, https://via.placeholder.com/1280x1920?text=Vertical+Image 2x"
+        data-srcset="https://via.placeholder.com/640x960?text=Vertical+Image 1x,
+        https://via.placeholder.com/1280x1920?text=Vertical+Image 2x"
     />
     <img
         class="lazy"
@@ -205,7 +207,7 @@ You can either you put the script in the page just before the LazyLoad one, as i
 
 ## Conclusions
 
-Here is a summary of what I wrote here
+Here is a summary:
 
 1. Don't load all the images lazily, just the ones _below the fold_
 2. Use the `img` tag to do simple responsive images
@@ -215,7 +217,7 @@ Here is a summary of what I wrote here
 
 If something is unclear or could be improved, let me know in the comments. Or [tweet me](https://twitter.com/verlok/).
 
-Otherwise if you did find this useful, feel free to share it! 
+If you did find this useful, feel free to share it! 
 
 ### Useful resources
 
