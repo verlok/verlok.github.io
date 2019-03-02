@@ -224,4 +224,4 @@ If you did find this useful, feel free to share it!
 - [Responsive images in practice](http://alistapart.com/article/responsive-images-in-practice) @ A List Apart
 - [Responsive images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images) @ Mozilla Developer Network
 - [Responsive images in CSS](https://css-tricks.com/responsive-images-css/) @ CSS Tricks
-- [Respinsive images community group](https://responsiveimages.org) website
+- [Responsive images community group](https://responsiveimages.org) website
