@@ -7,11 +7,13 @@ categories:
 tags: [srcset, responsive images, lazy load]
 ---
 
-> **2019 UPDATE!** Read the [updated version]({% post_url 2019-03-01-lazy-load-responsive-images-in-2019-srcset-sizes-webp %}) of this post.
-
----
-
 It's now possible (yes, today!) to have **lazy loading** on **responsive images** to make our images to adapt to users screens _and_ keep our website fast. YAY! \o/ In this article, we'll see what markup we need to write and which Javascript libraries we're gonna need to do that.
+
+## Updated version
+
+> **Hold on!** You're reading an old version of this article.
+
+&rarr; [Read the **2019 update**]({% post_url 2019-03-01-lazy-load-responsive-images-in-2019-srcset-sizes-webp %})
 
 ## Responsive lazy what?
 
