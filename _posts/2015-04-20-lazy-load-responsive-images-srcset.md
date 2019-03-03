@@ -7,7 +7,7 @@ categories:
 tags: [srcset, responsive images, lazy load]
 ---
 
-> **2019 UPDATE!** Read the [updated version]({% post_url 2019-03-01-lazy-load-responsive-images-in-2019-srcset-sizes-more %}) of this post.
+> **2019 UPDATE!** Read the [updated version]({% post_url 2019-03-01-lazy-load-responsive-images-in-2019-srcset-sizes-webp %}) of this post.
 
 ---
 
