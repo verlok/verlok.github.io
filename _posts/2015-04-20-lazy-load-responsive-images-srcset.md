@@ -13,7 +13,7 @@ It's now possible (yes, today!) to have **lazy loading** on **responsive images*
 
 > **Hold on!** You're reading an old version of this article.
 
-&rarr; [Read the **2019 update**]({% post_url 2019-03-01-lazy-load-responsive-images-in-2019-srcset-sizes-webp %})
+&rarr; [Read the **2019 update**]({% post_url 2019-03-01-lazy-load-responsive-images-in-2019-srcset-sizes-more %})
 
 ## Responsive lazy what?
 
