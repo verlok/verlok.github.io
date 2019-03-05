@@ -74,7 +74,7 @@ It's true, Internet Explorer does not support responsive images, but given that 
 
 ### Script inclusion
 
-To load the lazy images as they enter the viewport, you need a lazy load script such as [vanilla-lazyload](http://verlok.github.io/lazyload/) which is a lightweight-as-air (1.9 kb gzipped), configurable, SEO-friendly script that I've been developing and improving since 2014. It's also based on the `IntersectionObserver` browser API so it's blazing fast and grants jank-free scrolling also on slower devices.
+To load the lazy images as they enter the viewport, you need a lazy load script such as [vanilla-lazyload](https://github.com/verlok/lazyload) which is a lightweight-as-air (1.9 kb gzipped), configurable, SEO-friendly script that I've been developing and improving since 2014. It's also based on the `IntersectionObserver` browser API so it's blazing fast and grants jank-free scrolling also on slower devices.
 
 Here is the simplest way to include the script in your page.
 
