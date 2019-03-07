@@ -75,7 +75,7 @@ thead {
 
 And boom.
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="Table markup, list layout (on small viewports)" data-src="//codepen.io/verlok/embed/GeWXGy/?height=350&theme-id=light&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe class="lazy" height="350" style="width: 100%;" scrolling="no" title="Table markup, list layout (on small viewports)" data-src="//codepen.io/verlok/embed/GeWXGy/?height=350&theme-id=light&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/verlok/pen/GeWXGy/'>Table markup, list layout (on small viewports)</a> by Andrea Verlicchi
   (<a href='https://codepen.io/verlok'>@verlok</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -125,7 +125,7 @@ div {
 
 And here's the result:
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="List markup, table layout (on large viewports)" data-src="//codepen.io/verlok/embed/pYeOwq/?height=350&theme-id=light&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe class="lazy" height="350" style="width: 100%;" scrolling="no" title="List markup, table layout (on large viewports)" data-src="//codepen.io/verlok/embed/pYeOwq/?height=350&theme-id=light&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/verlok/pen/pYeOwq/'>List markup, table layout (on large viewports)</a> by Andrea Verlicchi
   (<a href='https://codepen.io/verlok'>@verlok</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
