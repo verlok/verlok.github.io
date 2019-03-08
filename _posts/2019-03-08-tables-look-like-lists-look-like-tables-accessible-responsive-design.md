@@ -4,7 +4,7 @@ title: Responsive and accessible table design
 
 date: 2019-03-08 07:12:00 +01:00
 categories:
-- development, responsive design, accessibility, techniques
+- techniques
 tags: [accessibility, responsive design, tables, list]
 ---
 
