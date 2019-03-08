@@ -8,7 +8,7 @@ categories:
 tags: [accessibility, responsive design, tables, list]
 ---
 
-How to make a potentially wide table fit on small devices, keeping accessibility in mind? Here is a simple solution solution and some considerations.
+How to make a potentially wide table fit on small devices, without losing readability and accessibility? Here are simple solutions to make tables look like lists, lists look like tables, in responsive and accessible design.
 
 So let’s say you have an HTML `<table>` containing some orders, each one having:
 
