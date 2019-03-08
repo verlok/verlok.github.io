@@ -10,7 +10,7 @@ tags: [IntersectionObserver, detect]
 
 Today I updated my iPhone to iOS 12.2 beta 4 which features the new version of Safari (also 12.2) with support to the IntersectionObserver API. I wanted to see it clearly so I've created a web page that detects and reveals to you if it's supported.
 
-&rarr; [Here's the page](http://www.andreaverlicchi.eu/IntersectionObserverDetect/).
+&rarr; [Open the tool](http://www.andreaverlicchi.eu/IntersectionObserverDetect/).
 
 What you'll see there:
 
