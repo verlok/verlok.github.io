@@ -1,14 +1,14 @@
 ---
 layout: post
-title: Tables that look like lists and lists that look like tables in responsive design
+title: Tables that look like lists and lists that look like tables in accessible responsive design
 
-date: 2019-03-11 08:15:00 +01:00
+date: 2019-03-08 07:12:00 +01:00
 categories:
 - development, responsive design, accessibility, techniques
 tags: [accessibility, responsive design, tables, list]
 ---
 
-How to make a potentially wide table fit on small devices, keeping accessibility in mind? Here is the solution and some considerations.
+How to make a potentially wide table fit on small devices, keeping accessibility in mind? Here is a simple solution solution and some considerations.
 
 So let’s say you have an HTML `<table>` containing some orders, each one having:
 
@@ -16,11 +16,11 @@ So let’s say you have an HTML `<table>` containing some orders, each one havin
 2. a description 
 3. a price
 
-And you need to:
+And you need to make it:
 
-- make it look like a list on small viewports, typically smartphones
-- make it look like a table on larger viewports, like tablets and computers
-- make it accessible, e.g. to blind users
+- **look like a list** on small viewports, typically smartphones
+- **look like a table** on larger viewports, like tablets and computers
+- **accessible** (see [accessibility](https://www.w3.org/standards/webdesign/accessibility)), e.g. to blind users
 
 ## Table markup
 
@@ -50,7 +50,7 @@ Here's the markup of the table you've got.
 </table>
 ```
 
-The solution in this case would be to `display: flex` the rows, then order them vertically using `flex-direction: column`.
+The solution in this case would be to `display: flex` the rows, then set their cells direction to vertical using `flex-direction: column`.
 
 ```css
 tr {
@@ -63,26 +63,18 @@ tr {
     flex-direction: row;
   }
 }
-
-td {
-  padding: 10px;
-}
-
-thead {
-  display: none;
-}
 ```
 
-And boom.
+And boom. Here's the example on codepen.
 
 <iframe class="lazy" height="350" style="width: 100%;" scrolling="no" title="Table markup, list layout (on small viewports)" data-src="//codepen.io/verlok/embed/GeWXGy/?height=350&theme-id=light&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/verlok/pen/GeWXGy/'>Table markup, list layout (on small viewports)</a> by Andrea Verlicchi
   (<a href='https://codepen.io/verlok'>@verlok</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## Table or table not?
+## But is this really a table?
 
-But is `<table>` the right tag to use here? Isn't just a list of order an unorder list? So why don't we use a `ul` instead?
+Is `table` the right tag to use here? Is there a change that we might have used the `table` tag only for layout simplicity? I mean, isn't it just a **list** of orders? So why don't use a `ul` instead?
 
 ```html
 <ul>
@@ -109,7 +101,7 @@ But is `<table>` the right tag to use here? Isn't just a list of order an unorde
 </ul>
 ```
 
-And in the CSS, make the `div`s inside the list items to be aligned horizontally, when there's enough space to do this.
+In this case, in the CSS, we just need to make the `div`s inside the list items to be aligned horizontally, when there's enough space to do this.
 
 ```css
 @media (min-width: 400px) {
@@ -123,7 +115,7 @@ div {
 }
 ```
 
-And here's the result:
+Here's the result:
 
 <iframe class="lazy" height="350" style="width: 100%;" scrolling="no" title="List markup, table layout (on large viewports)" data-src="//codepen.io/verlok/embed/pYeOwq/?height=350&theme-id=light&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/verlok/pen/pYeOwq/'>List markup, table layout (on large viewports)</a> by Andrea Verlicchi
@@ -132,8 +124,12 @@ And here's the result:
 
 ## Accessibility considerations
 
-Table is very accessible but it does make sense to have a table when the data in the cells have 2 headings, one at the top and one at the left.
+The `table`s can be very accessible if you [code them properly](https://webaim.org/techniques/tables/data), but I think it only makes sense to use `table`s when the data in each data cell have at least 2 headings: one at the beginning of its column and one at beginning of its row.
 
-If it's only a title per each column you have, you probably used the table only to align the columns, but the data is not to be considered a table.
+If it's only a title per each column you have, and you have a few columns, it's probably better to consider it a list and markup it like a list, using `ul` or `ol` as you prefer. Make sure you choose properly!
 
-So make sure you choose properly!
+Last but not least, if you have a non-table markup (`ul`, `div`, `span`) that you are displaying as a table, and you want to make it accessible too, make sure you use [ARIA roles](https://www.w3.org/TR/wai-aria-practices/examples/table/table.html) to define your `rowgroup`s, your `columnheader`s and `rowheader`s, your `cell`s, etc.
+
+## Conclusion
+
+You can use flexbox to easily make a table look like a list, or a list look like a table. Keep accessibility in mind! When coding tables use table headers for rows and columns. When coding pseudo-tables use ARIA roles to define which is what.
