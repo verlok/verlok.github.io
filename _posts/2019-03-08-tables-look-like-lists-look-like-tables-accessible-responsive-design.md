@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Tables that look like lists and lists that look like tables in accessible responsive design
+title: Responsive and accessible table design
 
 date: 2019-03-08 07:12:00 +01:00
 categories:
