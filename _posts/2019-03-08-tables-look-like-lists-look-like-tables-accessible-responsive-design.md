@@ -74,20 +74,10 @@ And boom. Here's the example on codepen.
 
 ## But is this really a table?
 
-Is `table` the right tag to use here? Is there a change that we might have used the `table` tag only for layout simplicity? I mean, isn't it just a **list** of orders? So why don't use a `ul` instead?
+Is `table` the right tag to use here? Is there a chance that we might have used the `table` tag only for layout simplicity? I mean, isn't it just a **list** of orders? So why don't use a `ul` instead?
 
 ```html
 <ul>
-  <li>
-    <div class="photo"><img src="https://via.placeholder.com/70x100&text=Product"></div>
-    <div class="description">Description</div>
-    <div class="price">EUR 12.345</div>
-  </li>
-  <li>
-    <div class="photo"><img src="https://via.placeholder.com/70x100&text=Product"></div>
-    <div class="description">Description</div>
-    <div class="price">EUR 12.345</div>
-  </li>
   <li>
     <div class="photo"><img src="https://via.placeholder.com/70x100&text=Product"></div>
     <div class="description">Description</div>
