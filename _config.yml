@@ -12,7 +12,7 @@ twitter_username: verlok
 github_username:  verlok
 markdown: kramdown
 include: [.htaccess]
-paginate: 10
+paginate: 20
 google_analytics: UA-26756203-1
 disqus:
   shortname: andreaverlicchi-blog
