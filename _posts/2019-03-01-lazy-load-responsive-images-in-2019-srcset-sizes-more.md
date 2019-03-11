@@ -143,7 +143,7 @@ Use case: you need to show images with different **width/height ratio** dependin
 
 &rarr; [Take a look at the results](http://verlok.github.io/lazyload/demos/picture_media.html) &larr; 
 
-Here's the code you're gonna need in this case. In order to have immediately loaded images, just use the plain `src` and `srcset` attributes, with no `data-` prefix.
+Here's the code you're gonna need in this case. In order to have immediately loaded images, just use the plain `src` and `srcset` attributes, without `data-` prefix.
 
 ```html
 <picture>
@@ -171,7 +171,7 @@ Use case: you want the browser to **automatically pick the WebP format** dependi
 
 &rarr; [Take a look at the results](http://verlok.github.io/lazyload/demos/picture_type_webp.html) &larr; 
 
-Here's the code! Again, in order to obtain immediately loaded images, just use the plain `src`, `srcset` and `sizes` attributes, with no `data-` prefix.
+Here's the code! Again, in order to obtain immediately loaded images, just use the plain `src`, `srcset` and `sizes` attributes, without `data-` prefix.
 
 ```html
 <picture>
