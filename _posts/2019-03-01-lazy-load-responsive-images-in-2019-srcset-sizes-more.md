@@ -54,8 +54,7 @@ And here's the markup you're going to need in order to _lazy load_ a responsive 
 If you want your lazy images to have a low-quality preview image while they load, you can put a small, low-quality image in the `src` tag like the following.
 
 ```html
-<!-- Lazy loaded responsive image
-     with low-quality preview -->
+<!-- Lazy loaded responsive image with low-quality preview -->
 <img
     alt="Image 03"
     class="lazy"
@@ -74,22 +73,15 @@ It's true, Internet Explorer does not support responsive images, but given that 
 
 ### Script inclusion
 
-To load the lazy images as they enter the viewport, you need a lazy load script such as [vanilla-lazyload](https://github.com/verlok/lazyload) which is a lightweight-as-air (1.9 kb gzipped), configurable, SEO-friendly script that I've been developing and improving since 2014. It's also based on the `IntersectionObserver` browser API so it's blazing fast and grants jank-free scrolling also on slower devices.
+To load the lazy images as they enter the viewport, you need a lazy load script such as [vanilla-lazyload](https://github.com/verlok/lazyload) which is a lightweight-as-air (1.9 kb gzipped), configurable, SEO-friendly script that I've been developing and improving since 2014. It's also based on the IntersectionObserver browser API so it's blazing fast and grants jank-free scrolling also on slower devices.
 
 Here is the simplest way to include the script in your page.
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@11.0.2/dist/lazyload.min.js"></script>
-```
-
-Including an IntersectionObserver polyfill is **not required**. If LazyLoad doesn't find it, it will just load all your lazy images immediately, which is acceptable. It's up to you. If you want to add it, though, you just need to:
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.5.1/intersection-observer.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@11.0.3/dist/lazyload.min.js"></script>
 ```
 
-You also have other choices to include LazyLoad in your web pages, like using an `async` script with auto-init, using RequireJS, using WebPack or Rollup. You can also add the polyfill conditionally, to save time and bandwidth when not required. &rarr; [More ways to include LazyLoad](https://github.com/verlok/lazyload/#include-lazyload-in-your-project).
+Other ways to include LazyLoad in your web pages, like using an `async` script with auto-init, using RequireJS, using WebPack or Rollup, are [documented here](https://github.com/verlok/lazyload/#include-lazyload-in-your-project).
 
 
 ### LazyLoad initialization
@@ -199,7 +191,7 @@ Here's the code! Again, in order to obtain immediately loaded images, just use t
 
 ## _One more thing_
 
-The vanilla [LazyLoad script](https://github.com/verlok/lazyload) leverages the `IntersectionObserver` API so, in browser not supporting it like Internet Explorer and older versions of Safari, it will load all images as soon as it executes, which leads more or less to the same result as if no LazyLoad was ever used on the page.
+The vanilla [LazyLoad script](https://github.com/verlok/lazyload) leverages the IntersectionObserver API so, in browser not supporting it like Internet Explorer and older versions of Safari, it will load all images as soon as it executes, which leads more or less to the same result as if no LazyLoad was ever used on the page.
 
 If you want to load your content lazily in the 100% of the browsers out there (I wouldn't, but it's up to you), you need to include the [IntersectionObserver Polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill) script before LazyLoad. 
 
@@ -207,7 +199,7 @@ You can either you put the script in the page just before the LazyLoad one, as i
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.5.1/intersection-observer.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@11.0.2/dist/lazyload.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@11.0.3/dist/lazyload.min.js"></script>
 ```
 
 ...or you can load it the polyfill as a dependency of LazyLoad using _RequireJS_ or another AMD module loader. [More info here](https://github.com/verlok/lazyload/blob/master/README.md#include-via-requirejs-without-intersectionobserver-polyfill).
