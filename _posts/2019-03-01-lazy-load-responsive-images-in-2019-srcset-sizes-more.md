@@ -36,7 +36,7 @@ Here's the markup of an immediately loaded responsive image.
 
 To make sure that your users will see your images **as soon as possible**, I recommend to **immediately load the topmost images** of your webpage, only the ones that will be placed _above the fold_ in most common viewports, considering smartphones, tablets and computers. 
 
-Always remember that lazy loading is a Javascript-based task, so before any lazy image **can start downloading**, your Javascript code needs to be **downloaded, parsed and executed**, your lazy images must be **found in the DOM**, **their position evaluated**, and this operations will take a while.
+Always remember that lazy loading is a Javascript-based task, so before any lazy image **can start downloading**, your Javascript code needs to be **downloaded, parsed and executed**, your lazy images must be **found in the DOM**, **their position evaluated**, and these operations are going to take a while.
 
 And here's the markup you're going to need in order to _lazy load_ a responsive image.
 
@@ -82,10 +82,19 @@ Here is the simplest way to include the script in your page.
 <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@11.0.2/dist/lazyload.min.js"></script>
 ```
 
+Including an IntersectionObserver polyfill is **not required**. If LazyLoad doesn't find it, it will just load all your lazy images immediately, which is acceptable. It's up to you. If you want to add it, though, you just need to:
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.5.1/intersection-observer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@11.0.3/dist/lazyload.min.js"></script>
+```
+
+You also have other choices to include LazyLoad in your web pages, like using an `async` script with auto-init, using RequireJS, using WebPack or Rollup. You can also add the polyfill conditionally, to save time and bandwidth when not required. &rarr; [More ways to include LazyLoad](https://github.com/verlok/lazyload/#include-lazyload-in-your-project).
+
+
 ### LazyLoad initialization
 
 You need LazyLoad to manage and load all the images with the `.lazy` class in the page. You can initialize `LazyLoad` like this:
-
 
 ```js
 var lazyLoad = new LazyLoad({
@@ -93,8 +102,6 @@ var lazyLoad = new LazyLoad({
     // More options here
 });
 ```
-
-**NOTE:** You have other choices for script inclusion in your web pages, like using an `async` script with auto-init, or using RequireJS, or with WebPack or Rollup.js. It's your choice. [Learn more](https://github.com/verlok/lazyload/#include-lazyload-in-your-project). 
 
 ### Some CSS Tricks
 
