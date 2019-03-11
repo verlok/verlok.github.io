@@ -67,7 +67,7 @@ If you want your lazy images to have a low-quality preview image while they load
 
 We're using the `img` HTML tag and not the `picture` tag, since the latter is not necessary in this case. I'll dig into the `picture` tag use cases [down below](#picture-tag-use-cases).
 
-#### But hey, what about Internet Explorer?
+_But hey, what about Internet Explorer?_
 
 It's true, Internet Explorer does not support responsive images, but given that only its latest version stuck around and it's slowly disappearing from our radars (in the websites we manage, its share is around 4%), I'd suggest NOT to use a responsive images polyfill for it, and just rely on the image specified in the `src` (or `data-src`) attribute instead.
 
@@ -132,11 +132,11 @@ Fixes the Firefox anomaly while images are loading
 }
 ```
 
-### Picture tag use cases
+## Picture tag use cases
 
 Until now, I wrote about the `img` tag with the `srcset` and `sizes` attributes, which is the solution to the vast majority of the responsive images you might need and use on a website or web application. Now, in which cases should you use the `picture` tag?
 
-#### Different width/height ratio
+### Different width/height ratio
 
 Use case: you need to show images with different **width/height ratio** depending on a media query. e.g. you want to show _portrait_ images on mobile, vertical devices, _landscape_ on wider viewports, like tablets and computers.
 
@@ -164,7 +164,7 @@ Here's the code you're gonna need in this case. In order to have immediately loa
 </picture>
 ```
 
-#### Automatically switch to WebP
+### Automatically switch to WebP
 
 Use case: you want the browser to **automatically pick the WebP format** depending on its support for that format.
 
