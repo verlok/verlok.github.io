@@ -78,7 +78,7 @@ To load the lazy images as they enter the viewport, you need a lazy load script 
 Here is the simplest way to include the script in your page.
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@11.0.3/dist/lazyload.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@11.0.4/dist/lazyload.min.js"></script>
 ```
 
 Other ways to include LazyLoad in your web pages, like using an `async` script with auto-init, using RequireJS, using WebPack or Rollup, are [documented here](https://github.com/verlok/lazyload/#include-lazyload-in-your-project).
@@ -199,7 +199,7 @@ You can either you put the script in the page just before the LazyLoad one, as i
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.5.1/intersection-observer.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@11.0.3/dist/lazyload.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@11.0.4/dist/lazyload.min.js"></script>
 ```
 
 ...or you can load it the polyfill as a dependency of LazyLoad using _RequireJS_ or another AMD module loader. [More info here](https://github.com/verlok/lazyload/blob/master/README.md#include-via-requirejs-without-intersectionobserver-polyfill).
