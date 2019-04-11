@@ -36,19 +36,33 @@ If you did everything correctly, that's what will happen:
 
 In order to achieve this on your website, you need to follow the following steps.
 
-In-viewport / above-the-fold images are regular <img> tags. A `data-src` would defeat the preload scanner so we want to avoid it for everything likely to be in the viewport. In addition, I added the `loading="eager"` attribute.
+In-viewport / above-the-fold images are regular <img> tags. A `data-src` would defeat the preload scanner so we want to avoid it for everything likely to be in the viewport. In addition, I'd the `loading="eager"` attribute to make sure they load as soon as possible.
 
-You can still use `data-src`, `data-srcset` and `data-sizes` on images to avoid an eager load in unsupported browsers.
+```html
+<img 
+    src="https://via.placeholder.com/440x560?text=Img+01" 
+    loading="eager"
+    alt="Img 01" 
+/>
+```
 
-Then use LazyLoad v. 12 beta:
+You should still use `data-src`, `data-srcset` and `data-sizes` on images to avoid an eager load in unsupported browsers.
 
-Via script:
+```html
+<img
+    data-src="https://via.placeholder.com/440x560?text=Img+03"
+    class="lazy"
+    alt="Img 03"
+/>
+```
+
+Then use LazyLoad v. 12 beta. Via jsdelivr CDN:
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.0.0-beta.0/dist/lazyload.min.js"></script>
 ```
 
-Or via npm:
+Or install it using npm:
 
 ```
 npm install vanilla-lazyload@12.0.0-beta.0
@@ -72,4 +86,4 @@ The `use_native` option makes sure that:
 
 You can already have both native lazy-loading and js-based lazyload today using vanilla-lazyload 12, just set the `use_native` option to true.
 
-That's it! If you have questions, don't hesitate to contact me. On Twitter, I'm [@verlok](https://twitter.com/verlok).
+If you have questions, don't hesitate to contact me. On Twitter, I'm [@verlok](https://twitter.com/verlok).
