@@ -40,7 +40,7 @@ In-viewport / above-the-fold images are regular <img> tags. A `data-src` would d
 
 You can still use `data-src`, `data-srcset` and `data-sizes` on images to avoid an eager load in unsupported browsers.
 
-Then use LazyLoad v. 12 beta...
+Then use LazyLoad v. 12 beta:
 
 Via script:
 
