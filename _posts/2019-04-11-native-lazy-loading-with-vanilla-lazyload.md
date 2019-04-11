@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Native lazy loading with vanilla-lazyload
+title: Native lazy-loading and js-based fallback with vanilla-lazyload 12
 
 date: 2019-04-11 19:00:00 +01:00
 categories:
