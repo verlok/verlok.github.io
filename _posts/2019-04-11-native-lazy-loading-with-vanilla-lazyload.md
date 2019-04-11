@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Native lazy loading with vanillalazyload
+title: Native lazy loading with vanilla-lazyload
 
 date: 2019-04-11 19:00:00 +01:00
 categories:
@@ -9,16 +9,16 @@ categories:
 tags: [native, vanilla, lazyload, image, iframe]
 ---
 
-On April 6th 2019, Addy Osmany wrote about [native image lazy-loading ](https://addyosmani.com/blog/lazy-loading/). Two days later Yvain, a front-end developer from Paris, [asked me](https://github.com/verlok/lazyload/issues/331) if my [vanilla-lazyload](https://github.com/verlok/lazyload/) could be a **loading attribute polyfill**, inspiring me to develop and release version 12 of the script, which features a new `use_native` option to enable native lazy-loading where supported. Here's how to try it out today.
+On April 6th 2019, Addy Osmany wrote about [native image lazy-loading](https://addyosmani.com/blog/lazy-loading/). Two days later Yvain, a front-end developer from Paris, [asked me](https://github.com/verlok/lazyload/issues/331) if my [vanilla-lazyload](https://github.com/verlok/lazyload/) could be a **loading attribute polyfill**, inspiring me to develop and release version 12 of the script, which features a new `use_native` option to enable native lazy-loading where supported. Here's how to try it out today.
 
 ## The browser you need
 
-Native lazy loading is in dev preview and available only in Chrome Canary under a flag. So in order to test it, you need to:
+As of 10th April 2019, native lazy-loading is in dev preview and available only in Chrome 75, which means Chrome Canary, and under a flag. So in order to test it, you need to:
 
 1. [Download Chrome Canary](https://www.google.com/chrome/canary/) and install it
 2. In Chrome Canary, go to the URL *chrome://flags* and enable the following flags:
-   - Enable lazy image loading
-   - Enable lazy iframe loading
+   - _Enable lazy image loading_
+   - _Enable lazy iframe loading_
 3. Restart Chrome Canary 
 
 ## Demo
@@ -70,7 +70,6 @@ The `use_native` option makes sure that:
 
 ## Conclusion
 
-You can have both native lazy-loading and js-based lazyload today using vanilla-lazyload 12, just set the `use_native` option to true.
+You can already have both native lazy-loading and js-based lazyload today using vanilla-lazyload 12, just set the `use_native` option to true.
 
-That's it!
-If you have questions, please tweet me @verlok.
+That's it! If you have questions, don't hesitate to contact me. On Twitter, I'm [@verlok](https://twitter.com/verlok).
