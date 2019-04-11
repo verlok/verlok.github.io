@@ -25,7 +25,7 @@ Native lazy loading is in dev preview and available only in Chrome Canary under 
 
 Now that you have the Chrome Canary browser with the native lazy loading enabled, you get started visiting the following demo pages.
 
-&rarr; [Native LazyLoad Demo](https://www.andreaverlicchi.eu/lazyload/demos/native_lazyload_conditional.html) || [Read the code](https://github.com/verlok/lazyload/blob/master/demos/native_lazyload_conditional.html)
+&rarr; [Native LazyLoad Demo](https://www.andreaverlicchi.eu/lazyload/demos/native_lazyload_conditional.html) /or/ [Read the code](https://github.com/verlok/lazyload/blob/master/demos/native_lazyload_conditional.html)
 
 If you did everything correctly, that's what will happen:
 
