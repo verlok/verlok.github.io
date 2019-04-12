@@ -105,13 +105,15 @@ new LazyLoad({
 })
 ```
 
-The `use_native` option makes sure that:
+The `use_native: true` flag sets up these context behaviors:
 
 - where native lazy loading is supported, LazyLoad adds the `loading="lazy"` attribute to the images, then just swaps the `data-*` attributes for the proper ones. Now the browser will manage the lazy loading itself.
 - where native lazy loading is NOT supported, the lazy loading continues to be managed by Javascript
 
-## Conclusion
+## To wrap up
 
-You can have **both native lazy-loading and js-based lazyload today** using vanilla-lazyload 12, just setting the `use_native` option to `true`.
+You can have **both native lazy-loading and js-based lazyload today** using vanilla-lazyload 12, just setting the `use_native` option to `true`. 
+ 
+**Try it out**! If you like it, **star the repo**. If you find something wrong, **file an issue** and I'll try and fix it. &rarr; [GitHub repo](https://github.com/verlok/lazyload).
 
-If you have questions, don't hesitate to contact me. On Twitter, I'm [@verlok](https://twitter.com/verlok).
+For any questions, [reach me on twitter](https://twitter.com/verlok). Cheers!
