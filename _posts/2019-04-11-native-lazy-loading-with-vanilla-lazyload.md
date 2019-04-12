@@ -57,7 +57,7 @@ In order to try it yourself, you need to follow the following steps.
 
 ### Markup
 
-In-viewport / above-the-fold images should be regular <img> tags. Using `data-src` would defeat the browser's preload scanner, so we want to avoid it for performance reasons. In addition, you can use the `loading="eager"` attribute to make sure they load as soon as possible.
+In-viewport / above-the-fold images should be regular `<img>` tags. Using `data-src` would defeat the browser's preload scanner, so we want to avoid it for performance reasons. In addition, you can use the `loading="eager"` attribute to make sure they load as soon as possible.
 
 ```html
 <img 
