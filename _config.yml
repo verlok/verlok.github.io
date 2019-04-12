@@ -7,7 +7,7 @@ description: > # this means to ignore newlines until "baseurl:"
   Andrea is a web craftsman, a father, a fan of GitHub and a proud writer of this tech blog.
   He currently works at YOOX NET-A-PORTER GROUP and he occasionally speaks at front-end conferences.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://www.andreaverlicchi.eu" # the base hostname & protocol for your site
+url: "https://www.andreaverlicchi.eu" # the base hostname & protocol for your site
 twitter_username: verlok
 github_username:  verlok
 markdown: kramdown
