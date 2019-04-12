@@ -24,6 +24,8 @@ Browsers will initially fetch a tiny bit of the images (~2kb) in order to get so
 
 The problem is that if you directly assign the `src` (and/or `srcset`) to the images, browsers that still don't support native lazy loading would download them all immediately, and this is something you might want to avoid in order to save bandwidth and speed up your website or web application.
 
+![](/assets/post-images/use_native.png "the `use_native` option")
+
 For this reason, I added the `use_native` option in version 12 of _vanilla-lazyload_ which enables native lazy-loading where supported.
 
 More info on native lazy loading can be found on Addy Osmani's post [native image lazy-loading](https://addyosmani.com/blog/lazy-loading/).
