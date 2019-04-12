@@ -58,7 +58,9 @@ In order to try it yourself, you need to follow the following steps.
 
 ### Markup
 
-In-viewport / above-the-fold images should be regular `<img>` tags. Using `data-src` would defeat the browser's preload scanner, so we want to avoid it for performance reasons. In addition, you can use the `loading="eager"` attribute to make sure they load as soon as possible.
+To make sure that your users see your images as soon as possible, I recommend to immediately load the topmost images of your webpage, only the ones that you know that will be placed _above-the-fold_ in the most common viewports, considering smartphones, tablets and computers.
+
+To do that, the first images in the page should be loaded using regular `<img>` tags. You can use the `loading="eager"` attribute to make sure they load as soon as possible.
 
 ```html
 <img 
@@ -68,7 +70,7 @@ In-viewport / above-the-fold images should be regular `<img>` tags. Using `data-
 />
 ```
 
-For off-viewport / below-the-fold images you should still use `data-src`, `data-srcset` and `data-sizes` to avoid an eager loading in unsupported browsers.
+All other _below-the-fold_ images should be loaded using the `data-src`, `data-srcset` and `data-sizes` attributes instead of `src`, `srcset` and `sizes`, to avoid an eager loading in browsers not supporting `loading="lazy"`.
 
 ```html
 <img
@@ -78,7 +80,7 @@ For off-viewport / below-the-fold images you should still use `data-src`, `data-
 />
 ```
 
-Note that you can lazily load responsive images using both the `img` tag and the `picture` tag. [Read more about lazy loading responsive images]({% post_url 2019-03-01-lazy-load-responsive-images-in-2019-srcset-sizes-more %}).
+**Link:** for a complete guide on how to lazy load responsive images, read [more about lazy loading responsive images]({% post_url 2019-03-01-lazy-load-responsive-images-in-2019-srcset-sizes-more %}).
 
 ### Now to the Javascript code! 
 
@@ -112,8 +114,13 @@ The `use_native: true` flag sets up these context behaviors:
 
 ## To wrap up
 
-You can have **both native lazy-loading and js-based lazyload today** using vanilla-lazyload 12, just setting the `use_native` option to `true`. 
- 
-**Try it out**! If you like it, **star the repo**. If you find something wrong, **file an issue** and I'll try and fix it. &rarr; [GitHub repo](https://github.com/verlok/lazyload).
+Loading content lazily is very important to **improve a website loading speed**, browser vendors are finally starting to implement it natively and I can't wait for it to be available on Edge, Safari and Firefox.
 
-For any questions, [reach me on twitter](https://twitter.com/verlok). Cheers!
+Until then, you can have **both native lazy loading and js-based lazy loading** using [vanilla-lazyload 12](https://github.com/verlok/lazyload), just setting the `use_native` option to `true`. 
+ 
+**Try it out**! 
+- 👍 If you like it, **[star the repo]([repo](https://github.com/verlok/lazyload))**. 
+- 👎 If you find something wrong, **[file an issue](https://github.com/verlok/lazyload/issues)** and I'll fix it.
+- For any questions on this topic, **[reach me on twitter](https://twitter.com/verlok)**. 
+
+Cheers!
