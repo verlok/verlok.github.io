@@ -26,13 +26,13 @@ pre {
  * Blocks of code
  */
 
-$extra-code-margin: 100px;
+$extra-code-margin: 12px;
 
 div.highlighter-rouge {
 	margin-top: $spacing-unit;
 	margin-bottom: $spacing-unit;
 	position: relative;
-	@media (min-width: 900px) {
+	@media (min-width: $content-width + $extra-code-margin * 6) {
 		width: $content-width + $extra-code-margin * 2;
 		margin-left: -$extra-code-margin;
 	}
