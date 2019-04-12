@@ -59,9 +59,9 @@ In-viewport / above-the-fold images should be regular <img> tags. Using `data-sr
 
 ```html
 <img 
-    src="https://via.placeholder.com/440x560?text=Img+01" 
+    src="eager-eagle.jpg" 
     loading="eager"
-    alt="Img 01" 
+    alt="Eager Eagle" 
 />
 ```
 
@@ -69,9 +69,9 @@ For off-viewport / below-the-fold images you should still use `data-src`, `data-
 
 ```html
 <img
-    data-src="https://via.placeholder.com/440x560?text=Img+03"
+    data-src="lazy-sloth.jpg"
     class="lazy"
-    alt="Img 03"
+    alt="Lazy Sloth"
 />
 ```
 
