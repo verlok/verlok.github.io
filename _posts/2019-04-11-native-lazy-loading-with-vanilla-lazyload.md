@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Native lazy-loading and js-based fallback with vanilla-lazyload 12
+title: Native lazy loading and js-based fallback with vanilla-lazyload 12
 
 date: 2019-04-11 19:00:00 +01:00
 categories:
@@ -9,7 +9,26 @@ categories:
 tags: [native, vanilla, lazyload, image, iframe]
 ---
 
-On April 6th 2019, Addy Osmany wrote about [native image lazy-loading](https://addyosmani.com/blog/lazy-loading/). Two days later Yvain, a front-end developer from Paris, [asked me](https://github.com/verlok/lazyload/issues/331) if my [vanilla-lazyload](https://github.com/verlok/lazyload/) could be a **loading attribute polyfill**, inspiring me to develop and release version 12 of the script, which features a new `use_native` option to enable native lazy-loading where supported. Here's how to try it out today.
+On April 6th 2019, Addy Osmany wrote about [native image lazy-loading](https://addyosmani.com/blog/lazy-loading/). Two days later Yvain, a front-end developer from Paris, [asked me](https://github.com/verlok/lazyload/issues/331) if my [vanilla-lazyload](https://github.com/verlok/lazyload/) could be a **loading attribute polyfill**, inspiring me to develop and release version 12 of the script, which features a new `use_native` option to enable native lazy-loading where supported. You can already use it today.
+
+## Wait... what?
+
+In case you didn't read Addy's post, it will soon be possible to _natively_ lazy load images through the `loading="lazy"` attribute on images and iframes.
+
+```html
+<img loading="lazy" src="...">
+<iframe loading="lazy" src="...">
+```
+
+Browsers will fetch the first 2kb of the images in order to get some initial information (e.g. size), then fetch the rest when they are about to enter the viewport.
+
+The problem is that if you directly assign the `src` (and/or `srcset`) to the images, the browser which still don't support native lazy loading would download them all immediately, and this is something you might want to avoid in order to save bandwidth and speed up your website or web application.
+
+For this reason, I added the `use_native` option in version 12 of _vanilla-lazyload_ which enable native lazy-loading where supported.
+
+More info on native lazy loading can be found on Addy Osmani's post [native image lazy-loading](https://addyosmani.com/blog/lazy-loading/).
+
+You lazily load responsive images using both the `img` tag and the `picture` tag. See also: [lazy loading responsive images in 2019]({% post_url 2019-03-01-lazy-load-responsive-images-in-2019-srcset-sizes-more %}).
 
 ## The browser you need
 
