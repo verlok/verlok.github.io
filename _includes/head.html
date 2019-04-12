@@ -16,7 +16,14 @@
   <meta property="og:url" content="{{ page.url | replace:'index.html','' | absolute_url }}" />
   <meta property="og:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}" />
   <meta property="og:description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}" />
-  <meta property="og:image" content="{{ site.url }}/assets/post-images/{{ page.image }}">
+
+  <meta property="og:image"
+    content="{% if page.image %}
+      {{ site.url }}/assets/post-images/{{ page.image }}
+    {% else %}
+      https://www.gravatar.com/avatar/a175bc6ffa39da4513620869709c0fcb?s=1200
+    {% endif %}">
+
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="700" />
   
