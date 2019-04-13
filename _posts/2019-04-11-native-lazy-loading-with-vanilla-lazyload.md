@@ -107,10 +107,10 @@ new LazyLoad({
 })
 ```
 
-The `use_native: true` flag sets up these context behaviors:
+The `use_native: true` flag sets up these contextual behaviors:
 
 - where native lazy loading is supported, LazyLoad adds the `loading="lazy"` attribute to the images, then just swaps the `data-*` attributes for the proper ones. Now the browser will manage the lazy loading itself.
-- where native lazy loading is NOT supported, the lazy loading continues to be managed by Javascript
+- where native lazy loading is NOT supported, the lazy loading continues to be managed by Javascript, leveraging the browser's IntersectionObserver API.
 
 ## To wrap up
 
