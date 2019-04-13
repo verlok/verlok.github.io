@@ -118,9 +118,8 @@ Loading content lazily is very important to **improve a website loading speed**,
 
 Until then, you can have **both native lazy loading and js-based lazy loading** using [vanilla-lazyload 12](https://github.com/verlok/lazyload), just setting the `use_native` option to `true`. 
  
-**Try it out**! 
-- 👍 If you like it, **[star the repo]([repo](https://github.com/verlok/lazyload))**. 
-- 👎 If you find something wrong, **[file an issue](https://github.com/verlok/lazyload/issues)** and I'll fix it.
-- For any questions on this topic, **[reach me on twitter](https://twitter.com/verlok)**. 
+Give it a try!
+
+If you like it, [star ⭐ the repo](https://github.com/verlok/lazyload). If you find something wrong, [file an issue](https://github.com/verlok/lazyload/issues) so I can try and fix it. For any questions, [reach me on twitter](https://twitter.com/verlok).
 
 Cheers!
