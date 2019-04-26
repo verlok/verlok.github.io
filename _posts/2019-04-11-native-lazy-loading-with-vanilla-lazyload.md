@@ -84,17 +84,17 @@ All other _below-the-fold_ images should be loaded using the `data-src`, `data-s
 
 ### Now to the Javascript code! 
 
-You're gonna need vanilla-lazyload version 12 (currently in beta).
+You're gonna need vanilla-lazyload version 12.
 <br>You can include it via a CDN:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.0.0-beta.0/dist/lazyload.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.0.0/dist/lazyload.min.js"></script>
 ```
 
 Or install it using npm:
 
 ```
-npm install vanilla-lazyload@12.0.0-beta.0
+npm install vanilla-lazyload@12.0.0
 ```
 
 In your code, set the option `use_native` to `true` when instantiating LazyLoad:
