@@ -5,7 +5,7 @@ date: '2012-09-23 22:52:10 +0200'
 date_gmt: '2012-09-23 21:52:10 +0200'
 ---
 
-<img alt="Andrea Verlicchi's face" width="295" src="http://www.gravatar.com/avatar/a175bc6ffa39da4513620869709c0fcb?s=295" srcset="http://www.gravatar.com/avatar/a175bc6ffa39da4513620869709c0fcb?s=295 295w, http://www.gravatar.com/avatar/a175bc6ffa39da4513620869709c0fcb?s=590 590w" sizes="295px" style="float: left; margin: 0 26px 26px 0"> 
+<img alt="Andrea Verlicchi's face" width="295" src="https://www.gravatar.com/avatar/a175bc6ffa39da4513620869709c0fcb?s=295" srcset="https://www.gravatar.com/avatar/a175bc6ffa39da4513620869709c0fcb?s=295 295w, https://www.gravatar.com/avatar/a175bc6ffa39da4513620869709c0fcb?s=590 590w" sizes="295px" style="float: left; margin: 0 26px 26px 0"> 
 
 Hello, I'm Andrea, and I love to craft websites with the user experience at the center, which I care about in every detail.
 
