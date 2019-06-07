@@ -15,7 +15,7 @@ workbox.routing.registerRoute(
 );
 
 workbox.routing.registerRoute(
-  /\.(?:png|jpg|jpeg|svg)$/,
+  /avatar\.com|\.(?:png|jpg|jpeg|svg)$/,
   new workbox.strategies.CacheFirst({
     cacheName: 'image-cache',
     plugins: [
