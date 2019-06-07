@@ -57,4 +57,5 @@ workbox.precaching.precacheAndRoute([
   { url: '/check-if-element-still-inside-viewport-after-given-time/', revision: '20190607' },
   { url: '/using-css-variables-to-scale-layout-spaces/', revision: '20190607' },
   { url: '/responsive-images-a-html-51-standard/', revision: '20190607' },
+  { url: '/hybrid-lazy-loading-smashing-magazine-article/', revision: '20190607' },
 ]);
