@@ -1,0 +1,19 @@
+/**
+ * Pages
+ */
+
+.page-content {
+    .about-face {
+        margin: 0 auto; 
+        display: block;
+        width: 100%; 
+        max-width: 385px; 
+        height: auto;
+
+        @media (min-width: 620px) {
+            float: left;
+            margin: 0 26px 0 0;
+            max-width: 300px;
+        }
+    }
+}

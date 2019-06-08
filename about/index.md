@@ -5,11 +5,11 @@ date: '2012-09-23 22:52:10 +0200'
 date_gmt: '2012-09-23 21:52:10 +0200'
 ---
 
-<img alt="Andrea Verlicchi's face" width="295" src="https://www.gravatar.com/avatar/a175bc6ffa39da4513620869709c0fcb?s=295" srcset="https://www.gravatar.com/avatar/a175bc6ffa39da4513620869709c0fcb?s=295 295w, https://www.gravatar.com/avatar/a175bc6ffa39da4513620869709c0fcb?s=590 590w" sizes="295px" style="float: left; margin: 0 26px 26px 0"> 
+Hello, I'm Andrea, and I love to craft websites with the user experience at the center, which I care about in every detail. Recently I've been counting and I realized that I'm a programmer for 30 years*.
 
-Hello, I'm Andrea, and I love to craft websites with the user experience at the center, which I care about in every detail.
+<img alt="Andrea Verlicchi's face" width="385" src="/assets/pages-images/andrea-verlicchi-face.jpg" class="about-face">
 
-Recently I've been counting and I realized that I'm a programmer for 30 years*. My current job at [YNAP](https://www.ynap.com) is mainly focused on front-end research and development, working together with tech leaders, training on new technologies / best practices, and technically assess candidates. [More on LinkedIn &rarr;](https://linkedin.com/andreaverlicchi)
+My current job at [YNAP](https://www.ynap.com) is mainly focused on front-end research and development, working together with tech leaders, training on new technologies / best practices, and technically assess candidates. [More on LinkedIn &rarr;](https://linkedin.com/andreaverlicchi)
 
 I'm a father, a fan of GitHub, the proud creator of [vanilla-lazyload](https://github.com/verlok/lazyload) and [colonnineelettriche.it](http://www.colonnineelettriche.it) and the writer of this tech blog. I also occasionally speak at front-end conferences.
 
