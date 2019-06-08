@@ -10,7 +10,7 @@ tags: [native, vanilla, hybrid lazyload, image, iframe]
 image: vanilla-lazyload-smashing.png
 ---
 
-On <time datetime="2019-05-06">May 6th, 2019</time> I wrote my first article on <a href="https://www.smashingmagazine.com/">Smashing Magazine</a>, which title is <a href="https://www.smashingmagazine.com/2019/05/hybrid-lazy-loading-progressive-migration-native/">Hybrid Lazy Loading: A Progressive Migration To Native Lazy Loading</a>.
+On <time datetime="2019-05-06">May 6th, 2019</time> I wrote my first article on *Smashing Magazine*: <a href="https://www.smashingmagazine.com/2019/05/hybrid-lazy-loading-progressive-migration-native/">Hybrid Lazy Loading: A Progressive Migration To Native Lazy Loading</a>.
 
 <a href="https://www.smashingmagazine.com/2019/05/hybrid-lazy-loading-progressive-migration-native/">![](/assets/post-images/vanilla-lazyload-smashing.png "screenshot of the article on smashing magazine")</a>
 
