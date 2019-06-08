@@ -24,7 +24,7 @@ workbox.precaching.precacheAndRoute([
 
 workbox.routing.registerRoute(
   /\.js$/,
-  new workbox.strategies.NetworkFirst({
+  new workbox.strategies.StaleWhileRevalidate({
     cacheName: "js-cache",
   })
 );
@@ -51,11 +51,11 @@ workbox.routing.registerRoute(
 
 workbox.routing.registerRoute(
   /\/[^\/]+\/$/,
-  new workbox.strategies.StaleWhileRevalidate({
+  new workbox.strategies.NetworkFirst({
     cacheName: 'posts-cache',
     plugins: [
       new workbox.expiration.Plugin({
-        maxEntries: 12
+        maxEntries: 20
       })
     ],
   })
