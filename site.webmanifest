@@ -1,5 +1,5 @@
 {
-    "name": "AV's Blog",
+    "name": "Andrea Verlicchi’s Blog",
     "short_name": "AV's Blog",
     "icons": [
         {
@@ -13,7 +13,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#977f34",
+    "theme_color": "#D90009",
     "background_color": "#977f34",
     "display": "standalone",
     "start_url": "/"
