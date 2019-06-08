@@ -24,14 +24,18 @@ figure {
 /**
  * Basic styling
  */
-body {
+html {
+	background-color: $toolbar-background-color;
 	font: $base-font-weight #{$base-font-size}/#{$base-line-height}
 		$base-font-family;
 	color: $text-color;
-	background-color: $background-color;
 	-webkit-text-size-adjust: 100%;
 	font-feature-settings: "kern" 1;
 	font-kerning: normal;
+}
+
+main {
+	background-color: $background-color;
 }
 
 /**
