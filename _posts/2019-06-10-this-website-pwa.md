@@ -10,17 +10,9 @@ tags: [pwa]
 image: pwa-reliable.png
 ---
 
-Some of my workmates and I took part to a Google Hackathon about Progressive Web Application and we learned a lot, so I've decided to enable this website as a PWA.
+Some of my workmates and I took part to a Google Hackathon about Progressive Web Application and we learned a lot, so I've decided to enable this website as a PWA. Here's what I did...
 
 ![](/assets/post-images/pwa-reliable.png "Progressive web application working both online and offline")
-
-The result is that this website is now:
-
-1. Installable 
-2. Accessible offline
-3. Modern :)
-
-Here's what I did:
 
 ## Web manifest
 
@@ -121,4 +113,14 @@ I've temporarily disabled precaching of other pages because I found out that tho
 ]);*/
 ```
 
-But I'm currently investigating and understanding how to manage this. If you have any hints or comments, please let me know in the comments!
+But I'm currently investigating and understanding how to manage this. 
+
+## Results
+
+The result is that this website is now:
+
+1. Installable 
+2. Accessible offline
+3. Modern :)
+
+If you have any hints or comments, please let me know in the comments!
