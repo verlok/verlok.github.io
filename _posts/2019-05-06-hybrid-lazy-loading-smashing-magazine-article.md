@@ -1,6 +1,6 @@
 ---
 layout: post
-title: A smashing article on "hybrid lazy loading"
+title: A smashing article on hybrid lazy loading
 
 date: 2019-05-16 09:00:00 +01:00
 categories:
