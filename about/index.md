@@ -5,6 +5,10 @@ date: '2012-09-23 22:52:10 +0200'
 date_gmt: '2012-09-23 21:52:10 +0200'
 ---
 
+<nav class="post-back post-back--top">
+  <a href="/">&larr; Home page</a>
+</nav>
+
 Hello, I'm Andrea, and I love to craft websites with the user experience at the center, which I care about in every detail. Recently I've been counting and I realized that I'm a programmer for 30 years*.
 
 <img alt="Andrea Verlicchi's face" width="385" src="/assets/pages-images/andrea-verlicchi-face.jpg" class="about-face">
