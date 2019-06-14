@@ -7,13 +7,13 @@
       this.page.identifier = '{{ page.url | absolute_url }}';
     };
 
-    (function() {
+    setTimeout(function() {
       var d = document, s = d.createElement('script');
       s.src = 'https://{{ site.disqus.shortname }}.disqus.com/embed.js';
       s.setAttribute('data-timestamp', Date.now());
       s.async = true;
       d.body.appendChild(s);
-    })();
+    }, 2000);
   </script>
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 {% endif %}
