@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Web share API step by step
+title: Web Share API, the step after PWA
 
 date: 2019-06-14 9:00:00 +01:00
 categories:
@@ -14,11 +14,11 @@ Today I experimented with the Web Share API and implemented it on this website, 
 
 ![](/assets/post-images/native-web-sharing-api.png "iOS system share tray")
 
-After I made a PWA out of this website, I also removed the AddThis script which was used to add the share buttons ad the end of each posts, because it was slowing down the website. I then realized that, after adding the website to my home screen as a standalone app, users couldn't share posts anymore. 
+After I made a Progressive Web Application out of this website, I also removed the AddThis script which was used to add the share buttons ad the end of each posts, because it was slowing down the website. I then realized that, after adding the website to my home screen as a standalone app, users couldn't share posts anymore. 
 
 ## Web Share API to the rescue!
 
-I've added this script to my website's post pages
+I've added the following script to my website's post pages:
 
 ```js
 (function() {
