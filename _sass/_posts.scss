@@ -12,6 +12,22 @@
         background-image: linear-gradient(to top, transparent 10%, currentColor 11%, currentColor 12%, transparent 13%);
     }
 
+    
+    &-cta {
+        display: inline-block;
+        color: $alternative-color;
+        border: 1px solid $alternative-color;
+        background: white;
+        cursor: pointer;
+        padding: $spacing-unit/4 $spacing-unit/2;
+        border-radius: 5px;
+        @include relative-font-size(0.9);
+        &:hover {
+            color: white;
+            background: $alternative-color;
+        }
+    }
+
     /* POST LIST - HOME */
     &-list {
         margin-left: 0;
@@ -34,18 +50,7 @@
         > article {
             margin-bottom: 32px;
         }
-        &-cta {
-            display: inline-block;
-            border: 1px solid $alternative-color;
-            //color: white;
-            padding: $spacing-unit/4 $spacing-unit/2;
-            border-radius: 5px;
-            @include relative-font-size(0.9);
-            &:hover {
-                color: white;
-                background: $alternative-color;
-            }
-        }
+        
     }
 
     
@@ -124,4 +129,8 @@
             @extend .visuallyHidden;
         }
     }
+}
+
+.noShare .post-share {
+    display: none;
 }
