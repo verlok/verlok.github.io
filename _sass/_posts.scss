@@ -119,15 +119,13 @@
                 color: $brand-color;
             }
         }
-        
     }
 
     &-share {
         float: right;
+        position: relative;
+        top: -$spacing-unit/2;
         margin-bottom: $spacing-unit/2;
-        &-title {
-            @extend .visuallyHidden;
-        }
     }
 }
 
