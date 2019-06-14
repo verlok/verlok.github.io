@@ -19,9 +19,9 @@ body {
 	border-bottom: 5px solid $brand-color;
 	min-height: $spacing-unit * 1.865;
 	color: $text-color-on-dark;
-	/* Positioning context for the mobile navigation icon -- and the contact menu */
+	// Positioning context for the mobile navigation icon -- and the contact menu
 	.wrapper {
-		position: relative
+		position: relative;
 	}
 }
 
@@ -31,7 +31,7 @@ body {
 	font-weight: 300;
 	line-height: $base-line-height * $base-font-size * 2.25;
 	margin-bottom: 0;
-	text-decoration: none; 
+	text-decoration: none;
 	.name {
 		color: white;
 	}
@@ -43,14 +43,18 @@ body {
 		position: relative;
 	}
 	span:after {
-		content: '';
+		content: "";
 		position: absolute;
 		top: 10%;
 		left: 0;
 		right: 0;
 		bottom: 10%;
 		z-index: 1;
-		background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 50%);
+		background-image: linear-gradient(
+			to top,
+			rgba(0, 0, 0, 0.5),
+			rgba(0, 0, 0, 0) 50%
+		);
 		transition: opacity 0.3s;
 	}
 	&:focus,
@@ -78,8 +82,8 @@ body {
 	.page-link {
 		text-decoration: none;
 		color: $brand-color-on-dark;
-		line-height: $base-line-height; 
-		/* Gaps between nav items, but not on the last one */
+		line-height: $base-line-height;
+		// Gaps between nav items, but not on the last one
 		&:not(:last-child) {
 			margin-right: 20px;
 		}
@@ -106,15 +110,15 @@ body {
 			line-height: 0;
 			padding-top: 10px;
 			text-align: center;
-			>svg path {
+			> svg path {
 				fill: $grey-color-dark;
 			}
 		}
-		input~.trigger {
+		input ~ .trigger {
 			clear: both;
 			display: none;
 		}
-		input:checked~.trigger {
+		input:checked ~ .trigger {
 			display: block;
 			padding-bottom: 5px;
 		}
@@ -129,7 +133,6 @@ body {
 	}
 }
 
-
 /**
  * Page content
  */
@@ -138,7 +141,6 @@ body {
 	flex-grow: 1;
 	padding: $spacing-unit 0;
 }
-
 
 /**
  * Site footer

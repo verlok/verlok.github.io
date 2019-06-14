@@ -14,6 +14,8 @@ markdown: kramdown
 include: [.htaccess]
 paginate: 20
 google_analytics: UA-26756203-1
+sass: 
+  style: compressed
 disqus:
   shortname: andreaverlicchi-blog
 defaults:

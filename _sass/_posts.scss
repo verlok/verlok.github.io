@@ -4,7 +4,7 @@
 
 .post {
 
-    /* LINKS INSIDE PARAGRAPHS, BOTH POST AND POST LIST */
+    // LINKS INSIDE PARAGRAPHS, BOTH POST AND POST LIST 
 
     &-list p a,
     p > a {
@@ -28,12 +28,12 @@
         }
     }
 
-    /* POST LIST - HOME */
+    // POST LIST - HOME 
     &-list {
         margin-left: 0;
         list-style: none;
 
-        /* LINK TO DETAIL PAGE */
+        // LINK TO DETAIL PAGE 
         &-link {
             line-height: 1.2;
             color: $brand-color;
@@ -55,7 +55,7 @@
 
     
 
-    /* SINGLE POST - DETAIL */
+    // SINGLE POST - DETAIL 
 
     &-title {
         @include relative-font-size(2.25);
@@ -76,7 +76,7 @@
         color: $grey-color;
     } 
     
-    /* POST CONTENT */
+    // POST CONTENT 
 
     &-content {
         margin-bottom: $spacing-unit;

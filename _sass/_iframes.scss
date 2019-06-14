@@ -1,4 +1,4 @@
-/* Iframe embedded */
+// Iframe embedded
 
 %iframeWrapper {
     @extend %vertical-rhythm;
@@ -15,9 +15,9 @@
 }
 .slideshareWrapper {
     @extend %iframeWrapper;
-    padding-bottom: 58%; /* 16:9 + slideshare controls on bottom */
+    padding-bottom: 58%; // 16:9 + slideshare controls on bottom 
 }
 .videoWrapper {
 	@extend %iframeWrapper;
-	padding-bottom: 56.25%; /* 16:9 */
+	padding-bottom: 56.25%; // 16:9 
 }
