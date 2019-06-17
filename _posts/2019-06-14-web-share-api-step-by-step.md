@@ -7,12 +7,12 @@ categories:
 - techniques
 - web share API
 tags: [web share api]
-image: native-web-sharing-api.png
+image: native-web-sharing-api__2x.png
 ---
 
 Today I experimented with the Web Share API and implemented it on this website, just to begin. Here's what I did and how you can implement it on your website.
 
-![](/assets/post-images/native-web-sharing-api.png "iOS system share tray")
+<img alt="iOS system share tray" src="/assets/post-images/native-web-sharing-api__ph.png" data-src="/assets/post-images/native-web-sharing-api__1x.png" data-srcset="/assets/post-images/native-web-sharing-api__1x.png 1x, /assets/post-images/native-web-sharing-api__2x.png 2x" class="lazy">
 
 After I made a Progressive Web Application out of this website, I also removed the AddThis script which was used to add the share buttons ad the end of each posts, because it was slowing down the website. I then realized that, after adding the website to my home screen as a standalone app, users couldn't share posts anymore. 
 
