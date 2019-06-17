@@ -7,7 +7,7 @@ categories:
 - libraries
 - techniques
 tags: [native, vanilla, hybrid lazyload, image, iframe]
-image: vanilla-lazyload-smashing.png
+image: vanilla-lazyload-smashing__2x.png
 ---
 
 On <time datetime="2019-05-06">May 6th, 2019</time> I wrote my first article on **Smashing Magazine**: <a href="https://www.smashingmagazine.com/2019/05/hybrid-lazy-loading-progressive-migration-native/">Hybrid Lazy Loading: A Progressive Migration To Native Lazy Loading</a>.

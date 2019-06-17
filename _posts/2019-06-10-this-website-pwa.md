@@ -7,7 +7,7 @@ categories:
 - techniques
 - progressive web applications
 tags: [pwa]
-image: pwa-reliable.png
+image: pwa-reliable__2x.png
 ---
 
 Some of my workmates and I took part to a Google Hackathon about Progressive Web Application and we learned a lot, so I've decided to enable this website as a PWA. Here's what I did...

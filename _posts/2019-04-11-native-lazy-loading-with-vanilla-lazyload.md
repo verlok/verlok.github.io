@@ -7,7 +7,7 @@ categories:
 - libraries
 - techniques
 tags: [native, vanilla, lazyload, image, iframe]
-image: lazyload-use_native.png
+image: lazyload-use_native__2x.png
 ---
 
 On April 6th 2019, Addy Osmany wrote about [native image lazy-loading](https://addyosmani.com/blog/lazy-loading/). Two days later Yvain, a front-end developer from Paris, [asked me](https://github.com/verlok/lazyload/issues/331) if my [vanilla-lazyload](https://github.com/verlok/lazyload/) could be a **loading attribute polyfill**, inspiring me to develop and release version 12 of the script, which features a new `use_native` option to enable native lazy-loading where supported. You can already use it today.
