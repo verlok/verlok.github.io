@@ -165,25 +165,3 @@ strong {
 	padding-left: $spacing-unit / 2;
 	@extend %clearfix;
 }
-
-/**
- * Icons
- */
-.icon > svg {
-	display: inline-block;
-	vertical-align: middle;
-
-	path {
-		fill: $grey-color;
-	}
-}
-
-.social-media-list {
-	.icon {
-		padding-right: 5px;
-	}
-
-	li + li {
-		padding-top: 5px;
-	}
-}

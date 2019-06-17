@@ -1,0 +1,31 @@
+/**
+ * Site footer
+ */
+
+ .site-footer {
+	flex-shrink: 0;
+	background-color: $toolbar-background-color;
+	border-top: 5px solid $brand-color;
+	padding: $spacing-unit/2 0;
+	color: $text-color-on-dark;
+	a {
+		color: $brand-color-on-dark;
+	}
+}
+
+.footer-heading {
+	@include relative-font-size(1.125);
+	margin-bottom: $spacing-unit / 2;
+}
+
+.contact-list,
+.social-media-list {
+	list-style: none;
+	margin-left: 0;
+}
+
+.social-media-list {
+	a {
+		text-decoration: none;
+	}
+}
