@@ -17,5 +17,13 @@
     {% if jekyll.environment == 'production' and site.google_analytics %}
     {% include google-analytics.html %}
     {% endif %}
+    <!-- Non critical CSS -->
+    <script async>
+      var href = "{{ '/assets/main.css' | relative_url }}";
+      var link = document.createElement("link");
+      link.setAttribute("rel", "stylesheet");
+      link.setAttribute("href", href);
+      document.documentElement.appendChild(link);
+    </script>
   </body>
 </html>
