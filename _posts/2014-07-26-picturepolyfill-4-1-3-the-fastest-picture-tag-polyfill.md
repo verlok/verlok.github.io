@@ -11,7 +11,7 @@ published: true
 ---
 **PicturePolyfill 4** is out! Implementing responsive images in your site has never been so simple and fast.
 
-![Responsive image](/assets/post-images/Copia-di-Schermata-2014-07-26-alle-15.46.48-709x215.jpg)
+![Responsive image](/assets/post-images/responsive-web-designed-website.jpg)
 
 ## Most important features
 
