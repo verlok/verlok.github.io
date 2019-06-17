@@ -12,6 +12,10 @@
         background-image: linear-gradient(to top, transparent 10%, currentColor 11%, currentColor 12%, transparent 13%);
     }
 
+    &-image {
+        width: 100%;
+        height: auto;
+    }
     
     &-cta {
         display: inline-block;
