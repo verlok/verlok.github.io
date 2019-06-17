@@ -1,0 +1,56 @@
+/**
+ * Posts
+ */
+
+.post {
+
+    // LINKS INSIDE PARAGRAPHS, BOTH POST AND POST LIST 
+
+    figcaption {
+        text-align: center;
+        margin-top: $spacing-unit/4;
+        color: #666;
+    }
+    
+    // POST CONTENT 
+
+    &-content {
+        h3 {
+            margin-top: $spacing-unit*1.1;
+            line-height: 1.2;
+            @include relative-font-size(1.375);
+        }
+    }
+
+    &-footer {
+        @extend %clearfix;
+    }
+
+    &-author {
+        &-image {
+            float: left; 
+            margin-right: $spacing-unit/2;
+        }
+    }
+
+    &-back {
+        &--bottom {
+            margin-bottom: $spacing-unit/2;
+            float: left;
+            a {
+                color: $brand-color;
+            }
+        }
+    }
+
+    &-share {
+        float: right;
+        position: relative;
+        top: -$spacing-unit/2;
+        margin-bottom: $spacing-unit/2;
+    }
+
+    .noShare &-share {
+        display: none;
+    }
+}
