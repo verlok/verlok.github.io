@@ -39,19 +39,21 @@ NOTE: This goes under the `assets` folder. The triple dash at the beginning is r
 
 ## head.html
 
-Inline the critical CSS you will obtain:
+Inline the critical CSS inside a `style` tag:
 
-```html
+```liquid
  <style>
-  {% capture critical %}
-    {% include minima_critical.scss %}
-  {% endcapture %}
+{% raw %}
+{% capture critical %}
+  {% include minima_critical.scss %}
+{% endcapture %}
 
-  {{ critical | scssify }} 
+{{ critical | scssify }} 
+{% endraw %}
 </style>
 ```
 
-_AND_ preload the main CSS you will use later:
+Also, it's a good idea to preload the main CSS you will use later:
 
 ```html
 <link rel="preload" href="{{ '/assets/main.css' | relative_url }}" as="style">

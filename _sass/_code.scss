@@ -74,3 +74,10 @@ div.highlighter-rouge {
 	background: #e4d617;
 	color: black;
 }
+
+.language-liquid::before {
+	@extend %language;
+	content: "Liquid";
+	background: hsl(46, 82%, 49%);
+	color: black;
+}
