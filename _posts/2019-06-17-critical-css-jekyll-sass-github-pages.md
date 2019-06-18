@@ -11,31 +11,44 @@ image: critical-css-jekyll-sass-github-pages__2x.png
 
 This site is run by Jekyll on GitHub pages and its CSS is build using SASS. Today I decided to boost performance even more inlining the render-blocking "critical" CSS, but I struggled to find an easy way to do it. Here's how I did it.
 
-<img alt="TODO" src="/assets/post-images/critical-css-jekyll-sass-github-pages__ph.png" data-src="/assets/post-images/critical-css-jekyll-sass-github-pages__1x.png" data-srcset="/assets/post-images/critical-css-jekyll-sass-github-pages__1x.png 1x, /assets/post-images/critical-css-jekyll-sass-github-pages__2x.png 2x" class="lazy post-image">
+<img alt="HTML + Jekyll code for critical CSS" src="/assets/post-images/critical-css-jekyll-sass-github-pages__ph.png" data-src="/assets/post-images/critical-css-jekyll-sass-github-pages__1x.png" data-srcset="/assets/post-images/critical-css-jekyll-sass-github-pages__1x.png 1x, /assets/post-images/critical-css-jekyll-sass-github-pages__2x.png 2x" class="lazy post-image">
 
-## includes/critical.scss
+## The critical style
+
+In the critical SASS file, use the SASS `@import` directive to include all the partials that have impact on the layout of your page, plus your _variables_ and _mixins_ that might be required from the imported partials.
+
+For instance, I import `base` (the base of the website, including reset and other typography rules), `layout` that styles the header and layout of the page, `posts_above` which styles the above-the-fold part of the posts list and post detail, and `utils` with their helper classes (e.g. `visuallyHidden`).
+
+The `posts_above` file was once a single file called `posts`, but I decided to split it in two separate files for further optimization. The `posts_below` contains information to style the post footer, the author section, the share button, etc.
+
+Create a `critical.scss` file inside the `includes` folder.
+
+`includes/critical.scss`
 
 ```scss
-// Import partials for critical css contentl
-@import "variables", "mixins", "base", "layout", "posts_above", 
-  "pages", "utils";
+// Import partials for critical css content
+@import "variables", "mixins", "base", "layout", "posts_above", "pages", "utils";
 ```
 
-NOTE: This goes under the `includes` folder!
+IMPORTANT: Place this file in the `includes` folder! You'll need to include it in your HTML later.
 
-## assets/main.scss
+## The rest of your stylesheet
+
+...
+
+`assets/main.scss`
 
 ```scss
 ---
 ---
 
 // Import partials for below-the-fold content
-@import "variables", "mixins", "posts_below", "syntax-highlighting", 
-  "footer", "code",	"pagination", "icons", "iframes", "tables";
+@import "variables", "mixins", "posts_below", "syntax-highlighting", "footer", "code", "pagination", "icons", "iframes", "tables";
 ```
 
-NOTE: This goes under the `assets` folder. The triple dash at the beginning is required by Jekyll to recognize it and deploy it as content.
+NOTE: This goes under the `assets` folder. 
 
+IMPORTANT: The two lines with a triple dash at the beginning of the file are required by Jekyll to recognize and deploy the file as content.
 
 ## head.html
 
