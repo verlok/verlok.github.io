@@ -15,11 +15,11 @@ This site is run by Jekyll on GitHub pages and its CSS is build using SASS. Toda
 
 ## The critical style
 
-In the critical SASS file, use the SASS `@import` directive to include all the partials that have impact on the layout of your page, plus your _variables_ and _mixins_ that might be required from the imported partials.
+In the critical SASS file, use the SASS `@import` directive to include all the partials that have an impact on the layout of your page, plus your _variables_ and _mixins_ that might be required from the imported partials.
 
-For instance, I import `base` (the base of the website, including reset and other typography rules), `layout` that styles the header and layout of the page, `posts_above` which styles the above-the-fold part of the posts list and post detail, and `utils` with their helper classes (e.g. `visuallyHidden`).
+For instance, I import the `base` partial, containing the basic rules of the website like reset and typography, the `layout` partial that styles the header and layout of the page, the `posts_above` partial which styles the _above-the-fold_ part of the posts list and the post detail, and `utils` which contains some helper classes (e.g. `visuallyHidden`).
 
-The `posts_above` file was once a single file called `posts`, but I decided to split it in two separate files for further optimization. The `posts_below` contains information to style the post footer, the author section, the share button, etc.
+The `posts_above` partial was once a single file called `posts`, but I decided to split it in two separate files for further optimization. The other partial, names `posts_below`, contains information to style the post footer (the author section, the share button) so it's _not_ included here.
 
 Create a `critical.scss` file inside the `includes` folder.
 
@@ -32,9 +32,34 @@ Create a `critical.scss` file inside the `includes` folder.
 
 IMPORTANT: Place this file in the `includes` folder! You'll need to include it in your HTML later.
 
+## Stick it in your `head`
+
+In the ``head`` HTML partial, inline the critical CSS inside a `style` tag. You can do that using the following Jekyll code, which is based on the Liquid template engine used in Jekyll.
+
+``head.html``:
+
+```liquid
+{% raw %}
+{% capture critical %}
+  {% include minima_critical.scss %}
+{% endcapture %}
+
+{{ critical | scssify }} 
+{% endraw %}
+```
+
+Also, it's a good idea to preload the `main` CSS file that you will use later in time:
+
+```html
+<link rel="preload" href="{{ '/assets/main.css' | relative_url }}" as="style">
+```
+
+
 ## The rest of your stylesheet
 
-...
+If your website is simple enough, you can import the rest of your partials inside a single SCSS file, which you will load asynchronously using JavaScript.
+
+I for instance imported there all the syntax highlighting style, the footer, the pagination style, the icons style, and also the iframes and tables styles, which are likely to appear _below-the-fold_ most of the times.
 
 `assets/main.scss`
 
@@ -46,33 +71,12 @@ IMPORTANT: Place this file in the `includes` folder! You'll need to include it i
 @import "variables", "mixins", "posts_below", "syntax-highlighting", "footer", "code", "pagination", "icons", "iframes", "tables";
 ```
 
-NOTE: This goes under the `assets` folder. 
+**IMPORTANT**: The two lines with a triple dash at the beginning of the file are required by Jekyll to recognize and deploy the file as content.
 
-IMPORTANT: The two lines with a triple dash at the beginning of the file are required by Jekyll to recognize and deploy the file as content.
 
-## head.html
+## Load the rest of CSS using Javascript
 
-Inline the critical CSS inside a `style` tag:
-
-```liquid
- <style>
-{% raw %}
-{% capture critical %}
-  {% include minima_critical.scss %}
-{% endcapture %}
-
-{{ critical | scssify }} 
-{% endraw %}
-</style>
-```
-
-Also, it's a good idea to preload the main CSS you will use later:
-
-```html
-<link rel="preload" href="{{ '/assets/main.css' | relative_url }}" as="style">
-```
-
-## default.html
+`default.html`
 
 Just before the closing `body` tag, load non critical CSS using JS:
 
