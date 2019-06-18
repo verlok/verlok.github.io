@@ -11,7 +11,7 @@ image: critical-css-jekyll-sass-github-pages__2x.png
 
 This site is run by Jekyll on GitHub pages and its CSS is build using SASS. Today I decided to boost performance even more inlining the render-blocking "critical" CSS, but I struggled to find an easy way to do it. Here's how I did it.
 
-<img alt="HTML + Jekyll code for critical CSS" src="/assets/post-images/critical-css-jekyll-sass-github-pages__ph.png" data-src="/assets/post-images/critical-css-jekyll-sass-github-pages__1x.png" data-srcset="/assets/post-images/critical-css-jekyll-sass-github-pages__1x.png 1x, /assets/post-images/critical-css-jekyll-sass-github-pages__2x.png 2x" class="lazy post-image">
+<img alt="Blurry but colored code :)" src="/assets/post-images/critical-css-jekyll-sass-github-pages__ph.png" data-src="/assets/post-images/critical-css-jekyll-sass-github-pages__1x.png" data-srcset="/assets/post-images/critical-css-jekyll-sass-github-pages__1x.png 1x, /assets/post-images/critical-css-jekyll-sass-github-pages__2x.png 2x" class="lazy post-image">
 
 ## The critical style
 
