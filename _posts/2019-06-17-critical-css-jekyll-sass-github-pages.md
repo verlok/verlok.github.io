@@ -53,9 +53,7 @@ File: ``includes/head.html``:
 {{ critical | scssify }}{% endraw %}
 ```
 
-Also, it's a good idea to preload the `main.css` file that will be served to your users later in time.
-
-Use the following code to render the `link` tag pointing to your main CSS file.
+Also, it's a good idea to preload the `main.css` file that will be served to your users later in time. Use the following code to render the `link` tag pointing to your main CSS file.
 
 ```html
 <link rel="preload" href="{{ '/assets/main.css' | relative_url }}" as="style">
