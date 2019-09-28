@@ -87,26 +87,15 @@ File: `assets/main.scss`:
 
 ## Load the rest of CSS using Javascript
 
-There are many ways to load the rest of your CSS using Javascript, but I've decided to write the script myself since it's a very small portion of code.
+There are many ways to load the rest of your CSS using Javascript, but I've decided to use the [modern async technique](https://www.filamentgroup.com/lab/async-css.html) which makes a CSS file load with low priority, then apply it to the page when loaded.
 
-&rarr; Just before the closing `body` tag, load non critical CSS using JS:
-
-File: `default.html`:
+File: `head.html`:
 
 ```html
-<!-- Non critical CSS -->
-<script async>
-  var href = "{{ '/assets/main.css' | relative_url }}";
-  var link = document.createElement("link");
-  link.setAttribute("rel", "stylesheet");
-  link.setAttribute("href", href);
-  document.documentElement.appendChild(link);
-</script>
-<!-- Fallback for disabled JS -->
-<noscript>
-  <link rel="stylesheet" href="/assets/main.css">
-</noscript>
+  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}" media="nope!" onload="this.media='all'">
 ```
+
+This works!
 
 ## Conclusion
 
