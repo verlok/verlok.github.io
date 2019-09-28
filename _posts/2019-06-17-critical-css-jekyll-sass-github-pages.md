@@ -28,7 +28,7 @@ The `posts_above` partial initially was a single file called `posts`, but I deci
 
 &rarr; Create a `critical.scss` file inside the `includes` folder.
 
-File: `includes/critical.scss`:
+File `includes/critical.scss`:
 
 ```scss
 // Import partials for critical css content
@@ -43,7 +43,7 @@ Inline the critical CSS inside a `style` tag in the `<head>` section of your HTM
 
 &rarr; Open your `head.html` partial if you have any.
 
-File: ``includes/head.html``:
+File ``includes/head.html``:
 
 ```liquid
 {% raw %}{% capture critical %}
@@ -51,12 +51,6 @@ File: ``includes/head.html``:
 {% endcapture %}
 
 {{ critical | scssify }}{% endraw %}
-```
-
-Also, it's a good idea to preload the `main.css` file that will be served to your users later in time. Use the following code to render the `link` tag pointing to your main CSS file.
-
-```html
-<link rel="preload" href="{{ '/assets/main.css' | relative_url }}" as="style">
 ```
 
 ## The rest of your stylesheet
@@ -73,7 +67,7 @@ I for instance imported there all the SASS partials which style the page section
 
 &rarr; Put the rest of your SASS rules inside your regular CSS file.
 
-File: `assets/main.scss`:
+File `assets/main.scss`:
 
 ```scss
 ---
@@ -89,10 +83,10 @@ File: `assets/main.scss`:
 
 There are many ways to load the rest of your CSS using Javascript, but I've decided to use the [modern async technique](https://www.filamentgroup.com/lab/async-css.html) which makes a CSS file load with low priority, then apply it to the page when loaded.
 
-File: `head.html`:
+File `head.html`:
 
 ```html
-  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}" media="nope!" onload="this.media='all'">
+{% raw %}<link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}" media="nope!" onload="this.media='all'">{% endraw %}
 ```
 
 This works!
