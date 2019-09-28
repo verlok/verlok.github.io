@@ -79,7 +79,7 @@ File `assets/main.scss`:
 
 **IMPORTANT**: The two lines with a triple dash at the beginning of the file are required by Jekyll to recognize and deploy the file as content.
 
-## Load the rest of CSS using Javascript
+## Load the rest of your stylesheet
 
 There are many ways to load the rest of your CSS using Javascript, but I've decided to use the [modern async technique](https://www.filamentgroup.com/lab/async-css.html) which makes a CSS file load with low priority, then apply it to the page when loaded.
 
