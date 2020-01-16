@@ -9,7 +9,7 @@ tags: [browsers, microsoft, edge]
 image: microsoft-edge-page-screenshot__2x.jpg
 ---
 
-The new Chromium-based Microsoft edge browser is finally here! Here’s a practical guide on how you can use it productively from day one. TL;DR: Download it, change the default search engine, optionally set the dark theme.
+The new Chromium-based Microsoft edge browser is finally here! Here’s a practical guide on how you can use it productively from day one. TL;DR: Download it, change the default search engine, install extensions, also from the Chrome Web Store.
 
 <img alt="Microsoft Edge page screenshot" src="/assets/post-images/microsoft-edge-page-screenshot__ph.png" data-src="/assets/post-images/microsoft-edge-page-screenshot__1x.jpg" data-srcset="/assets/post-images/microsoft-edge-page-screenshot__1x.jpg 1x, /assets/post-images/microsoft-edge-page-screenshot__2x.jpg 2x" class="lazy post-image">
 
@@ -17,7 +17,8 @@ The new Chromium-based Microsoft edge browser is finally here! Here’s a practi
 
 1. Download Microsoft Edge
 2. Change the default search engine
-3. Optionally set the dark theme
+3. Install extensions from Chrome web store
+4. Optionally set the dark theme
 
 ## Download for any platform
 
@@ -35,6 +36,16 @@ After you installed it, the first thing you want to do is to change your default
 - Select your favourite search engine from the "Search engine used in the address bar" drop down
 
 Happy usage!
+
+## Install extensions
+
+Microsoft Edge has its own marketplace for extensions, but on Microsoft Edge you can also **install extensions from the Chrome web store**.
+
+- [Extensions for Microsoft Edge](https://www.microsoft.com/en-us/store/collections/edgeextensions/)
+- [Extensions from the Chrome Web Store](https://chrome.google.com/webstore/category/extensions)
+
+When you visit the Chrome Web Store, Edge shows a blue bar on top telling you that you can install extensions from there. Just click the "Allow extensions from other stores" button and you're good to go.
+
 
 ## Set dark theme (optional)
 
