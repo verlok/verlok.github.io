@@ -9,7 +9,7 @@ tags: [browsers, microsoft, edge]
 image: microsoft-edge-page-screenshot__2x.jpg
 ---
 
-The new Chromium-based Microsoft edge browser is finally here! Here’s a practical guide on how you can use it productively from day one. TL;DR: Download it, change the default search engine, install extensions, also from the Chrome Web Store.
+Here’s a practical guide on how to productively use the new Chromium-based Microsoft Edge browser: download it, change the default search engine, install extensions, and more.
 
 <img alt="Microsoft Edge page screenshot" src="/assets/post-images/microsoft-edge-page-screenshot__ph.png" data-src="/assets/post-images/microsoft-edge-page-screenshot__1x.jpg" data-srcset="/assets/post-images/microsoft-edge-page-screenshot__1x.jpg 1x, /assets/post-images/microsoft-edge-page-screenshot__2x.jpg 2x" class="lazy post-image">
 
