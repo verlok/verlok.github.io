@@ -6,7 +6,14 @@
         dataLayer.push(arguments);
     }
     gtag("js", new Date());
-    gtag("config", "UA-26756203-1");
+    gtag("config", "UA-26756203-1", {
+        custom_map: {
+            dimension1: "page_load_time_tier",
+            dimension2: "page_render_time_tier",
+            metric1: "page_load_time",
+            metric2: "page_render_time",
+        }
+    });
 
     // ---------------------------
 
@@ -56,8 +63,8 @@
         { start, end },
         timeBounds,
         localStorageKey,
-        gaMetricKey,
-        gaDimensionKey
+        gaMetric,
+        gaDimension
     ) => {
         const hitTime = perfData[end] - perfData[start];
         let sessionTimes;
@@ -73,8 +80,11 @@
         const averageTime = arrayAverage(sessionTimes);
         const tier = getTier(averageTime, timeBounds);
 
-        ga("set", gaMetricKey, hitTime);
-        ga("set", gaDimensionKey, tier);
+        const dataToSend = {};
+        dataToSend[gaMetric] = hitTime;
+        dataToSend[gaDimension] = tier;
+
+        gtag('event', 'performance_metric', dataToSend);
     };
 
     const waitFor = (object, property, interval, callback) => {
@@ -89,15 +99,15 @@
     };
 
     // Track page load time
-    waitFor(perfData, "loadEventEnd", 500, () => {    
+    waitFor(perfData, "loadEventEnd", 500, () => {
         trackMetricAndDimension(
             isNewSession,
             perfData,
             { start: "navigationStart", end: "loadEventEnd" },
             loadTimeBounds,
             Key_SessionPageLoadTimes,
-            "metric1", // Page load time (number, hit)
-            "dimension1" // Page load time tier (string, session)
+            "page_load_time", // Page load time (number, hit)
+            "page_load_time_tier" // Page load time tier (string, session)
         );
     });
 
@@ -109,8 +119,8 @@
             { start: "domLoading", end: "domComplete" },
             renderTimeBounds,
             Key_SessionRenderTimes,
-            "metric2", // Render time (number, hit)
-            "dimension2" // Render time tier (string, session)
+            "page_render_time", // Render time (number, hit)
+            "page_render_time_tier" // Render time tier (string, session)
         );
     });
 </script>
