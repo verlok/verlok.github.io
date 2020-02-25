@@ -1,9 +1,116 @@
 <!-- Global Site Tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-26756203-1"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments)};
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "UA-26756203-1");
 
-  gtag('config', 'UA-26756203-1');
+    // ---------------------------
+
+    const Key_LastPageView = "GaPerf.LastPageView";
+    const Key_SessionPageLoadTimes = "GaPerf.SessionPageLoadTimes";
+    const Key_SessionRenderTimes = "GaPerf.SessionRenderTimes";
+
+    const loadTimeBounds = [
+        { time: 2500, tier: "Fast" },
+        { time: 6500, tier: "Average" },
+        { time: Infinity, tier: "Slow" }
+    ];
+
+    const renderTimeBounds = [
+        { time: 1000, tier: "Fast" },
+        { time: 2000, tier: "AverageFast" },
+        { time: 3000, tier: "AverageSlow" },
+        { time: Infinity, tier: "Slow" }
+    ];
+
+    const arrayAverage = arr => arr.reduce((a, b) => a + b, 0) / arr.length;
+
+    const getTier = (value, bounds) => {
+        return bounds.find(bound => value < bound.time).tier;
+    };
+
+    const setInStorage = (key, value) => {
+        localStorage.setItem(key, JSON.stringify(value));
+    };
+
+    const getFromStorage = key => JSON.parse(localStorage.getItem(key));
+
+    const getIsNewSession = () => {
+        const currentTimestamp = Date.now();
+        const lastTimestamp = getFromStorage(Key_LastPageView);
+        localStorage.setItem(Key_LastPageView, currentTimestamp);
+        return currentTimestamp - lastTimestamp > 1800000; // 30 minutes;
+    };
+
+    const perfData = window.performance.timing;
+
+    const isNewSession = getIsNewSession();
+
+    const trackMetricAndDimension = (
+        isNewSession,
+        perfData,
+        { start, end },
+        timeBounds,
+        localStorageKey,
+        gaMetricKey,
+        gaDimensionKey
+    ) => {
+        const hitTime = perfData[end] - perfData[start];
+        let sessionTimes;
+
+        if (isNewSession) {
+            sessionTimes = [hitTime];
+        } else {
+            sessionTimes = getFromStorage(localStorageKey);
+            sessionTimes.push(hitTime);
+        }
+
+        setInStorage(localStorageKey, sessionTimes);
+        const averageTime = arrayAverage(sessionTimes);
+        const tier = getTier(averageTime, timeBounds);
+
+        ga("set", gaMetricKey, hitTime);
+        ga("set", gaDimensionKey, tier);
+    };
+
+    const waitFor = (object, property, interval, callback) => {
+        const checkInterval = setInterval(() => {
+            if (!object[property]) {
+                // console.log(`Waiting for the ${property} value... checking again later`);
+                return;
+            }
+            clearInterval(checkInterval);
+            callback();
+        }, interval);
+    };
+
+    // Track page load time
+    waitFor(perfData, "loadEventEnd", 500, () => {    
+        trackMetricAndDimension(
+            isNewSession,
+            perfData,
+            { start: "navigationStart", end: "loadEventEnd" },
+            loadTimeBounds,
+            Key_SessionPageLoadTimes,
+            "metric1", // Page load time (number, hit)
+            "dimension1" // Page load time tier (string, session)
+        );
+    });
+
+    // Track render time
+    waitFor(perfData, "domComplete", 200, () => {
+        trackMetricAndDimension(
+            isNewSession,
+            perfData,
+            { start: "domLoading", end: "domComplete" },
+            renderTimeBounds,
+            Key_SessionRenderTimes,
+            "metric2", // Render time (number, hit)
+            "dimension2" // Render time tier (string, session)
+        );
+    });
 </script>
