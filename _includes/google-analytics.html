@@ -11,86 +11,127 @@
             dimension1: "page_load_time_tier",
             dimension2: "page_render_time_tier",
             metric1: "page_load_time",
-            metric2: "page_render_time",
+            metric2: "page_render_time"
         }
     });
 
     // ---------------------------
 
-    const Key_LastPageView = "GaPerf.LastPageView";
-    const Key_SessionPageLoadTimes = "GaPerf.SessionPageLoadTimes";
-    const Key_SessionRenderTimes = "GaPerf.SessionRenderTimes";
-
-    const loadTimeBounds = [
-        { time: 2500, tier: "Fast" },
-        { time: 6500, tier: "Average" },
-        { time: Infinity, tier: "Slow" }
-    ];
-
-    const renderTimeBounds = [
-        { time: 1000, tier: "Fast" },
-        { time: 2000, tier: "AverageFast" },
-        { time: 3000, tier: "AverageSlow" },
-        { time: Infinity, tier: "Slow" }
-    ];
-
-    const arrayAverage = arr => arr.reduce((a, b) => a + b, 0) / arr.length;
-
-    const getTier = (value, bounds) => {
-        return bounds.find(bound => value < bound.time).tier;
+    const trackCustomValues = data => {
+        gtag("event", "performance_data", data);
     };
 
-    const setInStorage = (key, value) => {
+    const get = key => JSON.parse(localStorage.getItem(key));
+
+    const set = (key, value) => {
         localStorage.setItem(key, JSON.stringify(value));
     };
 
-    const getFromStorage = key => JSON.parse(localStorage.getItem(key));
-
-    const getIsNewSession = () => {
-        const currentTimestamp = Date.now();
-        const lastTimestamp = getFromStorage(Key_LastPageView);
-        localStorage.setItem(Key_LastPageView, currentTimestamp);
-        return currentTimestamp - lastTimestamp > 1800000; // 30 minutes;
-    };
-
-    const perfData = window.performance.timing;
-
-    const isNewSession = getIsNewSession();
-
-    const trackMetricAndDimension = (
-        isNewSession,
-        perfData,
-        { start, end },
-        timeBounds,
-        localStorageKey,
-        gaMetric,
-        gaDimension
-    ) => {
-        const hitTime = perfData[end] - perfData[start];
-        let sessionTimes;
-
-        if (isNewSession) {
-            sessionTimes = [hitTime];
-        } else {
-            sessionTimes = getFromStorage(localStorageKey);
-            sessionTimes.push(hitTime);
+    class Timer {
+        constructor({ bounds, _localStorageKey }) {
+            this.bounds = bounds;
+            this._localStorageKey = _localStorageKey;
+            this.storedTimes = get(this._localStorageKey) || [];
         }
 
-        setInStorage(localStorageKey, sessionTimes);
-        const averageTime = arrayAverage(sessionTimes);
-        const tier = getTier(averageTime, timeBounds);
+        _timeDifference(from, to, perfTiming = window.performance.timing) {
+            return perfTiming[to] - perfTiming[from];
+        }
 
-        const dataToSend = {};
-        dataToSend[gaMetric] = hitTime;
-        dataToSend[gaDimension] = tier;
+        _calculateAverage(arr) {
+            return arr.reduce((a, b) => a + b, 0) / arr.length;
+        }
 
-        gtag('event', 'performance_metric', dataToSend);
-    };
+        _persistStoredTimes() {
+            set(this._localStorageKey, this.storedTimes);
+        }
+
+        _getTier() {
+            const average = this._calculateAverage(this.storedTimes);
+            return this.bounds.find(bound => average < bound.time).tier;
+        }
+
+        resetStoredTimes() {
+            this.storedTimes = [];
+            this._persistStoredTimes();
+        }
+
+        updateStoredTimes() {
+            this.storedTimes.push(this.time);
+            this._persistStoredTimes();
+        }
+    }
+
+    class PageLoadTime extends Timer {
+        constructor() {
+            super({
+                bounds: [
+                    { time: 2500, tier: "Fast" },
+                    { time: 6500, tier: "Average" },
+                    { time: Infinity, tier: "Slow" }
+                ],
+                _localStorageKey: "GaPerf.SessionPageLoadTimes"
+            });
+        }
+
+        calculate() {
+            this.time = this._timeDifference("navigationStart", "loadEventEnd");
+        }
+
+        track() {
+            trackCustomValues({
+                page_load_time: this.time,
+                page_load_time_tier: this._getTier()
+            });
+        }
+    }
+
+    class RenderTime extends Timer {
+        constructor() {
+            super({
+                bounds: [
+                    { time: 1000, tier: "Fast" },
+                    { time: 2000, tier: "AverageFast" },
+                    { time: 3000, tier: "AverageSlow" },
+                    { time: Infinity, tier: "Slow" }
+                ],
+                _localStorageKey: "GaPerf.SessionRenderTimes"
+            });
+        }
+
+        calculate() {
+            this.time = this._timeDifference("domLoading", "domComplete");
+        }
+
+        track() {
+            trackCustomValues({
+                page_render_time: this.time,
+                page_render_time_tier: this._getTier()
+            });
+        }
+    }
+
+    const THIRTY_MINS_IN_MS = 1800000;
+
+    class Session {
+        constructor() {
+            this._localStorageKey = "GaPerf.LastPageViewTime";
+        }
+
+        hasExpired() {
+            const currentTimestamp = Date.now();
+            const lastTimestamp = get(this._localStorageKey);
+            return currentTimestamp - lastTimestamp > THIRTY_MINS_IN_MS;
+        }
+
+        refresh() {
+            set(this._localStorageKey, Date.now());
+        }
+    }
 
     const waitFor = (object, property, interval, callback) => {
         const checkInterval = setInterval(() => {
             if (!object[property]) {
-                // console.log(`Waiting for the ${property} value... checking again later`);
                 return;
             }
             clearInterval(checkInterval);
@@ -98,29 +139,26 @@
         }, interval);
     };
 
-    // Track page load time
-    waitFor(perfData, "loadEventEnd", 500, () => {
-        trackMetricAndDimension(
-            isNewSession,
-            perfData,
-            { start: "navigationStart", end: "loadEventEnd" },
-            loadTimeBounds,
-            Key_SessionPageLoadTimes,
-            "page_load_time", // Page load time (number, hit)
-            "page_load_time_tier" // Page load time tier (string, session)
-        );
+    const pageLoadTime = new PageLoadTime();
+    const renderTime = new RenderTime();
+    const session = new Session();
+
+    if (session.hasExpired()) {
+        pageLoadTime.resetStoredTimes();
+        renderTime.resetStoredTimes();
+    }
+
+    waitFor(window.performance.timing, "loadEventEnd", 500, () => {
+        pageLoadTime.calculate();
+        pageLoadTime.updateStoredTimes();
+        pageLoadTime.track();
     });
 
-    // Track render time
-    waitFor(perfData, "domComplete", 200, () => {
-        trackMetricAndDimension(
-            isNewSession,
-            perfData,
-            { start: "domLoading", end: "domComplete" },
-            renderTimeBounds,
-            Key_SessionRenderTimes,
-            "page_render_time", // Render time (number, hit)
-            "page_render_time_tier" // Render time tier (string, session)
-        );
+    waitFor(window.performance.timing, "domComplete", 200, () => {
+        renderTime.calculate();
+        renderTime.updateStoredTimes();
+        renderTime.track();
     });
+
+    session.refresh();
 </script>
