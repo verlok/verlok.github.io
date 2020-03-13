@@ -49,7 +49,7 @@ Microsoft Edge has its own marketplace for extensions, but on Microsoft Edge you
 When you visit the Chrome Web Store, Edge shows a blue bar on top telling you that you can install extensions from there. Just click the "Allow extensions from other stores" button and you're good to go.
 
 
-## Ow to set the dark theme
+## How to set the dark theme
 
 If you like dark themes on development stuff like I do, you can activate the dark theme from the Settings panel, Appearance tab.
 
