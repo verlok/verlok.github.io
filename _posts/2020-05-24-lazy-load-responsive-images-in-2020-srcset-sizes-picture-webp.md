@@ -48,7 +48,7 @@ In the latest years, both at work and as maintainer of [vanilla-lazyload](https:
 
 ## Now to some code!
 
-&rarr; [Take a look at the results](http://verlok.github.io/lazyload/demos/image_srcset_lazy_sizes.html) &larr; you will achieve. Open your browser's **developer tools** and switch to the **network panel**. You will see that the first 2 images are loaded immediately (or _eagerly_) at page landing, while the rest of the images are loaded as you **scroll down** the document.
+&rarr; [Take a look at the results](http://verlok.github.io/lazyload/demos/image_srcset_lazy_sizes.html) &larr; you will achieve. Open your browser's **developer tools** and switch to the **network panel**. You will see that the first 2 images are loaded eagerly (meaning _as soon as possible_) just after page landing, while the rest of the images are loaded as you **scroll down** the document.
 
 ### HTML markup
 
@@ -59,7 +59,7 @@ For this reason, to make sure that your users will see your *above-the-fold* ima
 Here's the markup of an **eagerly loaded** responsive image.
 
 ```html
-<!-- Immediately loaded, responsive image -->
+<!-- Eagerly loaded responsive image -->
 <img
   alt="Image 01"
   src="https://via.placeholder.com/220x280?text=Img+01"
@@ -167,7 +167,7 @@ Use case: you need to show images with different **width/height ratio** dependin
 
 &rarr; [Take a look at the results](http://verlok.github.io/lazyload/demos/picture_media.html) &larr;
 
-Here's the code you're gonna need in this case. In order to have immediately loaded images, just use the plain `src` and `srcset` attributes, without `data-` prefix.
+Here's the code you're gonna need in this case. In order to have eagerly loaded images, just use the plain `src` and `srcset` attributes, without `data-` prefix.
 
 ```html
 <picture>
@@ -195,7 +195,7 @@ Use case: you want the browser to **automatically pick the WebP format** dependi
 
 &rarr; [Take a look at the results](http://verlok.github.io/lazyload/demos/picture_type_webp.html) &larr;
 
-Here's the code! Again, in order to obtain immediately loaded images, just use the plain `src`, `srcset` and `sizes` attributes, without `data-` prefix.
+Here's the code! Again, in order to obtain eagerly loaded images, just use the plain `src`, `srcset` and `sizes` attributes, without `data-` prefix.
 
 ```html
 <picture>
