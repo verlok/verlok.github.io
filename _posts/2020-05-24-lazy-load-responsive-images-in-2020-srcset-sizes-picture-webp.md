@@ -1,27 +1,22 @@
 ---
 layout: post
-title: Lazy load responsive images in 2019
-date: 2019-03-01 08:15:00 +01:00
+title: Lazy load responsive images in 2020
+date: 2020-05-24 08:00:00 +01:00
 categories:
 - libraries
 tags: [srcset, responsive images, lazy load]
-image: lazy-load-responsive-images-2019__2x.jpg
+image: lazy-load-responsive-images-2020__2x.jpg
 ---
 
-In the latest years, both at my job and as maintainer of a [LazyLoad script](https://github.com/verlok/lazyload), I've specialized in **lazy loading** of **responsive images**. Today I'm going to show you what HTML, CSS and JavaScript code you need to write _in 2019_ in order to serve responsive images _and_ load them lazily. In the second part of the post, I'm also showing how to make the browser **natively pick the WebP image** when it supports it.
+In the latest years, both at my job and as maintainer of a [LazyLoad script](https://github.com/verlok/lazyload), I've specialized in **lazy loading** of **responsive images**. Today I'm going to show you what HTML, CSS and JavaScript code you need to write _in 2020_ in order to serve responsive images _and_ load them lazily. In the second part of the post, I'm also showing how to make the browser **natively pick the WebP image** when it supports it.
 
 <figure>
-    <img alt="Lazy loading responsive images (2019)" src="/assets/post-images/lazy-load-responsive-images-2019__ph.jpg" data-src="/assets/post-images/lazy-load-responsive-images-2019__1x.jpg" data-srcset="/assets/post-images/lazy-load-responsive-images-2019__1x.jpg 1x, /assets/post-images/lazy-load-responsive-images-2019__2x.jpg 2x" class="lazy post-image">
-    <figcaption>
-        Photo by <a href="https://unsplash.com/@bugsster">Taras Shypka</a> on <a href="https://unsplash.com/search/photos/responsive">Unsplash</a>
-    </figcaption>
+  <img 
+    alt="Lazy loading responsive images (2020)" src="/assets/post-images/lazy-load-responsive-images-2020__ph.jpg" data-src="/assets/post-images/lazy-load-responsive-images-2020__1x.jpg" data-srcset="/assets/post-images/lazy-load-responsive-images-2020__1x.jpg 1x, /assets/post-images/lazy-load-responsive-images-2020__2x.jpg 2x" class="lazy post-image">
+  <figcaption>
+    Photo by <a href="https://unsplash.com/@domenicoloia">Domenico Loia</a> on <a href="https://unsplash.com/s/photos/website">Unsplash</a>
+  </figcaption>
 </figure>
-
-## Updated version!!
-
-> ⚠ **Hold on!** You're reading an old version of this article.
-
-&rarr; [Read the **2020 update**]({% post_url 2020-05-24-lazy-load-responsive-images-in-2020-srcset-sizes-picture-webp %})
 
 ## Responsive lazy what?
 
@@ -78,7 +73,7 @@ If you want your lazy images to have a low-quality preview image while they load
   src="https://via.placeholder.com/11x14?text=Img+03"
   data-src="https://via.placeholder.com/220x280?text=Img+03"
   data-srcset="https://via.placeholder.com/220x280?text=Img+03 220w, 
-        https://via.placeholder.com/440x560?text=Img+03 440w"
+    https://via.placeholder.com/440x560?text=Img+03 440w"
   data-sizes="220px"
 />
 ```
@@ -96,7 +91,7 @@ To load the lazy images as they enter the viewport, you need a lazy load script 
 Here is the simplest way to include the script in your page.
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@11.0.4/dist/lazyload.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@16.1.0/dist/lazyload.min.js"></script>
 ```
 
 Other ways to include LazyLoad in your web pages, like using an `async` script with auto-init, using RequireJS, using WebPack or Rollup, are [documented here](https://github.com/verlok/lazyload/#include-lazyload-in-your-project).
@@ -108,7 +103,7 @@ You need LazyLoad to manage and load all the images with the `.lazy` class in th
 ```js
 var lazyLoad = new LazyLoad({
   elements_selector: ".lazy"
-  // More options here
+  cancel_on_exit: true //optimize for fast readers on slow connections
 });
 ```
 
@@ -120,7 +115,7 @@ There are also some features that you can achieve using CSS only. You need to:
 - Avoid empty images to appear as broken images
 - Resolve a Firefox anomaly that displays the broken image icon while images are loading
 
-You can do all that using this CSS rules:
+You can do all that using these CSS rules:
 
 ```css
 /*
@@ -137,15 +132,6 @@ Avoid empty images to appear as broken
 */
 img:not([src]):not([srcset]) {
   visibility: hidden;
-}
-
-/* 
-Fixes the Firefox anomaly while images are loading
-*/
-@-moz-document url-prefix() {
-  img:-moz-loading {
-    visibility: hidden;
-  }
 }
 ```
 
@@ -217,8 +203,8 @@ If you want to load your content lazily in the 100% of the browsers out there (I
 You can either you put the script in the page just before the LazyLoad one, as it follows...
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.5.1/intersection-observer.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@11.0.4/dist/lazyload.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.10.0/intersection-observer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@16.1.0/dist/lazyload.min.js"></script>
 ```
 
 ...or you can load it the polyfill as a dependency of LazyLoad using _RequireJS_ or another AMD module loader. [More info here](https://github.com/verlok/lazyload/blob/master/README.md#include-via-requirejs-without-intersectionobserver-polyfill).
