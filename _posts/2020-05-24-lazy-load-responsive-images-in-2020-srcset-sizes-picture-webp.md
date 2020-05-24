@@ -8,7 +8,7 @@ tags: [srcset, responsive images, lazy load]
 image: lazy-load-responsive-images-2020__2x.jpg
 ---
 
-In the latest years, both at my job and as maintainer of a [LazyLoad script](https://github.com/verlok/lazyload), I've specialized in **lazy loading** of **responsive images**. Today I'm going to show you what HTML, CSS and JavaScript code you need to write _in 2020_ in order to serve responsive images _and_ load them lazily. In the second part of the post, I'm also showing how to make the browser **natively pick the WebP image** when it supports it.
+In the latest years, both at work and as maintainer of [vanilla-lazyload](https://github.com/verlok/lazyload), I've been specializing in **lazy loading** of **responsive images**. Today I'm going to show you what HTML, CSS and JavaScript code you need to write _in 2020_ to serve responsive images _and_ load them lazily. In the second part of the post, I'm showing how to make the browser **natively pick the WebP image** where supported.
 
 <figure>
   <picture>
@@ -40,19 +40,23 @@ In the latest years, both at my job and as maintainer of a [LazyLoad script](htt
   </figcaption>
 </figure>
 
-## Responsive lazy what?
+## Some definitions
 
-**Responsive images** are the images that adapt to the user's screen _while_ keeping our websites fast by downloading just the right image source for the right **viewport witdh** (from small devices to large desktop computers), also considering the user's **screen density** (retina display, hiDpi, etc.).
+**Responsive images** are images that adapt to the users screens _while_ keeping our websites fast by downloading the right image size for the browser's **viewport width** (from small devices to large desktop computers), also considering the device **screen density** (hiDPI, retina display, etc.).
 
-**Lazy loading images** is a technique to make your website faster by **avoiding to load below the fold images**, then loading them **as they enter the viewport**. Beyond performance, this also allows you to save bandwith and money, e.g. if you're paying a CDN service for your images.
+**Lazy loading images** is a technique to make your website faster by **avoiding to load below-the-fold images**, then loading them **as they enter the viewport**. Beyond performance, this also allows you to save bandwith and money, e.g. if you're paying a CDN service for your images.
 
-## Got it! Now show me some code!
+## Now to some code!
 
-&rarr; [Take a look at the results](http://verlok.github.io/lazyload/demos/image_srcset_lazy_sizes.html) &larr; that you will achieve. Open your browser's **developer tools** and switch to the **network panel**. You will see that the first images are loaded immediately (or _eagerly_) at page landing, while the rest of the images are loaded as you **scroll down** the document.
+&rarr; [Take a look at the results](http://verlok.github.io/lazyload/demos/image_srcset_lazy_sizes.html) &larr; you will achieve. Open your browser's **developer tools** and switch to the **network panel**. You will see that the first 2 images are loaded immediately (or _eagerly_) at page landing, while the rest of the images are loaded as you **scroll down** the document.
 
-### The HTML markup
+### HTML markup
 
-Here's the markup of an immediately loaded responsive image.
+Bare in mind that lazy loading is a Javascript-based task, so before any lazy image **can start downloading**, your Javascript code needs to be **downloaded, parsed and executed**, your lazy images must be **found in the DOM**, **their positions evaluated**, and these operations will take a while.
+
+For this reason, to make sure that your users will see your *above-the-fold* images **as soon as possible**, I recommend to **eagerly load them** (eagerly meaning the opposite of lazily). To understand how many images are *above-the-fold*, open your website in the most common viewports of smartphones, tablets and computers.
+
+Here's the markup of an **eagerly loaded** responsive image.
 
 ```html
 <!-- Immediately loaded, responsive image -->
@@ -66,10 +70,6 @@ Here's the markup of an immediately loaded responsive image.
   sizes="220px"
 />
 ```
-
-To make sure that your users will see your images **as soon as possible**, I recommend to **immediately load the topmost images** of your webpage, only the ones that will be placed _above the fold_ in most common viewports, considering smartphones, tablets and computers.
-
-Always remember that lazy loading is a Javascript-based task, so before any lazy image **can start downloading**, your Javascript code needs to be **downloaded, parsed and executed**, your lazy images must be **found in the DOM**, **their position evaluated**, and these operations are going to take a while.
 
 And here's the markup you're going to need in order to _lazy load_ a responsive image.
 
