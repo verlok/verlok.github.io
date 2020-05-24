@@ -11,8 +11,30 @@ image: lazy-load-responsive-images-2020__2x.jpg
 In the latest years, both at my job and as maintainer of a [LazyLoad script](https://github.com/verlok/lazyload), I've specialized in **lazy loading** of **responsive images**. Today I'm going to show you what HTML, CSS and JavaScript code you need to write _in 2020_ in order to serve responsive images _and_ load them lazily. In the second part of the post, I'm also showing how to make the browser **natively pick the WebP image** when it supports it.
 
 <figure>
-  <img 
-    alt="Lazy loading responsive images (2020)" src="/assets/post-images/lazy-load-responsive-images-2020__ph.jpg" data-src="/assets/post-images/lazy-load-responsive-images-2020__1x.jpg" data-srcset="/assets/post-images/lazy-load-responsive-images-2020__1x.jpg 1x, /assets/post-images/lazy-load-responsive-images-2020__2x.jpg 2x" class="lazy post-image">
+  <picture>
+    <source
+      type="image/webp"
+      data-srcset="
+        /assets/post-images/lazy-load-responsive-images-2020__600w.webp 600w,
+        /assets/post-images/lazy-load-responsive-images-2020__698w.webp 698w,
+        /assets/post-images/lazy-load-responsive-images-2020__1047w.webp 1047w,
+        /assets/post-images/lazy-load-responsive-images-2020__1200w.webp 1200w
+      " 
+    />
+    <img
+      class="lazy post-image"
+      alt="Lazy loading responsive images (2020)" 
+      src="/assets/post-images/lazy-load-responsive-images-2020__ph.jpg" 
+      data-src="/assets/post-images/lazy-load-responsive-images-2020__600w.jpg" 
+      data-srcset="
+        /assets/post-images/lazy-load-responsive-images-2020__600w.jpg 600w,
+        /assets/post-images/lazy-load-responsive-images-2020__698w.jpg 698w,
+        /assets/post-images/lazy-load-responsive-images-2020__1047w.jpg 1047w,
+        /assets/post-images/lazy-load-responsive-images-2020__1200w.jpg 1200w
+      "
+      data-sizes="(min-width: 630px) 600px, calc(100vw - 26px)"
+    >
+  </picture>
   <figcaption>
     Photo by <a href="https://unsplash.com/@domenicoloia">Domenico Loia</a> on <a href="https://unsplash.com/s/photos/website">Unsplash</a>
   </figcaption>
