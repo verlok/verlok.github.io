@@ -80,7 +80,7 @@ And here's the markup you're going to need in order to _lazy load_ a responsive 
   class="lazy"
   data-src="https://via.placeholder.com/220x280?text=Img+03"
   data-srcset="https://via.placeholder.com/220x280?text=Img+03 220w, 
-        https://via.placeholder.com/440x560?text=Img+03 440w"
+    https://via.placeholder.com/440x560?text=Img+03 440w"
   data-sizes="220px"
 />
 ```
