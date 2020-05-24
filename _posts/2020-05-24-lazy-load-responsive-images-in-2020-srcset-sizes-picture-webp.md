@@ -24,7 +24,7 @@ In the latest years, both at my job and as maintainer of a [LazyLoad script](htt
     <img
       class="lazy post-image"
       alt="Lazy loading responsive images (2020)" 
-      src="/assets/post-images/lazy-load-responsive-images-2020__ph.jpg" 
+      src="/assets/post-images/lazy-load-responsive-images-2020__50w.jpg" 
       data-src="/assets/post-images/lazy-load-responsive-images-2020__600w.jpg" 
       data-srcset="
         /assets/post-images/lazy-load-responsive-images-2020__600w.jpg 600w,
