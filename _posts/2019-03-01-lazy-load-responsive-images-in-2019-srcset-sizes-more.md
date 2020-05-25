@@ -8,7 +8,7 @@ tags: [srcset, responsive images, lazy load]
 image: lazy-load-responsive-images-2019__2x.jpg
 ---
 
-In the latest years, both at my job and as maintainer of a [LazyLoad script](https://github.com/verlok/lazyload), I've specialized in **lazy loading** of **responsive images**. Today I'm going to show you what HTML, CSS and JavaScript code you need to write _in 2019_ in order to serve responsive images _and_ load them lazily. In the second part of the post, I'm also showing how to make the browser **natively pick the WebP image** when it supports it.
+In the latest years, both at my job and as maintainer of a [LazyLoad script](https://github.com/verlok/vanilla-lazyload), I've specialized in **lazy loading** of **responsive images**. Today I'm going to show you what HTML, CSS and JavaScript code you need to write _in 2019_ in order to serve responsive images _and_ load them lazily. In the second part of the post, I'm also showing how to make the browser **natively pick the WebP image** when it supports it.
 
 <figure>
     <img alt="Lazy loading responsive images (2019)" src="/assets/post-images/lazy-load-responsive-images-2019__ph.jpg" data-src="/assets/post-images/lazy-load-responsive-images-2019__1x.jpg" data-srcset="/assets/post-images/lazy-load-responsive-images-2019__1x.jpg 1x, /assets/post-images/lazy-load-responsive-images-2019__2x.jpg 2x" class="lazy post-image">
@@ -91,7 +91,7 @@ It's true, Internet Explorer does not support responsive images, but given that 
 
 ### Script inclusion
 
-To load the lazy images as they enter the viewport, you need a lazy load script such as [vanilla-lazyload](https://github.com/verlok/lazyload) which is a lightweight-as-air (1.9 kb gzipped), configurable, SEO-friendly script that I've been developing and improving since 2014. It's also based on the IntersectionObserver browser API so it's blazing fast and grants jank-free scrolling also on slower devices.
+To load the lazy images as they enter the viewport, you need a lazy load script such as [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload) which is a lightweight-as-air (1.9 kb gzipped), configurable, SEO-friendly script that I've been developing and improving since 2014. It's also based on the IntersectionObserver browser API so it's blazing fast and grants jank-free scrolling also on slower devices.
 
 Here is the simplest way to include the script in your page.
 
@@ -99,7 +99,7 @@ Here is the simplest way to include the script in your page.
 <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@11.0.4/dist/lazyload.min.js"></script>
 ```
 
-Other ways to include LazyLoad in your web pages, like using an `async` script with auto-init, using RequireJS, using WebPack or Rollup, are [documented here](https://github.com/verlok/lazyload/#include-lazyload-in-your-project).
+Other ways to include LazyLoad in your web pages, like using an `async` script with auto-init, using RequireJS, using WebPack or Rollup, are [documented here](https://github.com/verlok/vanilla-lazyload/#include-lazyload-in-your-project).
 
 ### LazyLoad initialization
 
@@ -210,7 +210,7 @@ Here's the code! Again, in order to obtain immediately loaded images, just use t
 
 ## _One more thing_
 
-The vanilla [LazyLoad script](https://github.com/verlok/lazyload) leverages the IntersectionObserver API so, in browser not supporting it like Internet Explorer and older versions of Safari, it will load all images as soon as it executes, which leads more or less to the same result as if no LazyLoad was ever used on the page.
+The vanilla [LazyLoad script](https://github.com/verlok/vanilla-lazyload) leverages the IntersectionObserver API so, in browser not supporting it like Internet Explorer and older versions of Safari, it will load all images as soon as it executes, which leads more or less to the same result as if no LazyLoad was ever used on the page.
 
 If you want to load your content lazily in the 100% of the browsers out there (I wouldn't, but it's up to you), you need to include the [IntersectionObserver Polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill) script before LazyLoad.
 
@@ -221,7 +221,7 @@ You can either you put the script in the page just before the LazyLoad one, as i
 <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@11.0.4/dist/lazyload.min.js"></script>
 ```
 
-...or you can load it the polyfill as a dependency of LazyLoad using _RequireJS_ or another AMD module loader. [More info here](https://github.com/verlok/lazyload/blob/master/README.md#include-via-requirejs-without-intersectionobserver-polyfill).
+...or you can load it the polyfill as a dependency of LazyLoad using _RequireJS_ or another AMD module loader. [More info here](https://github.com/verlok/vanilla-lazyload/blob/master/README.md#include-via-requirejs-without-intersectionobserver-polyfill).
 
 ## Conclusions
 
@@ -230,7 +230,7 @@ Here is a summary:
 1. Don't load all the images lazily, just the ones _below the fold_
 2. Use the `img` tag to do simple responsive images
 3. Use the `picture` tag to conditinally serve the WebP version of your images, or to change your images ratio
-4. Use [vanilla-lazyload](https://github.com/verlok/lazyload/) to load your lazy images.
+4. Use [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload/) to load your lazy images.
 5. Optionally use the IntersectionObserver polyfill if you want to load lazily on 100% of the browsers.
 
 If something is unclear or could be improved, let me know in the comments. Or [tweet me](https://twitter.com/verlok/).

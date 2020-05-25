@@ -10,7 +10,7 @@ tags: [native, vanilla, lazyload, image, iframe]
 image: lazyload-use_native__2x.png
 ---
 
-On April 6th 2019, Addy Osmany wrote about [native image lazy-loading](https://addyosmani.com/blog/lazy-loading/). Two days later Yvain, a front-end developer from Paris, [asked me](https://github.com/verlok/lazyload/issues/331) if my [vanilla-lazyload](https://github.com/verlok/lazyload/) could be a **loading attribute polyfill**, inspiring me to develop and release version 12 of the script, which features a new `use_native` option to enable native lazy-loading where supported. You can already use it today.
+On April 6th 2019, Addy Osmany wrote about [native image lazy-loading](https://addyosmani.com/blog/lazy-loading/). Two days later Yvain, a front-end developer from Paris, [asked me](https://github.com/verlok/vanilla-lazyload/issues/331) if my [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload/) could be a **loading attribute polyfill**, inspiring me to develop and release version 12 of the script, which features a new `use_native` option to enable native lazy-loading where supported. You can already use it today.
 
 ## Wait... what?
 
@@ -45,7 +45,7 @@ As of 10th April 2019, native lazy-loading is in the early stages (dev preview) 
 
 Now that you have the Chrome Canary browser with the native lazy loading enabled, you can get started visiting the following demo page.
 
-&rarr; [Open the demo](https://www.andreaverlicchi.eu/lazyload/demos/native_lazyload_conditional.html) _and/or_ [Check the code](https://github.com/verlok/lazyload/blob/master/demos/native_lazyload_conditional.html)
+&rarr; [Open the demo](https://www.andreaverlicchi.eu/lazyload/demos/native_lazyload_conditional.html) _and/or_ [Check the code](https://github.com/verlok/vanilla-lazyload/blob/master/demos/native_lazyload_conditional.html)
 
 If you did everything correctly, that's what will happen:
 
@@ -115,10 +115,10 @@ The `use_native: true` flag sets up these contextual behaviors:
 
 Loading content lazily is very important to **improve a website loading speed**, browser vendors are finally starting to implement it natively and I can't wait for it to be available on Edge, Safari and Firefox.
 
-Until then, you can have **both native lazy loading and js-based lazy loading** using [vanilla-lazyload 12](https://github.com/verlok/lazyload), just setting the `use_native` option to `true`. 
+Until then, you can have **both native lazy loading and js-based lazy loading** using [vanilla-lazyload 12](https://github.com/verlok/vanilla-lazyload), just setting the `use_native` option to `true`. 
  
 Give it a try!
 
-If you like it, [star ⭐ the repo](https://github.com/verlok/lazyload). If you find something wrong, [file an issue](https://github.com/verlok/lazyload/issues) so I can try and fix it. For any questions, [reach me on twitter](https://twitter.com/verlok).
+If you like it, [star ⭐ the repo](https://github.com/verlok/vanilla-lazyload). If you find something wrong, [file an issue](https://github.com/verlok/vanilla-lazyload/issues) so I can try and fix it. For any questions, [reach me on twitter](https://twitter.com/verlok).
 
 Cheers!
