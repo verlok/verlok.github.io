@@ -45,7 +45,7 @@ As of 10th April 2019, native lazy-loading is in the early stages (dev preview) 
 
 Now that you have the Chrome Canary browser with the native lazy loading enabled, you can get started visiting the following demo page.
 
-&rarr; [Open the demo](https://www.andreaverlicchi.eu/lazyload/demos/native_lazyload_conditional.html) _and/or_ [Check the code](https://github.com/verlok/vanilla-lazyload/blob/master/demos/native_lazyload_conditional.html)
+&rarr; [Open the demo](https://www.andreaverlicchi.eu/vanilla-lazyload/demos/native_lazyload_conditional.html) _and/or_ [Check the code](https://github.com/verlok/vanilla-lazyload/blob/master/demos/native_lazyload_conditional.html)
 
 If you did everything correctly, that's what will happen:
 
