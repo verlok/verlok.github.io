@@ -18,7 +18,7 @@ If you really like it, you can show your appreciation ❤ [buying me a coffee](h
 
 ## Articles on lazy load
 
-- [Lazy load responsive images in 2020]({% post_url 2020-05-24-lazy-load-responsive-images-in-2020-srcset-sizes-picture-webp %}
+- [Lazy load responsive images in 2020]({% post_url 2020-05-24-lazy-load-responsive-images-in-2020-srcset-sizes-picture-webp %})
 - [A smashing article on hybrid lazy loading]({% post_url 2019-05-06-hybrid-lazy-loading-smashing-magazine-article %})
 - [Native lazy loading and js-based fallback with vanilla-lazyload 12]({% post_url 2019-04-11-native-lazy-loading-with-vanilla-lazyload %})
 - [Check if an element is still inside viewport after a given time]({% post_url 2018-08-27-check-if-element-still-inside-viewport-after-given-time %})
