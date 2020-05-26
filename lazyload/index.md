@@ -5,8 +5,7 @@ date: "2020-05-25 22:52:10 +0200"
 date_gmt: "2020-05-25 21:52:10 +0200"
 ---
 
-Did you know I'm the author of a popular LazyLoad script? 
-
+Did you know I'm the author of a popular LazyLoad script?<br>
 You can find it on:
 
 - [GitHub](https://github.com/verlok/vanilla-lazyload)
