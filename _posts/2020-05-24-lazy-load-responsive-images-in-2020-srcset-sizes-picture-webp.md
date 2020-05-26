@@ -58,7 +58,7 @@ If you used native lazy loading you wouldn't have these problems, but as of Jun 
 
 ## The result
 
-[Take a look 👀 at the result](http://verlok.github.io/lazyload/demos/image_srcset_lazy_sizes.html) you will achieve. Open your browser's **developer tools** and switch to the **network panel**. You will see that the first 2 images are loaded *eagerly* just after page landing, while the rest of the images are loaded **as you scroll down** the page.
+[Take a look 👀 at the result](http://verlok.github.io/vanilla-lazyload/demos/image_srcset_lazy_sizes.html) you will achieve. Open your browser's **developer tools** and switch to the **network panel**. You will see that the first 2 images are loaded *eagerly* just after page landing, while the rest of the images are loaded **as you scroll down** the page.
 
 ## Now to some code!
 
@@ -176,7 +176,7 @@ Until now, I wrote about the `img` tag with the `srcset` and `sizes` attributes,
 
 Use case: you need to show images with different **width/height ratio** depending on a media query. e.g. you want to show _portrait_ images on mobile, vertical devices, _landscape_ on wider viewports, like tablets and computers.
 
-&rarr; [Take a look at the results](http://verlok.github.io/lazyload/demos/picture_media.html) &larr;
+&rarr; [Take a look at the results](http://verlok.github.io/vanilla-lazyload/demos/picture_media.html) &larr;
 
 Here's the code you're gonna need in this case. In order to have eagerly loaded images, just use the plain `src` and `srcset` attributes, without `data-` prefix.
 
@@ -204,7 +204,7 @@ Here's the code you're gonna need in this case. In order to have eagerly loaded 
 
 Use case: you want the browser to **automatically pick the WebP format** depending on its support for that format.
 
-&rarr; [Take a look at the results](http://verlok.github.io/lazyload/demos/picture_type_webp.html) &larr;
+&rarr; [Take a look at the results](http://verlok.github.io/vanilla-lazyload/demos/picture_type_webp.html) &larr;
 
 Here's the code! Again, in order to obtain eagerly loaded images, just use the plain `src`, `srcset` and `sizes` attributes, without `data-` prefix.
 

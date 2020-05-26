@@ -31,7 +31,7 @@ In the latest years, both at my job and as maintainer of a [LazyLoad script](htt
 
 ## Got it! Now show me some code!
 
-&rarr; [Take a look at the results](http://verlok.github.io/lazyload/demos/image_srcset_lazy_sizes.html) &larr; that you will achieve. Open your browser's **developer tools** and switch to the **network panel**. You will see that the first images are loaded immediately (or _eagerly_) at page landing, while the rest of the images are loaded as you **scroll down** the document.
+&rarr; [Take a look at the results](http://verlok.github.io/vanilla-lazyload/demos/image_srcset_lazy_sizes.html) &larr; that you will achieve. Open your browser's **developer tools** and switch to the **network panel**. You will see that the first images are loaded immediately (or _eagerly_) at page landing, while the rest of the images are loaded as you **scroll down** the document.
 
 ### The HTML markup
 
@@ -157,7 +157,7 @@ Until now, I wrote about the `img` tag with the `srcset` and `sizes` attributes,
 
 Use case: you need to show images with different **width/height ratio** depending on a media query. e.g. you want to show _portrait_ images on mobile, vertical devices, _landscape_ on wider viewports, like tablets and computers.
 
-&rarr; [Take a look at the results](http://verlok.github.io/lazyload/demos/picture_media.html) &larr;
+&rarr; [Take a look at the results](http://verlok.github.io/vanilla-lazyload/demos/picture_media.html) &larr;
 
 Here's the code you're gonna need in this case. In order to have immediately loaded images, just use the plain `src` and `srcset` attributes, without `data-` prefix.
 
@@ -185,7 +185,7 @@ Here's the code you're gonna need in this case. In order to have immediately loa
 
 Use case: you want the browser to **automatically pick the WebP format** depending on its support for that format.
 
-&rarr; [Take a look at the results](http://verlok.github.io/lazyload/demos/picture_type_webp.html) &larr;
+&rarr; [Take a look at the results](http://verlok.github.io/vanilla-lazyload/demos/picture_type_webp.html) &larr;
 
 Here's the code! Again, in order to obtain immediately loaded images, just use the plain `src`, `srcset` and `sizes` attributes, without `data-` prefix.
 

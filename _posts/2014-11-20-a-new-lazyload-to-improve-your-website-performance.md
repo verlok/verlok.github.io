@@ -16,5 +16,5 @@ In the latest days I've been working on websites performance optimization and I 
 * it doesn't depend on jQuery
 * it best supports the progressive JPEG format
 
-More information on [LazyLoad website](http://verlok.github.io/lazyload/).
+More information on [LazyLoad website](http://verlok.github.io/vanilla-lazyload/).
 Check out the code on the [GitHub Repo](https://github.com/verlok/vanilla-lazyload).
