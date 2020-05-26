@@ -3,12 +3,12 @@ layout: post
 title: Lazy load responsive images in 2020
 date: 2020-05-24 08:00:00 +01:00
 categories:
-- libraries
+  - libraries
 tags: [srcset, responsive images, lazy load]
 image: lazy-load-responsive-images-2020__2x.jpg
 ---
 
-In this article I'm going to show you **what HTML, CSS and JavaScript code** you need to write to serve **responsive images** _and_ **lazy load** them in your website, how to make browsers use both **the WebP image format** and **native lazy load** where supported, plug give you some advice based on my latest years of experience as a front-end developer at <a href="https://www.ynap.com" target="_blank" noopener>YNAP</a> and as a maintainer of a [popular lazyload script](https://github.com/verlok/vanilla-lazyload).
+In this article I'm going to show you **what HTML, CSS and JavaScript code** you need to use to serve **responsive images** _and_ **lazy load** them in your website, how to make browsers use both **the WebP image format**, enable **native lazy load** where supported, and give you some advice based on my experience as a front-end developer and as maintainer of [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload).
 
 <figure>
   <picture>
@@ -40,31 +40,27 @@ In this article I'm going to show you **what HTML, CSS and JavaScript code** you
   </figcaption>
 </figure>
 
-## Some definitions
+## Definitions
 
 **Responsive images** are images that adapt to the users screens _while_ keeping our websites fast by downloading the right image size for the browser's **viewport width** (from small devices to large desktop computers), also considering the device **screen density** (hiDPI, retina display, etc.).
 
 **Lazy loading images** is a technique to make your website faster by **avoiding to load below-the-fold images**, then loading them **as they enter the viewport**. Beyond performance, this also allows you to save bandwith and money, e.g. if you're paying a CDN service for your images.
 
-## Important note
+## Above-the-fold first
 
-Bare in mind that using a script to **lazy load images is a Javascript-based task** and it's **relevantly slower than the regular image loading** (*eager loading* from now on) which starts while the HTML document is being parsed.
+Bare in mind that using a script to **lazy load images is a Javascript-based task** and it's **relevantly slower than the regular image loading** (_eager loading_ from now on) which starts while the HTML document is being parsed.
 
-☝️ For this reason, the best practice is to **eagerly load above-the-fold images**, then **lazy load below-the-fold images** and **only those**.
+☝️ For this reason, the best practice is to **eagerly load above-the-fold images**, and **lazy load only the below-the-fold images**.
 
-A good way to understand how many images will appear *above-the-fold* in your responsively designed page, **open it in a browser** and **test it at the most common viewports** of smartphones, computers and tablets.
+A good way to understand how many images will appear _above-the-fold_ in your responsively designed page is... to count them! Open your page in a browser and **try it in the most common viewports** of smartphones, computers and tablets.
 
-If you used native lazy loading you wouldn't have these problems, but as of Jun 2020 you can't just use that without detecting browser support first, so... you still have these problems.
+## Results
 
-## The result
-
-[Take a look 👀 at the result](http://verlok.github.io/vanilla-lazyload/demos/image_srcset_lazy_sizes.html) you will achieve. Open your browser's **developer tools** and switch to the **network panel**. You will see that the first 2 images are loaded *eagerly* just after page landing, while the rest of the images are loaded **as you scroll down** the page.
+[Take a look 👀 at the result](http://verlok.github.io/vanilla-lazyload/demos/image_srcset_lazy_sizes.html) you will achieve. Open your browser's **developer tools** and switch to the **network panel**. You will see that the first 2 images are loaded _eagerly_ just after page landing, while the rest of the images are loaded _lazily_ **as you scroll down** the page.
 
 ## Now to some code!
 
-### HTML
-
-Here's the HTML markup of an **eagerly loaded** responsive image.
+Here's the HTML markup of an _eagerly loaded_ responsive image.
 
 ```html
 <!-- Eagerly loaded responsive image -->
@@ -80,7 +76,7 @@ Here's the HTML markup of an **eagerly loaded** responsive image.
 />
 ```
 
-And here's the markup you're going to need in order to **lazy load** a responsive image.
+And here's the markup you're going to need in order to _lazy load_ a responsive image.
 
 ```html
 <!-- Lazy loaded responsive image -->
@@ -113,15 +109,15 @@ Want a low resolution preview while your lazy images load? You can do that by us
 
 We're using the `img` HTML tag and not the `picture` tag, since the latter is not necessary in this case. I'll dig into the `picture` tag use cases [down below](#picture-tag-use-cases).
 
-_But hey, what about Internet Explorer?_
+💬 _Hey, what about Internet Explorer?_
 
-It's true, Internet Explorer does not support responsive images, but given that only its latest version stuck around and it's slowly disappearing from our radars (in the websites we manage, its share is around 4%), I'd suggest NOT to use a responsive images polyfill for it, and just rely on the image specified in the `src` (or `data-src`) attribute instead.
+Internet Explorer does not support responsive images, but given that only version 11 is still around and it won't stay for much longer (Microsoft is silently replacing it with [Edge](https://www.microsoft.com/edge)), do NOT use a polyfill. Because a) it would slow down other browsers, b) <abbr title="Internet Explorer">IE</abbr> reads and uses the image specified in the `src`/`data-src` attribute, so choose an image that will appear nice on a desktop, non-HiDPI display, and you're good.
 
 ### Script inclusion
 
-To load the lazy images as they enter the viewport, you need a lazy load script such as [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload) which is a lightweight-as-air (1.9 kb gzipped), configurable, SEO-friendly script that I've been developing and improving since 2014. It's also based on the IntersectionObserver browser API so it's blazing fast and grants jank-free scrolling also on slower devices.
+To load the lazy images as they enter the viewport, you need a lazy load script such as [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload) which is a lightweight (2.5 kb gzipped), blazing fast, configurable, SEO-friendly script that I've been maintaining and improving since 2014.
 
-Here is the simplest way to include the script in your page.
+Here is the simplest way to include it in your page.
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@16.1.0/dist/lazyload.min.js"></script>
@@ -131,33 +127,40 @@ Other ways to include LazyLoad in your web pages, like using an `async` script w
 
 ### LazyLoad initialization
 
-You need LazyLoad to manage and load all the images with the `.lazy` class in the page. You can initialize `LazyLoad` like this:
+You need LazyLoad to manage and load all the images with a `lazy` class in the page. You can initialize `LazyLoad` like this:
 
 ```js
 var lazyLoad = new LazyLoad({
   elements_selector: ".lazy"
-  cancel_on_exit: true //optimize for fast readers on slow connections
+  cancel_on_exit: true
+  //☝️ recommended options
 });
 ```
 
 ### Some CSS Tricks
 
-There are also some features that you can achieve using CSS only. You need to:
+There are also some features that you can achieve using CSS only. You might want to:
 
-- **Make not-yet-loaded lazy images to occupy some space**. If you don't do so, those images will have height `0` and they'll collapse one next to another. As a result, all of them will enter the viewport all at the same time, nullifying our efforts to load them as they enter the viewport.
+- **Make not-yet-loaded lazy images to occupy some space**. The main reason is to avoid collapsing your layout while your images are yet to be loaded.
 - Avoid empty images to appear as broken images
-- Resolve a Firefox anomaly that displays the broken image icon while images are loading
 
 You can do all that using these CSS rules:
 
 ```css
 /*
-Makes images container to occupy some space 
-when the images aren't loaded yet.
-This value depends on your layout.
+Images container to occupy space 
+when the images aren't loaded yet
 */
-.imageList li {
-  min-height: 300px;
+.image-wrapper {
+  width: 100%;
+  height: 0;
+  padding-bottom: 150%;
+  /* ☝️ image height / width * 100% */
+  position: relative;
+}
+.image {
+  position: absolute;
+  /* ... */
 }
 
 /*
