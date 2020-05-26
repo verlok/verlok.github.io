@@ -5,15 +5,18 @@ date: "2020-05-25 22:52:10 +0200"
 date_gmt: "2020-05-25 21:52:10 +0200"
 ---
 
-Did you know I'm the author of a popular LazyLoad script?<br>
-You can find it on:
+You might be here because of an old link, since I've recently changed the URL of the vanilla-lazyload website. You're visiting the old URL, the new one is this &rarr; [vanilla-lazyload website](/vanilla-lazyload)
+
+---
+
+Oh, didn't you know that I'm the author of a LazyLoad script? It's very popular. You can find it on:
 
 - [GitHub](https://github.com/verlok/vanilla-lazyload)
 - [npm](https://www.npmjs.com/package/vanilla-lazyload)
 - [jsdelivr](https://www.jsdelivr.com/package/npm/vanilla-lazyload)
 - [on this website](/vanilla-lazyload)
 
-If you really like it, you can show your appreciation ❤ [buying me a coffee](https://ko-fi.com/verlok).
+If you really like it, you can show your ❤ appreciation by [buying me a coffee](https://ko-fi.com/verlok).
 
 ## Articles on lazy load
 
