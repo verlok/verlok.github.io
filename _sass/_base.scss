@@ -38,6 +38,11 @@ main {
 	background-color: $background-color;
 }
 
+pre,
+code {
+	font-family: $code-font-family;
+}
+
 /**
  * Set `margin-bottom` to maintain vertical rhythm
  */
