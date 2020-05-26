@@ -13,3 +13,12 @@ Did you know I'm the author of a very popular LazyLoad script? You can find it o
 - [on this website](/vanilla-lazyload)
 
 If you really like it, you can show your appreciation ❤ [buying me a coffee](https://ko-fi.com/verlok).
+
+## Articles on lazy loading
+
+- [Lazy load responsive images in 2020]({% post_url 2020-05-24-lazy-load-responsive-images-in-2020-srcset-sizes-picture-webp %}
+- [A smashing article on hybrid lazy loading]({% post_url 2019-05-06-hybrid-lazy-loading-smashing-magazine-article %})
+- [Native lazy loading and js-based fallback with vanilla-lazyload 12]({% post_url 2019-04-11-native-lazy-loading-with-vanilla-lazyload %})
+- [Check if an element is still inside viewport after a given time]({% post_url 2018-08-27-check-if-element-still-inside-viewport-after-given-time %})
+- [Intersection Observer and Lazy Load of elements]({% post_url _posts\2017-09-04-using-intersection-observers-to-create-vanilla-lazyload.md %})
+- [A new LazyLoad to improve your website performance]({% post_url 2014-11-20-a-new-lazyload-to-improve-your-website-performance %})
