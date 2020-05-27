@@ -8,7 +8,7 @@ tags: [srcset, responsive images, lazy load]
 image: lazy-load-responsive-images-2020__2x.jpg
 ---
 
-In this article I'm going to show you **what HTML, CSS and JavaScript code** you need to use to serve **responsive images** _and_ **lazy load** them in your website, how to make browsers use both **the WebP image format**, enable **native lazy load** where supported, and give you some advice based on my experience as a front-end developer and as maintainer of [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload).
+In this article I'm going to show you **what HTML, CSS and JavaScript code** you need to serve **responsive images** and **lazy load** them in your website, how to make browsers use **the WebP image format** where supported, enable **native lazy load** where supported, and give you some advice based on my experience as a front-end developer and as a maintainer of [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload).
 
 <figure>
   <picture>
@@ -42,9 +42,9 @@ In this article I'm going to show you **what HTML, CSS and JavaScript code** you
 
 ## Definitions
 
-**Responsive images** are images that adapt to the users screens _while_ keeping our websites fast by downloading the right image size for the browser's **viewport width** (from small devices to large desktop computers), also considering the device **screen density** (hiDPI, retina display, etc.).
+**Responsive images** are images that adapt to your design by **downloading a different image source** from a given **set of image sources**, which you provide, depending on **some conditions**, which you specify. You can specify basic conditions releated to the browser's **viewport width** and **device pixel density** using a regular `img` tag, and you can use media queries by wrapping your images in a `picture` tag. More about [responsive images in the MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images).
 
-**Lazy loading images** is a technique to make your website faster by **avoiding to load below-the-fold images**, then loading them **as they enter the viewport**. Beyond performance, this also allows you to save bandwith and money, e.g. if you're paying a CDN service for your images.
+**Lazy loading images** is a technique to make your website render faster by **deferring the loading of below-the-fold images** to when they **enter the viewport**. Beyond performance, this also allows you to save bandwith and money, e.g. if you're paying a CDN service for your images.
 
 ## Above-the-fold first
 
