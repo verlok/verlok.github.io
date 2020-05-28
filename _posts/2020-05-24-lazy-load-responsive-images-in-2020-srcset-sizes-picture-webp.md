@@ -154,6 +154,67 @@ The universal solution to do that is to use the vertical padding trick, while in
 
 
 ```css
+.image-wrapper {
+  width: 100%;
+  height: 0;
+  padding-bottom: 150%;
+  /* ☝️ image height / width * 100% */
+  position: relative;
+}
+.image {
+  position: absolute;
+  /* ...other positioning rules */
+}
+```
+
+### Hide "broken" images
+
+To avoid lazy images to appear as broken, even for a short amount of time, use CSS hide the images that still don't have neither an `src` nor a `srcset` attribute set.
+
+```css
+img:not([src]):not([srcset]) {
+  visibility: hidden;
+}
+```
+
+### Putting it all together
+
+For your convenience here's all the HTML, JS, and CSS code together.
+
+```html
+<!-- Eagerly loaded responsive image -->
+<!-- Only for above-the-fold images!!! -->
+<img
+  alt="Image 01"
+  src="https://via.placeholder.com/220x280?text=Img+01"
+  srcset="
+    https://via.placeholder.com/220x280?text=Img+01 220w,
+    https://via.placeholder.com/440x560?text=Img+01 440w
+  "
+  sizes="220px"
+/>
+
+<!-- Lazy loaded responsive image -->
+<!-- Only for below-the-fold images!!! -->
+<img
+  alt="Image 03"
+  class="lazy"
+  data-src="https://via.placeholder.com/220x280?text=Img+03"
+  data-srcset="https://via.placeholder.com/220x280?text=Img+03 220w, 
+    https://via.placeholder.com/440x560?text=Img+03 440w"
+  data-sizes="220px"
+/>
+```
+
+```js
+var lazyLoad = new LazyLoad({
+  elements_selector: ".lazy"
+  cancel_on_exit: true
+  //☝️ recommended options
+});
+```
+
+```css
 /*
 Images container to occupy space 
 when the images aren't loaded yet
@@ -167,19 +228,19 @@ when the images aren't loaded yet
 }
 .image {
   position: absolute;
-  /* Other positioning rules */
+  /* ...other positioning rules */
 }
-```
 
-### Hide "broken" images
-
-To avoid lazy images to appear as broken, even for a short amount of time, use CSS hide the images that still don't have neither an `src` nor a `srcset` attribute set.
-
-```css
+/*
+Hide "broken" images before 
+they start loading
+*/
 img:not([src]):not([srcset]) {
   visibility: hidden;
 }
 ```
+
+And that's it for the simple `img` tag.
 
 ## Picture tag use cases
 
