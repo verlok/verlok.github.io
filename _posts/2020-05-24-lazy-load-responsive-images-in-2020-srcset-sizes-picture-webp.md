@@ -13,13 +13,22 @@ Do you want to boost the performance of your website? You can do that by using *
 <figure>
   <picture>
     <source
+      type="image/jp2"
+      data-srcset="
+        /assets/post-images/lazy-load-responsive-images-2020__600w.jp2 600w,
+        /assets/post-images/lazy-load-responsive-images-2020__698w.jp2 698w,
+        /assets/post-images/lazy-load-responsive-images-2020__1047w.jp2 1047w,
+        /assets/post-images/lazy-load-responsive-images-2020__1200w.jp2 1200w
+      "
+    />
+    <source
       type="image/webp"
       data-srcset="
         /assets/post-images/lazy-load-responsive-images-2020__600w.webp 600w,
         /assets/post-images/lazy-load-responsive-images-2020__698w.webp 698w,
         /assets/post-images/lazy-load-responsive-images-2020__1047w.webp 1047w,
         /assets/post-images/lazy-load-responsive-images-2020__1200w.webp 1200w
-      " 
+      "
     />
     <img
       class="lazy post-image"
