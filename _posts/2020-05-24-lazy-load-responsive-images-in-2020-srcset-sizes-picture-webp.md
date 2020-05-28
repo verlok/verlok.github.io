@@ -356,7 +356,7 @@ Here is a summary:
 
 If something is unclear or could be improved, let me know in the comments or [tweet me](https://twitter.com/verlok/).
 
-If you found this article useful, feel free to [buy me a coffee](https://ko-fi.com/verlok) ☕
+If you found this article useful, feel free to [buy me a coffee](https://ko-fi.com/verlok). ☕
 
 Happy lazy loading!
 
