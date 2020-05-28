@@ -320,7 +320,7 @@ You need the `source` tag and the `type` attribute containing the MIME type of t
 
 You might have heard or read of [native lazy-loading](https://web.dev/native-lazy-loading/) coming to the web. Cool, isn't it? As of May 2020, it's supported in Chrome, Firefox, Edge, Opera, and _behind a flag_ in Safari.
 
-So browser support isn't ready yet, but in case you want to try it in your browser, you could do [hybrid lazy-loading](https://www.smashingmagazine.com/2019/05/hybrid-lazy-loading-progressive-migration-native/) setting the `use_native` option of vanilla-lazyload to `true`.
+So browser 100% support isn't quite there, but in case you want to try enable it on supported browsers, you could go for [hybrid lazy-loading](https://www.smashingmagazine.com/2019/05/hybrid-lazy-loading-progressive-migration-native/) by setting the `use_native` option of vanilla-lazyload to `true`.
 
 ```js
 new LazyLoad({
@@ -355,6 +355,7 @@ Here is a summary:
 1. Don't use any polyfill if not strictly required
 
 If something is unclear or could be improved, let me know in the comments or [tweet me](https://twitter.com/verlok/).
+
 If you found this article useful, feel free to [buy me a coffee](https://ko-fi.com/verlok) ☕
 
 Happy lazy loading!
