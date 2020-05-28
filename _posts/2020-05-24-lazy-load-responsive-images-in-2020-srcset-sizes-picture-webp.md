@@ -114,13 +114,7 @@ Want a low-resolution preview while your lazy images load? You can do that by us
 
 [Open the 👀 demo](http://verlok.github.io/vanilla-lazyload/demos/image_srcset_lazy_sizes.html), then your browser's **developer tools**, and switch to the **Network panel**. You will see that the first 2 images are loaded _eagerly_ just after page landing, while the rest of the images are loaded _lazily_ **as you scroll down** the page.
 
-We're using the `img` HTML tag and not the `picture` tag, given that the latter is not necessary in this case. I'll dig into the `picture` tag use cases [down below](#picture-tag-use-cases).
-
-💬 _What about Internet Explorer?_
-
-Internet Explorer does not support responsive images, but you don't need to use a polyfill because <abbr title="Internet Explorer">IE</abbr> reads and uses the image specified in the `src` attribute, so choose an image that will appear nice on a desktop, mDPI (not retina) display, put it in the `src` attribute, and you're good.
-
-Besides, consider that Microsoft is silently replacing Internet Explorer with [Edge](https://www.microsoft.com/edge)), which is a modern browser.
+We're using the `img` HTML tag and not the `picture` tag, given that the latter is not necessary in this case. I'll dig into the `picture` tag use cases later in this article. ⏩ [Skip to `picture` tag use cases](#picture-tag-use-cases)
 
 ### Script inclusion
 
@@ -152,7 +146,6 @@ When using lazy loading, the images that haven't started loading collapse to `0`
 
 The universal solution to do that is to use the vertical padding trick, while in the future you'll be able to use the `aspect-ratio` CSS directive to do the trick (as I'm writing it's [landed](https://twitter.com/Una/status/1260980901934137345) in Chrome Canary only).
 
-
 ```css
 .image-wrapper {
   width: 100%;
@@ -175,6 +168,24 @@ To avoid lazy images to appear as broken, even for a short amount of time, use C
 img:not([src]):not([srcset]) {
   visibility: hidden;
 }
+```
+
+### No polyfills required
+
+You might be tempted to add one or more polyfills to support Internet Explorer (*yes, I named it and it's 2020*). Don't do that, **you don't need any**. Let me tell you why:
+
+- *Responsive images:* Internet Explorer does not support responsive images, but you don't need to use a polyfill because <abbr title="Internet Explorer">IE</abbr> gracefully degrades using **the image in the `src` attribute**. So you can place in the `src` attribute an image that would appear nice on a regular desktop display, and you're cool.
+
+- *IntersectionObserver:* Internet Explorer does not support the `IntersectionObserver` API, which is used by vanilla-lazyload, but you don't need to provide a polyfill because vanilla-lazyload detects the support for that API and, in case it doesn't, it loads all images immediately, which leads to the same result as if no LazyLoad was ever used on the page.
+
+That's cool, Internet Explorer is not being used by more than 5% of the users today, and Microsoft is silently replacing it with [Edge](https://www.microsoft.com/edge) via Windows Update.
+
+Anyway if for some reason you want it to work in the same exact way on Internet Explorer, you can use the IntersectionObserver polyfill by including it before vanilla-lazyload.
+
+```html
+<!-- Don't do this if you're not sure! Read above -->
+<script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.10.0/intersection-observer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@16.1.0/dist/lazyload.min.js"></script>
 ```
 
 ### Putting it all together
@@ -305,20 +316,7 @@ You need the `source` tag and the `type` attribute containing the MIME type of t
 
 [Open the 👀 demo](http://verlok.github.io/vanilla-lazyload/demos/picture_type_webp.html), then your browser's **developer tools** and switch to the **network panel**. You will see that it downloads only the image source corresponding to the first type that your browser supports.
 
-## _One more thing_
-
-The vanilla [LazyLoad script](https://github.com/verlok/vanilla-lazyload) leverages the IntersectionObserver API so, in browser not supporting it like Internet Explorer and older versions of Safari, it will load all images as soon as it executes, which leads more or less to the same result as if no LazyLoad was ever used on the page.
-
-If you want to load your content lazily in the 100% of the browsers out there (I wouldn't, but it's up to you), you need to include the [IntersectionObserver Polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill) script before LazyLoad.
-
-You can either you put the script in the page just before the LazyLoad one, as it follows...
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.10.0/intersection-observer.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@16.1.0/dist/lazyload.min.js"></script>
-```
-
-...or you can load it the polyfill as a dependency of LazyLoad using _RequireJS_ or another AMD module loader. [More info here](https://github.com/verlok/vanilla-lazyload/blob/master/README.md#include-via-requirejs-without-intersectionobserver-polyfill).
+---
 
 ## Conclusions
 
