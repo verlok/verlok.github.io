@@ -172,11 +172,11 @@ img:not([src]):not([srcset]) {
 
 ### No polyfills required
 
-You might be tempted to add one or more polyfills to support Internet Explorer (*yes, I named it and it's 2020*). Don't do that, **you don't need any**. Let me tell you why:
+You might be tempted to add one or more polyfills to support Internet Explorer (_yes, I named it and it's 2020_). Don't do that, **you don't need any**. Let me tell you why:
 
-- *Responsive images:* Internet Explorer does not support responsive images, but you don't need to use a polyfill because <abbr title="Internet Explorer">IE</abbr> gracefully degrades using **the image in the `src` attribute**. So you can place in the `src` attribute an image that would appear nice on a regular desktop display, and you're cool.
+- _Responsive images:_ Internet Explorer does not support responsive images, but you don't need to use a polyfill because <abbr title="Internet Explorer">IE</abbr> gracefully degrades using **the image in the `src` attribute**. So you can place in the `src` attribute an image that would appear nice on a regular desktop display, and you're cool.
 
-- *IntersectionObserver:* Internet Explorer does not support the `IntersectionObserver` API, which is used by vanilla-lazyload, but you don't need to provide a polyfill because vanilla-lazyload detects the support for that API and, in case it doesn't, it loads all images immediately, which leads to the same result as if no LazyLoad was ever used on the page.
+- _IntersectionObserver:_ Internet Explorer does not support the `IntersectionObserver` API, which is used by vanilla-lazyload, but you don't need to provide a polyfill because vanilla-lazyload detects the support for that API and, in case it doesn't, it loads all images immediately, which leads to the same result as if no LazyLoad was ever used on the page.
 
 That's cool, Internet Explorer is not being used by more than 5% of the users today, and Microsoft is silently replacing it with [Edge](https://www.microsoft.com/edge) via Windows Update.
 
@@ -316,21 +316,48 @@ You need the `source` tag and the `type` attribute containing the MIME type of t
 
 [Open the 👀 demo](http://verlok.github.io/vanilla-lazyload/demos/picture_type_webp.html), then your browser's **developer tools** and switch to the **network panel**. You will see that it downloads only the image source corresponding to the first type that your browser supports.
 
+## Native lazyload
+
+You might have heard or read of [native lazy-loading](https://web.dev/native-lazy-loading/) coming to the web. Cool, isn't it? As of May 2020, it's supported in Chrome, Firefox, Edge, Opera, and _behind a flag_ in Safari.
+
+So browser support isn't ready yet, but in case you want to try it in your browser, you could do [hybrid lazy-loading](https://www.smashingmagazine.com/2019/05/hybrid-lazy-loading-progressive-migration-native/) setting the `use_native` option of vanilla-lazyload to `true`.
+
+```js
+new LazyLoad({
+  elements_selector: ".lazy",
+  use_native: true
+});
+```
+
+### You might miss these
+
+If you go for native lazy-loading or hybrid lazyloading, you might miss some **features that JS-driven lazy-loading grants**.
+
+- automatic classes application on events (`loading`, `loaded`, etc.)
+- automatic retry loading when network failed
+- download cancelation when an image exits the viewport while still loading
+- callbacks on events (enter, exit, etc.)
+
+So think about it!
+
 ---
 
 ## Conclusions
 
 Here is a summary:
 
+1. Use [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload/) to load your lazy images.
 1. Don't load all the images lazily, just the ones _below the fold_
-2. Use the `img` tag to do simple responsive images
-3. Use the `picture` tag to conditinally serve the WebP version of your images, or to change your images ratio
-4. Use [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload/) to load your lazy images.
-5. Optionally use the IntersectionObserver polyfill if you want to load lazily on 100% of the browsers.
+1. Use the `img` for simple responsive images
+1. Use the `picture` tag to
+    - conditionally serve your images in modern formats like WebP or Jpeg2000
+    - change your images width/height ratio at specific media queries
+1. Don't use any polyfill if not strictly required
 
-If something is unclear or could be improved, let me know in the comments. Or [tweet me](https://twitter.com/verlok/).
+If something is unclear or could be improved, let me know in the comments or [tweet me](https://twitter.com/verlok/).
+If you found this article useful, feel free to [buy me a coffee](https://ko-fi.com/verlok) ☕
 
-If you did find this useful, feel free to share it!
+Happy lazy loading!
 
 ### Useful resources
 
