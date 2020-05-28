@@ -150,7 +150,8 @@ var lazyLoad = new LazyLoad({
 
 When using lazy loading, the images that haven't started loading collapse to `0`-height, only to grow when they'll have started loading. Layout reflowing would make your website janky, so it's a best practice to stabilize your layout by occupying some space before the images start loading.
 
-In the future, you'll be able to use the `aspect-ratio` CSS directive to do the trick. In the meantime, you might want to use the good old vertical padding trick to do that.
+The universal solution to do that is to use the vertical padding trick, while in the future you'll be able to use the `aspect-ratio` CSS directive to do the trick (as I'm writing it's [landed](https://twitter.com/Una/status/1260980901934137345) in Chrome Canary only).
+
 
 ```css
 /*
