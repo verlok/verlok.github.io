@@ -1,15 +1,23 @@
 ---
 layout: default
 ---
+
 <h1 class="post-title">Oops. This is embarassing...</h1>
 <h2>You probably stumbled upon a broken link.</h2>
-<p>🔧 If the link to this page starts with `www.andreaverlicchi.eu/lazyload/`, try replacing `lazyload` with `vanilla-lazyload` and it should work!</p>
 <p>If it doesn't, start over by one of the following pages:</p>
 <ul>
-    <li><a href="/">Blog</a></li>
-	{% for page in site.pages %}
-		{% if page.title %}
-			<li><a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
-		{% endif %}
-	{% endfor %}
+  <li><a href="/">Blog</a></li>
+  {% for page in site.pages %} {% if page.title %}
+  <li><a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
+  {% endif %} {% endfor %}
 </ul>
+
+<script>
+	if (window.location.pathname.substring(0,10) === "/lazyload/") {
+		const title = document.querySelector("h1");
+		const subtitle = document.querySelector("h2");
+		title.innerHTML = "Hold on!";
+		subtitle.innerHTML = "I'm trying and fixing the broken link...";
+		window.location.pathname = window.location.pathname.replace("/lazyload/", "/vanilla-lazyload/");
+	}
+</script>
