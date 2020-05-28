@@ -8,7 +8,7 @@ tags: [srcset, responsive images, lazy load]
 image: lazy-load-responsive-images-2020__2x.jpg
 ---
 
-Do you want to boost the performance of your website? You can do that by using **responsive images** and **lazy loading**! In this article you will find the **HTML, JavaScript and CSS code** to lazy load responsive images, to make browsers use **modern image formats** like **WebP** and **Jpeg2000**, and to enable **native lazy load** where supported.
+Do you want to boost performance on your website? You can do that by using **responsive images** and **lazy loading**! In this article you will find the **HTML, JavaScript and CSS code** to lazy load responsive images, to make browsers use **modern image formats** like **WebP** and **Jpeg2000**, and to enable **native lazy load** where supported.
 
 <figure>
   <picture>
@@ -51,17 +51,17 @@ Do you want to boost the performance of your website? You can do that by using *
 
 ## Definitions
 
-**Responsive images** are images that adapt to your design by **downloading a different image source** from a given **set of image sources**, which you provide, depending on **some conditions**, which you specify. You can specify basic conditions releated to the browser's **viewport width** and **device pixel density** using a regular `img` tag, and you can use media queries by wrapping your images in a `picture` tag. More about [responsive images in the MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images).
+**Responsive images** are images that adapt to your design by **downloading a different image source** from a given **set of image sources**, which you provide, depending on **some conditions**, which you specify. You can specify basic conditions related to the browser's **viewport width** and **device pixel density** using a regular `img` tag, and you can use media queries by wrapping your images in a `picture` tag. More about [responsive images in the MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images).
 
-**Lazy loading images** is a technique to make your website render faster by **deferring the loading of below-the-fold images** to when they **enter the viewport**. Beyond performance, this also allows you to save bandwith and money, e.g. if you're paying a CDN service for your images.
+**Lazy loading images** is a technique to make your website render faster by **deferring the loading of below-the-fold images** to when they **enter the viewport**. Beyond performance, this also allows you to save bandwidth and money, e.g. if you're paying a CDN service for your images.
 
 ## Above-the-fold first
 
-Bare in mind that using a script to **lazy load images is a Javascript-based task** and it's **relevantly slower than the regular image loading** (_eager loading_ from now on) which starts as soon as the HTML document is being parsed.
+Bear in mind that using a script to **lazy load images is a Javascript-based task** and it's **relevantly slower than the regular image loading** (_eager loading_ from now on) which starts as soon as the HTML document is being parsed.
 
 ☝️ For this reason, the best practice is to **eagerly load above-the-fold images**, and **lazy load only the below-the-fold images**.
 
-A good way to understand how many images will appear _above-the-fold_ in your responsively designed page is... to count them! Open your page in a browser and **try it in the most common viewports** of smartphones, computers and tablets.
+A good way to understand how many images will appear _above-the-fold_ in your responsively designed page is... to count them! Open your page in a browser and **try it in the most common viewports** of smartphones, computers, and tablets.
 
 ## Now to some code!
 
@@ -81,7 +81,7 @@ Here's the HTML markup of an _eagerly loaded_ responsive image.
 />
 ```
 
-And here's the markup you're going to need in order to _lazy load_ a responsive image.
+And here's the markup you're going to need to _lazy load_ a responsive image.
 
 ```html
 <!-- Lazy loaded responsive image -->
@@ -96,7 +96,7 @@ And here's the markup you're going to need in order to _lazy load_ a responsive 
 />
 ```
 
-Want a low resolution preview while your lazy images load? You can do that by using a small, low-quality image in the `src` tag, like this:
+Want a low-resolution preview while your lazy images load? You can do that by using a small, low-quality image in the `src` tag, like the following.
 
 ```html
 <!-- Lazy loaded responsive image + low-res preview -->
@@ -112,17 +112,19 @@ Want a low resolution preview while your lazy images load? You can do that by us
 />
 ```
 
-[Open the 👀 demo](http://verlok.github.io/vanilla-lazyload/demos/image_srcset_lazy_sizes.html), then your browser's **developer tools** and switch to the **network panel**. You will see that the first 2 images are loaded _eagerly_ just after page landing, while the rest of the images are loaded _lazily_ **as you scroll down** the page.
+[Open the 👀 demo](http://verlok.github.io/vanilla-lazyload/demos/image_srcset_lazy_sizes.html), then your browser's **developer tools**, and switch to the **Network panel**. You will see that the first 2 images are loaded _eagerly_ just after page landing, while the rest of the images are loaded _lazily_ **as you scroll down** the page.
 
-We're using the `img` HTML tag and not the `picture` tag, since the latter is not necessary in this case. I'll dig into the `picture` tag use cases [down below](#picture-tag-use-cases).
+We're using the `img` HTML tag and not the `picture` tag, given that the latter is not necessary in this case. I'll dig into the `picture` tag use cases [down below](#picture-tag-use-cases).
 
 💬 _What about Internet Explorer?_
 
-Internet Explorer does not support responsive images, but given that only version 11 is still around and it won't stay for much longer (Microsoft is silently replacing it with [Edge](https://www.microsoft.com/edge)), do NOT use a polyfill. Because a) it would slow down other browsers, b) <abbr title="Internet Explorer">IE</abbr> reads and uses the image specified in the `src`/`data-src` attribute, so choose an image that will appear nice on a desktop, non-HiDPI display, and you're good.
+Internet Explorer does not support responsive images, but you don't need to use a polyfill because <abbr title="Internet Explorer">IE</abbr> reads and uses the image specified in the `src` attribute, so choose an image that will appear nice on a desktop, mDPI (not retina) display, put it in the `src` attribute, and you're good.
+
+Besides, consider that Microsoft is silently replacing Internet Explorer with [Edge](https://www.microsoft.com/edge)), which is a modern browser.
 
 ### Script inclusion
 
-To load the lazy images as they enter the viewport, you need a lazy load script such as [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload) which is a lightweight (2.5 kb gzipped), blazing fast, configurable, SEO-friendly script that I've been maintaining and improving since 2014.
+To load the lazy images as they enter the viewport, you need a lazy load script such as [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload) which is a lightweight (2.5 kb gzipped), blazing-fast, configurable, SEO-friendly script that I've been maintaining and improving since 2014.
 
 Here is the simplest way to include it in your page.
 
@@ -134,7 +136,7 @@ Other ways to include LazyLoad in your web pages, like using an `async` script w
 
 ### LazyLoad initialization
 
-You need LazyLoad to manage and load all the images with a `lazy` class in the page. You can initialize `LazyLoad` like this:
+You need LazyLoad to manage and load all the images with a `lazy` class included in the page. You can initialize `LazyLoad` like this:
 
 ```js
 var lazyLoad = new LazyLoad({
