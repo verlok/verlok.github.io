@@ -146,14 +146,11 @@ var lazyLoad = new LazyLoad({
 });
 ```
 
-### Some CSS Tricks
+### Minimize layout reflow
 
-There are also some features that you can achieve using CSS only. You might want to:
+When using lazy loading, the images that haven't started loading collapse to `0`-height, only to grow when they'll have started loading. Layout reflowing would make your website janky, so it's a best practice to stabilize your layout by occupying some space before the images start loading.
 
-- **Make not-yet-loaded lazy images to occupy some space**. The main reason is to avoid collapsing your layout while your images are yet to be loaded.
-- Avoid empty images to appear as broken images
-
-You can do all that using these CSS rules:
+In the future, you'll be able to use the `aspect-ratio` CSS directive to do the trick. In the meantime, you might want to use the good old vertical padding trick to do that.
 
 ```css
 /*
@@ -169,12 +166,15 @@ when the images aren't loaded yet
 }
 .image {
   position: absolute;
-  /* ... */
+  /* Other positioning rules */
 }
+```
 
-/*
-Avoid empty images to appear as broken
-*/
+### Hide "broken" images
+
+To avoid lazy images to appear as broken, even for a short amount of time, use CSS hide the images that still don't have neither an `src` nor a `srcset` attribute set.
+
+```css
 img:not([src]):not([srcset]) {
   visibility: hidden;
 }
