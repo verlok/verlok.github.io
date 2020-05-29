@@ -51,7 +51,7 @@ Do you want to boost performance on your website? You can do that by using **res
 
 ## Definitions
 
-**Responsive images** are images that adapt to your design by **downloading a different image source** from a given **set of image sources**, which you provide, depending on **some conditions**, which you specify. You can specify basic conditions related to the browser's **viewport width** and **device pixel density** using a regular `img` tag, and you can use media queries by wrapping your images in a `picture` tag. More about [responsive images in the MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images).
+**Responsive images** are images that adapt to your design by **downloading a specific image source** from a **set of image sources** which you provide, depending on **conditions** you specify. You can specify basic conditions related to the browser's **viewport width** and **device pixel density** using a regular `img` tag, and you can use media queries by wrapping your images in a `picture` tag. More about [responsive images in the MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images).
 
 **Lazy loading images** is a technique to make your website render faster by **deferring the loading of below-the-fold images** to when they **enter the viewport**. Beyond performance, this also allows you to save bandwidth and money, e.g. if you're paying a CDN service for your images.
 
