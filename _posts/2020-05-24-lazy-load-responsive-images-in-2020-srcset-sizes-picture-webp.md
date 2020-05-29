@@ -51,7 +51,7 @@ Do you want to boost performance on your website? You can do that by using **res
 
 ## Definitions
 
-**Responsive images** are images that adapt to your design by **downloading a specific image source** from a **set of image sources** which you provide, depending on **conditions** you specify. You can specify basic conditions related to the browser's **viewport width** and **device pixel density** using a regular `img` tag, and you can use media queries by wrapping your images in a `picture` tag. More about [responsive images in the MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images).
+**Responsive images** are `img` tags that download the right image source depending on your design and the user's device. You can provide information about your design in the `sizes` attribute and a list of image sources in the `srcset` attribute. You can also use media queries by wrapping your `img` in a `picture` tag. More about [responsive images in the MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images).
 
 **Lazy loading images** is a technique to make your website render faster by **deferring the loading of below-the-fold images** to when they **enter the viewport**. Beyond performance, this also allows you to save bandwidth and money, e.g. if you're paying a CDN service for your images.
 
@@ -134,11 +134,12 @@ You need vanilla-lazyload to manage and load all the images with a `lazy` class 
 
 ```js
 var lazyLoad = new LazyLoad({
-  elements_selector: ".lazy"
+  elements_selector: ".lazy",
   cancel_on_exit: true
-  //☝️ recommended options
 });
 ```
+
+☝️ Setting the `cancel_on_exit` option will optimize performance for users that scroll down quickly. It does that by **automatically canceling downloads** of images that **exit the viewport while still loading**, to **prioritize the loading** of the images that are **currently in viewport**.
 
 ### Minimize layout reflow
 
@@ -221,7 +222,6 @@ For your convenience here's all the HTML, JS, and CSS code together.
 var lazyLoad = new LazyLoad({
   elements_selector: ".lazy"
   cancel_on_exit: true
-  //☝️ recommended options
 });
 ```
 
