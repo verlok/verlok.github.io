@@ -13,11 +13,16 @@ layout: default
 </ul>
 
 <script>
-	if (window.location.pathname.substring(0,10) === "/lazyload/") {
-		const title = document.querySelector("h1");
-		const subtitle = document.querySelector("h2");
-		title.innerHTML = "Hold on!";
-		subtitle.innerHTML = "I'm trying and fixing the broken link...";
-		window.location.pathname = window.location.pathname.replace("/lazyload/", "/vanilla-lazyload/");
-	}
+  (() => {
+    const checkBrokenLazyLoadLink = /^\/(lazyload\/|lazyload$)/g;
+    const isBrokenLazyLoadLink = checkBrokenLazyLoadLink.test(window.location.pathname);
+    debugger;
+    if (!isBrokenLazyLoadLink) return; 
+
+    const title = document.querySelector("h1");
+    const subtitle = document.querySelector("h2");
+    title.innerHTML = "Hold on!";
+    subtitle.innerHTML = "I'm trying and fixing this broken link...";
+    window.location.pathname = window.location.pathname.replace("/lazyload", "/vanilla-lazyload");
+  })();
 </script>
