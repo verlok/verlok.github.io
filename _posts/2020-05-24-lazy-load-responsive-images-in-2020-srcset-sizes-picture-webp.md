@@ -8,7 +8,7 @@ tags: [srcset, responsive images, lazy load]
 image: lazy-load-responsive-images-2020__2x.jpg
 ---
 
-Do you want to boost performance on your website? You can do that by using **responsive images** and **lazy loading**! In this article you will find the **HTML, JavaScript and CSS code** to lazy load responsive images, to make browsers use **modern image formats** like **WebP** and **Jpeg2000**, and to enable **native lazy load** where supported.
+Do you want to boost performance on your website? You can do that by using **responsive images** and **lazy loading**! In this article, you will find the **HTML, JavaScript, and CSS code** to lazy load responsive images, to make browsers use **modern image formats** like **WebP** and **Jpeg2000**, and to enable **native lazy load** where supported.
 
 <figure>
   <picture>
@@ -329,14 +329,14 @@ new LazyLoad({
 });
 ```
 
-### You might miss these
+### You might miss these features
 
 If you go for native lazy-loading or hybrid lazyloading, you might miss some **features that JS-driven lazy-loading grants**.
 
 - **automatic classes application** on events (`loading`, `loaded`, etc.)
 - **automatic retry loading images** when the network failed and you're back online
 - **download cancelation** when images exit the viewport while still loading, to **prioritize the loading of new ones**
-- **callbacks on event triggered** (viewport enter/exit, loading started/finished, etc.)
+- **callbacks on events triggered** (viewport enter/exit, loading started/finished, etc.)
 
 Think about it carefully before switching to native lazy-loading. If you don't care about the above features, you're good to go.
 
