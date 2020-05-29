@@ -61,7 +61,13 @@ Bear in mind that using a script to **lazy load images is a Javascript-based tas
 
 ☝️ For this reason, the best practice is to **eagerly load above-the-fold images**, and **lazy load only the below-the-fold images**.
 
-A good way to understand how many images will appear _above-the-fold_ in your responsively designed page is... to count them! Open your page in a browser and **try it in the most common viewports** of smartphones, computers, and tablets.
+At this point, people usually ask:
+
+💬 _My website is responsive, how do I know how many images will be *above-the-fold* at page landing?_
+
+The answer is: count them! Open the web page in a browser, resize the viewport to the most common dimensions (smartphones, computers, and tablets) maybe using the device emulation tool, and count them.
+
+If you can see 4 images _above-the-fold_ in a smartphone viewport, plus only the tip of 4 more images on a desktop viewport, be conservative and eagerly load only 4.
 
 ## Now to some code!
 
@@ -73,10 +79,8 @@ Here's the HTML markup of an _eagerly loaded_ responsive image.
 <img
   alt="Eager above"
   src="220x280.jpg"
-  srcset="
-    220x280.jpg 220w,
-    440x560.jpg 440w
-  "
+  srcset="220x280.jpg 220w,
+    440x560.jpg 440w"
   sizes="220px"
 />
 ```
@@ -199,10 +203,8 @@ For your convenience here's all the HTML, JS, and CSS code together.
 <img
   alt="Eager above"
   src="220x280.jpg"
-  srcset="
-    220x280.jpg 220w,
-    440x560.jpg 440w
-  "
+  srcset="220x280.jpg 220w,
+    440x560.jpg 440w"
   sizes="220px"
 />
 
@@ -338,7 +340,7 @@ If you go for native lazy-loading or hybrid lazyloading, you might miss some **f
 - **download cancelation** when images exit the viewport while still loading, to **prioritize the loading of new ones**
 - **callbacks on events triggered** (viewport enter/exit, loading started/finished, etc.)
 
-Think about it carefully before switching to native lazy-loading. If you don't care about the above features, you're good to go.
+Think about it carefully before switching to native lazy-loading. If you don't mind missing the above features, you're good to go.
 
 ---
 
@@ -350,8 +352,8 @@ Here is a summary:
 1. Don't load all the images lazily, just the ones _below the fold_
 1. Use the `img` for simple responsive images
 1. Use the `picture` tag to
-    - conditionally serve your images in modern formats like WebP or Jpeg2000
-    - change your images width/height ratio at specific media queries
+   - conditionally serve your images in modern formats like WebP or Jpeg2000
+   - change your images width/height ratio at specific media queries
 1. Don't use any polyfill if not strictly required
 
 Happy lazy loading!
