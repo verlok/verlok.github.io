@@ -16,7 +16,6 @@ layout: default
   (() => {
     const checkBrokenLazyLoadLink = /^\/(lazyload\/|lazyload$)/g;
     const isBrokenLazyLoadLink = checkBrokenLazyLoadLink.test(window.location.pathname);
-    debugger;
     if (!isBrokenLazyLoadLink) return; 
 
     const title = document.querySelector("h1");
