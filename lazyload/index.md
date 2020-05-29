@@ -1,24 +1,26 @@
 ---
 layout: page
-title: Lazy load
+title: Lazy Load
 date: "2020-05-25 22:52:10 +0200"
 date_gmt: "2020-05-25 21:52:10 +0200"
 ---
 
-You might be here because of an old link, since I've recently changed the URL of the vanilla-lazyload website. You're visiting the old URL, the new one is this &rarr; [vanilla-lazyload website](/vanilla-lazyload)
+Looking for the vanilla-lazyload website? [It's here now](/vanilla-lazyload).
 
 ---
 
-Oh, didn't you know that I'm the author of a LazyLoad script? It's very popular. You can find it on:
+Oh, you didn't know that I'm the author of a lazy load script? It's very popular. You can find it on:
 
 - [GitHub](https://github.com/verlok/vanilla-lazyload)
 - [npm](https://www.npmjs.com/package/vanilla-lazyload)
 - [jsdelivr](https://www.jsdelivr.com/package/npm/vanilla-lazyload)
-- [on this website](/vanilla-lazyload)
+- [dedicated website](/vanilla-lazyload)
+- [ko-fi](https://ko-fi.com/verlok) ☕
 
-If you really like it, you can show your ❤ appreciation by [buying me a coffee](https://ko-fi.com/verlok).
 
-## Articles on lazy load
+### Articles on lazy load
+
+Here are some articles about lazy-loading images!
 
 - [Lazy load responsive images in 2020]({% post_url 2020-05-24-lazy-load-responsive-images-in-2020-srcset-sizes-picture-webp %})
 - [A smashing article on hybrid lazy loading]({% post_url 2019-05-06-hybrid-lazy-loading-smashing-magazine-article %})
