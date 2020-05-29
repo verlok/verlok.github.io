@@ -17,9 +17,9 @@ In the latest years, both at my job and as maintainer of a [LazyLoad script](htt
     </figcaption>
 </figure>
 
-## ⚠ You're reading an old version
+## ⚠ Old article!
 
-**Hold on! There's a new version of this post released in 2020.**
+**Hold on! You're reading an old version of the article.**
 
 &rarr; [Read the **2020 update**]({% post_url 2020-05-24-lazy-load-responsive-images-in-2020-srcset-sizes-picture-webp %})
 
