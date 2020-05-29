@@ -63,7 +63,7 @@ Bear in mind that using a script to **lazy load images is a Javascript-based tas
 
 At this point, people usually ask:
 
-💬 _My website is responsive, how do I know how many images will be *above-the-fold* at page landing?_
+💬 _My website is responsive, how do I know how many images will be_ above-the-fold _at page landing?_
 
 The answer is: count them! Open the web page in a browser, resize the viewport to the most common dimensions (smartphones, computers, and tablets) maybe using the device emulation tool, and count them.
 
@@ -79,8 +79,7 @@ Here's the HTML markup of an _eagerly loaded_ responsive image.
 <img
   alt="Eager above"
   src="220x280.jpg"
-  srcset="220x280.jpg 220w,
-    440x560.jpg 440w"
+  srcset="220x280.jpg 220w, 440x560.jpg 440w"
   sizes="220px"
 />
 ```
@@ -203,8 +202,7 @@ For your convenience here's all the HTML, JS, and CSS code together.
 <img
   alt="Eager above"
   src="220x280.jpg"
-  srcset="220x280.jpg 220w,
-    440x560.jpg 440w"
+  srcset="220x280.jpg 220w, 440x560.jpg 440w"
   sizes="220px"
 />
 
@@ -277,11 +275,7 @@ Here's the code you're gonna need in this case. In order to have eagerly loaded 
     data-srcset="640x960.jpg 1x,
       1280x1920.jpg 2x"
   />
-  <img
-    class="lazy"
-    alt="Portrait or landscape"
-    data-src="1024x576.jpg"
-  />
+  <img class="lazy" alt="Portrait or landscape" data-src="1024x576.jpg" />
 </picture>
 ```
 
@@ -318,7 +312,7 @@ You need the `source` tag and the `type` attribute containing the MIME type of t
 
 [Open the 👀 demo](http://verlok.github.io/vanilla-lazyload/demos/picture_type_webp.html), then your browser's **developer tools**, then switch to the **Network panel**. You will see that it downloads only the image source corresponding to the first type that your browser supports.
 
-💬 *Isn't that markup too long for one image?*
+💬 _Isn't that markup too long for one image?_
 
 Yes, it is. And if you have money to invest in image optimization, there other ways to do that. Most cloud-based image servers now automatically serve different image formats at the same URL. This means that you can request `1024x576.jpg` and you get a WebP or a Jpeg2000 accordingly. [Cloudinary](https://cloudinary.com/) and [Akamai Image &amp; Video Manager](https://www.akamai.com/it/it/products/performance/image-and-video-manager.jsp) do that.
 
