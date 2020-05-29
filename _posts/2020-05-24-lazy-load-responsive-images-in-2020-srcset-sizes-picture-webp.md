@@ -53,7 +53,7 @@ Do you want to boost performance on your website? You can do that by using **res
 
 **Responsive images** are `img` tags that download the right image source depending on your design and the user's device. You can provide information about your design in the `sizes` attribute and a list of image sources in the `srcset` attribute. You can also use media queries by wrapping your `img` in a `picture` tag. More about [responsive images in the MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images).
 
-**Lazy loading images** is a technique to make your website render faster by **deferring the loading of below-the-fold images** to when they **enter the viewport**. Beyond performance, this also allows you to save bandwidth and money, e.g. if you're paying a CDN service for your images.
+**Lazy loading images** is a technique that makes your website render faster by **deferring the loading of below-the-fold images** to when they **enter the viewport**. Beyond performance, this also allows you to save bandwidth and money, e.g. if you're paying a CDN service for your images.
 
 ## Above-the-fold first
 
@@ -81,7 +81,7 @@ Here's the HTML markup of an _eagerly loaded_ responsive image.
 />
 ```
 
-And here's the markup you're going to need to _lazy load_ a responsive image.
+And here's the markup to _lazy load_ a responsive image.
 
 ```html
 <!-- Lazy loaded responsive image -->
@@ -96,7 +96,7 @@ And here's the markup you're going to need to _lazy load_ a responsive image.
 />
 ```
 
-Want a low-resolution preview while your lazy images load? You can do that by using a small, low-quality image in the `src` tag, like the following.
+Want to show a low-resolution preview while your lazy images are loading? You can do that by using a small, low-quality image in the `src` tag, like the following.
 
 ```html
 <!-- Lazy loaded responsive image + low-res preview -->
@@ -112,7 +112,7 @@ Want a low-resolution preview while your lazy images load? You can do that by us
 />
 ```
 
-[Open the 👀 demo](http://verlok.github.io/vanilla-lazyload/demos/image_srcset_lazy_sizes.html), then your browser's **developer tools**, then switch to the **Network panel**. You will see that the first 2 images are loaded _eagerly_ just after page landing, while the rest of the images are loaded _lazily_ **as you scroll down** the page.
+[Open the 👀 demo](http://verlok.github.io/vanilla-lazyload/demos/image_srcset_lazy_sizes.html), then your browser's **developer tools**, then switch to the **Network panel**. You will see that the first 2 images are _eagerly_ loaded just after page landing, while the rest of the images are _lazily_ loaded **as you scroll down** the page.
 
 We're using the `img` HTML tag and not the `picture` tag, given that the latter is not necessary in this case. I'll dig into the `picture` tag use cases later in this article. ⏩ [Skip to `picture` tag use cases](#picture-tag-use-cases)
 
@@ -126,11 +126,11 @@ Here is the simplest way to include it in your page.
 <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@16.1.0/dist/lazyload.min.js"></script>
 ```
 
-Read about [more ways to include LazyLoad](https://github.com/verlok/vanilla-lazyload/#-getting-started---script) in your web pages, like using an `async` script with auto-init, using RequireJS, using WebPack or Rollup, in the documentation.
+Have a look at the documentation for [more ways to include LazyLoad](https://github.com/verlok/vanilla-lazyload/#-getting-started---script) in your web pages, like using an `async` script with auto-init, using RequireJS, using WebPack or Rollup.
 
 ### LazyLoad initialization
 
-You need vanilla-lazyload to manage and load all the images with a `lazy` class included in the page. You can initialize `LazyLoad` like this:
+You need vanilla-lazyload to manage and load all the images with a `lazy` CSS class included in the page. You can initialize `LazyLoad` like this:
 
 ```js
 var lazyLoad = new LazyLoad({
@@ -145,7 +145,7 @@ var lazyLoad = new LazyLoad({
 
 When using lazy loading, the images that haven't started loading collapse to `0`-height, only to grow when they'll have started loading. Layout reflowing would make your website janky, so it's a best practice to stabilize your layout by occupying some space before the images start loading.
 
-The universal solution to do that is to use the vertical padding trick, while in the future you'll be able to use the `aspect-ratio` CSS directive to do the trick (as I'm writing it's [landed](https://twitter.com/Una/status/1260980901934137345) in Chrome Canary only).
+The universal solution to do that is to use the vertical padding trick, while in the future you'll be able to use the `aspect-ratio` CSS directive to do it (as I'm writing it's [landed](https://twitter.com/Una/status/1260980901934137345) in Chrome Canary only).
 
 ```css
 .image-wrapper {
@@ -163,7 +163,7 @@ The universal solution to do that is to use the vertical padding trick, while in
 
 ### Hide "broken" images
 
-To avoid lazy images to appear as broken, even for a short amount of time, use CSS hide the images that still don't have neither an `src` nor a `srcset` attribute set.
+To avoid lazy images to appear as broken, even for a short amount of time, use CSS. Hide the images that still don't have neither an `src` nor a `srcset` attribute set.
 
 ```css
 img:not([src]):not([srcset]) {
@@ -255,7 +255,7 @@ And that's it for the simple `img` tag.
 
 ## Picture tag use cases
 
-Until now, I wrote about the `img` tag with the `srcset` and `sizes` attributes, which is the solution to the vast majority of the responsive images you might need and use on a website or web application. Now, in which cases should you use the `picture` tag?
+Until now, I wrote about the `img` tag with the `srcset` and `sizes` attributes, which is the solution to the vast majority of the responsive images you might need to use on a website or web application. Now, in which cases should you use the `picture` tag?
 
 ### Different width/height ratio
 
@@ -320,7 +320,7 @@ You need the `source` tag and the `type` attribute containing the MIME type of t
 
 You might have heard or read of [native lazy-loading](https://web.dev/native-lazy-loading/) coming to the web. Cool, isn't it? As of May 2020, it's supported in Chrome, Firefox, Edge, Opera, and _behind a flag_ in Safari.
 
-So browser 100% support isn't quite there, but in case you want to try enabling it on supported browsers, you could go for [hybrid lazy-loading](https://www.smashingmagazine.com/2019/05/hybrid-lazy-loading-progressive-migration-native/) by setting the `use_native` option of vanilla-lazyload to `true`.
+So 100% browsers support isn't quite there, but in case you want to enable it on supported browsers, you could go for [hybrid lazy-loading](https://www.smashingmagazine.com/2019/05/hybrid-lazy-loading-progressive-migration-native/) by setting the `use_native` option of vanilla-lazyload to `true`.
 
 ```js
 new LazyLoad({
