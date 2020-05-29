@@ -112,7 +112,7 @@ Want a low-resolution preview while your lazy images load? You can do that by us
 />
 ```
 
-[Open the 👀 demo](http://verlok.github.io/vanilla-lazyload/demos/image_srcset_lazy_sizes.html), then your browser's **developer tools**, and switch to the **Network panel**. You will see that the first 2 images are loaded _eagerly_ just after page landing, while the rest of the images are loaded _lazily_ **as you scroll down** the page.
+[Open the 👀 demo](http://verlok.github.io/vanilla-lazyload/demos/image_srcset_lazy_sizes.html), then your browser's **developer tools**, then switch to the **Network panel**. You will see that the first 2 images are loaded _eagerly_ just after page landing, while the rest of the images are loaded _lazily_ **as you scroll down** the page.
 
 We're using the `img` HTML tag and not the `picture` tag, given that the latter is not necessary in this case. I'll dig into the `picture` tag use cases later in this article. ⏩ [Skip to `picture` tag use cases](#picture-tag-use-cases)
 
@@ -126,11 +126,11 @@ Here is the simplest way to include it in your page.
 <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@16.1.0/dist/lazyload.min.js"></script>
 ```
 
-Other ways to include LazyLoad in your web pages, like using an `async` script with auto-init, using RequireJS, using WebPack or Rollup, are [documented here](https://github.com/verlok/vanilla-lazyload/#include-lazyload-in-your-project).
+Read about [more ways to include LazyLoad](https://github.com/verlok/vanilla-lazyload/#-getting-started---script) in your web pages, like using an `async` script with auto-init, using RequireJS, using WebPack or Rollup, in the documentation.
 
 ### LazyLoad initialization
 
-You need LazyLoad to manage and load all the images with a `lazy` class included in the page. You can initialize `LazyLoad` like this:
+You need vanilla-lazyload to manage and load all the images with a `lazy` class included in the page. You can initialize `LazyLoad` like this:
 
 ```js
 var lazyLoad = new LazyLoad({
@@ -259,7 +259,7 @@ Until now, I wrote about the `img` tag with the `srcset` and `sizes` attributes,
 
 ### Different width/height ratio
 
-Use case: you need to show images with different **width/height ratio** depending on a media query. e.g. you want to show _portrait_ images on mobile, vertical devices, _landscape_ on wider viewports, like tablets and computers.
+Use case: you need to show images with different **width/height ratio** depending on a media query. e.g. you want to show _portrait images_ on mobile, vertical devices, _landscape images_ on wider viewports, like tablets and computers.
 
 Here's the code you're gonna need in this case. In order to have eagerly loaded images, just use the plain `src` and `srcset` attributes, without `data-` prefix.
 
@@ -283,7 +283,7 @@ Here's the code you're gonna need in this case. In order to have eagerly loaded 
 </picture>
 ```
 
-[Open the 👀 demo](http://verlok.github.io/vanilla-lazyload/demos/picture_media.html), then your browser's **developer tools** and switch to the **network panel**. You will see that it downloads only the image source corresponding to the first media query that matches.
+[Open the 👀 demo](http://verlok.github.io/vanilla-lazyload/demos/picture_media.html), then your browser's **developer tools**, then switch to the **Network panel**. You will see that it downloads only the image source corresponding to the first media query that matches.
 
 ### Load modern formats like WebP and Jpeg2000
 
@@ -314,13 +314,13 @@ You need the `source` tag and the `type` attribute containing the MIME type of t
 </picture>
 ```
 
-[Open the 👀 demo](http://verlok.github.io/vanilla-lazyload/demos/picture_type_webp.html), then your browser's **developer tools** and switch to the **network panel**. You will see that it downloads only the image source corresponding to the first type that your browser supports.
+[Open the 👀 demo](http://verlok.github.io/vanilla-lazyload/demos/picture_type_webp.html), then your browser's **developer tools**, then switch to the **Network panel**. You will see that it downloads only the image source corresponding to the first type that your browser supports.
 
 ## Native lazyload
 
 You might have heard or read of [native lazy-loading](https://web.dev/native-lazy-loading/) coming to the web. Cool, isn't it? As of May 2020, it's supported in Chrome, Firefox, Edge, Opera, and _behind a flag_ in Safari.
 
-So browser 100% support isn't quite there, but in case you want to try enable it on supported browsers, you could go for [hybrid lazy-loading](https://www.smashingmagazine.com/2019/05/hybrid-lazy-loading-progressive-migration-native/) by setting the `use_native` option of vanilla-lazyload to `true`.
+So browser 100% support isn't quite there, but in case you want to try enabling it on supported browsers, you could go for [hybrid lazy-loading](https://www.smashingmagazine.com/2019/05/hybrid-lazy-loading-progressive-migration-native/) by setting the `use_native` option of vanilla-lazyload to `true`.
 
 ```js
 new LazyLoad({
@@ -333,12 +333,12 @@ new LazyLoad({
 
 If you go for native lazy-loading or hybrid lazyloading, you might miss some **features that JS-driven lazy-loading grants**.
 
-- automatic classes application on events (`loading`, `loaded`, etc.)
-- automatic retry loading when network failed
-- download cancelation when an image exits the viewport while still loading
-- callbacks on events (enter, exit, etc.)
+- **automatic classes application** on events (`loading`, `loaded`, etc.)
+- **automatic retry loading images** when the network failed and you're back online
+- **download cancelation** when images exit the viewport while still loading, to **prioritize the loading of new ones**
+- **callbacks on event triggered** (viewport enter/exit, loading started/finished, etc.)
 
-So think about it!
+Think about it carefully before switching to native lazy-loading. If you don't care about the above features, you're good to go.
 
 ---
 
@@ -354,11 +354,13 @@ Here is a summary:
     - change your images width/height ratio at specific media queries
 1. Don't use any polyfill if not strictly required
 
+Happy lazy loading!
+
+### About this article
+
 If something is unclear or could be improved, let me know in the comments or [tweet me](https://twitter.com/verlok/).
 
-If you found this article useful, feel free to [buy me a coffee](https://ko-fi.com/verlok). ☕
-
-Happy lazy loading!
+☕ If you found it useful, feel free to [buy me a coffee](https://ko-fi.com/verlok).
 
 ### Useful resources
 
