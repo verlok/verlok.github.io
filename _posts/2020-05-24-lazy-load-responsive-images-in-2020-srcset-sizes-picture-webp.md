@@ -318,6 +318,10 @@ You need the `source` tag and the `type` attribute containing the MIME type of t
 
 [Open the 👀 demo](http://verlok.github.io/vanilla-lazyload/demos/picture_type_webp.html), then your browser's **developer tools**, then switch to the **Network panel**. You will see that it downloads only the image source corresponding to the first type that your browser supports.
 
+💬 *Isn't that markup too long for one image?*
+
+Yes, it is. And if you have money to invest in image optimization, there other ways to do that. Most cloud-based image servers now automatically serve different image formats at the same URL. This means that you can request `1024x576.jpg` and you get a WebP or a Jpeg2000 accordingly. [Cloudinary](https://cloudinary.com/) and [Akamai Image &amp; Video Manager](https://www.akamai.com/it/it/products/performance/image-and-video-manager.jsp) do that.
+
 ## Native lazyload
 
 You might have heard or read of [native lazy-loading](https://web.dev/native-lazy-loading/) coming to the web. Cool, isn't it? As of May 2020, it's supported in Chrome, Firefox, Edge, Opera, and _behind a flag_ in Safari.
