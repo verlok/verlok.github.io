@@ -5,7 +5,7 @@ date: 2020-05-24 08:00:00 +01:00
 categories:
   - libraries
 tags: [srcset, responsive images, lazy load]
-image: lazy-load-responsive-images-2020__2x.jpg
+image: lazy-load-responsive-images-2020__1200w.jpg
 ---
 
 Do you want to boost performance on your website? You can do that by using **responsive images** and **lazy loading**! In this article, you will find the **HTML, JavaScript, and CSS code** to lazy load responsive images, to make browsers use **modern image formats** like **WebP** and **Jpeg2000**, and to enable **native lazy load** where supported.
