@@ -71,11 +71,11 @@ Here's the HTML markup of an _eagerly loaded_ responsive image.
 <!-- Eagerly loaded responsive image -->
 <!-- Only for above-the-fold images!!! -->
 <img
-  alt="Image 01"
-  src="https://via.placeholder.com/220x280?text=Img+01"
+  alt="Eager above"
+  src="220x280.jpg"
   srcset="
-    https://via.placeholder.com/220x280?text=Img+01 220w,
-    https://via.placeholder.com/440x560?text=Img+01 440w
+    220x280.jpg 220w,
+    440x560.jpg 440w
   "
   sizes="220px"
 />
@@ -87,11 +87,11 @@ And here's the markup to _lazy load_ a responsive image.
 <!-- Lazy loaded responsive image -->
 <!-- Only for below-the-fold images!!! -->
 <img
-  alt="Image 03"
+  alt="Lazy below"
   class="lazy"
-  data-src="https://via.placeholder.com/220x280?text=Img+03"
-  data-srcset="https://via.placeholder.com/220x280?text=Img+03 220w, 
-    https://via.placeholder.com/440x560?text=Img+03 440w"
+  data-src="220x280.jpg"
+  data-srcset="220x280.jpg 220w, 
+    440x560.jpg 440w"
   data-sizes="220px"
 />
 ```
@@ -102,12 +102,12 @@ Want to show a low-resolution preview while your lazy images are loading? You ca
 <!-- Lazy loaded responsive image + low-res preview -->
 <!-- Only for below-the-fold images!!! -->
 <img
-  alt="Image 03"
+  alt="Lazy below with preview"
   class="lazy"
-  src="https://via.placeholder.com/11x14?text=Img+03"
-  data-src="https://via.placeholder.com/220x280?text=Img+03"
-  data-srcset="https://via.placeholder.com/220x280?text=Img+03 220w, 
-    https://via.placeholder.com/440x560?text=Img+03 440w"
+  src="11x14.jpg"
+  data-src="220x280.jpg"
+  data-srcset="220x280.jpg 220w, 
+    440x560.jpg 440w"
   data-sizes="220px"
 />
 ```
@@ -197,11 +197,11 @@ For your convenience here's all the HTML, JS, and CSS code together.
 <!-- Eagerly loaded responsive image -->
 <!-- Only for above-the-fold images!!! -->
 <img
-  alt="Image 01"
-  src="https://via.placeholder.com/220x280?text=Img+01"
+  alt="Eager above"
+  src="220x280.jpg"
   srcset="
-    https://via.placeholder.com/220x280?text=Img+01 220w,
-    https://via.placeholder.com/440x560?text=Img+01 440w
+    220x280.jpg 220w,
+    440x560.jpg 440w
   "
   sizes="220px"
 />
@@ -209,11 +209,11 @@ For your convenience here's all the HTML, JS, and CSS code together.
 <!-- Lazy loaded responsive image -->
 <!-- Only for below-the-fold images!!! -->
 <img
-  alt="Image 03"
+  alt="Lazy below"
   class="lazy"
-  data-src="https://via.placeholder.com/220x280?text=Img+03"
-  data-srcset="https://via.placeholder.com/220x280?text=Img+03 220w, 
-    https://via.placeholder.com/440x560?text=Img+03 440w"
+  data-src="220x280.jpg"
+  data-srcset="220x280.jpg 220w, 
+    440x560.jpg 440w"
   data-sizes="220px"
 />
 ```
@@ -267,18 +267,18 @@ Here's the code you're gonna need in this case. In order to have eagerly loaded 
 <picture>
   <source
     media="(min-width: 1024px)"
-    data-srcset="https://via.placeholder.com/1024x576?text=Horizontal+Image 1x,
-      https://via.placeholder.com/2048x1152?text=Horizontal+Image 2x"
+    data-srcset="1024x576.jpg 1x,
+      2048x1152.jpg 2x"
   />
   <source
     media="(max-width: 1023px)"
-    data-srcset="https://via.placeholder.com/640x960?text=Vertical+Image 1x,
-      https://via.placeholder.com/1280x1920?text=Vertical+Image 2x"
+    data-srcset="640x960.jpg 1x,
+      1280x1920.jpg 2x"
   />
   <img
     class="lazy"
-    alt="Stivaletti"
-    data-src="https://via.placeholder.com/1024x576?text=Horizontal+Image"
+    alt="Portrait or landscape"
+    data-src="1024x576.jpg"
   />
 </picture>
 ```
@@ -295,20 +295,20 @@ You need the `source` tag and the `type` attribute containing the MIME type of t
 <picture>
   <source
     type="image/jp2"
-    data-srcset="https://via.placeholder.com/1024x576?text=Jpeg2000+Image 1x, 
-      https://via.placeholder.com/2048x1152?text=Jpeg2000+Image 2x"
+    data-srcset="1024x576.jp2 1x, 
+      2048x1152.jp2 2x"
   />
   <source
     type="image/webp"
-    data-srcset="https://via.placeholder.com/1024x576?text=WebP+Image 1x, 
-      https://via.placeholder.com/2048x1152?text=WebP+Image 2x"
+    data-srcset="1024x576.webp 1x, 
+      2048x1152.webp 2x"
   />
   <img
-    data-src="https://via.placeholder.com/256.jpg?text=1024x576+Jpg+Image"
-    data-srcset="https://via.placeholder.com/1024x576?text=Jpg+Image 1x, 
-      https://via.placeholder.com/2048x1152?text=Jpg+Image 2x"
-    data-sizes="220px"
-    alt="An image"
+    data-src="1024x576.jpg"
+    data-srcset="1024x576.jpg 1x, 
+      2048x1152.jpg 2x"
+    data-sizes="1024px"
+    alt="Jp2, WebP or Jpg"
     class="lazy"
   />
 </picture>
