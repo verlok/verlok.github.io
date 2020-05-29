@@ -27,4 +27,4 @@ To join the event for FREE, book your presence sending an e-mail to fabio.malpez
 
 UPDATE: here are the slides and the demos used during the speech:
 
-<iframe src="http://www.slideshare.net/slideshow/embed_code/15433383" width="710" height="572" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe>
+<iframe src="https://www.slideshare.net/slideshow/embed_code/15433383" width="710" height="572" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe>

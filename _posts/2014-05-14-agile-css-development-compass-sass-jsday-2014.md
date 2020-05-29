@@ -16,4 +16,4 @@ I spoke again at [jsDay](http://2014.jsday.it "jsDay, the international javascri
 
 ![Agile CSS Development with Compass / SASS](/assets/post-images/agile-css-development-sass-compass.png)
 
-The slides of the speech are now available [here](http://www.slideshare.net/verlok/agile-css-development-with-compass "Slides of &quot;Agile CSS development with Compass/SASS&quot;").
+The slides of the speech are now available [here](https://www.slideshare.net/verlok/agile-css-development-with-compass "Slides of &quot;Agile CSS development with Compass/SASS&quot;").
