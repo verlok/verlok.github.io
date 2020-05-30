@@ -125,7 +125,7 @@ We're using the `img` HTML tag and not the `picture` tag, given that the latter 
 
 ### Script inclusion
 
-To load the lazy images as they enter the viewport, you need a lazy load script such as [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload) which is a lightweight (2.5 kb gzipped), blazing-fast, configurable, SEO-friendly script that I've been maintaining and improving since 2014.
+To load the lazy images as they enter the viewport, you need a lazy load script such as [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload) which is a lightweight (2.5 kb gzipped), blazing-fast, configurable, SEO-friendly script that I created and I've been constantly improving since 2014.
 
 Here is the simplest way to include it in your page.
 
@@ -137,7 +137,7 @@ Have a look at the documentation for [more ways to include LazyLoad](https://git
 
 ### LazyLoad initialization
 
-You need vanilla-lazyload to manage and load all the images with a `lazy` CSS class included in the page. You can initialize `LazyLoad` like this:
+Including the vanilla-lazyload script gives you a `LazyLoad` JS class you can use to load the images identified by the `lazy` CSS class. You must create a `LazyLoad` instance like this:
 
 ```js
 var lazyLoad = new LazyLoad({
@@ -146,11 +146,11 @@ var lazyLoad = new LazyLoad({
 });
 ```
 
-☝️ Setting the `cancel_on_exit` option will optimize performance for users that scroll down quickly. It does that by **automatically canceling downloads** of images that **exit the viewport while still loading**, to **prioritize the loading** of the images that are **currently in viewport**.
+☝️ Setting the `cancel_on_exit` option will optimize performance for users who scroll down quickly. It does that by **automatically canceling downloads** of images that **exit the viewport while still loading**, to **prioritize the loading** of the images that are **currently in viewport**.
 
 ### Minimize layout reflow
 
-When using lazy loading, the images that haven't started loading collapse to `0`-height, only to grow when they'll have started loading. Layout reflowing would make your website janky, so it's a best practice to stabilize your layout by occupying some space before the images start loading.
+When using lazy loading, the images that haven't started loading collapse to `0`-height, only to grow when they'll have started loading. Layout reflowing would make your website janky, so it's a best practice to **stabilize your layout** by occupying the exact amount of space your images will take when loaded, before they start loading.
 
 The universal solution to do that is to use the vertical padding trick, while in the future you'll be able to use the `aspect-ratio` CSS directive to do it (as I'm writing it's [landed](https://twitter.com/Una/status/1260980901934137345) in Chrome Canary only).
 
@@ -164,11 +164,37 @@ The universal solution to do that is to use the vertical padding trick, while in
 }
 .image {
   position: absolute;
-  /* ...other positioning rules */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 ```
 
-### Hide "broken" images
+Here's also a useful SASS mixin to do that (source: [CSS tricks](https://css-tricks.com/snippets/sass/maintain-aspect-ratio-mixin/)).
+
+```scss
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+```
+
+More info in [Sizing Fluid Image Containers with a Little CSS Padding Hack](http://andyshora.com/css-image-container-padding-hack.html) by Andy Shora.
+
+### Avoid "broken" images
 
 To avoid lazy images to appear as broken, even for a short amount of time, use CSS. Hide the images that still don't have neither an `src` nor a `srcset` attribute set.
 
@@ -182,9 +208,9 @@ img:not([src]):not([srcset]) {
 
 You might be tempted to add one or more polyfills to support Internet Explorer (_yes, I named it and it's 2020_). Don't do that, **you don't need any**. Let me tell you why:
 
-- _Responsive images:_ Internet Explorer does not support responsive images, but you don't need to use a polyfill because <abbr title="Internet Explorer">IE</abbr> gracefully degrades using **the image in the `src` attribute**. So you can place in the `src` attribute an image that would appear nice on a regular desktop display, and you're cool.
+- _Responsive images:_ Internet Explorer does not support responsive images, but you don't need to use a polyfill because <abbr title="Internet Explorer">IE</abbr> gracefully degrades using **the image specified in the `src` attribute**. So choose an image that would appear nice on a regular desktop display, place in the `src` attribute, and you're cool.
 
-- _IntersectionObserver:_ Internet Explorer does not support the `IntersectionObserver` API, which is used by vanilla-lazyload, but you don't need to provide a polyfill because vanilla-lazyload detects the support for that API and, in case it doesn't, it loads all images immediately, which leads to the same result as if no LazyLoad was ever used on the page.
+- _IntersectionObserver:_ Internet Explorer does not support the `IntersectionObserver` API, which is used by vanilla-lazyload, but you don't need to provide a polyfill because vanilla-lazyload will detect the support for that API and, if missing, it will loads all images immediately. This leads to the same result as if no LazyLoad was ever used on the page, but it doesn't throw any errors.
 
 That's cool, Internet Explorer is not being used by more than 5% of the users today, and Microsoft is silently replacing it with [Edge](https://www.microsoft.com/edge) via Windows Update.
 
@@ -290,7 +316,7 @@ Here's the code you're gonna need in this case. In order to have eagerly loaded 
 </picture>
 ```
 
-[Open the 👀 demo](http://verlok.github.io/vanilla-lazyload/demos/picture_media.html), then your browser's **developer tools**, then switch to the **Network panel**. You will see that it downloads only the image source corresponding to the first media query that matches.
+[Open the 👀 demo](http://verlok.github.io/vanilla-lazyload/demos/picture_media.html), then your browser's **developer tools**, then switch to the **Network panel**. You will see that it downloads only the image source corresponding to the first matching media query.
 
 ### Load modern formats like WebP and Jpeg2000
 
@@ -325,7 +351,7 @@ You need the `source` tag and the `type` attribute containing the MIME type of t
 
 💬 _Isn't that markup too long for one image?_
 
-Yes, it is. And if you have money to invest in image optimization, there other ways to do that. Most cloud-based image servers now automatically serve different image formats at the same URL. This means that you can request `1024x576.jpg` and you get a WebP or a Jpeg2000 accordingly. [Cloudinary](https://cloudinary.com/) and [Akamai Image &amp; Video Manager](https://www.akamai.com/it/it/products/performance/image-and-video-manager.jsp) do that.
+Yes, it is. And if you have money to invest in image optimization, there other ways to do that. Most of the cloud-based image servers in the market now automatically serve different image formats at the same URL. This means that you can request `1024x576.jpg` and you get a WebP or a Jpeg2000 accordingly. [Cloudinary](https://cloudinary.com/) and [Akamai Image &amp; Video Manager](https://www.akamai.com/it/it/products/performance/image-and-video-manager.jsp) do that, amongst others.
 
 ## Native lazyload
 
@@ -361,8 +387,8 @@ Here is a summary:
 1. Don't load all the images lazily, just the ones _below the fold_
 1. Use the `img` for simple responsive images
 1. Use the `picture` tag to
-   - conditionally serve your images in modern formats like WebP or Jpeg2000
    - change your images width/height ratio at specific media queries
+   - conditionally serve your images in modern formats like WebP or Jpeg2000
 1. Don't use any polyfill if not strictly required
 
 Happy lazy loading!
@@ -371,7 +397,7 @@ Happy lazy loading!
 
 If something is unclear or could be improved, let me know in the comments or [tweet me](https://twitter.com/verlok/).
 
-☕ If you found it useful, feel free to [buy me a coffee](https://ko-fi.com/verlok).
+☕ If you've found it useful, you might want to [express your gratitude with coffee](https://ko-fi.com/verlok).
 
 ### Useful resources
 

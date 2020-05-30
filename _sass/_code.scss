@@ -61,6 +61,13 @@ div.highlighter-rouge {
 	color: white;
 }
 
+.language-scss::before {
+	@extend %language;
+	content: "SCSS";
+	background: #ff2e9f;
+	color: white;
+}
+
 .language-css::before {
 	@extend %language;
 	content: "CSS";
