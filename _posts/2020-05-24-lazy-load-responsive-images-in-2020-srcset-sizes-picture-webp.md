@@ -74,12 +74,15 @@ If you can see 4 images _above-the-fold_ in a smartphone viewport, plus only the
 Here's the HTML markup of an _eagerly loaded_ responsive image.
 
 ```html
-<!-- Eagerly loaded responsive image -->
-<!-- Only for above-the-fold images!!! -->
+<!-- Eagerly loaded,
+     above-the-fold only -->
 <img
   alt="Eager above"
   src="220x280.jpg"
-  srcset="220x280.jpg 220w, 440x560.jpg 440w"
+  srcset="
+    220x280.jpg 220w,
+    440x560.jpg 440w
+  "
   sizes="220px"
 />
 ```
@@ -87,8 +90,8 @@ Here's the HTML markup of an _eagerly loaded_ responsive image.
 And here's the markup to _lazy load_ a responsive image.
 
 ```html
-<!-- Lazy loaded responsive image -->
-<!-- Only for below-the-fold images!!! -->
+<!-- Lazy loaded,
+     below-the-fold only -->
 <img
   alt="Lazy below"
   class="lazy"
@@ -102,8 +105,9 @@ And here's the markup to _lazy load_ a responsive image.
 Want to show a low-resolution preview while your lazy images are loading? You can do that by using a small, low-quality image in the `src` tag, like the following.
 
 ```html
-<!-- Lazy loaded responsive image + low-res preview -->
-<!-- Only for below-the-fold images!!! -->
+<!-- Lazy loaded,
+     + low-res preview,
+     below-the-fold only -->
 <img
   alt="Lazy below with preview"
   class="lazy"
@@ -197,17 +201,20 @@ Anyway if for some reason you want it to work in the same exact way on Internet 
 For your convenience here's all the HTML, JS, and CSS code together.
 
 ```html
-<!-- Eagerly loaded responsive image -->
-<!-- Only for above-the-fold images!!! -->
+<!-- Eagerly loaded,
+     above-the-fold only -->
 <img
   alt="Eager above"
   src="220x280.jpg"
-  srcset="220x280.jpg 220w, 440x560.jpg 440w"
+  srcset="
+    220x280.jpg 220w,
+    440x560.jpg 440w
+  "
   sizes="220px"
 />
 
-<!-- Lazy loaded responsive image -->
-<!-- Only for below-the-fold images!!! -->
+<!-- Lazy loaded,
+     below-the-fold only -->
 <img
   alt="Lazy below"
   class="lazy"
@@ -275,7 +282,11 @@ Here's the code you're gonna need in this case. In order to have eagerly loaded 
     data-srcset="640x960.jpg 1x,
       1280x1920.jpg 2x"
   />
-  <img class="lazy" alt="Portrait or landscape" data-src="1024x576.jpg" />
+  <img
+    class="lazy"
+    alt="Portrait or landscape"
+    data-src="1024x576.jpg"
+  />
 </picture>
 ```
 
