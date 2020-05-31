@@ -9,7 +9,7 @@ tags: [srcset, responsive images, lazy load]
 
 It's now possible (yes, today!) to have **lazy loading** on **responsive images** to make our images to adapt to users screens _and_ keep our website fast. YAY! \o/ In this article, we'll see what markup we need to write and which Javascript libraries we're gonna need to do that.
 
-## 👀 Old article!
+## Old article! 👀
 
 **Hold on! You're reading an old version of this article.**
 

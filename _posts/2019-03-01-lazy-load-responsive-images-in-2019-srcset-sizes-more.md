@@ -17,7 +17,7 @@ In the latest years, both at my job and as maintainer of a [LazyLoad script](htt
     </figcaption>
 </figure>
 
-## 👀 Old article!
+## Old article! 👀
 
 **Hold on! You're reading an old version of this article.**
 
