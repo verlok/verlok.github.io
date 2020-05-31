@@ -17,11 +17,11 @@ In the latest years, both at my job and as maintainer of a [LazyLoad script](htt
     </figcaption>
 </figure>
 
-## ⚠ Old article!
+## 👀 Old article!
 
-**Hold on! You're reading an old version of the article.**
+**Hold on! You're reading an old version of this article.**
 
-&rarr; [Read the **2020 update**]({% post_url 2020-05-24-lazy-load-responsive-images-in-2020-srcset-sizes-picture-webp %})
+👉 [Read the **2020 update**]({% post_url 2020-05-24-lazy-load-responsive-images-in-2020-srcset-sizes-picture-webp %})
 
 ## Responsive lazy what?
 
