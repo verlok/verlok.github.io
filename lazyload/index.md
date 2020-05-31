@@ -5,7 +5,7 @@ date: "2020-05-25 22:52:10 +0200"
 date_gmt: "2020-05-25 21:52:10 +0200"
 ---
 
-Looking for the vanilla-lazyload website? [It's here now](/vanilla-lazyload).
+I'm moving the lazyload website. In the meantime, find all the info on the 👉&nbsp;[vanilla-lazyload readme](https://github.com/verlok/vanilla-lazyload/blob/master/README.md) on GitHub. Thank you for your patience.
 
 ---
 
