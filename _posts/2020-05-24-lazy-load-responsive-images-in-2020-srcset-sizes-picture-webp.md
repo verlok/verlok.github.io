@@ -11,38 +11,40 @@ image: lazy-load-responsive-images-2020__1200w.jpg
 Do you want to boost performance on your website? You can do that by using **responsive images** and **lazy loading**! In this article, you will find the **HTML, JavaScript, and CSS code** to lazy load responsive images, to make browsers use **modern image formats** like **WebP** and **Jpeg2000**, and to enable **native lazy load** where supported.
 
 <figure>
-  <picture>
-    <source
-      type="image/jp2"
-      srcset="
-        /assets/post-images/lazy-load-responsive-images-2020__600w.jp2 600w,
-        /assets/post-images/lazy-load-responsive-images-2020__698w.jp2 698w,
-        /assets/post-images/lazy-load-responsive-images-2020__1047w.jp2 1047w,
-        /assets/post-images/lazy-load-responsive-images-2020__1200w.jp2 1200w
-      "
-    />
-    <source
-      type="image/webp"
-      srcset="
-        /assets/post-images/lazy-load-responsive-images-2020__600w.webp 600w,
-        /assets/post-images/lazy-load-responsive-images-2020__698w.webp 698w,
-        /assets/post-images/lazy-load-responsive-images-2020__1047w.webp 1047w,
-        /assets/post-images/lazy-load-responsive-images-2020__1200w.webp 1200w
-      "
-    />
-    <img
-      class="post-image"
-      alt="Lazy loading responsive images (2020)" 
-      src="/assets/post-images/lazy-load-responsive-images-2020__600w.jpg" 
-      srcset="
-        /assets/post-images/lazy-load-responsive-images-2020__600w.jpg 600w,
-        /assets/post-images/lazy-load-responsive-images-2020__698w.jpg 698w,
-        /assets/post-images/lazy-load-responsive-images-2020__1047w.jpg 1047w,
-        /assets/post-images/lazy-load-responsive-images-2020__1200w.jpg 1200w
-      "
-      sizes="(min-width: 630px) 600px, calc(100vw - 26px)"
-    >
-  </picture>
+  <div class="post-image-spacer" style="background-color: #d8d8e0">
+    <picture>
+      <source
+        type="image/jp2"
+        srcset="
+          /assets/post-images/lazy-load-responsive-images-2020__600w.jp2 600w,
+          /assets/post-images/lazy-load-responsive-images-2020__698w.jp2 698w,
+          /assets/post-images/lazy-load-responsive-images-2020__1047w.jp2 1047w,
+          /assets/post-images/lazy-load-responsive-images-2020__1200w.jp2 1200w
+        "
+      />
+      <source
+        type="image/webp"
+        srcset="
+          /assets/post-images/lazy-load-responsive-images-2020__600w.webp 600w,
+          /assets/post-images/lazy-load-responsive-images-2020__698w.webp 698w,
+          /assets/post-images/lazy-load-responsive-images-2020__1047w.webp 1047w,
+          /assets/post-images/lazy-load-responsive-images-2020__1200w.webp 1200w
+        "
+      />
+      <img
+        class="post-image"
+        alt="Lazy loading responsive images (2020)" 
+        src="/assets/post-images/lazy-load-responsive-images-2020__600w.jpg" 
+        srcset="
+          /assets/post-images/lazy-load-responsive-images-2020__600w.jpg 600w,
+          /assets/post-images/lazy-load-responsive-images-2020__698w.jpg 698w,
+          /assets/post-images/lazy-load-responsive-images-2020__1047w.jpg 1047w,
+          /assets/post-images/lazy-load-responsive-images-2020__1200w.jpg 1200w
+        "
+        sizes="(min-width: 630px) 600px, calc(100vw - 26px)"
+      >
+    </picture>
+  </div>
   <figcaption>
     Photo by <a href="https://unsplash.com/@domenicoloia">Domenico Loia</a> on <a href="https://unsplash.com/s/photos/website">Unsplash</a>
   </figcaption>

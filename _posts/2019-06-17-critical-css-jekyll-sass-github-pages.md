@@ -11,7 +11,11 @@ image: critical-css-jekyll-sass__2x.png
 
 This site is run by **Jekyll on GitHub pages** and its CSS is built using SASS. Today I decided to boost performance even more inlining the render-blocking _critical_ CSS, but even searching the internet I struggled to find an easy way to do it. This post is for you, in case you want to do the same.
 
-<img alt="Blurry, uncomprehensible and colored code" src="/assets/post-images/critical-css-jekyll-sass__1x.png" srcset="/assets/post-images/critical-css-jekyll-sass__1x.png 1x, /assets/post-images/critical-css-jekyll-sass__2x.png 2x" class="post-image">
+<figure>
+  <div class="post-image-spacer">
+    <img alt="Uncomprehensible code" src="/assets/post-images/critical-css-jekyll-sass__1x.png" srcset="/assets/post-images/critical-css-jekyll-sass__1x.png 1x, /assets/post-images/critical-css-jekyll-sass__2x.png 2x" class="post-image">
+  </div>
+</figure>
 
 ## The critical style
 

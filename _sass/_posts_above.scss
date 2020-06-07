@@ -13,8 +13,17 @@
     }
 
     &-image {
+        position: absolute;
         width: 100%;
         height: auto;
+        top: 0; 
+        left: 0;
+
+        &-spacer {
+            position: relative;
+            padding-bottom: 66.66667%;
+            background-color: #EEE;
+        }
     }
 
     &-cta {
