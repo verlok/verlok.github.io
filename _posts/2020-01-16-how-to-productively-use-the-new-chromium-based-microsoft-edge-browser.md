@@ -11,7 +11,7 @@ image: microsoft-edge-page-screenshot__2x.jpg
 
 Here’s a practical guide on how to productively use the new Chromium-based Microsoft Edge browser: download it, change the default search engine, install extensions, and more.
 
-<img alt="Microsoft Edge page screenshot" src="/assets/post-images/microsoft-edge-page-screenshot__ph.png" data-src="/assets/post-images/microsoft-edge-page-screenshot__1x.jpg" data-srcset="/assets/post-images/microsoft-edge-page-screenshot__1x.jpg 1x, /assets/post-images/microsoft-edge-page-screenshot__2x.jpg 2x" class="lazy post-image">
+<img alt="Microsoft Edge page screenshot" src="/assets/post-images/microsoft-edge-page-screenshot__1x.jpg" srcset="/assets/post-images/microsoft-edge-page-screenshot__1x.jpg 1x, /assets/post-images/microsoft-edge-page-screenshot__2x.jpg 2x" class="post-image">
 
 ## Index
 

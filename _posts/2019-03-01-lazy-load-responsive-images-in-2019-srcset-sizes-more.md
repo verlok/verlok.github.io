@@ -3,15 +3,16 @@ layout: post
 title: Lazy load responsive images in 2019
 date: 2019-03-01 08:15:00 +01:00
 categories:
-- libraries
-tags: [srcset, responsive images, lazy load]
+  - libraries
+tags:
+  [srcset, responsive images, lazy load]
 image: lazy-load-responsive-images-2019__2x.jpg
 ---
 
 In the latest years, both at my job and as maintainer of a [LazyLoad script](https://github.com/verlok/vanilla-lazyload), I've specialized in **lazy loading** of **responsive images**. Today I'm going to show you what HTML, CSS and JavaScript code you need to write _in 2019_ in order to serve responsive images _and_ load them lazily. In the second part of the post, I'm also showing how to make the browser **natively pick the WebP image** when it supports it.
 
 <figure>
-    <img alt="Lazy loading responsive images (2019)" src="/assets/post-images/lazy-load-responsive-images-2019__ph.jpg" data-src="/assets/post-images/lazy-load-responsive-images-2019__1x.jpg" data-srcset="/assets/post-images/lazy-load-responsive-images-2019__1x.jpg 1x, /assets/post-images/lazy-load-responsive-images-2019__2x.jpg 2x" class="lazy post-image">
+    <img alt="Lazy loading responsive images (2019)" src="/assets/post-images/lazy-load-responsive-images-2019__1x.jpg" srcset="/assets/post-images/lazy-load-responsive-images-2019__1x.jpg 1x, /assets/post-images/lazy-load-responsive-images-2019__2x.jpg 2x" class="post-image">
     <figcaption>
         Photo by <a href="https://unsplash.com/@bugsster">Taras Shypka</a> on <a href="https://unsplash.com/search/photos/responsive">Unsplash</a>
     </figcaption>

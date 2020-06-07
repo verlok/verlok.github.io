@@ -14,7 +14,7 @@ Do you want to boost performance on your website? You can do that by using **res
   <picture>
     <source
       type="image/jp2"
-      data-srcset="
+      srcset="
         /assets/post-images/lazy-load-responsive-images-2020__600w.jp2 600w,
         /assets/post-images/lazy-load-responsive-images-2020__698w.jp2 698w,
         /assets/post-images/lazy-load-responsive-images-2020__1047w.jp2 1047w,
@@ -23,7 +23,7 @@ Do you want to boost performance on your website? You can do that by using **res
     />
     <source
       type="image/webp"
-      data-srcset="
+      srcset="
         /assets/post-images/lazy-load-responsive-images-2020__600w.webp 600w,
         /assets/post-images/lazy-load-responsive-images-2020__698w.webp 698w,
         /assets/post-images/lazy-load-responsive-images-2020__1047w.webp 1047w,
@@ -31,17 +31,16 @@ Do you want to boost performance on your website? You can do that by using **res
       "
     />
     <img
-      class="lazy post-image"
+      class="post-image"
       alt="Lazy loading responsive images (2020)" 
-      src="/assets/post-images/lazy-load-responsive-images-2020__50w.jpg" 
-      data-src="/assets/post-images/lazy-load-responsive-images-2020__600w.jpg" 
-      data-srcset="
+      src="/assets/post-images/lazy-load-responsive-images-2020__600w.jpg" 
+      srcset="
         /assets/post-images/lazy-load-responsive-images-2020__600w.jpg 600w,
         /assets/post-images/lazy-load-responsive-images-2020__698w.jpg 698w,
         /assets/post-images/lazy-load-responsive-images-2020__1047w.jpg 1047w,
         /assets/post-images/lazy-load-responsive-images-2020__1200w.jpg 1200w
       "
-      data-sizes="(min-width: 630px) 600px, calc(100vw - 26px)"
+      sizes="(min-width: 630px) 600px, calc(100vw - 26px)"
     >
   </picture>
   <figcaption>

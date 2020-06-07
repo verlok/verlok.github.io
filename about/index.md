@@ -11,7 +11,7 @@ date_gmt: "2012-09-23 21:52:10 +0200"
 
 Hello, I'm Andrea, and I love to craft websites with the user experience at the center, which I care about in every detail. Recently I've been counting and I realized that I'm a programmer for 30 years\*.
 
-<img alt="Andrea Verlicchi's face" src="/assets/pages-images/andrea-verlicchi-face__ph.jpg" data-src="/assets/pages-images/andrea-verlicchi-face__1x.jpg" data-srcset="/assets/pages-images/andrea-verlicchi-face__1x.jpg 1x, /assets/pages-images/andrea-verlicchi-face__2x.jpg 2x" class="lazy about-face">
+<img alt="Andrea Verlicchi's face" src="/assets/pages-images/andrea-verlicchi-face__1x.jpg" srcset="/assets/pages-images/andrea-verlicchi-face__1x.jpg 1x, /assets/pages-images/andrea-verlicchi-face__2x.jpg 2x" class="about-face">
 
 My current job at [YNAP](https://www.ynap.com) is mainly focused on front-end research and development, working together with tech leaders, training on new technologies / best practices, and technically assess candidates. [More on LinkedIn &rarr;](https://linkedin.com/andreaverlicchi)
 

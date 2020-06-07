@@ -12,7 +12,7 @@ image: pwa-reliable__2x.png
 
 Some of my workmates and I took part to a Google Hackathon about Progressive Web Application and we learned a lot, so I've decided to enable this website as a PWA. Here's what I did...
 
-<img alt="Progressive web application working both online and offline" src="/assets/post-images/pwa-reliable__ph.png" data-src="/assets/post-images/pwa-reliable__1x.png" data-srcset="/assets/post-images/pwa-reliable__1x.png 1x, /assets/post-images/pwa-reliable__2x.png 2x" class="lazy post-image">
+<img alt="Progressive web application working both online and offline" src="/assets/post-images/pwa-reliable__1x.png" srcset="/assets/post-images/pwa-reliable__1x.png 1x, /assets/post-images/pwa-reliable__2x.png 2x" class="post-image">
 
 ## Web manifest
 
