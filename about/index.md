@@ -11,9 +11,14 @@ date_gmt: "2012-09-23 21:52:10 +0200"
 
 Hello, I'm Andrea, and I love to craft websites with the user experience at the center, which I care about in every detail. Recently I've been counting and I realized that I'm a programmer for 30 years\*.
 
-<img alt="Andrea Verlicchi's face" src="/assets/pages-images/andrea-verlicchi-face__1x.jpg" srcset="/assets/pages-images/andrea-verlicchi-face__1x.jpg 1x, /assets/pages-images/andrea-verlicchi-face__2x.jpg 2x" class="about-face">
+<figure class="about-face">
+  <div class="about-face__spacer">
+  <img alt="Andrea Verlicchi's face" src="/assets/pages-images/andrea-verlicchi-face__1x.jpg" srcset="/assets/pages-images/andrea-verlicchi-face__1x.jpg 1x, /assets/pages-images/andrea-verlicchi-face__2x.jpg 2x" class="about-face__image">
+  </div>
+  <figcaption>Image courtesy: myself</figcaption>
+</figure>
 
-My current job at [YNAP](https://www.ynap.com) is mainly focused on front-end research and development, working together with tech leaders, training on new technologies / best practices, and technically assess candidates. [More on LinkedIn &rarr;](https://linkedin.com/andreaverlicchi)
+My current job at [YNAP](https://www.ynap.com) is mainly focused on front-end research and development, working together with tech leaders, training on new technologies / best practices, and technically assess candidates. [More on LinkedIn](https://linkedin.com/andreaverlicchi)
 
 I'm a father of two, a fan of GitHub, the proud creator of [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload) and [colonnineelettriche.it](http://www.colonnineelettriche.it) and the writer of this tech blog. I also occasionally speak at front-end conferences.
 
