@@ -4,9 +4,16 @@ title: Native lazy loading and js-based fallback with vanilla-lazyload 12
 
 date: 2019-04-11 19:00:00 +01:00
 categories:
-- libraries
-- techniques
-tags: [native, vanilla, lazyload, image, iframe]
+  - libraries
+  - techniques
+tags:
+  [
+    native,
+    vanilla,
+    lazyload,
+    image,
+    iframe,
+  ]
 image: lazyload-use_native__2x.png
 ---
 
@@ -17,8 +24,11 @@ On April 6th 2019, Addy Osmany wrote about [native image lazy-loading](https://a
 In case you missed Addy Osmani's article, it will be possible to _natively_ lazy load images through the `loading="lazy"` attribute on images and iframes, and it's already possible on Chrome 75 (currently Canary).
 
 ```html
-<img loading="lazy" src="...">
-<iframe loading="lazy" src="...">
+<img loading="lazy" src="..." />
+<iframe
+  loading="lazy"
+  src="..."
+></iframe>
 ```
 
 Browsers will initially fetch a tiny bit of the images (~2kb) in order to get some initial information (e.g. size), then fetch the rest when they are _about to enter the viewport_.
@@ -26,7 +36,7 @@ Browsers will initially fetch a tiny bit of the images (~2kb) in order to get so
 The problem is that if you directly assign the `src` (and/or `srcset`) to the images, browsers that still don't support native lazy loading would download them all immediately, and this is something you might want to avoid in order to save bandwidth and speed up your website or web application.
 
 <figure>
-  <div class="post-image-spacer" style="padding-bottom:52.33333%">
+  <div class="post-image-spacer" style="padding-bottom: 52.33333%; background-color: #272822">
     <img alt="The `use_native` option" data-src="/assets/post-images/lazyload-use_native__1x.png" data-srcset="/assets/post-images/lazyload-use_native__1x.png 1x, /assets/post-images/lazyload-use_native__2x.png 2x" class="lazy post-image">
   </div>
 </figure>
@@ -40,10 +50,10 @@ More info on native lazy loading can be found on Addy Osmani's post [native imag
 As of 10th April 2019, native lazy-loading is in the early stages (dev preview) and it's available only in Chrome 75 (currently Canary), and under a flag. So in order to test it, you need to:
 
 1. [Download Chrome Canary](https://www.google.com/chrome/canary/) and install it
-2. In Chrome Canary, go to the URL *chrome://flags* and enable the following flags:
+2. In Chrome Canary, go to the URL _chrome://flags_ and enable the following flags:
    - _Enable lazy image loading_
    - _Enable lazy iframe loading_
-3. Restart Chrome Canary 
+3. Restart Chrome Canary
 
 ## Demo
 
@@ -67,10 +77,10 @@ To make sure that your users see your images as soon as possible, I recommend to
 To do that, the first images in the page should be loaded using regular `<img>` tags. You can use the `loading="eager"` attribute to make sure they load as soon as possible.
 
 ```html
-<img 
-    src="eager-eagle.jpg" 
-    loading="eager"
-    alt="Eager Eagle" 
+<img
+  src="eager-eagle.jpg"
+  loading="eager"
+  alt="Eager Eagle"
 />
 ```
 
@@ -78,15 +88,15 @@ All other _below-the-fold_ images should be loaded using the `data-src`, `data-s
 
 ```html
 <img
-    data-src="lazy-sloth.jpg"
-    class="lazy"
-    alt="Lazy Sloth"
+  data-src="lazy-sloth.jpg"
+  class="lazy"
+  alt="Lazy Sloth"
 />
 ```
 
 **Link:** for a complete guide on how to lazy load responsive images, read [more about lazy loading responsive images]({% post_url 2019-03-01-lazy-load-responsive-images-in-2019-srcset-sizes-more %}).
 
-### Now to the Javascript code! 
+### Now to the Javascript code!
 
 You're gonna need vanilla-lazyload version 12.
 <br>You can include it via a CDN:
@@ -105,9 +115,9 @@ In your code, set the option `use_native` to `true` when instantiating LazyLoad:
 
 ```js
 new LazyLoad({
-    elements_selector: `.lazy`,
-    use_native: true // This one
-})
+  elements_selector: `.lazy`,
+  use_native: true // This one
+});
 ```
 
 The `use_native: true` flag sets up these contextual behaviors:
@@ -119,8 +129,8 @@ The `use_native: true` flag sets up these contextual behaviors:
 
 Loading content lazily is very important to **improve a website loading speed**, browser vendors are finally starting to implement it natively and I can't wait for it to be available on Edge, Safari and Firefox.
 
-Until then, you can have **both native lazy loading and js-based lazy loading** using [vanilla-lazyload 12](https://github.com/verlok/vanilla-lazyload), just setting the `use_native` option to `true`. 
- 
+Until then, you can have **both native lazy loading and js-based lazy loading** using [vanilla-lazyload 12](https://github.com/verlok/vanilla-lazyload), just setting the `use_native` option to `true`.
+
 Give it a try!
 
 If you like it, [star ⭐ the repo](https://github.com/verlok/vanilla-lazyload). If you find something wrong, [file an issue](https://github.com/verlok/vanilla-lazyload/issues) so I can try and fix it. For any questions, [reach me on twitter](https://twitter.com/verlok).
