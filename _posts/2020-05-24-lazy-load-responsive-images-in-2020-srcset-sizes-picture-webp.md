@@ -131,7 +131,7 @@ To load the lazy images as they enter the viewport, you need a lazy load script 
 Here is the simplest way to include it in your page.
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@16.1.0/dist/lazyload.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.0.0/dist/lazyload.min.js"></script>
 ```
 
 Have a look at the documentation for [more ways to include LazyLoad](https://github.com/verlok/vanilla-lazyload/#-getting-started---script) in your web pages, like using an `async` script with auto-init, using RequireJS, using WebPack or Rollup.
@@ -142,12 +142,9 @@ Including the vanilla-lazyload script gives you a `LazyLoad` JS class you can us
 
 ```js
 var lazyLoad = new LazyLoad({
-  elements_selector: ".lazy",
-  cancel_on_exit: true
+  // Your custom settings go here
 });
 ```
-
-☝️ Setting the `cancel_on_exit` option will optimize performance for users who scroll down quickly. It does that by **automatically canceling downloads** of images that **exit the viewport while still loading**, to **prioritize the loading** of the images that are **currently in viewport**.
 
 ### Minimize layout reflow
 
@@ -220,7 +217,7 @@ Anyway if for some reason you want it to work in the same exact way on Internet 
 ```html
 <!-- Don't do this if you're not sure! Read above -->
 <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.10.0/intersection-observer.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@16.1.0/dist/lazyload.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.0.0/dist/lazyload.min.js"></script>
 ```
 
 ### Putting it all together
@@ -362,7 +359,6 @@ So 100% browsers support isn't quite there, but in case you want to enable it on
 
 ```js
 new LazyLoad({
-  elements_selector: ".lazy",
   use_native: true
 });
 ```
@@ -396,9 +392,9 @@ Happy lazy loading!
 
 ### About this article
 
-If something is unclear or could be improved, let me know in the comments or [tweet me](https://twitter.com/verlok/).
+If something is unclear or you think it could be improved, let me know in the comments or [tweet me](https://twitter.com/verlok/).
 
-☕ If you've found it useful, you might want to [express your gratitude with coffee](https://ko-fi.com/verlok).
+☕ If you've found this useful, you might want to express your gratitude by [buying me a coffee](https://ko-fi.com/verlok). ☕
 
 ### Useful resources
 
