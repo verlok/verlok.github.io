@@ -131,7 +131,7 @@ To load the lazy images as they enter the viewport, you need a lazy load script 
 Here is the simplest way to include it in your page.
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.2/dist/lazyload.min.js"></script>
 ```
 
 Have a look at the documentation for [more ways to include LazyLoad](https://github.com/verlok/vanilla-lazyload/#-getting-started---script) in your web pages, like using an `async` script with auto-init, using RequireJS, using WebPack or Rollup.
@@ -217,7 +217,7 @@ Anyway if for some reason you want it to work in the same exact way on Internet 
 ```html
 <!-- Don't do this if you're not sure! Read above -->
 <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.10.0/intersection-observer.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.2/dist/lazyload.min.js"></script>
 ```
 
 ### Putting it all together
