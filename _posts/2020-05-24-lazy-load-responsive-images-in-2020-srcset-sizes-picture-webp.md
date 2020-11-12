@@ -351,6 +351,13 @@ You need the `source` tag and the `type` attribute containing the MIME type of t
 
 Yes, it is. And if you have money to invest in image optimization, there other ways to do that. Most of the cloud-based image servers in the market now automatically serve different image formats at the same URL. This means that you can request `1024x576.jpg` and you get a WebP or a Jpeg2000 accordingly. [Cloudinary](https://cloudinary.com/) and [Akamai Image &amp; Video Manager](https://www.akamai.com/it/it/products/performance/image-and-video-manager.jsp) do that, amongst others.
 
+### Image fidelity capping to 2x
+
+With the rise of very high density "super retina" displays in newest high-end devices such as the whole iPhone 12 and the whole Google Pixel lineups, capping image fidelity to 2x leads to a big improvement in terms of download speed, and no perceivable quality loss for your users. 
+
+👉 [Here's a new best practice on how to do that.]({% post_url 2020-11-11-capping-image-fidelity-2x-minimize-loading-time %})
+
+
 ## Native lazyload
 
 You might have heard or read of [native lazy-loading](https://web.dev/native-lazy-loading/) coming to the web. Cool, isn't it? As of May 2020, it's supported in Chrome, Firefox, Edge, Opera, and _behind a flag_ in Safari.
