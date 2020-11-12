@@ -46,15 +46,13 @@ So the first thing we started doing was to list a normal image to regular 1x dis
 />
 ```
 
-Remember that `x` descriptor in the `srcset` attribute, we will use this later. `1x` meaning "this is the image for regular screens", `2x` meaning "this is the image for HiDPI <abbr title="also known as">aka</abbr> Retina display". Depending on the device's screen, browsers are to pick the corresponding source and don't stretch it.
+That `x` descriptor in the `srcset` attribute, is to match sources to screen densities. `1x` means "this is the image for regular screens", `2x` means "this is the image for HiDPI / Retina displays". Depending on the device's screen, browsers will pick the corresponding source.
 
 ## Responsive images
 
-[Responsive images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images) are an HTML spec that allows you to serve the proper image size to your users, depending on the space your image occupies on the user's screen, and taking the device pixel ratio into account.
+[Responsive images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images) are an HTML spec that allows you to serve the proper image size to users, depending on the space the image occupies on the user's screen, and taking the device pixel ratio into account.
 
-The simplest way to do that is to list all the image sizes we have in a `srcset` attribute, using the `w` descriptor, and tell the browser how big is our image using the `sizes` attribute. Browsers will do the math and they will download the most appropriate image.
-
-If you're confused, I recommend you to [read this in-depth explanation](https://ericportis.com/posts/2014/srcset-sizes/).
+The simplest way to code responsive images is to list all the image sizes you have in a `srcset` attribute, using the `w` descriptor, and tell the browser how big is our image, using the `sizes` attribute. Browsers will do the math and will download the most appropriate image.
 
 ```html
 <img
@@ -69,7 +67,7 @@ If you're confused, I recommend you to [read this in-depth explanation](https://
 />
 ```
 
-Or complicate things more with media queries in the `sizes` attribute.
+Or if the size of your images change depending on media queries, add the same media queries in the `sizes` attribute.
 
 ```html
 <img
@@ -84,6 +82,8 @@ Or complicate things more with media queries in the `sizes` attribute.
     sizes="(min-width: 640px) 50vw, 100vw"
 />
 ```
+
+If you're confused, I recommend you to read [Srcset and Sizes from Eric Portis](https://ericportis.com/posts/2014/srcset-sizes/). That article lighted my way when I was starting to play around with responsive images.
 
 ## Devices with 3x displays
 
@@ -101,7 +101,7 @@ As I'm writing, there are a bunch of high-end devices, both from Apple and Googl
 
 ## Capping image fidelity
 
-Standing to the analysis on a [Twitter mobile app change](https://blog.twitter.com/engineering/en_us/topics/infrastructure/2019/capping-image-fidelity-on-ultra-high-resolution-devices.html), capping image fidelity to 2x leads to a big improvement in terms of download speed, and no perceivable quality loss for your users.
+According to the analysis on a [Twitter mobile app change](https://blog.twitter.com/engineering/en_us/topics/infrastructure/2019/capping-image-fidelity-on-ultra-high-resolution-devices.html), capping image fidelity to 2x leads to a big improvement in terms of download speed, and no perceivable quality loss for your users.
 
 > Images in timelines on ultra-high resolution devices now load roughly 33% faster while using 1/3rd less data, and with no visible quality change.
 
@@ -199,10 +199,8 @@ If your layout requires you to do more than 1 media query for tablets / computer
 </picture>
 ```
 
-In this way, from the landscape tablet / computers media query and above, you won't need to add other `source` tags, because we don't need to cap image quality on computers. So the upmost `source` tag does the trick.
+In this way, from the landscape tablet / computers media query and above, you won't need to add other `source` tags, because there's no need to cap image quality on computers. So the upmost `source` tag does the trick.
 
 ## Conclusion
 
-Capping image quality on super HiDPI devices a relatively new best practice in web design with responsive images, but with the growing number of smartphones spoiling super HiDPI displays, the overall download speed of your website will improve, and so will improve the [LCP](https://web.dev/lcp/) [Web Vital](https://web.dev/vitals/) of your pages. 
-
-Your users will notice the difference.
+Capping image quality on super HiDPI devices a relatively new best practice in web design with responsive images, but with the growing number of smartphones spoiling super HiDPI displays, the overall download speed of your website will improve, and so will the [LCP](https://web.dev/lcp/) [Web Vital](https://web.dev/vitals/) of your pages and your users experience.
