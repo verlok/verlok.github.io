@@ -13,7 +13,7 @@ tags:
 image: capping-image-fidelity__2x.jpg
 ---
 
-With the rise of very high density "super retina" displays in newest high-end devices such as the whole iPhone 12 and the whole Google Pixel lineups, capping image fidelity to 2x leads to a big improvement in terms of download speed, and no perceivable quality loss for your users. Here's a new best practice on how to do that.
+With the rise of very high density "super retina" displays in newest high-end devices such as all the iPhone 12 from the Mini to the Pro Max and the whole Google Pixel lineup, capping image fidelity to 2x leads to a big improvement in terms of download speed, and no perceivable quality loss for your users. Here's a new best practice on how to do that.
 
 <figure>
   <div class="post-image-spacer" style="background-color: #eee">
@@ -164,7 +164,7 @@ Notice that:
 - on the smartphones media queries we describe only the `2x` image, because all smartphones mount a retina display nowadays
 - on the landscape tablet / computers media query we should describe both the `1x` and `2x` images.
 
-## [Optional] Reduce complexity on tablets / computers
+## Optionally reduce complexity on tablets / computers
 
 If your layout requires you to do more than 1 media query for tablets / computers, you can then conside rusing the `srcset` attribute with the `w` descriptor and the `sizes` attribute, which leads to this:
 
