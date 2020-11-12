@@ -29,9 +29,9 @@ With the rise of very high density "super retina" displays in newest high-end de
 
 In June 2010, Apple introduces the first Retina display on the iPhone 4. "Retina" is just a fancy name to describe a HiDPI display, that has 2x the pixels horizontally and 2x vertically.
 
-HiDPI <abbr title="also known as">aka</abbr> Retina displays are wonderful when having to render vectors, like fonts and SVG images, but when it comes to images, if we don't provide a specific image for HiDPI displays, our regular image gets strecthed to cover all the additinal pixels, which doesn't look good.
+HiDPI <abbr title="also known as">aka</abbr> Retina displays are wonderful when having to render vectors, like fonts and SVG images, but when it comes to images, if we don't provide a specific image for HiDPI displays, our regular image gets strecthed to cover all the additional pixels, which doesn't look good.
 
-So the first thing we started doing was to list a normal image to regular 1x displays and a bigger, better defined image specifically for Retina displays, using the `srcset` attribute and the `x` descriptor. Like this:
+So the first thing we started doing was to list a normal image to regular 1x displays and a bigger, better defined image, specifically for Retina displays, using the `srcset` attribute and the `x` descriptor. Like this:
 
 ```html
 <img
@@ -114,7 +114,7 @@ device pixel density =
 width of the image to download
 ```
 
-So for example, if an image is to be displayed at a width of `300px` on an iPhone 12, Safari would to:
+So for example, if an image has to be displayed at a width of `300px` on an iPhone 12, Safari would to:
 
 ```
 300 *
@@ -124,7 +124,7 @@ So for example, if an image is to be displayed at a width of `300px` on an iPhon
 ```
 
 Leading to the download of a 900 pixels wide image.
-What we want is to cap the fidelity to 2x so that it downloads the an image 600 pixels wide.
+What we want is to cap the fidelity to 2x so that it downloads the 600 pixels wide image.
 
 The only way to do that on the web is to use the `picture` tag like the following:
 
@@ -203,4 +203,4 @@ In this way, from the landscape tablet / computers media query and above, you wo
 
 ## Conclusion
 
-Capping image quality on super HiDPI devices a relatively new best practice in web design with responsive images, but with the growing number of smartphones spoiling super HiDPI displays, the overall download speed of your website will improve, and so will the [LCP](https://web.dev/lcp/) [Web Vital](https://web.dev/vitals/) of your pages and your users experience.
+Capping image quality on super HiDPI devices is a relatively new best practice in web design with responsive images, but with the growing number of smartphones spoiling super HiDPI displays, the overall download speed of your website will improve, as well as the [LCP](https://web.dev/lcp/) [Web Vital](https://web.dev/vitals/) of your pages and your users experience.
