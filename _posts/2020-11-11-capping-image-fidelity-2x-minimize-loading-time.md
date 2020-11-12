@@ -166,7 +166,7 @@ Notice that:
 
 ## Optionally reduce complexity on tablets / computers
 
-If your layout requires you to do more than 1 media query for tablets / computers, you can then conside rusing the `srcset` attribute with the `w` descriptor and the `sizes` attribute, which leads to this:
+If your layout requires you to do more than 1 media query for tablets / computers, you can then consider using the `srcset` attribute with the `w` descriptor and the `sizes` attribute, which leads to this:
 
 ```html
 <picture>
