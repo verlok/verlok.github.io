@@ -201,7 +201,7 @@ If your layout requires you to do more than 1 media query for tablets / computer
 
 In this way, from the landscape tablet / computers media query and above, you won't need to add other `source` tags, because there's no need to cap image quality on computers. So the upmost `source` tag does the trick.
 
-## Try this and fork it
+## Codepen demo
 
 Find here a codepen with an example of what I explained until here. Try it and fork it!
 
@@ -211,6 +211,10 @@ Find here a codepen with an example of what I explained until here. Try it and f
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+## 45% lighter images
+
+Using this technique on the product listing page of one of the websites we manage, led to an **image weight reduction of 45%**.
 
 ## Conclusion
 
