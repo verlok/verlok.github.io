@@ -114,7 +114,7 @@ device pixel density =
 width of the image to download
 ```
 
-So for example, if an image has to be displayed at a width of `300px` on an iPhone 12, Safari would to:
+So for example, if an image has to be displayed at a width of `300px` on an iPhone 12, Safari would do:
 
 ```
 300 *
@@ -212,11 +212,19 @@ Find here a codepen with an example of what I explained until here. Try it and f
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-## 45% lighter images
+## Result: 45% lighter images
 
-Using this technique on the product listing page of one of the websites we manage, led to an **image weight reduction of 45%**.
+Using this technique on the product listing page of one of the websites we manage, led to an **image weight reduction of 45%**. Images weight on an iPhone 11 Pro was 1.7 Mb before and it's only 949 Kb after the capping.
 
-
+<figure>
+  <div class="post-image-spacer" style="background-color: #000; padding-bottom: 54.5%">
+    <picture>
+        <source type="image/webp" srcset="/assets/post-images/capping-image-fidelity-to-2x/image-weight-reduction__1x.webp 1x, /assets/post-images/capping-image-fidelity-to-2x/image-weight-reduction__2x.webp 2x">
+        <img alt="Capping image fidelity at 2x" src="/assets/post-images/capping-image-fidelity-to-2x/image-weight-reduction__2x.jpg" srcset="/assets/post-images/capping-image-fidelity-to-2x/image-weight-reduction__1x.jpg 1x, /assets/post-images/capping-image-fidelity-to-2x/image-weight-reduction__2x.jpg 2x" class="post-image">
+    </picture>
+  </div>
+  <figcaption>Images weight before (left) and after the capping (right)</figcaption>
+</figure>
 
 ## Conclusion
 
