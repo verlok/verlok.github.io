@@ -201,6 +201,17 @@ If your layout requires you to do more than 1 media query for tablets / computer
 
 In this way, from the landscape tablet / computers media query and above, you won't need to add other `source` tags, because there's no need to cap image quality on computers. So the upmost `source` tag does the trick.
 
+## Try this and fork it
+
+Find here a codepen with an example of what I explained until here. Try it and fork it!
+
+<p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="html,result" data-user="verlok" data-slug-hash="wvWRgEG" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Capping image fidelity to 2x to minimize loading time on high-end mobile phones">
+  <span>See the Pen <a href="https://codepen.io/verlok/pen/wvWRgEG">
+  Capping image fidelity to 2x to minimize loading time on high-end mobile phones</a> by Andrea Verlicchi (<a href="https://codepen.io/verlok">@verlok</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
 ## Conclusion
 
 Capping image quality on super HiDPI devices is a relatively new best practice in web design with responsive images, but with the growing number of smartphones spoiling super HiDPI displays, the overall download speed of your website will improve, as well as the [LCP](https://web.dev/lcp/) [Web Vital](https://web.dev/vitals/) of your pages and your users experience.
