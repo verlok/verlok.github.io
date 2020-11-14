@@ -18,8 +18,8 @@ With the rise of very high density "super retina" displays in newest high-end de
 <figure>
   <div class="post-image-spacer" style="background-color: #eee">
     <picture>
-        <source type="image/webp" srcset="/assets/post-images/capping-image-fidelity__1x.webp 1x, /assets/post-images/capping-image-fidelity__2x.webp 2x">
-        <img alt="Capping image fidelity at 2x" src="/assets/post-images/capping-image-fidelity__2x.jpg" srcset="/assets/post-images/capping-image-fidelity__1x.jpg 1x, /assets/post-images/capping-image-fidelity__2x.jpg 2x" class="post-image">
+        <source type="image/webp" srcset="/assets/post-images/capping-image-fidelity-to-2x/capping-image-fidelity__1x.webp 1x, /assets/post-images/capping-image-fidelity-to-2x/capping-image-fidelity__2x.webp 2x">
+        <img alt="Capping image fidelity at 2x" src="/assets/post-images/capping-image-fidelity-to-2x/capping-image-fidelity__2x.jpg" srcset="/assets/post-images/capping-image-fidelity-to-2x/capping-image-fidelity__1x.jpg 1x, /assets/post-images/capping-image-fidelity-to-2x/capping-image-fidelity__2x.jpg 2x" class="post-image">
     </picture>
   </div>
   <figcaption>Photo by <a href="https://unsplash.com/@reinhartjulian?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Reinhart Julian</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></figcaption>
@@ -92,8 +92,8 @@ As I'm writing, there are a bunch of high-end devices, both from Apple and Googl
 <figure>
   <div class="post-image-spacer" style="background-color: #fff; padding-bottom: 81.5%">
     <picture>
-        <source type="image/webp" srcset="/assets/post-images/devices-with-super-hidpi-display__1x.webp 1x, /assets/post-images/devices-with-super-hidpi-display__2x.webp 2x">
-        <img alt="Capping image fidelity at 2x" src="/assets/post-images/devices-with-super-hidpi-display__2x.jpg" srcset="/assets/post-images/devices-with-super-hidpi-display__1x.jpg 1x, /assets/post-images/devices-with-super-hidpi-display__2x.jpg 2x" class="post-image">
+        <source type="image/webp" srcset="/assets/post-images/capping-image-fidelity-to-2x/devices-with-super-hidpi-display__1x.webp 1x, /assets/post-images/capping-image-fidelity-to-2x/devices-with-super-hidpi-display__2x.webp 2x">
+        <img alt="Capping image fidelity at 2x" src="/assets/post-images/capping-image-fidelity-to-2x/devices-with-super-hidpi-display__2x.jpg" srcset="/assets/post-images/capping-image-fidelity-to-2x/devices-with-super-hidpi-display__1x.jpg 1x, /assets/post-images/capping-image-fidelity-to-2x/devices-with-super-hidpi-display__2x.jpg 2x" class="post-image">
     </picture>
   </div>
   <figcaption>Apple and Google devices with 3x HiDPI displays (excluding "Max" versions)</figcaption>
@@ -215,6 +215,8 @@ Find here a codepen with an example of what I explained until here. Try it and f
 ## 45% lighter images
 
 Using this technique on the product listing page of one of the websites we manage, led to an **image weight reduction of 45%**.
+
+
 
 ## Conclusion
 
