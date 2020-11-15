@@ -1,7 +1,7 @@
 $brand-color: #d90009;
-$brand-color--dm: lighten($brand-color, 15%);
+$brand-color--light15: lighten($brand-color, 15%);
 $alternative-color: #1170a6;
-$alternative-color--dm: lighten($alternative-color, 15%);
+$alternative-color--light15: lighten($alternative-color, 15%);
 
 :root {
   --background-color: #fdfdfd;
@@ -9,6 +9,8 @@ $alternative-color--dm: lighten($alternative-color, 15%);
   --text-color-headfoot: #fff;
   --toolbar-background-color: black;
   --link-color: #{$alternative-color};
+  --link-color-headfoot: #{$brand-color--light15};
+  --site-title-color: #{$brand-color--light15};
   --cta-color: #{$alternative-color};
   --blockquote-border-color: #{$alternative-color};
   --background-color-headfoot: black;
@@ -18,8 +20,8 @@ $alternative-color--dm: lighten($alternative-color, 15%);
     --background-color: #020202;
     --text-color: #eee;
     --text-color-headfoot: #eee;
-    --link-color: #{$alternative-color--dm};
-    --cta-color: #{$alternative-color--dm};
-    --blockquote-border-color: #{$alternative-color--dm};
+    --link-color: #{$alternative-color--light15};
+    --cta-color: #{$alternative-color--light15};
+    --blockquote-border-color: #{$alternative-color--light15};
   }
 }

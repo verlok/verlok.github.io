@@ -37,7 +37,7 @@ body {
 	}
 	&,
 	&:visited {
-		color: $brand-color-on-dark;
+		color: var(--site-title-color);
 	}
 	span {
 		position: relative;
@@ -81,7 +81,7 @@ body {
 	}
 	.page-link {
 		text-decoration: none;
-		color: $brand-color-on-dark;
+		color: var(--link-color-headfoot);;
 		line-height: $base-line-height;
 		// Gaps between nav items, but not on the last one
 		&:not(:last-child) {
