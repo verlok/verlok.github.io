@@ -29,7 +29,7 @@ With the rise of very high density "super retina" displays in newest high-end de
 
 In June 2010, Apple introduces the first Retina display on the iPhone 4. "Retina" is just a fancy name to describe a HiDPI display, that has 2x the pixels horizontally and 2x vertically.
 
-HiDPI <abbr title="also known as">aka</abbr> Retina displays are wonderful when having to render vectors, like fonts and SVG images, but when it comes to images, if we don't provide a specific image for HiDPI displays, our regular image gets strecthed to cover all the additional pixels, which doesn't look good.
+HiDPI <abbr title="also known as">aka</abbr> Retina displays are wonderful when having to render vectors, like fonts and SVG images, but when it comes to images, if we don't provide a specific image for HiDPI displays, our regular image gets stretched to cover all the additional pixels, which doesn't look good.
 
 So the first thing we started doing was to list a normal image to regular 1x displays and a bigger, better defined image, specifically for Retina displays, using the `srcset` attribute and the `x` descriptor. Like this:
 
