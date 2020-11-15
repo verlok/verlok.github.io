@@ -15,10 +15,10 @@ body {
 
 .site-header {
 	flex-shrink: 0;
-	background: $toolbar-background-color;
+	background: var(--background-color-headfoot);
 	border-bottom: 5px solid $brand-color;
 	min-height: $spacing-unit * 1.865;
-	color: var(--text-color-header-footer);
+	color: var(--text-color-headfoot);
 	// Positioning context for the mobile navigation icon -- and the contact menu
 	.wrapper {
 		position: relative;
