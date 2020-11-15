@@ -226,6 +226,10 @@ Using this technique on the product listing page of one of the websites we manag
   <figcaption>Images weight before (left) and after the capping (right)</figcaption>
 </figure>
 
+## More image loading best practices
+
+You can still lazy-load images! One of the best practices to minimize your website’s [Largest Contentful Paint](https://web.dev/lcp/) is to eagerly load the above-the-fold images, lazy load below-the-fold ones. You can do that by using `data-src`, `data-srcet`, `data-sizes` instead of `src`, `srcset`, `sizes` both in the `img` and in the `source` tags. More about [lazy loading responsive images](({% post_url 2020-05-24-lazy-load-responsive-images-in-2020-srcset-sizes-picture-webp %})).
+
 ## Conclusion
 
 Capping image quality on super HiDPI devices is a relatively new best practice in web design with responsive images, but with the growing number of smartphones spoiling super HiDPI displays, the overall download speed of your website will improve, as well as the [LCP](https://web.dev/lcp/) [Web Vital](https://web.dev/vitals/) of your pages and your users experience.
