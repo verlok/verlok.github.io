@@ -11,14 +11,9 @@ $small-font-size:  $base-font-size * 0.875 !default;
 
 // Colors
 $toolbar-background-color: black;
-$text-color-on-dark:       #FFF;
-$text-color:               #111;
-$background-color:         #fdfdfd;
 $brand-color:              #D90009;
 $brand-color-on-dark:      lighten($brand-color, 15%);
 $alternative-color:        #1170A6;
-$link-color:               $alternative-color;
-$link-color-on-dark:       lighten($link-color, 15%);
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);

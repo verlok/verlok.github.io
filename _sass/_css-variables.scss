@@ -1,0 +1,24 @@
+$brand-color: #d90009;
+$brand-color--dm: lighten($brand-color, 15%);
+$alternative-color: #1170a6;
+$alternative-color--dm: lighten($alternative-color, 15%);
+
+:root {
+  --background-color: #fdfdfd;
+  --text-color: #111;
+  --text-color-header-footer: #fff;
+  --toolbar-background-color: black;
+  --link-color: #{$alternative-color};
+  --cta-color: #{$alternative-color};
+  --blockquote-border-color: #{$alternative-color};
+
+  /* Dark mode */
+  @media (prefers-color-scheme: dark) {
+    --background-color: #020202;
+    --text-color: #eee;
+    --text-color-header-footer: #eee;
+    --link-color: #{$alternative-color--dm};
+    --cta-color: #{$alternative-color--dm};
+    --blockquote-border-color: #{$alternative-color--dm};
+  }
+}

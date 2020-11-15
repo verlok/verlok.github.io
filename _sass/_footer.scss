@@ -7,7 +7,7 @@
 	background-color: $toolbar-background-color;
 	border-top: 5px solid $brand-color;
 	padding: $spacing-unit/2 0;
-	color: $text-color-on-dark;
+	color: var(--text-color-header-footer);
 	a {
 		color: $brand-color-on-dark;
 	}

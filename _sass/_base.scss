@@ -28,14 +28,14 @@ html {
 	background-color: $toolbar-background-color;
 	font: $base-font-weight #{$base-font-size}/#{$base-line-height}
 		$base-font-family;
-	color: $text-color;
+	color: var(--text-color);
 	-webkit-text-size-adjust: 100%;
 	font-feature-settings: "kern" 1;
 	font-kerning: normal;
 }
 
 main {
-	background-color: $background-color;
+	background-color: var(--background-color);
 }
 
 /**
@@ -108,7 +108,7 @@ h6 {
  * Links
  */
 a {
-	color: $link-color;
+	color: var(--link-color);
 	text-decoration: none;
 
 	.social-media-list &:hover {

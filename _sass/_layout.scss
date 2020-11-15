@@ -18,7 +18,7 @@ body {
 	background: $toolbar-background-color;
 	border-bottom: 5px solid $brand-color;
 	min-height: $spacing-unit * 1.865;
-	color: $text-color-on-dark;
+	color: var(--text-color-header-footer);
 	// Positioning context for the mobile navigation icon -- and the contact menu
 	.wrapper {
 		position: relative;
@@ -90,7 +90,7 @@ body {
 	}
 	@include media-query($on-palm) {
 		top: $spacing-unit / 2;
-		background-color: $background-color;
+		background-color: var(--background-color);
 		border: 1px solid $grey-color-light;
 		border-radius: 5px;
 		text-align: right;
