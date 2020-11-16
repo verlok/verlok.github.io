@@ -25,17 +25,17 @@ figure {
  * Basic styling
  */
 html {
-	background-color: $toolbar-background-color;
+	background-color: var(--headfoot__background-color);
 	font: $base-font-weight #{$base-font-size}/#{$base-line-height}
 		$base-font-family;
-	color: $text-color;
+	color: var(--base__color);
 	-webkit-text-size-adjust: 100%;
 	font-feature-settings: "kern" 1;
 	font-kerning: normal;
 }
 
 main {
-	background-color: $background-color;
+	background-color: var(--base__background-color);
 }
 
 pre,
@@ -113,7 +113,7 @@ h6 {
  * Links
  */
 a {
-	color: $link-color;
+	color: var(--link__color);
 	text-decoration: none;
 
 	.social-media-list &:hover {
@@ -138,12 +138,10 @@ abbr[title] {
  * Blockquotes
  */
 blockquote {
-	//color: $grey-color;
-	//@include relative-font-size(1.125);
-	border-left: 4px solid $alternative-color;
+	border-left: 4px solid var(--blockquote__border-color);
 	padding: $spacing-unit / 2;
 	font-style: italic;
-	background: $grey-color-light;
+	background: var(--blockquote__bg-color);
 
 	> :last-child {
 		margin-bottom: 0;
@@ -156,7 +154,6 @@ blockquote {
 
 strong {
 	font-weight: normal;
-	//background-color: lighten($alternative-color, 60);
 }
 
 /**
