@@ -18,16 +18,16 @@
 
     &-cta {
         display: inline-block;
-        color: var(--cta-color);
-        border: 1px solid var(--cta-border-color);
-        background: var(--cta-bg-color);
+        color: var(--cta__color);
+        border: 1px solid var(--cta__border-color);
+        background: var(--cta__bg-color);
         cursor: pointer;
         padding: $spacing-unit/4 $spacing-unit/2;
         border-radius: 5px;
         @include relative-font-size(0.9);
         &:hover {
-            color: var(--cta-color--hover);
-            background: var(--cta-bg-color--hover);
+            color: var(--cta__color--hover);
+            background: var(--cta__bg-color--hover);
         }
     }
 

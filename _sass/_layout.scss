@@ -15,10 +15,10 @@ body {
 
 .site-header {
 	flex-shrink: 0;
-	background: var(--background-color-headfoot);
+	background: var(--headfoot__background-color);
 	border-bottom: 5px solid $brand-color;
 	min-height: $spacing-unit * 1.865;
-	color: var(--text-color-headfoot);
+	color: var(--headfoot__text-color);
 	// Positioning context for the mobile navigation icon -- and the contact menu
 	.wrapper {
 		position: relative;
@@ -37,7 +37,7 @@ body {
 	}
 	&,
 	&:visited {
-		color: var(--site-title-color);
+		color: var(--site-title__color);
 	}
 	span {
 		position: relative;
@@ -81,7 +81,7 @@ body {
 	}
 	.page-link {
 		text-decoration: none;
-		color: var(--link-color-headfoot);;
+		color: var(--headfoot__link-color);;
 		line-height: $base-line-height;
 		// Gaps between nav items, but not on the last one
 		&:not(:last-child) {
@@ -90,7 +90,7 @@ body {
 	}
 	@include media-query($on-palm) {
 		top: $spacing-unit / 2;
-		background-color: var(--background-color);
+		background-color: var(--base__background-color);
 		border: 1px solid $grey-color-light;
 		border-radius: 5px;
 		text-align: right;
