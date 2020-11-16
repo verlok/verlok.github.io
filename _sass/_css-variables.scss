@@ -7,11 +7,15 @@ $alternative-color--light15: lighten($alternative-color, 15%);
   --background-color: #fdfdfd;
   --text-color: #111;
   --text-color-headfoot: #fff;
-  --toolbar-background-color: black;
+  --toolbar-background-color: #111;
   --link-color: #{$alternative-color};
   --link-color-headfoot: #{$brand-color--light15};
   --site-title-color: #{$brand-color--light15};
   --cta-color: #{$alternative-color};
+  --cta-color--hover: #{$alternative-color};
+  --cta-border-color: #{$alternative-color};
+  --cta-bg-color: white;
+  --cta-bg-color-hover: #111;
   --blockquote-border-color: #{$alternative-color};
   --background-color-headfoot: black;
 
@@ -22,6 +26,8 @@ $alternative-color--light15: lighten($alternative-color, 15%);
     --text-color-headfoot: #eee;
     --link-color: #{$alternative-color--light15};
     --cta-color: #{$alternative-color--light15};
+    --cta-bg-color: #111;
+  
     --blockquote-border-color: #{$alternative-color--light15};
   }
 }

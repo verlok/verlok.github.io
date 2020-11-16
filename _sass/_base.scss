@@ -135,7 +135,7 @@ abbr[title] {
 blockquote {
 	//color: $grey-color;
 	//@include relative-font-size(1.125);
-	border-left: 4px solid $alternative-color;
+	border-left: 4px solid var(--blockquote-border-color);
 	padding: $spacing-unit / 2;
 	font-style: italic;
 	background: $grey-color-light;
@@ -151,7 +151,6 @@ blockquote {
 
 strong {
 	font-weight: normal;
-	//background-color: lighten($alternative-color, 60);
 }
 
 /**
