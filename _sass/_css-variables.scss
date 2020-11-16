@@ -6,27 +6,26 @@ $alternative-color--light15: lighten($alternative-color, 15%);
 :root {
   --base__background-color: #fdfdfd;
   --base__color: #111;
-  --headfoot__text-color: #fff;
   --link__color: #{$alternative-color};
-  --headfoot__link-color: #{$brand-color--light15};
-  --site-title__color: #{$brand-color--light15};
   --cta__color: #{$alternative-color};
   --cta__color--hover: #{$alternative-color};
   --cta__border-color: #{$alternative-color};
   --cta__bg-color: white;
   --cta__bg-color-hover: #111;
-  --blockquote__border-color: #{$alternative-color};
+  --headfoot__link-color: #{$brand-color--light15};
+  --headfoot__text-color: #fff;
   --headfoot__background-color: black;
+  --site-title__color: #{$brand-color--light15};
+  --blockquote__border-color: #{$alternative-color};
 
   /* Dark mode */
   @media (prefers-color-scheme: dark) {
     --base__background-color: #020202;
     --base__color: #eee;
-    --headfoot__text-color: #eee;
     --link__color: #{$alternative-color--light15};
+    --headfoot__text-color: #eee;
     --cta__color: #{$alternative-color--light15};
     --cta__bg-color: #111;
-  
     --blockquote__border-color: #{$alternative-color--light15};
   }
 }
