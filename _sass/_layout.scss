@@ -15,10 +15,10 @@ body {
 
 .site-header {
 	flex-shrink: 0;
-	background: var(--headfoot__background-color);
-	border-bottom: 5px solid var(--headfoot__border-color);
+	background: $toolbar-background-color;
+	border-bottom: 5px solid $brand-color;
 	min-height: $spacing-unit * 1.865;
-	color: var(--headfoot__text-color);
+	color: $text-color-on-dark;
 	// Positioning context for the mobile navigation icon -- and the contact menu
 	.wrapper {
 		position: relative;
@@ -37,7 +37,25 @@ body {
 	}
 	&,
 	&:visited {
-		color: var(--site-title__color);
+		color: $brand-color-on-dark;
+	}
+	span {
+		position: relative;
+	}
+	span:after {
+		content: "";
+		position: absolute;
+		top: 10%;
+		left: 0;
+		right: 0;
+		bottom: 10%;
+		z-index: 1;
+		background-image: linear-gradient(
+			to top,
+			rgba(0, 0, 0, 0.5),
+			rgba(0, 0, 0, 0) 50%
+		);
+		transition: opacity 0.3s;
 	}
 	&:focus,
 	&:hover {
@@ -63,7 +81,7 @@ body {
 	}
 	.page-link {
 		text-decoration: none;
-		color: var(--headfoot__link-color);;
+		color: $brand-color-on-dark;
 		line-height: $base-line-height;
 		// Gaps between nav items, but not on the last one
 		&:not(:last-child) {
@@ -72,8 +90,8 @@ body {
 	}
 	@include media-query($on-palm) {
 		top: $spacing-unit / 2;
-		background-color: var(--menubutton__bg-color);
-		border: 1px solid var(--menubutton__border-color);
+		background-color: $background-color;
+		border: 1px solid $grey-color-light;
 		border-radius: 5px;
 		text-align: right;
 		label[for="nav-trigger"] {
@@ -93,7 +111,7 @@ body {
 			padding-top: 10px;
 			text-align: center;
 			> svg path {
-				fill: var(--menubutton__fill-color);
+				fill: $grey-color-dark;
 			}
 		}
 		input ~ .trigger {

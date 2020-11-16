@@ -9,7 +9,7 @@ tags: [es2015, modules, javascript, gulp, rollup]
 
 Let's see how to write a JavaScript library using [ES2015](https://babeljs.io/learn-es2015/) transpiled with [Babel](https://babeljs.io/), featuring [ES modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) packed up using [Rollup](https://rollupjs.org/) via [Gulp](gulp.js), and [Jest](https://facebook.github.io/jest/) to test your code.
 
-Here I'm sharing the experience I had while developing my [vanilla-lazyload](https://github.com/verlok/lazyload) script, since at the time I didn't find anything that explained how to use those libraries together, especially **Rollup and Jest**.
+Here I'm sharing the experience I had while developing my [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload) script, since at the time I didn't find anything that explained how to use those libraries together, especially **Rollup and Jest**.
 
 
 ## Installing Gulp

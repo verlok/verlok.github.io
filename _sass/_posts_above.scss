@@ -8,27 +8,36 @@
 
     &-list p a,
     p > a {
+        text-shadow: 0 0 1px white, 0 0 2px white;
         background-image: linear-gradient(to top, transparent 10%, currentColor 11%, currentColor 12%, transparent 13%);
     }
 
     &-image {
+        position: absolute;
         width: 100%;
         height: auto;
+        top: 0; 
+        left: 0;
+
+        &-spacer {
+            position: relative;
+            padding-bottom: 66.66667%;
+            background-color: #EEE;
+        }
     }
 
     &-cta {
         display: inline-block;
-        color: var(--cta__color);
-        border: 1px solid var(--cta__border-color);
-        background: var(--cta__bg-color);
+        color: $alternative-color;
+        border: 1px solid $alternative-color;
+        background: white;
         cursor: pointer;
         padding: $spacing-unit/4 $spacing-unit/2;
         border-radius: 5px;
         @include relative-font-size(0.9);
         &:hover {
-            color: var(--cta__color--hover);
-            background: var(--cta__bg-color--hover);
-            border-color: var(--cta__border-color--hover);
+            color: white;
+            background: $alternative-color;
         }
     }
 
@@ -40,7 +49,7 @@
         // LINK TO DETAIL PAGE 
         &-link {
             line-height: 1.2;
-            color: var(--special-link__color);
+            color: $brand-color;
             margin-bottom: $spacing-unit/2;
             letter-spacing: -1px;
         }
@@ -60,10 +69,11 @@
 
     &-title {
         @include relative-font-size(2.25);
-        color: var(--special-link__color);
+        color: $brand-color;
         font-weight: bold;
         letter-spacing: -1px;
         line-height: 0.9;
+        text-transform: uppercase;
     }
     &-header {
         margin-bottom: $spacing-unit;
@@ -74,7 +84,7 @@
     }
     &-meta {
         @include relative-font-size(0.9);
-        color: var(--post-meta__color);
+        color: $grey-color;
     } 
     
     // POST CONTENT 

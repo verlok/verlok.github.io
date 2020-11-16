@@ -2,24 +2,24 @@
  * Icons
  */
 .icon {
-  > svg {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    vertical-align: middle;
-  }
+    > svg {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+    }
 
-  path {
-    fill: var(--icon__fill-color);
-  }
+    path {
+		fill: $grey-color;
+	}
 }
 
 .social-media-list {
-  .icon {
-    padding-right: 5px;
-  }
+	.icon {
+		padding-right: 5px;
+	}
 
-  li + li {
-    padding-top: 5px;
-  }
+	li + li {
+		padding-top: 5px;
+	}
 }

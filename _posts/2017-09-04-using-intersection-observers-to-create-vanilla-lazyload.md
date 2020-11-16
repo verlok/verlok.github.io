@@ -9,12 +9,12 @@ tags: [intersection observer API, lazy load]
 
 In August 2017 a new exciting browser API finally [gained](https://hacks.mozilla.org/2017/08/intersection-observer-comes-to-firefox/) quite a [wide support](https://caniuse.com/#search=IntersectionObserver): the [Intersection Observer](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API), which we can use to know when two DOM elements intersect, or when a given DOM element **enters the browser viewport**. Lazy loading of images is just the case.
 
-About [3 years]({{ site.baseurl }}{% post_url 2014-11-20-a-new-lazyload-to-improve-your-website-performance %}) and 500 commits ago, I gave birth to a new vanilla javascript [lazy load script](https://github.com/verlok/lazyload), currently known as `vanilla-lazyload` on [npm](https://www.npmjs.com/package/vanilla-lazyload) and [cdnjs](https://cdnjs.com/libraries/vanilla-lazyload), and starred by **1,135 people on GitHub**.
+About [3 years]({{ site.baseurl }}{% post_url 2014-11-20-a-new-lazyload-to-improve-your-website-performance %}) and 500 commits ago, I gave birth to a new vanilla javascript [lazy load script](https://github.com/verlok/vanilla-lazyload), currently known as `vanilla-lazyload` on [npm](https://www.npmjs.com/package/vanilla-lazyload) and [cdnjs](https://cdnjs.com/libraries/vanilla-lazyload), and starred by **1,135 people on GitHub**.
 
 
 ## The switch to Intersection Observer
 
-As the community around my script started to grow, [some](https://github.com/si14) [members](https://github.com/ricardobrandao) requested it to support the Intersection Observer API, amongst [other enhancements](https://github.com/verlok/lazyload/issues?q=label%3Aenhancement+is%3Aclosed).
+As the community around my script started to grow, [some](https://github.com/si14) [members](https://github.com/ricardobrandao) requested it to support the Intersection Observer API, amongst [other enhancements](https://github.com/verlok/vanilla-lazyload/issues?q=label%3Aenhancement+is%3Aclosed).
 
 So I decided to make my script's fans happy, and I did it. The resulting source code is **40% smaller**, and vanilla-lazyload is now **much faster** than its previous version. (by the way, if you know how to measure a script performance precisely, please comment)
 
@@ -107,11 +107,11 @@ if (!("IntersectionObserver" in window)) {
 }
 ```
 
-In my case, on browsers where `IntersectionObserver` is not supported, LazyLoad will load **all the images at once**. Therefore, if you need to load lots of images and your user base is browsing with a consistent share of older browsers, you should use LazyLoad a version less than 9. See [changelog](https://github.com/verlok/lazyload/blob/master/CHANGELOG.md) for more details.
+In my case, on browsers where `IntersectionObserver` is not supported, LazyLoad will load **all the images at once**. Therefore, if you need to load lots of images and your user base is browsing with a consistent share of older browsers, you should use LazyLoad a version less than 9. See [changelog](https://github.com/verlok/vanilla-lazyload/blob/master/CHANGELOG.md) for more details.
 
 
 ## Conclusion
 
 That's it! Intersection Observer makes your code much smaller, faster and more legible. If you're not using it already, you should definetly start playing around with it.
 
-And don't forget, if you have a very long page stuffed with images and other content, you should load them lazily using a lazy load script, and your best choice is [vanilla-lazyload](https://github.com/verlok/lazyload)!
+And don't forget, if you have a very long page stuffed with images and other content, you should load them lazily using a lazy load script, and your best choice is [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload)!
