@@ -39,7 +39,7 @@ body {
 	&:visited {
 		color: var(--site-title__color);
 	}
-	span {
+	/* span {
 		position: relative;
 	}
 	span:after {
@@ -52,11 +52,11 @@ body {
 		z-index: 1;
 		background-image: linear-gradient(
 			to top,
-			rgba(0, 0, 0, 0.5),
-			rgba(0, 0, 0, 0) 50%
+			rgba(var(--headfoot__background-color), 0.5),
+			rgba(var(--headfoot__background-color), 0) 50%
 		);
 		transition: opacity 0.3s;
-	}
+	} */
 	&:focus,
 	&:hover {
 		text-decoration: none;
