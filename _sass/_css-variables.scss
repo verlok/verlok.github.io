@@ -16,6 +16,7 @@ $white-color: #fdfdfd;
 :root {
   --base__background-color: #{$white-color};
   --base__color: #111;
+  --post-meta__color: #{$grey-color};
   --link__color: #{$alternative-color};
   --cta__color: #{$alternative-color};
   --cta__color--hover: #{$alternative-color};
@@ -36,6 +37,7 @@ $white-color: #fdfdfd;
   --menubutton__bg-color: #333;
   --menubutton__border-color: #{$grey-color--dark15};
   --menubutton__fill-color: #{$white-color};
+  --icon__fill-color: #{$grey-color};
 
   /* Dark mode */
   @media (prefers-color-scheme: dark) {
