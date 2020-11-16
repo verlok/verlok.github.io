@@ -4,12 +4,12 @@
 
  .site-footer {
 	flex-shrink: 0;
-	background-color: $toolbar-background-color;
-	border-top: 5px solid $brand-color;
+	background-color: var(--headfoot__background-color);
+	border-top: 5px solid var(--headfoot__border-color);
 	padding: $spacing-unit/2 0;
-	color: $text-color-on-dark;
+	color: var(--headfoot__text-color);
 	a {
-		color: $brand-color-on-dark;
+		color: var(--headfoot__link-color);
 	}
 }
 

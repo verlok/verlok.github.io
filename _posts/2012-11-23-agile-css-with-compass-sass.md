@@ -22,6 +22,6 @@ This time my speech was about agile web page styling (CSS) with Compass/SASS.
 
 Here are the slides shown during the speech:
 
-<iframe src="https://www.slideshare.net/slideshow/embed_code/15433271" width="710" height="572" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe>
+<iframe src="http://www.slideshare.net/slideshow/embed_code/15433271" width="710" height="572" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe>
 
-**[View on SlideShare](https://www.slideshare.net/verlok/agile-css-development-with-compass "Agile css development with Compass/SASS on SlideShare") ** from **[Andrea Verlicchi](https://www.slideshare.net/verlok)**
+**[View on SlideShare](http://www.slideshare.net/verlok/agile-css-development-with-compass "Agile css development with Compass/SASS on SlideShare") ** from **[Andrea Verlicchi](http://www.slideshare.net/verlok)**

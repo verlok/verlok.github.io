@@ -11,11 +11,7 @@ image: microsoft-edge-page-screenshot__2x.jpg
 
 Here’s a practical guide on how to productively use the new Chromium-based Microsoft Edge browser: download it, change the default search engine, install extensions, and more.
 
-<figure>
-  <div class="post-image-spacer" style="background-color: #a8fdfe">
-    <img alt="Microsoft Edge page screenshot" src="/assets/post-images/microsoft-edge-page-screenshot__1x.jpg" srcset="/assets/post-images/microsoft-edge-page-screenshot__1x.jpg 1x, /assets/post-images/microsoft-edge-page-screenshot__2x.jpg 2x" class="post-image">
-  </div>
-</figure>
+<img alt="Microsoft Edge page screenshot" src="/assets/post-images/microsoft-edge-page-screenshot__ph.png" data-src="/assets/post-images/microsoft-edge-page-screenshot__1x.jpg" data-srcset="/assets/post-images/microsoft-edge-page-screenshot__1x.jpg 1x, /assets/post-images/microsoft-edge-page-screenshot__2x.jpg 2x" class="lazy post-image">
 
 ## Index
 
@@ -53,7 +49,7 @@ Microsoft Edge has its own marketplace for extensions, but on Microsoft Edge you
 When you visit the Chrome Web Store, Edge shows a blue bar on top telling you that you can install extensions from there. Just click the "Allow extensions from other stores" button and you're good to go.
 
 
-## How to set the dark theme
+## Ow to set the dark theme
 
 If you like dark themes on development stuff like I do, you can activate the dark theme from the Settings panel, Appearance tab.
 

@@ -25,4 +25,4 @@ defaults:
       type: "posts" # previously `post` in Jekyll 2.2.
     values:
       permalink: /:title/
-plugins: [jekyll-paginate]
+gems: [jekyll-paginate]

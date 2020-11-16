@@ -13,7 +13,7 @@ code {
 
 code.highlighter-rouge {
 	padding: 1px 4px;
-	background: $grey-color-light;
+	background: var(--inline-code__bg-color);
 	border-radius: 3px;
 }
 
@@ -58,13 +58,6 @@ div.highlighter-rouge {
 	@extend %language;
 	content: "JSON";
 	background: #1b72be;
-	color: white;
-}
-
-.language-scss::before {
-	@extend %language;
-	content: "SCSS";
-	background: #ff2e9f;
 	color: white;
 }
 

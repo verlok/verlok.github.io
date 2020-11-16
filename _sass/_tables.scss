@@ -6,7 +6,7 @@ table {
 
 td,
 th {
-    border: 1px solid $tables-border-color;
+    border: 1px solid var(--table__border-color);
     padding: 0.3em;
     vertical-align: top;
     font-size: 90%;
@@ -14,6 +14,5 @@ th {
 
 th {
     text-align: left;
-    background-color: $grey-color-light;
-    //color: white;
+    background-color: var(--table-header__bg-color);
 }

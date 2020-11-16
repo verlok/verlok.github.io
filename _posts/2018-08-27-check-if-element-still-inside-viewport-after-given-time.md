@@ -7,7 +7,7 @@ categories:
 tags: [javascript, IntersectionObserver, timeout, lazy loading]
 ---
 
-What would you do if somebody asked you to load a DOM element only if it **stays inside the viewport for a given time**? You would use [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload), wouldn't you? 😉 This is exactly what the GitHub community asked for as new feature in LazyLoad, to **avoid loading elements which users skipped** by **scrolling fast beyond them**. In this post, I'd like to share the solution with you.
+What would you do if somebody asked you to load a DOM element only if it **stays inside the viewport for a given time**? You would use [vanilla-lazyload](https://github.com/verlok/lazyload), wouldn't you? 😉 This is exactly what the GitHub community asked for as new feature in LazyLoad, to **avoid loading elements which users skipped** by **scrolling fast beyond them**. In this post, I'd like to share the solution with you.
 
 There are a couple of ways of doing this. The first one is check the element's posistion over time, the second one leverages `IntersectionObserver`.
 
@@ -17,7 +17,7 @@ This way is much slower that using `IntersectionObserver` because it implies:
 
 - watching browser’s `scroll` and `resize` events to call a (throttled) callback
 - in the callback, loop through every watched element and call a `isInsideViewport` function to check if they are inside the viewport 
-- the `isInsideViewport` function then checks a [bunch of things](https://github.com/verlok/vanilla-lazyload/blob/support/8.x/src/lazyload.viewport.js) like the element's `getBoundingClientRect`, the window's `innerHeight`, `pageYOffset`, etc. and returns a boolean
+- the `isInsideViewport` function then checks a [bunch of things](https://github.com/verlok/lazyload/blob/support/8.x/src/lazyload.viewport.js) like the element's `getBoundingClientRect`, the window's `innerHeight`, `pageYOffset`, etc. and returns a boolean
 
 All of these only to know when elements enter the viewport.
 
@@ -54,7 +54,7 @@ Says MDN:
 
 > Either a single number or an array of numbers which indicate at what percentage of the target's visibility the observer's callback should be executed. If you only want to detect when visibility passes the 50% mark, you can use a value of 0.5. If you want the callback run every time visibility passes another 25%, you would specify the array [0, 0.25, 0.5, 0.75, 1]. The default is 0 (meaning as soon as even one pixel is visible, the callback will be run). A value of 1.0 means that the threshold isn't considered passed until every pixel is visible.
 
-After I fiddled around with the option and tried the result in a specific [delay load demo](https://github.com/verlok/vanilla-lazyload/blob/master/demos/delay_test.html), I found out that passing `0` to the `thresholds` option (which is the default value), the `onIntersection` function is called also when the element _leaves_ the viewport.
+After I fiddled around with the option and tried the result in a specific [delay load demo](https://github.com/verlok/lazyload/blob/master/demos/delay_test.html), I found out that passing `0` to the `thresholds` option (which is the default value), the `onIntersection` function is called also when the element _leaves_ the viewport.
 
 ### Ultimate solution
 
@@ -73,7 +73,7 @@ That's linear and easy! 😊
 
 ## Show me the code!
 
-You can find the full code in vanilla-lazyload's [`lazyload.js`](https://github.com/verlok/vanilla-lazyload/blob/master/src/lazyload.js) file + related imports. If you don't feel like jumping from one file to another, you could also open the bundled file [`lazyload.es2015.js`](https://github.com/verlok/vanilla-lazyload/blob/master/dist/lazyload.es2015.js) from the `dist` folder. 
+You can find the full code in vanilla-lazyload's [`lazyload.js`](https://github.com/verlok/lazyload/blob/master/src/lazyload.js) file + related imports. If you don't feel like jumping from one file to another, you could also open the bundled file [`lazyload.es2015.js`](https://github.com/verlok/lazyload/blob/master/dist/lazyload.es2015.js) from the `dist` folder. 
 
 A **simplified version** of the code is provided below for your convenience.
 
@@ -204,4 +204,4 @@ For more information about how to create LazyLoad using `IntersectionObserver`, 
 
 Is there something you would have done differently, or do you agree with what I did here? Please let me know in the comments!
 
-If you want to show some love to LazyLoad, [star it on GitHub](https://github.com/verlok/vanilla-lazyload)! ⭐
+If you want to show some love to LazyLoad, [star it on GitHub](https://github.com/verlok/lazyload)! ⭐

@@ -9,11 +9,11 @@ tags: [srcset, responsive images, lazy load]
 
 It's now possible (yes, today!) to have **lazy loading** on **responsive images** to make our images to adapt to users screens _and_ keep our website fast. YAY! \o/ In this article, we'll see what markup we need to write and which Javascript libraries we're gonna need to do that.
 
-## Old article! 👀
+## Updated version
 
-**Hold on! You're reading an old version of this article.**
+> **Hold on!** You're reading an old version of this article.
 
-👉 [Read the **2020 update**]({% post_url 2020-05-24-lazy-load-responsive-images-in-2020-srcset-sizes-picture-webp %})
+&rarr; [Read the **2019 update**]({% post_url 2019-03-01-lazy-load-responsive-images-in-2019-srcset-sizes-more %})
 
 ## Responsive lazy what?
 
@@ -61,7 +61,7 @@ Note that we're using the `img` HTML tag and **not** the `picture`. The latter i
 
 ### Script inclusion
 
-First of all, we need a library to load the lazy images as they enter the viewport. There are a couple of libraries to have your images loaded lazily, but to have lazy loading of _responsive_ images you're gonna need the one that I wrote: [LazyLoad](http://verlok.github.io/vanilla-lazyload/) (read about all its advantages [here]({% post_url 2014-11-20-a-new-lazyload-to-improve-your-website-performance %})).
+First of all, we need a library to load the lazy images as they enter the viewport. There are a couple of libraries to have your images loaded lazily, but to have lazy loading of _responsive_ images you're gonna need the one that I wrote: [LazyLoad](http://verlok.github.io/lazyload/) (read about all its advantages [here]({% post_url 2014-11-20-a-new-lazyload-to-improve-your-website-performance %})).
 
 Furthermore, as not all browser are supporting responsive images, we need to include Filament Group's [picturefill](https://github.com/scottjehl/picturefill) library, a polyfill which allows us fill the gap and make responsive images work in all browsers. Note that this library won't be necessary when all browsers you need to support will support responsive images.
 
@@ -92,7 +92,7 @@ We can do all of that using this command:
 });
 ```
 
-For further reference about what we did here, see [LazyLoad documentation](http://verlok.github.io/vanilla-lazyload/).
+For further reference about what we did here, see [LazyLoad documentation](http://verlok.github.io/lazyload/).
 
 ### The stylesheet
 
