@@ -2,6 +2,8 @@ $brand-color: #d90009;
 $brand-color--light15: lighten($brand-color, 15%);
 $alternative-color: #1170a6;
 $alternative-color--light15: lighten($alternative-color, 15%);
+$alternative-color--light30: lighten($alternative-color, 30%);
+$alternative-color--light55: lighten($alternative-color, 55%);
 
 :root {
   --base__background-color: #fdfdfd;
@@ -10,8 +12,9 @@ $alternative-color--light15: lighten($alternative-color, 15%);
   --cta__color: #{$alternative-color};
   --cta__color--hover: #{$alternative-color};
   --cta__border-color: #{$alternative-color};
+  --cta__border-color--hover: #{$alternative-color};
   --cta__bg-color: white;
-  --cta__bg-color-hover: #111;
+  --cta__bg-color--hover: $alternative-color--light55;
   --headfoot__background-color: #222;
   --headfoot__link-color: #{$brand-color--light15};
   --headfoot__text-color: #fff;
@@ -25,7 +28,11 @@ $alternative-color--light15: lighten($alternative-color, 15%);
     --link__color: #{$alternative-color--light15};
     --headfoot__text-color: #eee;
     --cta__color: #{$alternative-color--light15};
-    --cta__bg-color: #111;
+    --cta__color--hover: #{$alternative-color--light30};
+    --cta__border-color: #{$alternative-color};
+    --cta__border-color--hover: #{$alternative-color--light15};
+    --cta__bg-color: #020202;
+    --cta__bg-color--hover: #222;
     --blockquote__border-color: #{$alternative-color--light15};
     --headfoot__background-color: #333;
   }
