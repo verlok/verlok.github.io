@@ -8,7 +8,6 @@
 
     &-list p a,
     p > a {
-        text-shadow: 0 0 1px white, 0 0 2px white;
         background-image: linear-gradient(to top, transparent 10%, currentColor 11%, currentColor 12%, transparent 13%);
     }
 
@@ -19,16 +18,17 @@
 
     &-cta {
         display: inline-block;
-        color: $alternative-color;
-        border: 1px solid $alternative-color;
-        background: white;
+        color: var(--cta__color);
+        border: 1px solid var(--cta__border-color);
+        background: var(--cta__bg-color);
         cursor: pointer;
         padding: $spacing-unit/4 $spacing-unit/2;
         border-radius: 5px;
         @include relative-font-size(0.9);
         &:hover {
-            color: white;
-            background: $alternative-color;
+            color: var(--cta__color--hover);
+            background: var(--cta__bg-color--hover);
+            border-color: var(--cta__border-color--hover);
         }
     }
 
@@ -40,7 +40,7 @@
         // LINK TO DETAIL PAGE 
         &-link {
             line-height: 1.2;
-            color: $brand-color;
+            color: var(--special-link__color);
             margin-bottom: $spacing-unit/2;
             letter-spacing: -1px;
         }
@@ -60,7 +60,7 @@
 
     &-title {
         @include relative-font-size(2.25);
-        color: $brand-color;
+        color: var(--special-link__color);
         font-weight: bold;
         letter-spacing: -1px;
         line-height: 0.9;
@@ -74,7 +74,7 @@
     }
     &-meta {
         @include relative-font-size(0.9);
-        color: $grey-color;
+        color: var(--post-meta__color);
     } 
     
     // POST CONTENT 

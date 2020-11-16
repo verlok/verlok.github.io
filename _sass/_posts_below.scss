@@ -38,7 +38,7 @@
             margin-bottom: $spacing-unit/2;
             float: left;
             a {
-                color: $brand-color;
+                color: var(--special-link__color);
             }
         }
     }
