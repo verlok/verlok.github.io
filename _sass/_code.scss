@@ -13,7 +13,7 @@ code {
 
 code.highlighter-rouge {
 	padding: 1px 4px;
-	background: $grey-color-light;
+	background: var(--inline-code__bg-color);
 	border-radius: 3px;
 }
 

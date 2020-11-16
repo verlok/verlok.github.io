@@ -133,12 +133,10 @@ abbr[title] {
  * Blockquotes
  */
 blockquote {
-	//color: $grey-color;
-	//@include relative-font-size(1.125);
 	border-left: 4px solid var(--blockquote__border-color);
 	padding: $spacing-unit / 2;
 	font-style: italic;
-	background: $grey-color-light;
+	background: var(--blockquote__bg-color);
 
 	> :last-child {
 		margin-bottom: 0;

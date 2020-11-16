@@ -16,7 +16,7 @@ body {
 .site-header {
 	flex-shrink: 0;
 	background: var(--headfoot__background-color);
-	border-bottom: 5px solid $brand-color;
+	border-bottom: 5px solid var(--headfoot__border-color);
 	min-height: $spacing-unit * 1.865;
 	color: var(--headfoot__text-color);
 	// Positioning context for the mobile navigation icon -- and the contact menu
@@ -72,8 +72,8 @@ body {
 	}
 	@include media-query($on-palm) {
 		top: $spacing-unit / 2;
-		background-color: var(--base__background-color);
-		border: 1px solid $grey-color-light;
+		background-color: var(--menubutton__bg-color);
+		border: 1px solid var(--menubutton__border-color);
 		border-radius: 5px;
 		text-align: right;
 		label[for="nav-trigger"] {
@@ -93,7 +93,7 @@ body {
 			padding-top: 10px;
 			text-align: center;
 			> svg path {
-				fill: $grey-color-dark;
+				fill: var(--menubutton__fill-color);
 			}
 		}
 		input ~ .trigger {

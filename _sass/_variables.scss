@@ -13,14 +13,9 @@ $small-font-size:  $base-font-size * 0.875 !default;
 $brand-color:              #D90009;
 
 $grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 15%);
 
 // Width of the content area
 $content-width:    600px;
 
 // MQ Breakpoints
 $on-palm:          420px;
-
-// Tables
-$tables-border-color: $grey-color;
