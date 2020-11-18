@@ -9,7 +9,7 @@
     figcaption {
         text-align: center;
         margin-top: $spacing-unit/4;
-        color: #666;
+        color: var(--post-meta__color);
     }
     
     // POST CONTENT 
