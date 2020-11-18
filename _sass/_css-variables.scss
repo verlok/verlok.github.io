@@ -7,6 +7,14 @@ $alternative-color--light15: lighten($alternative-color, 15%);
 $alternative-color--light30: lighten($alternative-color, 30%);
 $alternative-color--light55: lighten($alternative-color, 55%);
 
+$brand-darkmode-color: #FF27A6;
+$brand-darkmode-color--dark30: darken($brand-darkmode-color, 30%);
+
+$alternative-darkmode-color: #6B40FF;
+$alternative-darkmode-color--light15: lighten($alternative-darkmode-color, 15%);
+$alternative-darkmode-color--light30: lighten($alternative-darkmode-color, 30%);
+$alternative-darkmode-color--light55: lighten($alternative-darkmode-color, 55%);
+
 $grey-color:       #828282;
 $grey-color--light40: lighten($grey-color, 40%);
 $grey-color--dark15:  darken($grey-color, 15%);
@@ -45,19 +53,22 @@ $white-color: #fdfdfd;
   @media (prefers-color-scheme: dark) {
     --base__background-color: #020202;
     --base__color: #eee;
-    --link__color: #{$alternative-color--light15};
-    --special-link__color: #{$brand-color--light15};
+    --link__color: #{$alternative-darkmode-color--light15};
+    --special-link__color: #{$brand-darkmode-color};
     --headfoot__text-color: #eee;
-    --headfoot__border-color: #{$brand-color--dark30};
-    --cta__color: #{$alternative-color--light15};
-    --cta__color--hover: #{$alternative-color--light30};
-    --cta__border-color: #{$alternative-color};
-    --cta__border-color--hover: #{$alternative-color--light15};
+    --headfoot__border-color: #{$brand-darkmode-color--dark30};
+    --headfoot__link-color: #{$alternative-darkmode-color--light15};
+    --site-title__color: #{$brand-darkmode-color};
+    --cta__color: #{$alternative-darkmode-color--light15};
+    --cta__color--hover: #{$alternative-darkmode-color--light30};
+    --cta__border-color: #{$alternative-darkmode-color};
+    --cta__border-color--hover: #{$alternative-darkmode-color--light15};
     --cta__bg-color: #020202;
     --cta__bg-color--hover: #222;
     --blockquote__bg-color: #{$grey-color--dark25};
-    --blockquote__border-color: #{$alternative-color--light15};
+    --blockquote__border-color: #{$alternative-darkmode-color--light15};
     --inline-code__bg-color: #{$grey-color--dark25};
     --table-header__bg-color: #{$grey-color--dark25};
+
   }
 }
