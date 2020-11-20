@@ -220,6 +220,11 @@ Using this technique on the product listing page of one of the websites we manag
   <figcaption>Images weight before (left) and after the capping (right)</figcaption>
 </figure>
 
+<div class="videoWrapper">
+    <iframe class="lazy" width="560" height="315" data-src="https://www.youtube.com/embed/c2frAgQ_8lQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+
 ## Demos
 
 I’ve created a [GitHub repo](https://github.com/verlok/cap-image-fidelity-to-2x) and a [Codepen](https://codepen.io/verlok/pen/wvWRgEG). Feel free to try and fork them.
