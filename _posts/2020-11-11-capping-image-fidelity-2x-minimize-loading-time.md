@@ -229,6 +229,14 @@ Using this technique on the product listing page of one of the websites we manag
 
 I’ve created a [GitHub repo](https://github.com/verlok/cap-image-fidelity-to-2x) and a [Codepen](https://codepen.io/verlok/pen/wvWRgEG). Feel free to try and fork them.
 
+Single image with fidelity capped to 2x:
+
+- [GitHub repo](https://github.com/verlok/cap-image-fidelity-to-2x)
+- [Live here](https://www.andreaverlicchi.eu/cap-image-fidelity-to-2x/)
+- [Codepen](https://codepen.io/verlok/pen/wvWRgEG)
+
+Or try [the page shown in the video above](https://faulty-driving.surge.sh/).
+
 🌟 [Open the live demo](https://www.andreaverlicchi.eu/cap-image-fidelity-to-2x/) 💻
 
 ## Psst! You can still lazy-load images
