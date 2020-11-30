@@ -11,8 +11,8 @@ image: clever-way-webp-modern-jpg-ie__2x.jpg
 Before the day Safari started support WebP images, we were forced to use the `picture` tag to serve WebP images to browsers supporting it. Today all modern browsers support WebP, so there's probably a clever way to do that using a single tag: `img`.
 
 <figure>
-  <div class="post-image-spacer" style="background-color: #eee">
-    <img alt="Capping image fidelity at 2x" src="/assets/post-images/clever-way-webp-modern-jpg-ie/clever-way-webp-modern-jpg-ie__2x.jpg" srcset="/assets/post-images/clever-way-webp-modern-jpg-ie/clever-way-webp-modern-jpg-ie__1x.webp 1x, /assets/post-images/clever-way-webp-modern-jpg-ie/clever-way-webp-modern-jpg-ie__2x.webp 2x" class="post-image">
+  <div class="post-image-spacer" style="background-color: #1e1e1e">
+    <img alt="A clever way to serve WebP images to modern browsers only" src="/assets/post-images/clever-way-webp-modern-jpg-ie/clever-way-webp-modern-jpg-ie__2x.jpg" srcset="/assets/post-images/clever-way-webp-modern-jpg-ie/clever-way-webp-modern-jpg-ie__1x.webp 1x, /assets/post-images/clever-way-webp-modern-jpg-ie/clever-way-webp-modern-jpg-ie__2x.webp 2x" class="post-image">
   </div>
   <figcaption>A clever way to serve WebP images to modern browsers only</figcaption>
 </figure>
