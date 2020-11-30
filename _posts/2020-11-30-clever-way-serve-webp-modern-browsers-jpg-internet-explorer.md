@@ -17,7 +17,12 @@ Before the day Safari started support WebP images, we were forced to use the `pi
   <figcaption>A clever way to serve WebP images to modern browsers only</figcaption>
 </figure>
 
-The old way to do that was:
+
+## How we did it before
+
+The old way to do that was using a `picture` tag containing the regular `img` tag with both `src` and `srcset` attributes for browsers not supporting WebP, and a sibling `source` tag - marked with the `type="image/webp"` - containing the `srcset` for browsers accepting the WebP image format.
+
+Long story short, this:
 
 ```html
 <picture>
@@ -39,7 +44,11 @@ The old way to do that was:
 </picture>
 ```
 
-Now we can get rid of the `picture` tag and just do:
+## But Safari is more modern now
+
+Now that all modern browsers support WebP, we can assume that all browsers that support the `srcset` attribute also support WebP. So we can get rid of the `picture` tag and use a single `img` tag.
+
+Like this:
 
 ```html
 <img
@@ -52,13 +61,13 @@ Now we can get rid of the `picture` tag and just do:
 />
 ```
 
-## Why's that?
+Legacy browsers fallback to the `src` attribute, and they get the Jpg image. Simple as that.
 
-Modern browsers that understand the `srcset` attribute also support WebP. Legacy browsers will fallback to the `src` attribute, and they'll get the Jpg image. Simple as that.
 
 ## Compatibility
 
 If you're supporting versions of iOS older than 14, you probably want to continue using the `picture` tag to to so. This depends on the audience you're targeting. Find more about your audience using Google Analytics data.
+
 
 ## Demo?
 
