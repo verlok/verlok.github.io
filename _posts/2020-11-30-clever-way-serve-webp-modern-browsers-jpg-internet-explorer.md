@@ -5,7 +5,7 @@ date: 2020-11-29 23:00:00 +02:00
 categories:
     - techniques
 tags: [performance, images]
-image: clever-way-webp-modern-jpg-ie__2x.jpg
+image: clever-way-webp-modern-jpg-ie/clever-way-webp-modern-jpg-ie__2x.jpg
 ---
 
 Before the day Safari started support WebP images, we were forced to use the `picture` tag to serve WebP images to browsers supporting it. Today all modern browsers support WebP, so there's probably a clever way to do that using a single tag: `img`.

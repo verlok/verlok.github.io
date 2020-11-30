@@ -10,7 +10,7 @@ tags:
         responsive-images,
         image fidelity capping,
     ]
-image: capping-image-fidelity__2x.jpg
+image: capping-image-fidelity-to-2x/capping-image-fidelity__2x.jpg
 ---
 
 With the rise of very high density “super retina” displays in the newest high-end devices, capping image fidelity to 2x leads to a big improvement in terms of rendering speed, and no perceivable quality loss for your users. Here’s a new best practice on how to do that.
