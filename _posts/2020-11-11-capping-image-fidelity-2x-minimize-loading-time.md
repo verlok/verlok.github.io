@@ -274,7 +274,7 @@ One of the best practices to minimize your website’s [Largest Contentful Paint
 </picture>
 ```
 
-More about [lazy loading responsive images](({% post_url 2020-05-24-lazy-load-responsive-images-in-2020-srcset-sizes-picture-webp %})).
+More about [lazy loading responsive images]({% post_url 2020-05-24-lazy-load-responsive-images-in-2020-srcset-sizes-picture-webp %}).
 
 ## To wrap up
 
