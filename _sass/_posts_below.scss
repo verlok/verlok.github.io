@@ -23,7 +23,17 @@
     }
 
     &-footer {
-        @extend %clearfix;
+        &-navbar {
+            display: flex;
+            justify-content: space-between;
+            margin-top: $spacing-unit;
+        }
+    }
+
+    &-coffee {
+        &-cta {
+            margin-bottom: $spacing-unit;
+        }
     }
 
     &-author {
@@ -31,23 +41,6 @@
             float: left; 
             margin-right: $spacing-unit/2;
         }
-    }
-
-    &-back {
-        &--bottom {
-            margin-bottom: $spacing-unit/2;
-            float: left;
-            a {
-                color: var(--special-link__color);
-            }
-        }
-    }
-
-    &-share {
-        float: right;
-        position: relative;
-        top: -$spacing-unit/2;
-        margin-bottom: $spacing-unit/2;
     }
 
     .noShare &-share {

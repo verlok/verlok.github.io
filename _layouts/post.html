@@ -20,16 +20,18 @@ layout: default
     {{ content }}
   </div>
   <footer class="post-footer">
-    <button type="button" class="post-share post-cta">&uarr; Share this post</button>
-    <nav class="post-back post-back--bottom">
-      <a href="/">&larr; Other posts</a>
-    </nav>
+    {% include post_coffee.html %}
+    {% include post_author.html %}
+    <div class="post-footer-navbar">
+      {% include post_others.html %}   
+      {% include post_share.html %}
+    </div>
   </footer>
 </article>
 
-{% include post_share.html %}
-{% include post_author.html %}
 
 {% if site.disqus.shortname %}
   {% include disqus_comments.html %}
 {% endif %}
+
+<script async src="/assets/js/share.js"></script>
