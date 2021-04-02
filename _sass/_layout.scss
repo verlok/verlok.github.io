@@ -14,21 +14,43 @@ body {
 }
 
 .header-coffee {
-  background: var(
+  color: white;
+  background-color: var(
     --headfoot__border-color
   );
   font-family: sans-serif;
   position: sticky;
   top: 0;
+  z-index: 2;
+  font-size: 15px;
 
   &-inner {
     max-width: 600px;
     display: flex;
     justify-content: space-between;
     padding: 5px 13px;
+    margin: 0 auto;
+  }
+  &-callout {
+    @media (min-width: 476px) {
+      margin-right: $spacing-unit;      
+    }
+    &--secondary {
+      @media (max-width: 560px) {
+        display: none;
+      }
+    }
   }
   &-cta {
-    text-decoration: underline;
+    a {
+      text-decoration: underline;
+      color: white;
+    }
+    &-emoji {
+      @media (max-width: 374px) {
+        display: none;
+      }
+    }
   }
 }
 
