@@ -4,7 +4,7 @@
   "description": "The new version of my blog, based on Jekyll.",
   "main": "gulpfile.js",
   "dependencies": {
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "uncss": "^0.16.1"
   },
   "devDependencies": {
