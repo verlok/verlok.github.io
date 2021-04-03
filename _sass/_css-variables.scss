@@ -1,5 +1,6 @@
 $brand-color: #d90009;
 $brand-color--light15: lighten($brand-color, 15%);
+$brand-color--dark15: darken($brand-color, 15%);
 $brand-color--dark30: darken($brand-color, 30%);
 
 $alternative-color: #1170a6;
@@ -48,6 +49,7 @@ $white-color: #fdfdfd;
   --menubutton__border-color: #{$grey-color--dark15};
   --menubutton__fill-color: #{$white-color};
   --icon__fill-color: #{$grey-color};
+  --coffee-bar--color: #{$brand-color--dark15};
 
   /* Dark mode */
   @media (prefers-color-scheme: dark) {
@@ -69,6 +71,6 @@ $white-color: #fdfdfd;
     --blockquote__border-color: #{$alternative-darkmode-color--light15};
     --inline-code__bg-color: #{$grey-color--dark25};
     --table-header__bg-color: #{$grey-color--dark25};
-
+    --coffee-bar--color: #{$brand-darkmode-color--dark30};
   }
 }

@@ -16,7 +16,7 @@ body {
 .header-coffee {
   color: white;
   background-color: var(
-    --headfoot__border-color
+    --coffee-bar--color
   );
   font-family: sans-serif;
   position: sticky;
@@ -31,25 +31,10 @@ body {
     padding: 5px 13px;
     margin: 0 auto;
   }
-  &-callout {
-    @media (min-width: 476px) {
-      margin-right: $spacing-unit;
-    }
-    &--secondary {
-      @media (max-width: 560px) {
-        display: none;
-      }
-    }
-  }
   &-cta {
     a {
       text-decoration: underline;
       color: white;
-    }
-    &-emoji {
-      @media (max-width: 359px) {
-        display: none;
-      }
     }
   }
 }
@@ -59,8 +44,6 @@ body {
   background: var(
     --headfoot__background-color
   );
-  border-bottom: 5px solid
-    var(--headfoot__border-color);
   min-height: $spacing-unit * 1.865;
   color: var(--headfoot__text-color);
   // Positioning context for the mobile navigation icon -- and the contact menu
