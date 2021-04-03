@@ -9,8 +9,6 @@ html {
 body {
   min-width: 320px;
   min-height: 100vh;
-  //display: flex;
-  //flex-direction: column;
 }
 
 .header-coffee {
@@ -41,7 +39,7 @@ body {
 
 .site-header {
   position: relative;
-  z-index: 3;
+  z-index: 2;
   flex-shrink: 0;
   background: var(
     --headfoot__background-color
@@ -69,24 +67,6 @@ body {
   &:visited {
     color: var(--site-title__color);
   }
-  /* span {
-		position: relative;
-	}
-	span:after {
-		content: "";
-		position: absolute;
-		top: 10%;
-		left: 0;
-		right: 0;
-		bottom: 10%;
-		z-index: 1;
-		background-image: linear-gradient(
-			to top,
-			rgba(var(--headfoot__background-color), 0.5),
-			rgba(var(--headfoot__background-color), 0) 50%
-		);
-		transition: opacity 0.3s;
-	} */
   &:focus,
   &:hover {
     text-decoration: none;
@@ -97,12 +77,13 @@ body {
 }
 
 .site-nav {
-  float: right;
   line-height: $base-line-height *
     $base-font-size * 2.25;
   position: absolute;
   top: 3px;
   right: $spacing-unit / 2;
+  z-index: 1;
+  transform: translate3d(0, 0, 0); // FIX FOR SAFARI's STACKING CONTEXT
   .nav-trigger {
     display: none;
   }
