@@ -41,7 +41,7 @@ body {
 
 .site-header {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   flex-shrink: 0;
   background: var(
     --headfoot__background-color
@@ -101,7 +101,6 @@ body {
   line-height: $base-line-height *
     $base-font-size * 2.25;
   position: absolute;
-  z-index: 2;
   top: 3px;
   right: $spacing-unit / 2;
   .nav-trigger {
