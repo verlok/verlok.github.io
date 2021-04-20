@@ -77,14 +77,15 @@ The modern and simpler way is to define a width / height aspect ratio implicitly
 
 Firefox and Chromium browsers (Chrome, MS Egde, Opera) have already shipped this feature. Mapped aspect-ratio is not supported by Safari yet, but it will be [supported in Safari 14](https://twitter.com/jensimmons/status/1275171897244823553) later in 2020. 
 
-[Check out this pen](https://codepen.io/verlok/pen/ExPwzGO) and note how the paragraph is rendered below the images even before the images start loading.
+I've created a [3 images with native lazy-loading](https://codepen.io/verlok/pen/ExPwzGO) pen. Note how the paragraph is rendered _below the images_ even before the images start loading.
 
-### Lazy images (JS) not supported
+### JS lazy-loaded images without placeholder are not supported
 
-Unfortunately, this is not working for images lazy loaded using Javascript. See [this pen](https://codepen.io/verlok/pen/bGEYyZe) and see that the `width` and `height` attributes have no effect. This is probably because the `src`/`srcset` attributes are both missing. 
+Unfortunately, this is not working for images lazy-loaded using Javascript. I've created a [3 images with JavaScript lazy-loading](https://codepen.io/verlok/pen/bGEYyZe). Note that the `width` and `height` attributes have no effect. This is probably because the `src`/`srcset` attributes are both missing.
 
-On the other hand, if you use native lazy loading via the `loading=lazy` attribute on images, it works good. But you can use native lazy loading only for images and iframes (not videos). 🤷‍♂️
+### JS lazy-loaded images with placeholder works!
 
+Using a placeholder image in the `src` attribute makes the mapped `aspect-ratio` work. I've created a [3 images with JavaScript lazy-loading and an SVG placeholder image](https://codepen.io/verlok/pen/poRxEPM). You can see that the `width` and `height` work to reserve space even before the placeholder image is loaded. To check this out, you can use your browser's developer tool to disable cache and simulate a very slow connection like "slod 3G".
 
 ## The modern way - explicit
 
