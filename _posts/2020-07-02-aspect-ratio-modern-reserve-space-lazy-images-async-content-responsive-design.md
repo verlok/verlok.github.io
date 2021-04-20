@@ -91,10 +91,10 @@ I've created a set of demos on Codepen to test mapped `aspect-ratio` in differen
 | ------------------------------------------------------------ | ------ | --------------------------------------------- |
 | Native lazy loading (no placeholders required)               | 🟢 Yes | [Demo](https://codepen.io/verlok/pen/ExPwzGO) |
 | Javascript lazy loading (no placeholders, no `display` fix)  | 🔴 No  | [Demo](https://codepen.io/verlok/pen/bGEYyZe) |
-| Javascript lazy loading (no placeholders, `display` fix)     | 🟢 Yes | [Demo](https://codepen.io/verlok/pen/RwKeoBX) |
+| Javascript lazy loading (no placeholders, with `display` fix)     | 🟢 Yes | [Demo](https://codepen.io/verlok/pen/RwKeoBX) |
 | Javascript lazy loading (SVG placeholders, no `display` fix) | 🟢 Yes | [Demo](https://codepen.io/verlok/pen/zYNmoxz) |
 
-With `display` fix I mean I needed to set the images `display` property to `block`, because leaving its value to the default one (`inline-block`), it didn't work out for Javascript lazy-loaded images.
+With `display` fix I mean I needed to set the images `display` property to `block`, because leaving its value to the default one (`inline-block`) didn't work out for Javascript lazy-loaded images.
 
 With "Works?" I mean if the browser reserved space for the images before they were loaded. 
 To check if it works yourself, use your browser's developer tools to disable the cache and emulate a "slow 3G" network speed.
@@ -123,11 +123,11 @@ We still don't know if and when this will be supported in future versions of Saf
 
 Yay! It is possible to use mapped `aspect-ratio` to reserve space for your lazily loaded content like images and videos today!
 
-Just se the `width` and `height` attributes to images and pick one of the following three ways: 
+Just set the `width` and `height` attributes to images and pick one of the following three ways: 
 
 1. Use native lazy loading with `loading=lazy`
 2. Use JavaScript lazy loading with no placeholders, but applying `display: block` to the images
 3. Use JavaScript lazy loading with placeholders
 
-I can't wait to know how you reduced your [CLS](https://web.dev/cls) using these techniques. 
+I can't wait to know how you reduced your pages' [CLS](https://web.dev/cls) using these techniques. 
 Please let me know in the comments!
