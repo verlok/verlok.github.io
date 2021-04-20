@@ -85,7 +85,7 @@ Unfortunately, this is not working for images lazy-loaded using Javascript. I've
 
 ### JS lazy-loaded images with placeholder works!
 
-Using a placeholder image in the `src` attribute makes the mapped `aspect-ratio` work. I've created a [3 images with JavaScript lazy-loading and an SVG placeholder image](https://codepen.io/verlok/pen/poRxEPM). You can see that the `width` and `height` work to reserve space even before the placeholder image is loaded. To check this out, you can use your browser's developer tool to disable cache and simulate a very slow connection like "slod 3G".
+Using a placeholder image in the `src` attribute makes the mapped `aspect-ratio` work. I've created a [3 images with JavaScript lazy-loading and an SVG placeholder image](https://codepen.io/verlok/pen/zYNmoxz). You can see that the `width` and `height` work to reserve space even before the placeholder image is loaded. To check this out, you can use your browser's developer tool to disable cache and simulate a very slow connection like "slod 3G".
 
 ## The modern way - explicit
 
