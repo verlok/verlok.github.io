@@ -1,10 +1,16 @@
 ---
 layout: post
 title: "aspect-ratio: A modern way to reserve space for images and async content in responsive design"
-date: 2020-07-02 01:00:00 +02:00
+date: 2021-04-18 12:30:00 +02:00
 categories:
   - techniques
-tags: [aspect-ratio, responsive design, responsive-images, cumulative layout shift]
+tags:
+  [
+    aspect-ratio,
+    responsive design,
+    responsive-images,
+    cumulative layout shift
+  ]
 image: aspect-ratio__2x.png
 ---
 
@@ -22,10 +28,7 @@ The traditional way to reserve space for images is to use the vertical padding t
 
 ```html
 <div class="image-wrapper">
-  <img
-    alt="An image"
-    src="image.jpg"
-  />
+  <img alt="An image" src="image.jpg" />
 </div>
 ```
 
@@ -44,7 +47,7 @@ The traditional way to reserve space for images is to use the vertical padding t
 }
 ```
 
-## The modern way - mapped
+## The modern way 1 - mapped `aspect-ratio`
 
 The modern and simpler way is to define a width / height aspect ratio implicitly by [defining the width and height attributes on images and videos](https://twitter.com/addyosmani/status/1276779799198007301). This is called "mapped aspect-ratio".
 
@@ -70,31 +73,39 @@ The modern and simpler way is to define a width / height aspect ratio implicitly
 /* Modern browser stylesheets will add a default
   aspect ratio based on the element's existing 
   width and height attributes */
-  img, video {
-    aspect-ratio: attr(width) / attr(height);
-  }
+img,
+video {
+  aspect-ratio: attr(width) / attr(height);
+}
 ```
 
-Firefox and Chromium browsers (Chrome, MS Egde, Opera) have already shipped this feature. Mapped aspect-ratio is not supported by Safari yet, but it will be [supported in Safari 14](https://twitter.com/jensimmons/status/1275171897244823553) later in 2020. 
+The good news is that both Chromium browsers (Chrome, Microsoft Egde, and Opera), Firefox and Safari (starting version 14) now support mapped `aspect-ratio`! So the vast majority of browsers is covered, and Internet Explorer is slowly dying at the expenses of Microsoft Edge.
 
-I've created a [3 images with native lazy-loading](https://codepen.io/verlok/pen/ExPwzGO) pen. Note how the paragraph is rendered _below the images_ even before the images start loading.
+But there are some caveats when using JavaScript-powered lazy loading.
 
-### JS lazy-loaded images without placeholder are not supported
+### Demos
 
-Unfortunately, this is not working for images lazy-loaded using Javascript. I've created a [3 images with JavaScript lazy-loading](https://codepen.io/verlok/pen/bGEYyZe). Note that the `width` and `height` attributes have no effect. This is probably because the `src`/`srcset` attributes are both missing.
+I've created a set of demos on Codepen to test mapped `aspect-ratio` in different cases.
 
-### JS lazy-loaded images with placeholder works!
+| Use case                                                     | Works? | Demo                                          |
+| ------------------------------------------------------------ | ------ | --------------------------------------------- |
+| Native lazy loading (no placeholders required)               | 🟢 Yes | [Demo](https://codepen.io/verlok/pen/ExPwzGO) |
+| Javascript lazy loading (no placeholders, no `display` fix)  | 🔴 No  | [Demo](https://codepen.io/verlok/pen/bGEYyZe) |
+| Javascript lazy loading (no placeholders, `display` fix)     | 🟢 Yes | [Demo](https://codepen.io/verlok/pen/RwKeoBX) |
+| Javascript lazy loading (SVG placeholders, no `display` fix) | 🟢 Yes | [Demo](https://codepen.io/verlok/pen/zYNmoxz) |
 
-Using a placeholder image in the `src` attribute makes the mapped `aspect-ratio` work. I've created a [3 images with JavaScript lazy-loading and an SVG placeholder image](https://codepen.io/verlok/pen/zYNmoxz). You can see that the `width` and `height` work to reserve space even before the placeholder image is loaded. To check this out, you can use your browser's developer tool to disable cache and simulate a very slow connection like "slod 3G".
+With `display` fix I mean I needed to set the images `display` property to `block`, because leaving its value to the default one (`inline-block`), it didn't work out for Javascript lazy-loaded images.
 
-## The modern way - explicit
+With "Works?" I mean if the browser reserved space for the images before they were loaded. 
+To check if it works yourself, use your browser's developer tools to disable the cache and emulate a "slow 3G" network speed.
+You should see some space is reserved _before_ the images start loading, so the paragraph is rendered way below the images.
 
-In the near future, you will also be able to explicitly set the aspect ratio in your CSS code using [the aspect-ratio CSS rule](https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio).
+## The modern way 2 - explicit `aspect-ratio`
+
+In the future, you will also be able to explicitly set the aspect ratio in your CSS code using [the aspect-ratio CSS rule](https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio).
 
 ```html
-<div
-  class="async"
->
+<div class="async">
   Content is loading...
 </div>
 ```
@@ -105,13 +116,18 @@ In the near future, you will also be able to explicitly set the aspect ratio in 
 }
 ```
 
-This is experimental and it has currently (July 2nd, 2020) only [shipped to Chrome Canary](  https://twitter.com/una/status/1260980901934137345). We still don't know if this will be supported in Safari 14, which announced support [only for mapped values](https://twitter.com/jensimmons/status/1275171897244823553).
-
+Unfortunately, this has currently (April 2021) [supported](https://caniuse.com/mdn-css_properties_aspect-ratio) only by Chromium browsers.
+We still don't know if and when this will be supported in future versions of Safari.
 
 ## Conclusion
 
-Will we be able to ditch the vertical padding trick in favor of mapped or explicitly set `aspect-ratio` CSS rule? 
+Yay! It is possible to use mapped `aspect-ratio` to reserve space for your lazily loaded content like images and videos today!
 
-It depends on what Safari 14 will ship and on how quickly Internet Explorer 11 will disappear from the market share. 
+Just se the `width` and `height` attributes to images and pick one of the following three ways: 
 
-I'm not that optimistic but... Fingers crossed, developers! 🤞
+1. Use native lazy loading with `loading=lazy`
+2. Use JavaScript lazy loading with no placeholders, but applying `display: block` to the images
+3. Use JavaScript lazy loading with placeholders
+
+I can't wait to know how you reduced your [CLS](https://web.dev/cls) using these techniques. 
+Please let me know in the comments!
