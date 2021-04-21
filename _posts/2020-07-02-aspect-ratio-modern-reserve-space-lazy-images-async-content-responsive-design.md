@@ -79,7 +79,7 @@ video {
 }
 ```
 
-The good news is that both Chromium browsers (Chrome, Microsoft Egde, and Opera), Firefox and Safari (starting version 14) now support mapped `aspect-ratio`! So the vast majority of browsers is covered, and Internet Explorer is slowly dying at the expenses of Microsoft Edge.
+The good news is that either Chromium browsers (Chrome, Microsoft Egde, and Opera), Firefox and Safari (starting version 14) now support mapped `aspect-ratio`! So the vast majority of browsers is covered, and Internet Explorer is slowly dying, while Microsoft Edge is ramping up.
 
 But there are some caveats when using JavaScript-powered lazy loading.
 
