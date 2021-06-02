@@ -18,7 +18,7 @@ Hello, I'm Andrea, and I love to craft websites with the user experience at the 
   <figcaption>Image courtesy: myself</figcaption>
 </figure>
 
-My current job at [YNAP](https://www.ynap.com) is mainly focused on front-end research and development, working together with tech leaders, training on new technologies / best practices, and technically assess candidates. [More on LinkedIn](https://linkedin.com/andreaverlicchi)
+My current job at [YNAP](https://www.ynap.com) is mainly focused on front-end research and development, working together with tech leaders, training on new technologies / best practices, and technically assess candidates. [More on LinkedIn](https://linkedin.com/in/andreaverlicchi)
 
 I'm a father of two, a fan of GitHub, the proud creator of [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload) and [colonnineelettriche.it](http://www.colonnineelettriche.it) and the writer of this tech blog. I also occasionally speak at front-end conferences.
 
