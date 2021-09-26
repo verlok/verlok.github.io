@@ -68,7 +68,7 @@ Both scripts **don't hide images/assets from search engines**. No matter what ma
 
 ### Optimizes performance by cancelling downloads of images that already exited the viewport
 
-If your mobile users are on slow connections and scrolls down fast, vanilla-lazyload cancels the download of images that are still loading but already exited the viewport. If for some reason you don't want this to happen, you can turn this feature off bu setting the option `cancel_on_exit` to `false` (default is `true`).
+If your mobile users are on slow connections and scrolls down fast, vanilla-lazyload cancels the download of images that are still loading but already exited the viewport. Although if for some reason you don't want this to happen, this feature can be turned off.
 
 ### Retries loading after network connection went off and on
 
@@ -76,7 +76,7 @@ If your mobile users are on flaky connections and go offline and back online, va
 
 ### Supports conditional usage of native lazyloading
 
-If your users are on a browser supporting native lazyloading and you want to use it, with vanilla-lazyload you can conditinally activate it by setting the `use_native` option to `true`. Find here [more information](https://github.com/verlok/vanilla-lazyload#mixed-native-and-js-based-lazy-loading) and the [conditional native lazyload demo](https://www.andreaverlicchi.eu/vanilla-lazyload/demos/native_lazyload_conditional.html).
+If your users are on a browser supporting native lazyloading and you want to use it, with vanilla-lazyload you can conditionally activate it by setting the `use_native` option to `true`. Find here [more information](https://github.com/verlok/vanilla-lazyload#mixed-native-and-js-based-lazy-loading) and the [conditional native lazyload demo](https://www.andreaverlicchi.eu/vanilla-lazyload/demos/native_lazyload_conditional.html).
 
 ### Works with your DOM, your own classes and data-attributes
 
