@@ -109,7 +109,7 @@ Only on vanilla-lazyload you can execute code when given elements enter the visi
 
 Check out the [lazy functions](https://www.github.com/verlok/vanilla-lazyload#lazy-functions) section in vanilla-lazyload documentation for more.
 
-### Can restore DOM to its original state
+### Can restore the DOM to its original state
 
 Sometimes you need to clean up your DOM before unloading it and soft-navigating to another page, e.g. when using TurboLinks. 
 
