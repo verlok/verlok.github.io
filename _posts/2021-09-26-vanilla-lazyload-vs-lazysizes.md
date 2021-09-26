@@ -16,7 +16,13 @@ tags:
 
 It's not the first time I get asked the question: <q>what is the difference between vanilla-lazyload and lazy sizes?</q> It's now time to answer the question once and for all.
 
-<!-- 🤫 Quick answer: find all the differences [in this table](https://github.com/verlok/vanilla-lazyload/blob/master/README.md#vanilla-lazyload-vs-lazysizes) -->
+<div class="post-image-spacer" style="background-color: #08A683">
+  <img 
+    alt="vanilla-lazyload and lazysizes" 
+    src="/assets/post-images/vanilla-lazyload-vs-lazysizes__1x.jpg" 
+    srcset="/assets/post-images/vanilla-lazyload-vs-lazysizes__1x.webp 1x, /assets/post-images/vanilla-lazyload-vs-lazysizes__2x.webp 2x" 
+    class="post-image">
+</div>
 
 ## What are vanilla-lazyload and lazy sizes?
 
@@ -53,7 +59,7 @@ Find the main features of vanilla-lazyload compared with lazysizes in the table 
 
 ### Is extendable
 
-Both vanilla-lazyload and lazysizes are extendable, see [vanilla-lazyload API](https://www.github.com/verlok/vanilla-lazyload#-api) and [lazysizes plugins](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins). 
+Both vanilla-lazyload and lazysizes are extendable, see [vanilla-lazyload API](https://www.github.com/verlok/vanilla-lazyload#-api) and [lazysizes plugins](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins).
 
 ### Is SEO friendly
 
@@ -93,31 +99,31 @@ Both vanilla-lazyload and lazisizes can lazyload the `iframe` tag.
 
 ### Can lazyload videos
 
-Only vanilla-lazyload can lazyload the `video` tag, even with multiple `source`s. 
+Only vanilla-lazyload can lazyload the `video` tag, even with multiple `source`s.
 
 See [lazy video](https://github.com/verlok/vanilla-lazyload#lazy-video) in vanilla-lazyload documentation for more.
 
 ### Can lazyload background images
 
-Only vanilla-lazyload can lazyload background images, even multiple background images. It also has a way to supporting HiDPI displays such as Retina displays and Super Retina display. 
+Only vanilla-lazyload can lazyload background images, even multiple background images. It also has a way to supporting HiDPI displays such as Retina displays and Super Retina display.
 
 See [lazy background images](https://github.com/verlok/vanilla-lazyload#lazy-background-image) in vanilla-lazyload documentation for more.
 
 ### Can lazily execute code, when given elements enter the viewport
 
-Only on vanilla-lazyload you can execute code when given elements enter the visible portion of the page. 
+Only on vanilla-lazyload you can execute code when given elements enter the visible portion of the page.
 
 Check out the [lazy functions](https://www.github.com/verlok/vanilla-lazyload#lazy-functions) section in vanilla-lazyload documentation for more.
 
 ### Can restore the DOM to its original state
 
-Sometimes you need to clean up your DOM before unloading it and soft-navigating to another page, e.g. when using TurboLinks. 
+Sometimes you need to clean up your DOM before unloading it and soft-navigating to another page, e.g. when using TurboLinks.
 
-vanilla-lazyload allows you to restore all DOM it manipulated to its original state by calling the `restoreAll()` method. 
+vanilla-lazyload allows you to restore all DOM it manipulated to its original state by calling the `restoreAll()` method.
 
 ## Conclusion
 
-vanilla-lazyload has more features you can use to lazyload images, background images, videos and iframes, it automatically retries loading images after a network down, supports conditional native lazy loading, can execute code lazily, and restore your DOM to its original state. 
+vanilla-lazyload has more features you can use to lazyload images, background images, videos and iframes, it automatically retries loading images after a network down, supports conditional native lazy loading, can execute code lazily, and restore your DOM to its original state.
 
 On the other hand, lazysizes is extendable and it has the ability to automatically calculate your images `sizes` attribute if you don't want to.
 
