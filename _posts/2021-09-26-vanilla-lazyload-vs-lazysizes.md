@@ -29,9 +29,7 @@ As the author of vanilla-lazyload, it's not the first time I get asked the quest
 
 [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload/) and [lazysizes](https://github.com/afarkas/lazysizes/) are two popular Javascript libraries to [lazyload](https://web.dev/lazy-loading/) images and other DOM elements, meaning <strong>load them only when they enter the visible portion of the web page</strong> (the browser viewport), or a little bit earlier than they do.
 
-Both of them are very popular libraries used to improve the <strong>rendering time</strong> of your website, by delaying the loading of all non-critical content to later, typically to when users <strong>scroll down the page</strong>. 
-
-They are very useful to get better values of [Core Web Vitals](https://web.dev/cwv) and particularly to reduce the [Largest Contentful Paint](https://web.dev/lcp).
+Using one of them is very important to improve the <strong>rendering time</strong> of your website by delaying the loading of all non-critical content to later, in order to get better [Core Web Vitals](https://web.dev/cwv) and particularly to reduce the [Largest Contentful Paint](https://web.dev/lcp).
 
 So what are the <strong>differences between vanilla-lazyload and lazysizes</strong>? What follows is a detailed comparison of the two.
 
