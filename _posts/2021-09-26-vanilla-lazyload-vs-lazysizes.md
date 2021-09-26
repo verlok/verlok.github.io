@@ -77,22 +77,7 @@ Both scripts work by default with the `data-src` attribute and the `lazy` class 
 
 ### Can lazyload responsive images
 
-Both vanilla-lazyload and lazysizes can lazyload responsive images by all kinds. 
-
-The simple `img` tag...
-
-```html
-<img src="..." srcset="..." sizes="...">
-```
-
-...and the `picture` tag with multiple `source` tags:
-
-```html
-<picture>
-    <source media="..." srcset="" ...>
-    <img ...>
-</picture>
-```
+Both vanilla-lazyload and lazysizes can lazyload responsive images by all kinds, the simple `img` tag and the `picture` tag with multiple `source` tags.
 
 For more information, check out [lazy load responsive images in 2020](https://www.andreaverlicchi.eu/lazy-load-responsive-images-in-2020-srcset-sizes-picture-webp/) by yours truly.
 
