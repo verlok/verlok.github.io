@@ -85,7 +85,7 @@ For more information, check out [lazy load responsive images in 2020](https://ww
 
 The lazysizes script has a function that can spare you the "fatigue" of writing the value of the `sizes` attribute in your HTML markup. By placing a `data-sizes="auto"` in your images markup, it can derive its value via Javascript from your CSS.
 
-This is a missing feature vanilla-lazyload for good reason. To make browsers display your website's content as fast as possible, you will have to <strong>mix lazy loading and eager loading</strong> (eager being the opposite of lazy). The best practice here is to eagerly load images above-the-fold and lazy loading the ones below-the-fold. In the eagerly loaded images you will have to put a sensible value of the `sizes` attribute. This means that you will have to calculate that value anyway and, once you did that, what is the use of calculating its value using JavaScript? You can use the value you calculated both for your eager images and your lazy ones.
+This is a missing feature vanilla-lazyload for a reason. To make browsers display your website's content as fast as possible, you will have to <strong>mix lazy loading and eager loading</strong> (eager being the opposite of lazy). The best practice here is to eagerly load images above-the-fold and lazy loading the ones below-the-fold. In the eagerly loaded images you will have to put a sensible value of the `sizes` attribute. This means that you will have to calculate that value anyway and, once you did that, what is the use of calculating its value using JavaScript? You can use the value you calculated both for your eager images and your lazy ones.
 
 ### Can lazyload iframes
 
