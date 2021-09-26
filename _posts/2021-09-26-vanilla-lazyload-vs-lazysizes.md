@@ -12,6 +12,7 @@ tags:
     iframes,
     videos
   ]
+image: vanilla-lazyload-vs-lazysizes__1x.jpg
 ---
 
 It's not the first time I get asked the question: <q>what is the difference between vanilla-lazyload and lazy sizes?</q> It's now time to answer the question once and for all.
