@@ -15,7 +15,7 @@ tags:
 image: vanilla-lazyload-vs-lazysizes__1x.jpg
 ---
 
-As the author of vanilla-lazyload, it's not the first time I get asked the question: <q>What are the differences between vanilla-lazyload and lazysizes?</q> This blog post answers that question.
+As the author of vanilla-lazyload, it's not the first time I get asked the question: <q>What are the differences between vanilla-lazyload and lazysizes?</q> This blog post is the answer to that question.
 
 <div class="post-image-spacer" style="background-color: #08A683">
   <img 
