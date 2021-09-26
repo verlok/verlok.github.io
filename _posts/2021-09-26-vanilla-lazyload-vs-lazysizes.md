@@ -47,16 +47,16 @@ Find the main features of vanilla-lazyload compared to lazysizes' in the table b
 | Optimizes performance by cancelling downloads of images that already exited the viewport | ✔                |                 |
 | Retries loading after network connection went off and on again                           | ✔                |                 |
 | Supports conditional usage of native lazyloading                                         | ✔                |                 |
-| Works with your DOM, your own classes and data-attributes                                | ✔                |                 |
+| Works with your DOM, your own classes, and data-attributes                                | ✔                |                 |
 | Can lazyload responsive images                                                           | ✔                | ✔               |
 | ...and automatically calculate the value of the `sizes` attribute                        |                  | ✔               |
 | Can lazyload iframes                                                                     | ✔                | ✔               |
 | Can lazyload videos                                                                      | ✔                |                 |
 | Can lazyload background images                                                           | ✔                |                 |
-| Can lazily execute code, when given elements enter the viewport                          | ✔                |                 |
+| Can lazily execute code when given elements enter the viewport                          | ✔                |                 |
 | Can restore DOM to its original state                                                    | ✔                |                 |
 
-## Table rows explanained
+## Table rows explained
 
 ### Is extendable
 
@@ -68,7 +68,7 @@ Both scripts **don't hide images/assets from search engines**. No matter what ma
 
 ### Optimizes performance by cancelling downloads of images that already exited the viewport
 
-If your mobile users are on slow connections and scrolls down fast, vanilla-lazyload cancels the download of images that are still loading but already exited the viewport. Although if for some reason you don't want this to happen, this feature can be turned off.
+If your mobile users are on slow connections and they scroll down fast, vanilla-lazyload cancels the download of images that are still loading but already exited the viewport. Although if for some reason you don't want this to happen, this feature can be turned off.
 
 ### Retries loading after network connection went off and on
 
@@ -96,7 +96,7 @@ This is a missing feature vanilla-lazyload for a reason. To make browsers displa
 
 ### Can lazyload iframes
 
-Both vanilla-lazyload and lazisizes can lazyload the `iframe` tag.
+Both vanilla-lazyload and lazysizes can lazyload the `iframe` tag.
 
 ### Can lazyload videos
 
@@ -106,11 +106,11 @@ See [lazy video](https://github.com/verlok/vanilla-lazyload#lazy-video) in vanil
 
 ### Can lazyload background images
 
-Only vanilla-lazyload can lazyload background images, even multiple background images. It also has a way to supporting HiDPI displays such as Retina displays and Super Retina display.
+Only vanilla-lazyload can lazyload background images, even multiple background images. It also has a way of supporting HiDPI displays such as Retina and Super Retina displays.
 
-See [lazy background images](https://github.com/verlok/vanilla-lazyload#lazy-background-image) in vanilla-lazyload documentation for more.
+Check [lazy background images](https://github.com/verlok/vanilla-lazyload#lazy-background-image) in vanilla-lazyload documentation for more.
 
-### Can lazily execute code, when given elements enter the viewport
+### Can lazily execute code when given elements enter the viewport
 
 Only on vanilla-lazyload you can execute code when given elements enter the visible portion of the page.
 
