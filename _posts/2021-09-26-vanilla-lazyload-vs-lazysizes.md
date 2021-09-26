@@ -77,11 +77,15 @@ Both scripts work by default with the `data-src` attribute and the `lazy` class 
 
 ### Can lazyload responsive images
 
-Both vanilla-lazyload and lazysizes can lazyload responsive images by all kinds, e.g. simple `img` tag like the following
+Both vanilla-lazyload and lazysizes can lazyload responsive images by all kinds. 
+
+The simple `img` tag...
 
 ```html
 <img src="..." srcset="..." sizes="...">
 ```
+
+...and the `picture` tag with multiple `source` tags:
 
 ```html
 <picture>
@@ -90,10 +94,13 @@ Both vanilla-lazyload and lazysizes can lazyload responsive images by all kinds,
 </picture>
 ```
 
+For more information, check out [lazy load responsive images in 2020](https://www.andreaverlicchi.eu/lazy-load-responsive-images-in-2020-srcset-sizes-picture-webp/) by yours truly.
+
 ### ...and automatically calculate the value of the `sizes` attribute
 
-lazysizes has the advantage that it can derive the value of the `sizes` attribute from your CSS by using Javascript.
-vanilla-lazyload doesn't have this feature because of performance optimization reasons: to be useful on eagerly loaded images, the `sizes` attribute is useful when it's set in the HTML markup, not when it's set by javascript.
+The lazysizes script has a function that can spare you the "fatigue" of writing the value of the `sizes` attribute in your HTML markup. By placing a `data-sizes="auto"` in your images markup, it can derive its value via Javascript from your CSS.
+
+This is a missing feature vanilla-lazyload for good reason. To make browsers display your website's content as fast as possible, you will have to <strong>mix lazy loading and eager loading</strong> (eager being the opposite of lazy). The best practice here is to eagerly load images above-the-fold and lazy loading the ones below-the-fold. In the eagerly loaded images you will have to put a sensible value of the `sizes` attribute. This means that you will have to calculate that value anyway and, once you did that, what is the use of calculating its value using JavaScript? You can use the value you calculated both for your eager images and your lazy ones.
 
 ### Can lazyload iframes
 
@@ -101,16 +108,34 @@ Both vanilla-lazyload and lazisizes can lazyload the `iframe` tag.
 
 ### Can lazyload videos
 
-Only vanilla-lazyload can lazyload the `video` tag, even with multiple `source`s.
+Only vanilla-lazyload can lazyload the `video` tag, even with multiple `source`s. 
+
+See [lazy video](https://github.com/verlok/vanilla-lazyload#lazy-video) in vanilla-lazyload documentation for more.
 
 ### Can lazyload background images
 
-Only vanilla-lazyload can lazyload background images. And also multiple background images. And supporting HiDPI such as Retina and Super Retina display.
+Only vanilla-lazyload can lazyload background images, even multiple background images. It also has a way to supporting HiDPI displays such as Retina displays and Super Retina display. 
+
+See [lazy background images](https://github.com/verlok/vanilla-lazyload#lazy-background-image) in vanilla-lazyload documentation for more.
 
 ### Can lazily execute code, when given elements enter the viewport
 
-Check out the [lazy functions](https://www.github.com/verlok/vanilla-lazyload#lazy-functions) section and learn how to execute code only when given elements enter the viewport.
+Only on vanilla-lazyload you can execute code when given elements enter the visible portion of the page. 
+
+Check out the [lazy functions](https://www.github.com/verlok/vanilla-lazyload#lazy-functions) section in vanilla-lazyload documentation for more.
 
 ### Can restore DOM to its original state
 
-Using the `restoreAll()` method, you can make LazyLoad restore all DOM manipulated from LazyLoad to how it was when the page was loaded the first time.
+Sometimes you need to clean up your DOM before unloading it and soft-navigating to another page, e.g. when using TurboLinks. 
+
+vanilla-lazyload allows you to restore all DOM it manipulated to its original state by calling the `restoreAll()` method. 
+
+## Conclusion
+
+vanilla-lazyload has more features you can use to lazyload images, background images, videos and iframes, it automatically retries loading images after a network down, supports conditional native lazy loading, can execute code lazily, and restore your DOM to its original state.  
+On the other hand, lazysizes is extendable and it has the ability to automatically calculate your images `sizes` attribute if you don't want to.
+
+- [vanilla-lazyload github page](https://github.com/verlok/vanilla-lazyload)
+- [lazysizes github page](https://github.com/afarkas/lazysizes/)
+
+I hope you found this article useful!
