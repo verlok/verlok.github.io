@@ -1,7 +1,7 @@
 ---
 layout: post
 title: vanilla-lazyload vs lazysizes
-date: 2020-11-26 18:55:00 +02:00
+date: 2021-09-26 11:00:00 +02:00
 categories:
     - libraries
 tags: [libraries, lazyloading, images, iframes, videos]
