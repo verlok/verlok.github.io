@@ -27,17 +27,17 @@ As the author of vanilla-lazyload, it's not the first time I get asked the quest
 
 ## What are vanilla-lazyload and lazy sizes?
 
-[vanilla-lazyload](https://github.com/verlok/vanilla-lazyload/) and [lazysizes](https://github.com/afarkas/lazysizes/) are two popular Javascript libraries to [lazy-load](https://web.dev/lazy-loading/) images and other DOM elements lazily, meaning <strong>load them only when they enter the visible portion of the web page</strong>, or a little bit earlier than they do.
+[vanilla-lazyload](https://github.com/verlok/vanilla-lazyload/) and [lazysizes](https://github.com/afarkas/lazysizes/) are two popular Javascript libraries to [lazyload](https://web.dev/lazy-loading/) images and other DOM elements, meaning <strong>load them only when they enter the visible portion of the web page</strong> (the browser viewport), or a little bit earlier than they do.
 
-Both of them are great solutions to improve the <strong>rendering time</strong> of your website, by delaying all non-crucial content to when users <strong>scroll down the page</strong>, ultimately getting better [Core Web Vitals](https://web.dev/cwv) values as a result, and especially an improved [Largest Contentful Paint](https://web.dev/lcp).
+Both of them are very popular libraries used to improve the <strong>rendering time</strong> of your website, by delaying the loading of all non-critical content to later, typically to when users <strong>scroll down the page</strong>. 
 
-So what are the <strong>differences between vanilla-lazyload and lazysizes</strong>?
+They are very useful to get better values of [Core Web Vitals](https://web.dev/cwv) and particularly to reduce the [Largest Contentful Paint](https://web.dev/lcp).
 
-Both of them are very populare libraries used in production on thousand websites, so I've written this very detailed comparison.
+So what are the <strong>differences between vanilla-lazyload and lazysizes</strong>? What follows is a detailed comparison of the two.
 
 ## vanilla-lazyload and lazysizes compared
 
-Find the main features of vanilla-lazyload compared with lazysizes in the table below.
+Find the main features of vanilla-lazyload compared to lazysizes' in the table below.
 
 | It                                                                                       | vanilla-lazyload | lazysizes       |
 | ---------------------------------------------------------------------------------------- | ---------------- | --------------- |
