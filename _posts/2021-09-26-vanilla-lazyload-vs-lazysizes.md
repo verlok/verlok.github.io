@@ -122,7 +122,7 @@ vanilla-lazyload allows you to restore all DOM it manipulated to its original st
 
 ## Conclusion
 
-vanilla-lazyload has more features you can use to lazyload images, background images, videos and iframes, it optimise it for slow connections, it automatically retries loading images after a network down, supports conditional native lazy loading, can execute code lazily, and restore your DOM to its original state.
+vanilla-lazyload has more features you can use to lazyload images, background images, videos and iframes, it's optimised for slow connections, it automatically retries loading images after a network down, supports conditional native lazy loading, can execute code lazily, and restore your DOM to its original state.
 
 On the other hand, lazysizes is extendable and it has the ability to automatically calculate your images `sizes` attribute if you don't want to.
 
