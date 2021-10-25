@@ -17,7 +17,7 @@ image: quicklink__1x.webp
 
 [QuickLink](https://github.com/GoogleChromeLabs/quicklink) is a lightweight library created by Addy Osmani (Google) that prefetches pages linked to the current page, as the links to those pages enter the visible portion of the page (viewport).
 
-<div class="post-image-spacer" style="background-color: #FFF">
+<div class="post-image-spacer" style="background-color: #FFF; padding-bottom: 37.5%">
   <img 
     alt="vanilla-lazyload and lazysizes" 
     src="/assets/post-images/quicklink__1x.jpg" 
