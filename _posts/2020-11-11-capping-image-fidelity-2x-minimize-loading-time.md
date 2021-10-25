@@ -87,7 +87,7 @@ If you feel confused, I recommend you to read [Srcset and Sizes from Eric Portis
 
 ## Devices with 3x displays
 
-At the time I am writing this article, there are a bunch of high-end devices, both from Apple and Google, mounting a HiDPI display with 3x pixel density or more. Apple calls them Super Retina displays, Google calls them FHD+ displays.
+At the time I am writing this article, there's a bunch of high-end devices, both from Apple and Google, mounting a HiDPI display with 3x pixel density or more. Apple calls them Super Retina displays, Google calls them FHD+ displays.
 
 <figure>
   <div class="post-image-spacer" style="background-color: #fff; padding-bottom: 81.5%">
@@ -159,7 +159,8 @@ Note: I replaced the real numbers with a `###` placeholder because those numbers
 Notice that:
 
 - on the smartphones media queries, we describe only the `2x` image because all smartphones mount a retina display nowadays
-on the landscape, tablet and computers media query, we should describe both the `1x` and `2x` images.
+- on the landscape, tablet and computers media query, we should describe both the `1x` and `2x` images.
+- the `src` attribute on the `img` tag is required, but it will be used only by legacy browsers, IE 11 included
 
 ## Optionally reduce complexity on tablets and computers media queries
 
