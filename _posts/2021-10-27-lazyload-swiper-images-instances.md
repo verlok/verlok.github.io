@@ -12,11 +12,11 @@ tags:
   ]
 ---
 
-Say you have multiple carousels in a page, each one containing multiple images, and you want to download only the images that are inside the visible portion of the page, and maybe save some CPU time by lazily create the carousel instances. I think I've found a valuable and elegant technique to do so.
+Say you have multiple carousels in a page, each one containing multiple images, and you want to download only the images that are inside the visible portion of the page, and maybe save some CPU time by lazily create the carousel instances. I think I’ve found a valuable and elegant technique to do so.
 
-The following technique is about lazy loading images inside a [Swiper JS](https://swiperjs.com/) instance, and also lazily create the Swiper instances that are located below-the-fold, using Swiper with [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload).
+The following technique is about lazy loading images inside an instance of [Swiper JS](https://swiperjs.com/), and also lazily creating the Swiper instances below-the-fold, using Swiper with [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload).
 
-The HTML code of the first carousel leaves a couple of images as eagerly loaded, so broesers will prioritise their downloads, and leaves all the rest to lazy loading. 
+The HTML code of the first carousel sets a couple of images as eagerly loaded so browsers will prioritize their downloading, and it leaves all the rest to lazy loading.
 
 ```html
 <div class="swiper swiper--eager">
@@ -77,7 +77,7 @@ The HTML code of the first carousel leaves a couple of images as eagerly loaded,
 </div>
 ```
 
-From the second carousel on, all the images inside it are lazily loaded.
+From the second carousel on, all the images are to be lazily loaded.
 
 ```html
 <div class="swiper swiper--lazy" id="swiperLazy1">
@@ -139,7 +139,7 @@ From the second carousel on, all the images inside it are lazily loaded.
 </div>
 ```
 
-Here's the JavaScript code that makes the magic. 
+Here goes the JavaScript code that makes the magic. 
 
 ```js
 const swiperOptions = {
@@ -173,6 +173,6 @@ new LazyLoad({
 });
 ```
 
-I've tested it emulating a "slow 3G" connection and I like a lot the waterfall and the Largest Contentful Paint.
+I tested it by emulating a "slow 3G" connection, and I like the waterfall of network calls and the optimal value of the Largest Contentful Paint.
 
 [Try it live here](https://www.andreaverlicchi.eu/vanilla-lazyload/demos/swiper.html).
