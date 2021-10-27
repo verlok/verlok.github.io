@@ -1,6 +1,6 @@
 ---
 layout: post
-title: A clever way to lazyload images in Swiper, and lazily create Swiper instances
+title: An elegant way to lazyload images in Swiper, and lazily create Swiper instances
 date: 2021-10-27 04:00:00 +02:00
 categories:
   - techniques
@@ -12,12 +12,12 @@ tags:
   ]
 ---
 
-I think I've found a valuable and elegant technique to lazyload images inside a Swiper instance and also lazily create multiple instances of Swiper in a page, using a combination of Swiper and vanilla-lazyload. 
+Say you have multiple Swiper instances in a page, each Swiper instance containing multiple images, but you want to:
 
-Say you have multiple Swiper instances in a page, each Swiper instance containing multiple images, but you only want
+- download only the images inside the visible portion of the page, to save bandwidth and optimize the user experience 
+- lazily create the Swiper instances, as they enter the page, to increment the DOM only as needed
 
-- to download only the images inside the visible portion of the page, to save bandwidth and optimize the user experience 
-- to lazily create Swiper instances, as they enter the page, to increment the DOM only as needed
+I think I've found a valuable and elegant technique to lazyload images inside a carousel, and also lazily create the carousel instances, using a combination of [Swiper JS](https://swiperjs.com/) and [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload).
 
 The HTML code leaves a couple of images as eagerly loaded, to prioritise their downloads, and leaves the rest all lazy. 
 
