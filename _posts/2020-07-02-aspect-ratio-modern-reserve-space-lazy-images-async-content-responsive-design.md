@@ -116,8 +116,10 @@ In the future, you will also be able to explicitly set the aspect ratio in your 
 }
 ```
 
-Unfortunately, this has currently (April 2021) [supported](https://caniuse.com/mdn-css_properties_aspect-ratio) only by Chromium browsers.
-We still don't know if and when this will be supported in future versions of Safari.
+~~Unfortunately, this has currently (April 2021) supported only by Chromium browsers. We still don't know if and when this will be supported in future versions of Safari.~~
+
+**November 2021 update:** this is now [supported](https://caniuse.com/mdn-css_properties_aspect-ratio) by all latest versions of all browsers (except for Internet Explorer, but... well).
+
 
 ## Conclusion
 
