@@ -9,7 +9,7 @@ date_gmt: "2012-09-23 21:52:10 +0200"
   <a href="/">&larr; Home page</a>
 </nav>
 
-Hello, I'm Andrea, and I love to craft and/or optimise websites. I'm passionate about user experience and especially web performance. I've been programming since I was 9, which was 3.5 decades ago. 
+Hello, I'm Andrea, and I love to craft and optimise websites. I'm passionate about user experience and especially web performance. 
 
 <figure class="about-face">
   <div class="about-face__spacer">
@@ -20,7 +20,7 @@ Hello, I'm Andrea, and I love to craft and/or optimise websites. I'm passionate 
 
 I write about the web on this tech blog, on [Medium](https://medium.com/@andrea.verlicchi) and [Smashing Magazine](https://www.smashingmagazine.com/author/andrea-verlicchi/), and I love to speak at conferences about the web.
 
-I'm a father of two, a GitHub fan, and the proud creator of [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload). 
+I'm a GitHub fan and the proud creator of many open-source projects, [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload) amongst them. 
 
 I love nature in all of its forms and - when I'm not geeking around - I love cycling, hiking, eating local food, and all kinds of foreign and regional languages and cultures.
 
