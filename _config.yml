@@ -1,11 +1,12 @@
 # Site settings
-title: Andrea Verlicchi's Blog
-subtitle: A web craftsman's tech blog
+title: Andrea Verlicchi - Blog
+subtitle: Making the web faster and delightful
 email: andrea.verlicchi@gmail.com
 theme: minima
 description: > # this means to ignore newlines until "baseurl:"
-  Andrea is a web craftsman, a father, a fan of GitHub and a proud writer of this tech blog.
-  He currently works at YOOX NET-A-PORTER GROUP and he occasionally speaks at front-end conferences.
+  I'm a web development geek specialised in web performance optimisation.
+  I write this blog and sometimes I speak at conferences about the web.  
+  I'm currently working at Netcentric, a Cognizant digital business.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://www.andreaverlicchi.eu" # the base hostname & protocol for your site
 twitter_username: verlok
