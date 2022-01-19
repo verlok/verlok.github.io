@@ -4,9 +4,9 @@ subtitle: Making the web faster and delightful
 email: andrea.verlicchi@gmail.com
 theme: minima
 description: > # this means to ignore newlines until "baseurl:"
-  I'm a web development geek specialised in web performance optimisation.
-  I write this blog and sometimes I speak at conferences about the web.  
-  I'm currently working at Netcentric, a Cognizant digital business.
+  Andrea is a web development geek specialised in web performance optimisation.
+  He writes on this and other tech blogs and on Medium. Sometimes he speaks at conferences about the web.  
+  Andrea currently works at Netcentric, a Cognizant digital business.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://www.andreaverlicchi.eu" # the base hostname & protocol for your site
 twitter_username: verlok
