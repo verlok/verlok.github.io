@@ -9,7 +9,7 @@ date_gmt: "2012-09-23 21:52:10 +0200"
   <a href="/">&larr; Home page</a>
 </nav>
 
-Hello, I'm Andrea, and I love to craft websites with the user experience at the center, which I care about in every detail. Recently I've been counting and I realized that I'm a programmer for 30 years\*.
+Hello, I'm Andrea, and I love to craft and/or optimise websites. I'm passionate about user experience and especially web performance. I've been programming since I was 9, which was 3.5 decades ago. 
 
 <figure class="about-face">
   <div class="about-face__spacer">
@@ -18,10 +18,10 @@ Hello, I'm Andrea, and I love to craft websites with the user experience at the 
   <figcaption>Image courtesy: myself</figcaption>
 </figure>
 
-My current job at [YNAP](https://www.ynap.com) is mainly focused on front-end research and development, working together with tech leaders, training on new technologies / best practices, and technically assess candidates. [More on LinkedIn](https://linkedin.com/in/andreaverlicchi)
+I write about the web on this tech blog, on Medium and Smashing Magazine, and I love to speak at conferences about the web.
 
-I'm a father of two, a fan of GitHub, the proud creator of [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload) and [colonnineelettriche.it](http://www.colonnineelettriche.it) and the writer of this tech blog. I also occasionally speak at front-end conferences.
+I'm a father of two, a GitHub fan, and the proud creator of [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload). 
 
-I love nature in all of its forms and - when I'm not geeking around - I love cycling, hiking, eat healthy local food, and all kinds of foreign and regional languages and cultures.
+I love nature in all of its forms and - when I'm not geeking around - I love cycling, hiking, eating local food, and all kinds of foreign and regional languages and cultures.
 
-\* to be honest, when at 9 I started coding on my [MSX](http://en.wikipedia.org/wiki/MSX), I just copied lines of code from a magazine, but I was loving it. Anyway I have to say thanks to my father for his patience and to the company that included a programming manual for kids (featuring a robot-dog!) in their computers box.
+My current job at [Netcentric](https://www.netcentric.biz) is focused on web performance optimisation. [More on LinkedIn](https://linkedin.com/in/andreaverlicchi)
