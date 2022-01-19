@@ -18,7 +18,7 @@ Hello, I'm Andrea, and I love to craft and/or optimise websites. I'm passionate 
   <figcaption>Image courtesy: myself</figcaption>
 </figure>
 
-I write about the web on this tech blog, on Medium and Smashing Magazine, and I love to speak at conferences about the web.
+I write about the web on this tech blog, on [Medium](https://medium.com/@andrea.verlicchi) and [Smashing Magazine](https://www.smashingmagazine.com/author/andrea-verlicchi/), and I love to speak at conferences about the web.
 
 I'm a father of two, a GitHub fan, and the proud creator of [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload). 
 
