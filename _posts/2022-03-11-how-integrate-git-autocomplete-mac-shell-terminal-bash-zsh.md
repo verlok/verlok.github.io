@@ -36,4 +36,4 @@ You can install `oh-my-zsh` running fhe following command:
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-Enjoy your new `zsh` terminal integrated with `git` commands!
+Enjoy your new `zsh` terminal integrated with `git` commands! 
