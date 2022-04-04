@@ -25,6 +25,8 @@ Here are the slides of my talk, from my <a href="https://www.slideshare.net/verl
     <iframe class="lazy" data-src="https://www.slideshare.net/slideshow/embed_code/key/f0UQZznjoJ5Yvs?hostedIn=slideshare&page=upload" width="100%" height="autp" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
 </div>
 
+The talk was rated very positively both with in-person feedback and [on joind.in](https://joind.in/event/cssday-2022/-ottimizzazione-immagini-40-a-data-driven--test-driven-approach).
+
 The video of the talk will be available soon at <a href="https://vimeo.com/grusp">GrUSP on Vimeo</a> and on this page.
 
 <!-- <div class="videoWrapper">
