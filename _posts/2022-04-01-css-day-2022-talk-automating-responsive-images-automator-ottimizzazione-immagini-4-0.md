@@ -19,6 +19,8 @@ tags:
 
 On April 1st 2022 I spoke about **responsive images optimisation 4.0** at the [CSS Day 2022 Conference](https://2022.cssday.it) in Faenza, Italy. The speech was on how to improve performance on your website by automating responsive images.
 
+The tool the talk was about is [responsive-images-automator](https://github.com/verlok/responsive-images-automator).
+
 Here are the slides of my talk, from my <a href="https://www.slideshare.net/verlok">SlideShare</a>:
 
 <div class="slideshareWrapper">
