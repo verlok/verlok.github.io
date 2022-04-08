@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Slides of my talk about responsive images at CSS Day 2017
+title: Talk about responsive images at CSS Day 2017
 date: 2017-03-18 12:30:00 +01:00
 categories:
   - techniques

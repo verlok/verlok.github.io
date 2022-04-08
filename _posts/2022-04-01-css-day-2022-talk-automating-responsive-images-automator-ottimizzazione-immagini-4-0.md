@@ -13,7 +13,7 @@ tags:
     responsive images automator,
     responsive design,
     conferences,
-    css day
+    css day,
   ]
 ---
 
@@ -23,16 +23,16 @@ The tool the talk was about is [responsive-images-automator](https://github.com/
 
 The talk was rated very positively! [Read feedback on joind.in](https://joind.in/event/cssday-2022/-ottimizzazione-immagini-40-a-data-driven--test-driven-approach).
 
-## Slides and video
+## Video and slides
 
-Here are the slides of my talk, from my <a href="https://www.slideshare.net/verlok">SlideShare</a>:
+Here's the video of my talk. It's in Italian only, sorry to all non-italian-speaking people.
+
+<div class="videoWrapper">
+  <iframe class="lazy" width="100%" height="auto" data-src="https://www.youtube.com/embed/8D4skk17BGI" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+And here are the slides, for your convenience.
 
 <div class="slideshareWrapper">
     <iframe class="lazy" data-src="https://www.slideshare.net/slideshow/embed_code/key/f0UQZznjoJ5Yvs?hostedIn=slideshare&page=upload" width="100%" height="autp" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
 </div>
-
-The video of the talk will be available soon at <a href="https://vimeo.com/grusp">GrUSP on Vimeo</a> and on this page.
-
-<!-- <div class="videoWrapper">
-    <iframe id="ytFrame" data-src="https://player.vimeo.com/video/213316110?h=ce6d8817d3" width="100%" height="auto" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-</div>-->
