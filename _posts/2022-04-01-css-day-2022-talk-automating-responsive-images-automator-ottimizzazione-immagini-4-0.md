@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CSS Day 2022 talk on automating responsive images, with slides
+title: Images optimisation 4.0, a user-driven approach. A talk on automating your workflow with responsive images @ CSS Day (IT) 2022
 date: 2022-04-01 18:00:00 +02:00
 categories:
   - techniques
