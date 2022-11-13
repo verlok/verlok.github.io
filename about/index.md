@@ -22,6 +22,6 @@ I write about the web on this tech blog, on [Medium](https://medium.com/@andrea.
 
 I'm a GitHub fan and the proud creator of many open-source projects, [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload) amongst others. 
 
-I love nature in all of its forms and - when I'm not geeking around - I love cycling, hiking, eating local food, and all kinds of foreign and regional languages and cultures.
+I currently work at [Cognizant Netcentric](https://www.netcentric.biz) as web performance consultant, and product owner for a RUM tool we are developing. [More on LinkedIn](https://linkedin.com/in/andreaverlicchi).
 
-My current job at [Netcentric](https://www.netcentric.biz) is focused on web performance optimisation. [More on LinkedIn](https://linkedin.com/in/andreaverlicchi)
+I love nature in all of its forms and - when I'm not geeking around - I love cycling, hiking, eating local food, and all kinds of foreign and regional languages and cultures.
