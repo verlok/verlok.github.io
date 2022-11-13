@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Do we still need hybrid lazy loading in 2022?
-date: 2022-11-14 08:00:00 +01:00
+title: Do we still need lazy loading libraries and `data-src` in 2022?
+date: 2022-11-13 23:30:00 +01:00
 categories:
   - techniques
   - lazy loading
@@ -15,21 +15,40 @@ tags:
   ]
 ---
 
-Back in 2019, as browsers were just starting to support native lazy loading, I [defined hybrid lazy loading](https://www.smashingmagazine.com/2019/05/hybrid-lazy-loading-progressive-migration-native/) a technique to progressively switch from JavaScript lazy loading to native lazy loading, by using `data-src` and using JavaScript and my vanilla-lazyload library to enable native lazy loading in browsers which supported it. Does it still make sense in 2022? 
+Back in the days, as browser support for [native lazy loading](https://web.dev/browser-level-image-lazy-loading/) was not widespread as today, the best practice was to markup our images with data attributes like `data-src` and use a JavaScript library like my [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload) to start loading them as they entered the visible portion of the page. Is it still a best practice today?
 
-Now it’s 2022 and, unless you need callbacks or you want to really optimise web performance, for content images you can use `src` and `loading=lazy`, without `data-src`. That is not hybrid lazy loading, that is native lazy loading, and it will work in every browser that support it. You don’t need JavaScript, so no `const lazyContent = new LazyLoad({use_native: true});`. 
+The short answer is: no, unless you need callbacks or you really care about web performance and user experience.
 
-For background images you still need the `data-bg` attribute and the `const lazyBackground = new LazyLoad(…);` as browser don’t support it. 
+If we limit our focus to lazy loading content images (not background images or videos, for which you still need a JavaScript lazy loading library), you can be cool by marking up your lazy images like the following.
 
-To answer the questions in the title of this issue:
+```html
+<img src="sloth.webp" alt="Lazy sloth" loading="lazy">
+```
 
-> Does hybrid lazy load still have to use data-src? 
+That will enable native lazy loading on [browsers that support it](https://caniuse.com/loading-lazy-attr), meaning pretty much every browser except our old *friend* Internet Explorer.
 
-Yes, but you don’t need hybrid lazy loading, at least in the way I mean it. 
+So what are the cases for keeping using JavaScript lazy loading, instead of just using `loading='lazy'`?
 
-> what makes it better than adding the loading='lazy' attribute manually?
 
-Nothing, if you want to enable native lazy loading with `use_native`. If you don’t. Using JS driven lazy load has the following advantages:
-- it really hides images to the browser until JavaScript kicks in, which might improve web performance, in terms of largest contentful paint
-- on slow connections and pages with lots of images, if users scroll down fast, it optimises to focus on the images on screen, candeline the download of the ones gone off screen
-- it triggers callbacks, if you need them to control stuff related to images entering/exiting the viewport or loading/loaded/triggered an error. 
+## You care for users on slow connections
+
+On slow connections, [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload) cancels the download of images that already exited the visible portion of the page, so your users bandwidth can be really focused on the images that are currently in the visible portion of the page, resulting in a much better experience. 
+
+This is especially true if your page contains many images, and your users scrolled down faster than their connection could download the images.
+
+
+## You want to retry downloading when network fails
+
+I don't know about other JavaScript lazy loading libraries, but [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload) allows you to retry loading images when there was a network error, like the user connection went off for some time.
+
+
+## You need callbacks or managing loading status of the image
+
+Lazy loading with JavaScript libraries like [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload) triggers callbacks when images enter or exit the viewport, when they are being loaded or finished loading, when their loading failes because of a network error, etc.
+
+You might be interested in using those callbacks to generate visual effects on your page, or just retry loading images when it failed the first time.
+
+
+## You really want to hide images to the browser before they enter the viewport
+
+There might be cases where you want your images to be hidden to the browser until JavaScript kicks in, e.g. you want to really optimise the [Largest Contentful Paint](https://web.dev/lcp/) by focusing all your users bandwidth on the hero image (which you will have eagerly loaded).
