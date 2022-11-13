@@ -11,7 +11,7 @@ tags:
     lazy loading,
     hybrid lazy loading,
     native lazy loading,
-    pros and cons
+    pros and cons,
   ]
 ---
 
@@ -22,24 +22,36 @@ The short answer is: no, unless you need callbacks or you really care about web 
 If we limit our focus to lazy loading content images (not background images or videos, for which you still need a JavaScript lazy loading library), you can be cool by marking up your lazy images like the following.
 
 ```html
-<img src="sloth.webp" alt="Lazy sloth" loading="lazy">
+<img
+  src="sloth.webp"
+  alt="Lazy sloth"
+  loading="lazy"
+/>
 ```
 
-That will enable native lazy loading on [browsers that support it](https://caniuse.com/loading-lazy-attr), meaning pretty much every browser except our old *friend* Internet Explorer.
+That will enable native lazy loading on [browsers that support it](https://caniuse.com/loading-lazy-attr), meaning pretty much every browser except our old _friend_ Internet Explorer.
 
 So what are the cases for keeping using JavaScript lazy loading, instead of just using `loading='lazy'`?
 
+```html
+<img
+  data-src="sloth.webp"
+  alt="Lazy sloth"
+  class="lazy"
+/>
 
-## You care for users on slow connections
+<script>
+  new LazyLoad();
+</script>
+```
 
-On slow connections, [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload) cancels the download of images that already exited the visible portion of the page, so your users bandwidth can be really focused on the images that are currently in the visible portion of the page, resulting in a much better experience. 
+## You care for users on slow/faulty connections
 
-This is especially true if your page contains many images, and your users scrolled down faster than their connection could download the images.
+On slow connections, [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload) cancels the download of images that already exited the visible portion of the page, so your users bandwidth can be really focused on the images that are currently in the visible portion of the page.
 
+This would result in a much better experience, especially if your page contains many images, and your users scrolled down faster than their connection would take to download the images.
 
-## You want to retry downloading when network fails
-
-I don't know about other JavaScript lazy loading libraries, but [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload) allows you to retry loading images when there was a network error, like the user connection went off for some time.
+In addition, [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload) will retry loading images when their download was interrupted by a network error, e.g. if users connection goes off and on ofter some time.
 
 
 ## You need callbacks or managing loading status of the image
