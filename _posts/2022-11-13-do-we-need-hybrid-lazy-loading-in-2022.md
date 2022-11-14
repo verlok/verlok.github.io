@@ -86,4 +86,4 @@ Check out [vanilla-lazyload API](https://www.andreaverlicchi.eu/vanilla-lazyload
 
 ## Lazy loading everything else
 
-In this article I focused only on *content* images. To lazy load *background* images, videos and even iframes on some browsers, you still need a JavaScript lazy loading library. Find more about it on the [vanilla-lazyload documentation](https://www.andreaverlicchi.eu/vanilla-lazyload/).
+In this article I focused only on *content* images. To lazy load *background* images, videos, animated SVGs, and even iframes on some browsers, you still need a JavaScript lazy loading library. Find more about it on the [vanilla-lazyload documentation](https://www.andreaverlicchi.eu/vanilla-lazyload/).
