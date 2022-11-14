@@ -17,9 +17,11 @@ tags:
   ]
 ---
 
-On June 24th 2022 I spoke about **responsive images optimisation 4.0** at the [LazyLoaz conference 2022](https://webdirections.org/lazyload/). The speech was on how to improve performance on your website by automating responsive images, with a data-driven approach.
+On June 24th 2022 I spoke about **responsive images optimisation 4.0** at the [LazyLoad conference 2022](https://webdirections.org/lazyload/). 
 
-The tool the talk was about is [responsive-images-automator](https://github.com/verlok/responsive-images-automator).
+The talk was about how to improve performance on your website by automating responsive images, with a data-driven approach.
+
+The tool mentioned in the the talk is [responsive-images-automator](https://github.com/verlok/responsive-images-automator).
 
 ## Video and slides
 
