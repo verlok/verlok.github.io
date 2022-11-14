@@ -19,7 +19,7 @@ Back in the days, as browser support for [native lazy loading](https://web.dev/b
 
 ## JavaScript-driven image lazy loading
 
-In order to lazy load images or iframes, it’s a very common practice to mark them up by replacing the proper `src` attribute with a similar data attribute, `data-src`, then to rely on a JavaScript solution to a) detect when the images/iframes are getting close to the visible portion of the website (typically because the user scrolled down), b) to copy the `data` attributes into the proper ones, triggering the deferred loading of their content.
+In order to lazy load images, it’s a very common practice to mark them up by replacing the proper `src` attribute with a similar data attribute, `data-src`, then to rely on a JavaScript solution to a) detect when the images are getting close to the visible portion of the website (typically because the user scrolled down), b) to copy the `data` attributes into the proper ones, triggering the deferred loading of their content.
 
 ```html
 <img
@@ -31,7 +31,7 @@ In order to lazy load images or iframes, it’s a very common practice to mark t
 
 ## Native lazy loading
 
-With native lazy loading, or [browser level lazy loading](https://web.dev/browser-level-image-lazy-loading/), to lazy load images or iframes, you just need to add the `loading="lazy"` attribute on the related tag.
+With native lazy loading, or [browser level lazy loading](https://web.dev/browser-level-image-lazy-loading/), to lazy load images, you just need to add the `loading="lazy"` attribute on the `<img>` tag.
 
 ```html
 <img
