@@ -17,50 +17,73 @@ tags:
 
 Back in the days, as browser support for [native lazy loading](https://web.dev/browser-level-image-lazy-loading/) was not widespread as today, the best practice was to markup our images with data attributes like `data-src` and use a JavaScript library like my [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload) to start loading them as they entered the visible portion of the page. Is it still a best practice today?
 
-The short answer is: no, unless you need callbacks or you really care about web performance and user experience.
+## JavaScript-driven image lazy loading
 
-If we limit our focus to lazy loading content images (not background images or videos, for which you still need a JavaScript lazy loading library), you can be cool by marking up your lazy images like the following.
+In order to lazy load images or iframes, it’s a very common practice to mark them up by replacing the proper `src` attribute with a similar data attribute, `data-src`, then to rely on a JavaScript solution to a) detect when the images/iframes are getting close to the visible portion of the website (typically because the user scrolled down), b) to copy the `data` attributes into the proper ones, triggering the deferred loading of their content.
 
 ```html
 <img
-  src="sloth.webp"
-  alt="Lazy sloth"
+  data-src="turtle.jpg"
+  alt="Lazy turtle"
+  class="lazy"
+/>
+```
+
+## Native lazy loading
+
+With native lazy loading, or [browser level lazy loading](https://web.dev/browser-level-image-lazy-loading/), to lazy load images or iframes, you just need to add the `loading="lazy"` attribute on the related tag.
+
+```html
+<img
+  src="turtle.jpg"
+  alt="Lazy turtle"
   loading="lazy"
 />
 ```
 
-That will enable native lazy loading on [browsers that support it](https://caniuse.com/loading-lazy-attr), meaning pretty much every browser except our old _friend_ Internet Explorer.
+That enables native lazy loading on [browsers that support it](https://caniuse.com/loading-lazy-attr), meaning pretty much every browser except our old _"friend"_ Internet Explorer.
 
-So what are the cases for keeping using JavaScript lazy loading, instead of just using `loading='lazy'`?
+## Do we still need JavaScript-driven lazy loading?
 
-```html
-<img
-  data-src="sloth.webp"
-  alt="Lazy sloth"
-  class="lazy"
-/>
+The short answer is: no, unless... you really care about **web performance** and **user experience**, or you need callbacks.
 
-<script>
-  new LazyLoad();
-</script>
-```
+So, what are the cases for using JavaScript-driven lazy loading, instead of just using `loading='lazy'`?
 
-## You care for users on slow/faulty connections
+### 1. You care for users on slow or faulty connections (hint: you should)
 
-On slow connections, [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload) cancels the download of images that already exited the visible portion of the page, so your users bandwidth can be really focused on the images that are currently in the visible portion of the page.
+What happens if you have some pages with many images, and some users on slow connections who scroll down faster than their connection would take to download the images?
 
-This would result in a much better experience, especially if your page contains many images, and your users scrolled down faster than their connection would take to download the images.
+Native lazy loading would make browsers download your lazy images in this order: from the first that appeared on the page to the last ones.
 
-In addition, [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload) will retry loading images when their download was interrupted by a network error, e.g. if users connection goes off and on ofter some time.
+With Javascript-driven libraries like [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload), which cancels the download of images that exit the visible portion of the page while still downloading, your users bandwidth will be always focused on downloading the images that are in the visible portion of the page.
+
+Moreover, if images download get interrupted by a network error, e.g. if users connection goes off for a while, vanilla-lazyload will retry download those images when the network becomes available again.
+
+All of this results in a much better user experience. You can try these features on any of the [vanilla-lazyload demos](https://www.andreaverlicchi.eu/vanilla-lazyload/#-demos), like the [basic case demo](https://www.andreaverlicchi.eu/vanilla-lazyload/demos/image_basic.html), and throttling or disabling your connection speed in the developer tools of your browser.
+
+### 2. You need advanced callbacks or CSS classes on your images
+
+Native lazy loading defer the loading of images and you can still watch over events like `loaded`, but you don't have the ability to watch for other events on you images, like start loading, error, exited viewport, etc.
+
+JavaScript-driven lazy loading will trigger callbacks and apply CSS classes on different cases: when images start loading, when images enter or exit the viewport, when they all finished loading, and even when their loading fails because of a network error.
+
+Those callbacks and CSS classes might be very helpful to create visual effects on your page.
+
+Find more about callbacks and classes in [vanilla-lazyload API](https://www.andreaverlicchi.eu/vanilla-lazyload/#-api) / [options](https://www.andreaverlicchi.eu/vanilla-lazyload/#options).
 
 
-## You need callbacks or managing loading status of the image
+### 3. You want to optimize web performance, and specifically the Largest Contentful Paint of your page
 
-Lazy loading with JavaScript libraries like [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload) triggers callbacks when images enter or exit the viewport, when they are being loaded or finished loading, when their loading failes because of a network error, etc.
+With native lazy loading you don't have control on what images get downloaded from the browser. 
 
-You might be interested in using those callbacks to generate visual effects on your page, or just retry loading images when it failed the first time.
+There might be some images that barely appear in the visible portion of the page, or they are below-the-fold but not far off, that browsers will download even if they are not the main image of the page, meaning the one that triggers the largest paint on your page.
 
+With JavaScript-driven lazy load you have plenty of options to control if you want to pre-download images that are off-viewport, and how much far off.
 
-## You really want to hide images to the browser before they enter the viewport
+If you want to really optimise the [Largest Contentful Paint](https://web.dev/lcp/) on the image causing the LCP, you might be interested in experimenting with JavaScript-driven lazy loading to have more control over it. 
 
-There might be cases where you want your images to be hidden to the browser until JavaScript kicks in, e.g. you want to really optimise the [Largest Contentful Paint](https://web.dev/lcp/) by focusing all your users bandwidth on the hero image (which you will have eagerly loaded).
+Check out [vanilla-lazyload API](https://www.andreaverlicchi.eu/vanilla-lazyload/#-api) / [options](https://www.andreaverlicchi.eu/vanilla-lazyload/#options) to know more.
+
+## Lazy loading everything else
+
+In this article I focused only on *content* images. To lazy load *background* images, videos and even iframes on some browsers, you still need a JavaScript lazy loading library. Find more about it on the [vanilla-lazyload documentation](https://www.andreaverlicchi.eu/vanilla-lazyload/).
