@@ -17,6 +17,12 @@ tags:
 
 Back in the days, as browser support for [native lazy loading](https://web.dev/browser-level-image-lazy-loading/) was not widespread as today, the best practice was to markup our images with data attributes like `data-src` and use a JavaScript library like my [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload) to start loading them as they entered the visible portion of the page. Is it still a best practice today?
 
+
+## What is lazy loading?
+
+**Lazy loading images** is a technique to **defer the loading of *below-the-fold* images** to when they **entered the viewport**, or are close to do it, viewport meaning the visible portion of the page. It allows you to save bandwidth and money (if you're paying a CDN service for your images), reduce the carbon footprint of your website, and last but not least to reduce the rendering time of your page, improving web performance, and particularly the [Largest Contentful Paint](https://web.dev/lcp/).
+
+
 ## JavaScript-driven image lazy loading
 
 In order to lazy load images, it’s a very common practice to mark them up by replacing the proper `src` attribute with a similar data attribute, `data-src`, then to rely on a JavaScript solution to a) detect when the images are getting close to the visible portion of the website (typically because the user scrolled down), b) to copy the `data` attributes into the proper ones, triggering the deferred loading of their content.
