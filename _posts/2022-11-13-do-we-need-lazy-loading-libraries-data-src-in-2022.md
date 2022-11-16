@@ -51,7 +51,7 @@ That enables native lazy loading on [browsers that support it](https://caniuse.c
 
 ## Do we still need JavaScript-driven lazy loading?
 
-The short answer is: no, unless... you really care about **web performance** and **user experience**, or you need callbacks.
+The short answer is: no, unless you want greater control over how lazy loading is handled.
 
 So, what are the cases for using JavaScript-driven lazy loading, instead of just using `loading='lazy'`?
 
