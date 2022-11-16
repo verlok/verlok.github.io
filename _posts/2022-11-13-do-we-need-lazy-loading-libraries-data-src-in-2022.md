@@ -13,15 +13,25 @@ tags:
     native lazy loading,
     pros and cons,
   ]
+image: do-we-still-need-lazyload-2022__1x.webp
 ---
 
 Back in the days, as browser support for [native lazy loading](https://web.dev/browser-level-image-lazy-loading/) was not widespread as today, the best practice was to markup our images with data attributes like `data-src` and use a JavaScript library like my [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload) to start loading them as they entered the visible portion of the page. Is it still a best practice today?
 
+<div class="post-image-spacer" style="background-color: #08a683; padding-bottom: 50%">
+  <img 
+    alt="Do we still need lazy loading libraries and data-src in 2022?" 
+    src="/assets/post-images/do-we-still-need-lazyload-2022__1x.webp" 
+    srcset="/assets/post-images/do-we-still-need-lazyload-2022__1x.webp 1x, /assets/post-images/do-we-still-need-lazyload-2022__2x.webp 2x"
+    class="post-image"
+    loading="eager"
+    width="600"
+    height="300">
+</div>
 
 ## What is lazy loading?
 
-**Lazy loading images** is a technique to **defer the loading of *below-the-fold* images** to when they **entered the viewport**, or are close to do it, viewport meaning the visible portion of the page. It allows you to save bandwidth and money (if you're paying a CDN service for your images), reduce the carbon footprint of your website, and last but not least to reduce the rendering time of your page, improving web performance, and particularly the [Largest Contentful Paint](https://web.dev/lcp/).
-
+**Lazy loading images** is a technique to **defer the loading of _below-the-fold_ images** to when they **entered the viewport**, or are close to do it, viewport meaning the visible portion of the page. It allows you to save bandwidth and money (if you're paying a CDN service for your images), reduce the carbon footprint of your website, and last but not least to reduce the rendering time of your page, improving web performance, and particularly the [Largest Contentful Paint](https://web.dev/lcp/).
 
 ## JavaScript-driven image lazy loading
 
@@ -77,19 +87,18 @@ Those callbacks and CSS classes might be very helpful to create visual effects o
 
 Find more about callbacks and classes in [vanilla-lazyload API](https://www.andreaverlicchi.eu/vanilla-lazyload/#-api) / [options](https://www.andreaverlicchi.eu/vanilla-lazyload/#options).
 
-
 ### 3. You want to optimize web performance, and specifically the Largest Contentful Paint of your page
 
-With native lazy loading you don't have control on what images get downloaded from the browser. 
+With native lazy loading you don't have control on what images get downloaded from the browser.
 
 There might be some images that barely appear in the visible portion of the page, or they are below-the-fold but not far off, that browsers will download even if they are not the main image of the page, meaning the one that triggers the largest paint on your page.
 
 With JavaScript-driven lazy load you have plenty of options to control if you want to pre-download images that are off-viewport, and how much far off.
 
-If you want to really optimise the [Largest Contentful Paint](https://web.dev/lcp/) on the image causing the LCP, you might be interested in experimenting with JavaScript-driven lazy loading to have more control over it. 
+If you want to really optimise the [Largest Contentful Paint](https://web.dev/lcp/) on the image causing the LCP, you might be interested in experimenting with JavaScript-driven lazy loading to have more control over it.
 
 Check out [vanilla-lazyload API](https://www.andreaverlicchi.eu/vanilla-lazyload/#-api) / [options](https://www.andreaverlicchi.eu/vanilla-lazyload/#options) to know more.
 
 ## Lazy loading everything else
 
-In this article I focused only on *content* images. To lazy load *background* images, videos, animated SVGs, and even iframes on some browsers, you still need a JavaScript lazy loading library. Find more about it on the [vanilla-lazyload documentation](https://www.andreaverlicchi.eu/vanilla-lazyload/).
+In this article I focused only on _content_ images. To lazy load _background_ images, videos, animated SVGs, and even iframes on some browsers, you still need a JavaScript lazy loading library. Find more about it on the [vanilla-lazyload documentation](https://www.andreaverlicchi.eu/vanilla-lazyload/).
