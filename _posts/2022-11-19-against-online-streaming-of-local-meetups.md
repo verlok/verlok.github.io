@@ -23,7 +23,7 @@ I like to take part to local meetup events. They are informative, fun, and socia
       width="600"
       height="269">
   </div>
-  <figcaption>Image courtesy of [meetup.com](https://www.meetup.com/find/online-events/)</figcaption>
+  <figcaption>Image courtesy of <a href="https://www.meetup.com/find/online-events/">meetup.com</a></figcaption>
 </figure>
 
 Listening to the meetup topic in person, together with other people who share your interests, focused on the speaker and her/his slides, it's a type of experience. Watching to such an event at home, in front of a screen, alone, with distractions calling for your attention, far from where the event is happening, is a much weaker type of experience.
