@@ -13,7 +13,7 @@ image: online_events__1x.jpg
 I like to take part to local meetup events. They are informative, fun, and socially engaging at the same time. Sometimes, the meetup organizers get asked to stream events online. It would be a cool feature, I guess, but if you ask me, it would do more harm than good the community. Let me explain why.
 
 <figure>
-  <div class="post-image-spacer" style="background-color: white; aspect-ratio:600 / 269">
+  <div class="post-image-spacer" style="background-color:white; padding-bottom:44.83%">
     <img 
       alt="" 
       src="/assets/post-images/online_events__1x.jpg" 
