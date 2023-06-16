@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Talks "How and why ($) to optimize web performance, tips and "
+title: Talking about "How and why ($) to optimize web performance, practical tips for 2023"
 date: 2023-06-16 17:00:00 +02:00
 categories:
   - talks
@@ -13,7 +13,7 @@ tags:
   ]
 ---
 
-During the first half of 2023 I've been talking about web performance at web conferences, Google Developer Groups and local meetups. The title of my talk is "How and why ($) to improve web performance, practical tips for 2023".
+During the first half of 2023 I've been talking about web performance at developer conferences, Google Developer Groups (GDG) and local meetups. The title of my talk is "How and why ($) to improve web performance, practical tips for 2023". Find all details below.
 
 <figure>
   <img 
