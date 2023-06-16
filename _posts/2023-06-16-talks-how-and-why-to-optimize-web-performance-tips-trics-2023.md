@@ -31,6 +31,7 @@ Here are the events I spoke at:
 
 - [Bologna front-end](https://www.meetup.com/it-IT/bologna-front-end/events/291336433/) - 15 February 2023
 - <a href="https://gdg.community.dev/events/details/google-gdg-torino-presents-web-talks-from-design-to-performance/"><abbr title="Google Developer Group">GDG</abbr> Turin</a> - 23 February 2023
+- [Dev Romagna](https://www.meetup.com/it-IT/devromagna/events/291862771/) - 22 March 2023
 - <a href="https://gdg.community.dev/events/details/google-gdg-bologna-presents-come-e-perche-migliorare-le-prestazioni-web-consigli-pratici-per-il-2023/"><abbr title="Google Developer Group">GDG</abbr> Bologna</a> - 5 April 2023
 - <a href="https://gdg.community.dev/events/details/google-gdg-firenze-presents-come-e-perche-migliorare-le-prestazioni-web/"><abbr title="Google Developer Group">GDG</abbr> Firenze</a> - 25 May 2023
 - <a href="https://gdg.community.dev/events/details/google-gdg-munich-presents-web-performance-meetup/"><abbr title="Google Developer Group">GDG</abbr> Munich</a> - 7 June 2023
