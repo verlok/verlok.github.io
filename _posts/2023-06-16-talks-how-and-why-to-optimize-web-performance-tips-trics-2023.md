@@ -11,6 +11,7 @@ tags:
     conferences,
     meetup
   ]
+image: how_why_improve_web_performance_tips_2023__1x.jpg
 ---
 
 During the first half of 2023 I've been talking about web performance at developer conferences, Google Developer Groups (GDG) and local meetups. The title of my talk is "How and why ($) to improve web performance, practical tips for 2023". Find all details below.
