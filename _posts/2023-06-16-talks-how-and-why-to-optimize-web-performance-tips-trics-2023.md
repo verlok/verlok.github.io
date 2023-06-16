@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Talks "How and why ($) to optimize web performance, tips and "
-date: 2022-06-16 17:00:00 +02:00
+date: 2023-06-16 17:00:00 +02:00
 categories:
   - talks
 tags:
