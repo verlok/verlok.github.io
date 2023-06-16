@@ -20,7 +20,6 @@ During the first half of 2023 I've been talking about web performance at develop
     alt="Rays of light in cyan and purple background" 
     src="/assets/post-images/how_why_improve_web_performance_tips_2023__1x.jpg" 
     srcset="/assets/post-images/how_why_improve_web_performance_tips_2023__1x.webp 1x, /assets/post-images/how_why_improve_web_performance_tips_2023__2x.webp 2x"
-    class="post-image"
     loading="eager"
     width="600"
     height="346">
