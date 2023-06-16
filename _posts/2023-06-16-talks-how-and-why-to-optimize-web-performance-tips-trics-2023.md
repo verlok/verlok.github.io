@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Talking about "How and why ($) to optimize web performance, practical tips for 2023"
+title: Talking about how and why to optimize web performance, practical tips for 2023
 date: 2023-06-16 17:00:00 +02:00
 categories:
   - talks
