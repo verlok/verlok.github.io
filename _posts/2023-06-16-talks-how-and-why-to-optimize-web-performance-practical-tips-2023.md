@@ -40,7 +40,7 @@ Here are the events I spoke at:
 
 Slides attached.
 
-- [🇬🇧 Slides in English](/assets/pdf/how-why-improve-web-performance-practical-tips-2023.pdf/)
+- [🇬🇧 Slides in English](/assets/pdf/how-why-improve-web-performance-practical-tips-2023.pdf)
 - [🇮🇹 Slides in Italian](/assets/pdf/come-perche-migliorare-prestazioni-web-consigli-pratici-2023.pdf)
 
 Videos and pictures are coming in the next days.
