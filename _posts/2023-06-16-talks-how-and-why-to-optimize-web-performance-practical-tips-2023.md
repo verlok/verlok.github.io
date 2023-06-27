@@ -42,6 +42,7 @@ Find below my slides, on Slideshare and on this website for quick download.
 
 <iframe src="https://www.slideshare.net/slideshow/embed_code/key/2OV3Hys8ze5i4D?hostedIn=slideshare&page=upload" width="710" height="572" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen></iframe>
 
-[🇬🇧 Slides in English](/assets/pdf/how-why-improve-web-performance-practical-tips-2023.pdf) | [🇮🇹 Slide in Italiano](/assets/pdf/come-perche-migliorare-prestazioni-web-consigli-pratici-2023.pdf)
+- [🇬🇧 Slides in English](/assets/pdf/how-why-improve-web-performance-practical-tips-2023.pdf)
+- [🇮🇹 Slide in Italiano](/assets/pdf/come-perche-migliorare-prestazioni-web-consigli-pratici-2023.pdf)
 
 Videos and pictures are coming in the next days.
