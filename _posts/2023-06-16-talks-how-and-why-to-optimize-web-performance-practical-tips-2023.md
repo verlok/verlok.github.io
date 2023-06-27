@@ -40,7 +40,7 @@ Here are the events I spoke at:
 
 Find below my slides, on Slideshare and on this website for quick download.
 
-<iframe src="https://www.slideshare.net/slideshow/embed_code/key/2OV3Hys8ze5i4D?hostedIn=slideshare&page=upload" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen style="width: 100%; aspect-ratio:16 / 10.5; margin-bottom:1rem"></iframe>
+<iframe src="https://www.slideshare.net/slideshow/embed_code/key/2OV3Hys8ze5i4D?hostedIn=slideshare&page=upload" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allow="fullscreen" style="width: 100%; aspect-ratio:16 / 10.5; margin-bottom:1rem"></iframe>
 
 - [🇬🇧 Slides in English](/assets/pdf/how-why-improve-web-performance-practical-tips-2023.pdf)
 - [🇮🇹 Slide in Italiano](/assets/pdf/come-perche-migliorare-prestazioni-web-consigli-pratici-2023.pdf)
