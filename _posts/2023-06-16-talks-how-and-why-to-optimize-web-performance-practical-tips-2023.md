@@ -38,4 +38,9 @@ Here are the events I spoke at:
 - <a href="https://gdg.community.dev/events/details/google-gdg-munich-presents-web-performance-meetup/"><abbr title="Google Developer Group">GDG</abbr> Munich</a> - 7 June 2023
 - [Dev BCN Conference](https://www.devbcn.com/talk/457013) - 4 July 2023
 
+Slides attached.
+
+- [🇬🇧 Slides in English](./assets/pdf/how-why-improve-web-performance-practical-tips-2023.pdf/)
+- [🇮🇹 Slides in Italian](./assets/pdf/come-perche-migliorare-prestazioni-web-consigli-pratici-2023.pdf)
+
 Videos and pictures are coming in the next days.
