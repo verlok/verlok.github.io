@@ -1,36 +1,5 @@
----
-layout: default
----
-<div class="home">
-    <h1 class="visuallyHidden">{{ site.title | escape }}</h1>
-
-    <!-- Posts list -->
-    <section class="post-list">
-        <p class="post-list-intro">Hello! <a href="/about/">I'm Andrea</a> and I wrote...</p>
-        {% for post in paginator.posts %}
-        <article>
-            <h2 class="post-list-title">
-                <a class="post-list-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-            </h2>
-            {{ post.excerpt }}
-            <a href="{{ post.url | prepend: site.baseurl }}" class="post-cta">Read more &rarr;</a>
-        </article>
-        {% endfor %}
-    </section>
-
-    <!-- Pagination links -->
-    <section class="pagination">
-        <h2 class="visuallyHidden">Pagination</h2>
-        <span class="pagination-pageNumber">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
-        {% if paginator.previous_page %}
-            <a href="{{ paginator.previous_page_path }}" class="pagination-previous">&larr; Newer posts</a>
-        {% else %}
-            <span class="pagination-previous"><span class="visuallyHidden">No newer posts</span></span>
-        {% endif %}
-        {% if paginator.next_page %}
-            <a href="{{ paginator.next_page_path }}" class="pagination-next">Older posts &rarr;</a>
-        {% else %}
-            <span class="pagination-next"><span class="visuallyHidden">No older posts</span></span>
-        {% endif %}
-    </section>
-</div>
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Redirecting to https://www.andreaverlicchi.eu/</title>
+<meta http-equiv="refresh" content="0; URL=https://www.andreaverlicchi.eu/">
+<link rel="canonical" href="https://www.andreaverlicchi.eu/">
